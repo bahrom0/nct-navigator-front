@@ -228,6 +228,7 @@ export default function ExplainContent() {
           whyItFits={recommendation?.reasoning ?? persistedDetail!.explanation}
           matchedInterests={recommendation?.matchedInterests ?? persistedDetail!.matchedInterests}
           cluster={recommendation?.cluster}
+          educationLevel={recommendation?.education_level}
           taxonomy={recommendation ? {
             cluster_name_ru: recommendation.cluster_name_ru,
             study_form: recommendation.study_form,

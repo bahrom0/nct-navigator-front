@@ -696,6 +696,7 @@ function candidateToMatchResult(candidate: SearchCandidate): NCTMatchResult {
     taxonomyScore: candidate.taxonomyScore,
     facetScore: candidate.facetScore,
     qualityScore: candidate.qualityScore,
+    education_level: candidate.educationLevel,
     searchIntent: candidate.searchIntent,
   }
 }

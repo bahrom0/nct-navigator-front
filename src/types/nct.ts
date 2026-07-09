@@ -48,6 +48,7 @@ export interface NCTMatchResult {
   facetScore?: number
   qualityScore?: number
   searchIntent?: "broad" | "narrow" | "facet" | "code" | "comparison"
+  education_level?: "after_9" | "after_11"
 }
 
 export interface RankedNCT extends NCTMatchResult {

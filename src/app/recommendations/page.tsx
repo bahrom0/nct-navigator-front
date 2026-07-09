@@ -535,6 +535,7 @@ return (
                 whyItFits={result.reasoning}
                 matchedInterests={result.matchedInterests || []}
                 cluster={result.cluster}
+                educationLevel={result.education_level}
                 taxonomy={{
                   cluster_name_ru: result.cluster_name_ru,
                   study_form: result.study_form,

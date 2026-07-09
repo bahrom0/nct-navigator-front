@@ -54,6 +54,7 @@ export const RecommendationsResponseSchema = z.object({
         taxonomyScore: z.number().optional(),
         facetScore: z.number().optional(),
         qualityScore: z.number().optional(),
+        education_level: z.enum(["after_9", "after_11"]).optional(),
         searchIntent: z
           .enum(["broad", "narrow", "facet", "code", "comparison"])
           .optional(),
@@ -86,6 +87,7 @@ export const RecommendationsResponseSchema = z.object({
         taxonomyScore: z.number().optional(),
         facetScore: z.number().optional(),
         qualityScore: z.number().optional(),
+        education_level: z.enum(["after_9", "after_11"]).optional(),
         searchIntent: z
           .enum(["broad", "narrow", "facet", "code", "comparison"])
           .optional(),

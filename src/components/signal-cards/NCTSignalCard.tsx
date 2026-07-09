@@ -8,7 +8,7 @@ import { CompetitionMeter } from "@/components/strategy/CompetitionMeter"
 import { evaluateCompetitionForCode } from "@/features/strategy/competition-meter"
 import { useRouter } from "next/navigation"
 import { logActivityEvent } from "@/lib/activity-logger"
-import { CLUSTER_NAMES, CLUSTER_EXAMS } from "@/lib/db/types"
+import { CLUSTER_NAMES, CLUSTER_EXAMS, EDUCATION_LEVEL_LABELS } from "@/lib/db/types"
 
 interface NCTSignalCardProps {
   code: string
@@ -20,6 +20,7 @@ interface NCTSignalCardProps {
   whyItFits: string
   matchedInterests: string[]
   cluster?: number
+  educationLevel?: "after_9" | "after_11"
   taxonomy?: {
     cluster_name_ru?: string
     study_form?: string[]
@@ -42,6 +43,7 @@ export function NCTSignalCard({
   whyItFits,
   matchedInterests,
   cluster,
+  educationLevel = "after_11",
   taxonomy,
   index = 0,
   variant = "default",
@@ -53,7 +55,7 @@ export function NCTSignalCard({
   const [showTooltip, setShowTooltip] = useState(false)
 
   const clusterName = cluster !== undefined ? CLUSTER_NAMES[cluster] : taxonomy?.cluster_name_ru
-  const exams = cluster !== undefined ? CLUSTER_EXAMS[cluster] : []
+  const exams = cluster !== undefined ? CLUSTER_EXAMS[educationLevel]?.[cluster] ?? [] : []
 
   const competition = useMemo(() => evaluateCompetitionForCode(code, confidence), [code, confidence])
 
@@ -108,6 +110,7 @@ export function NCTSignalCard({
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.1 }}
                   className="inline-flex cursor-default items-center gap-1 rounded-[8px] bg-black/[.04] px-2.5 py-1 text-xs font-medium text-text-secondary"
+                  aria-label={clusterName ? `${clusterName}: экзамены ${EDUCATION_LEVEL_LABELS[educationLevel]}` : undefined}
                 >
                   <GraduationCap className="h-3 w-3" />
                   Кластер {cluster}
@@ -120,9 +123,12 @@ export function NCTSignalCard({
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 4, scale: 0.95 }}
                       transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                      className="absolute left-0 top-full z-20 mt-2 w-56 rounded-[12px] border border-border bg-card-bg p-3 shadow-lg"
+                      className="absolute left-0 top-full z-20 mt-2 w-72 rounded-[12px] border border-border bg-card-bg p-3 shadow-lg"
                     >
-                      <p className="text-xs font-semibold text-foreground">Вступительные экзамены</p>
+                      <p className="text-xs font-semibold text-foreground">Экзамены НЦТ</p>
+                      <p className="mt-1 text-[11px] leading-snug text-text-muted">
+                        {clusterName ?? `Кластер ${cluster}`} • {EDUCATION_LEVEL_LABELS[educationLevel]}
+                      </p>
                       <ul className="mt-2 space-y-1">
                         {exams.map((exam) => (
                           <li key={exam} className="flex items-center gap-2 text-xs text-text-secondary">
@@ -154,7 +160,7 @@ export function NCTSignalCard({
           <h3 className="text-lg font-semibold leading-snug text-foreground">{title_ru}</h3>
           <div className="mt-1.5 flex items-center gap-2 text-sm text-text-secondary">
             <span className="font-medium">{institution}</span>
-            <span className="text-text-muted">·</span>
+            <span className="text-text-muted">В·</span>
             <span>{city}</span>
           </div>
         </div>
