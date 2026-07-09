@@ -1,13 +1,15 @@
 "use client";
 
-import { useState, useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowLeft, Bot, GraduationCap, MessageCircle } from "lucide-react";
 import { ProfileButton, ProfileDrawer } from "@/components/profile";
 import { LoginModal } from "@/components/auth/LoginModal";
+import { MaintenanceScreen } from "@/components/system/MaintenanceScreen";
 import { useAuthStore } from "@/stores/auth-store";
 import { useProfileStore } from "@/stores/profile-store";
+import { useServerStatusStore } from "@/stores/server-status-store";
 import { logActivityEvent } from "@/lib/activity-logger";
 import { useProfileSync } from "@/lib/chat/use-profile-sync";
 import { useMobileChatNavStore } from "@/stores/mobile-chat-nav-store";
@@ -23,23 +25,14 @@ export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const activeConversationId = useUserChatStore((s) => s.activeConversationId);
   const openMobileChatNav = useMobileChatNavStore((s) => s.open);
+  const isServerAvailable = useServerStatusStore((s) => s.isAvailable);
+  const serverMessage = useServerStatusStore((s) => s.message);
+  const maintenanceVariant = useServerStatusStore((s) => s.maintenanceVariant);
+  const serverUpdatedAt = useServerStatusStore((s) => s.updatedAt);
+  const markServerUnavailable = useServerStatusStore((s) => s.markUnavailable);
+  const markServerAvailable = useServerStatusStore((s) => s.markAvailable);
 
   useProfileSync();
-
-  useEffect(() => {
-    hydrate();
-    const handler = () => {
-      setOpen(true);
-      logActivityEvent("open_profile", "Открытие профиля пользователем");
-    };
-    const onSync = () => setOpen((v) => v);
-    window.addEventListener("profile:open", handler as EventListener);
-    window.addEventListener("profile:sync", onSync);
-    return () => {
-      window.removeEventListener("profile:open", handler as EventListener);
-      window.removeEventListener("profile:sync", onSync);
-    };
-  }, [hydrate]);
 
   const isChatRoute = pathname?.startsWith("/chat");
   const isMarketingRoute =
@@ -55,6 +48,84 @@ export function AppShell({ children }: { children: ReactNode }) {
     pathname?.startsWith("/plan") ||
     pathname?.startsWith("/coach");
   const showBackButton = isChatRoute && !!activeConversationId;
+
+  useEffect(() => {
+    const handler = () => {
+      setOpen(true);
+      logActivityEvent("open_profile", "Открытие профиля пользователем");
+    };
+    const onSync = () => setOpen((v) => v);
+    window.addEventListener("profile:open", handler as EventListener);
+    window.addEventListener("profile:sync", onSync);
+    return () => {
+      window.removeEventListener("profile:open", handler as EventListener);
+      window.removeEventListener("profile:sync", onSync);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isServerAvailable) return;
+    hydrate();
+  }, [hydrate, isServerAvailable]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const originalFetch = window.fetch.bind(window);
+    window.fetch = async (...args) => {
+      const response = await originalFetch(...args);
+
+      if (response.status === 503) {
+        const contentType = response.headers.get("content-type") ?? "";
+        if (contentType.includes("application/json")) {
+          void response
+            .clone()
+            .json()
+            .then((payload: unknown) => {
+              if (
+                payload &&
+                typeof payload === "object" &&
+                (payload as { code?: string }).code === "SERVER_DISABLED"
+              ) {
+                markServerUnavailable({
+                  message:
+                    typeof (payload as { message?: string }).message === "string"
+                      ? (payload as { message?: string }).message
+                      : undefined,
+                  maintenanceVariant:
+                    (payload as { maintenanceVariant?: "standard" | "blackout" })
+                      .maintenanceVariant === "blackout"
+                      ? "blackout"
+                      : "standard",
+                });
+              }
+            })
+            .catch(() => {});
+        }
+      } else if (response.ok) {
+        markServerAvailable();
+      }
+
+      return response;
+    };
+
+    return () => {
+      window.fetch = originalFetch;
+    };
+  }, [markServerAvailable, markServerUnavailable]);
+
+  if (!isServerAvailable) {
+    return (
+      <>
+        <ThemeSync />
+        <MaintenanceScreen
+          message={serverMessage}
+          variant={maintenanceVariant}
+          updatedAt={serverUpdatedAt}
+        />
+      </>
+    );
+  }
 
   if (isMarketingRoute) {
     return (

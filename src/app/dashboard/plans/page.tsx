@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { motion } from "framer-motion"
 import { Search, ArrowUpDown, ExternalLink, CheckCircle2, GitBranch, Target } from "lucide-react"
 import Link from "next/link"
@@ -21,6 +21,11 @@ export default function DashboardPlans() {
   const activeGoalId = useProfileStore((store) => store.activeGoalId)
   const [search, setSearch] = useState("")
   const [sort, setSort] = useState<SortKey>("newest")
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const filtered = useMemo(() => {
     const query = search.toLowerCase().trim()
@@ -51,6 +56,22 @@ export default function DashboardPlans() {
       activeGoalPlans,
     }
   }, [activeGoalId, plans])
+
+  if (!mounted) {
+    return (
+      <div>
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
+          <h1 className="text-2xl font-bold tracking-tight text-foreground">Планы развития</h1>
+          <p className="mt-1 text-sm text-text-secondary">
+            Здесь важнее связь плана с активной целью и roadmap, чем декоративные статусы.
+          </p>
+        </motion.div>
+        <div className="mt-8 rounded-[18px] border border-border bg-background p-12 text-center">
+          <p className="text-sm text-text-secondary">Загружаем планы...</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div>
