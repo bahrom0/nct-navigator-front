@@ -301,7 +301,7 @@ function PlanContent() {
                 {saveState === "saved" ? (
                   <span className="inline-flex items-center gap-2 rounded-full border border-success/30 bg-success/5 px-3 py-1.5 text-xs font-semibold text-success">
                     <Check className="h-3.5 w-3.5" />
-                    Сохранено в Supabase
+                    Сохранено в облаке
                   </span>
                 ) : (
                   <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card-bg px-3 py-1.5 text-xs font-medium text-text-secondary">

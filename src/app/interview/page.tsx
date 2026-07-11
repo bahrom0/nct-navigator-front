@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowLeft, Loader2, RefreshCw, CheckCircle2 } from "lucide-react"
+import { ArrowLeft, ArrowRight, CheckCircle2, Lightbulb, Loader2, RefreshCw, Sparkles } from "lucide-react"
 import { useInterviewStore } from "@/stores/interview-store"
 import { useCategoryStore } from "@/stores/category-store"
 import { useProfileStore } from "@/stores/profile-store"
@@ -109,17 +109,12 @@ function InterviewContent() {
   }, [answers, categoryStore.selected, creatingPlan, finalLevel, finalSummary, nctCode, nctTitle, router])
 
   useEffect(() => {
-    if (!nctCode) {
-      router.replace("/recommendations")
-      return
-    }
-    setNctContext(nctCode, nctTitle)
-    startInterview()
-  }, [nctCode])
+    const frame = window.requestAnimationFrame(() => {
+      setSelectedOption(null)
+      setTextAnswer("")
+    })
 
-  useEffect(() => {
-    setSelectedOption(null)
-    setTextAnswer("")
+    return () => window.cancelAnimationFrame(frame)
   }, [currentQuestionIndex])
 
   const startInterview = useCallback(async () => {
@@ -148,7 +143,16 @@ function InterviewContent() {
     } catch (err) {
       setError(err instanceof Error ? err.message : "Ошибка сети")
     }
-  }, [nctCode, nctTitle])
+  }, [categoryStore.selected, nctCode, nctTitle, setActive, setError, setLoading])
+
+  useEffect(() => {
+    if (!nctCode) {
+      router.replace("/recommendations")
+      return
+    }
+    setNctContext(nctCode, nctTitle)
+    void startInterview()
+  }, [nctCode, nctTitle, router, setNctContext, startInterview])
 
   const submitAnswer = useCallback(async () => {
     if (!currentQuestion) return
@@ -223,7 +227,7 @@ function InterviewContent() {
     } finally {
       setSubmitting(false)
     }
-  }, [answers, createPlanFromInterview, currentQuestion, currentQuestionIndex, nctCode, nctTitle, selectedOption, textAnswer])
+  }, [addAnswer, answers, createPlanFromInterview, currentQuestion, currentQuestionIndex, nctCode, nctTitle, nextQuestion, selectedOption, setCompleted, setError, textAnswer, upsertInterview])
 
   if (currentStep === "loading") {
     return (
@@ -291,37 +295,42 @@ function InterviewContent() {
 
   if (!currentQuestion) return null
 
-  const progress = questions.length > 1 ? ((currentQuestionIndex) / (questions.length - 1)) * 100 : 0
+  const progress = questions.length > 0 ? ((currentQuestionIndex + 1) / questions.length) * 100 : 0
   const canSubmit = currentQuestion.type === "choice" ? selectedOption !== null : textAnswer.trim().length > 0
 
   return (
-    <main className="flex flex-1 flex-col px-6 py-8">
-      <div className="mx-auto max-w-2xl w-full">
-        <div className="mb-8 flex items-center gap-3">
+    <main className="interview-page flex flex-1 flex-col px-4 py-6 sm:px-6 sm:py-10">
+      <div className="mx-auto w-full max-w-6xl">
+        <div className="interview-hero mb-7 flex items-center gap-4 p-5 sm:p-7">
           <button
             onClick={() => router.back()}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-[12px] border border-border bg-card-bg transition-colors hover:bg-background"
+            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-[var(--marketing-border)] bg-[var(--marketing-surface)] text-[var(--marketing-foreground)] shadow-[0_10px_24px_rgb(42_34_25_/_0.08)] transition-colors hover:bg-[var(--marketing-surface-strong)]"
           >
             <ArrowLeft className="h-4 w-4 text-text-secondary" />
           </button>
           <div>
-            <span className="text-xs font-semibold tracking-wide text-primary">{nctCode}</span>
-            <h1 className="text-xl font-bold tracking-tight text-foreground">Профориентационное интервью</h1>
+            <span className="text-xs font-semibold tracking-wide text-primary">Интервью</span>
+            <h1 className="text-xl font-bold tracking-tight text-foreground">{nctCode}</h1>
             <p className="mt-1 text-xs text-text-muted">
               Вопрос {currentQuestionIndex + 1} из {questions.length}
             </p>
           </div>
         </div>
 
-        <div className="mb-6 h-1 overflow-hidden rounded-full bg-border">
+        <div className="interview-progress mb-7">
+          <div className="mb-2 flex items-center justify-between text-xs font-semibold text-[var(--marketing-muted)]"><span>Шаг {currentQuestionIndex + 1} из {questions.length}</span><span>{Math.round(progress)}%</span></div>
+          <div className="h-2 overflow-hidden rounded-full bg-[var(--marketing-border)]">
           <motion.div
-            className="h-full bg-primary"
+            className="h-full rounded-full bg-primary"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.3 }}
           />
+          </div>
         </div>
 
+        <div className="interview-layout">
+        <section>
         <AnimatePresence mode="wait">
           <motion.div
             key={currentQuestion.id}
@@ -329,7 +338,7 @@ function InterviewContent() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.2 }}
-            className="rounded-[20px] border border-border bg-card-bg p-6"
+            className="interview-question-card p-5 sm:p-8"
           >
             <h2 className="text-lg font-semibold leading-snug text-foreground">{currentQuestion.question}</h2>
 
@@ -375,6 +384,18 @@ function InterviewContent() {
             </button>
           </motion.div>
         </AnimatePresence>
+        </section>
+        <aside className="interview-side-panel hidden">
+          <div className="flex items-center gap-3">
+            <span className="interview-side-icon"><Sparkles className="h-5 w-5" /></span>
+            <div><p className="text-sm font-semibold text-[var(--marketing-foreground)]">AI Navigator</p><p className="text-xs text-[var(--marketing-muted)]">Ваш персональный помощник</p></div>
+          </div>
+          <h2 className="mt-7 text-2xl font-semibold leading-tight tracking-[-0.03em] text-[var(--marketing-foreground)]">Ответьте честно — так рекомендация станет точнее.</h2>
+          <p className="mt-3 text-sm leading-6 text-[var(--marketing-muted)]">Здесь нет неправильных ответов. Нам важно понять ваш интерес, опыт и то, какой путь будет комфортен именно вам.</p>
+          <div className="mt-6 rounded-2xl border border-[var(--marketing-border)] bg-[var(--marketing-surface-muted)] p-4"><div className="flex items-start gap-3"><Lightbulb className="mt-0.5 h-5 w-5 shrink-0 text-[var(--primary)]" /><p className="text-sm leading-5 text-[var(--marketing-muted)]">Можно отвечать коротко или подробно — своими словами.</p></div></div>
+          <div className="mt-6 flex items-center justify-between border-t border-[var(--marketing-border)] pt-5 text-xs font-semibold text-[var(--marketing-muted)]"><span>Следующий шаг</span><ArrowRight className="h-4 w-4 text-[var(--primary)]" /></div>
+        </aside>
+        </div>
       </div>
     </main>
   )

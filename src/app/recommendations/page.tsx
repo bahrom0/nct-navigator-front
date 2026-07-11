@@ -3,7 +3,7 @@
 import { useEffect, useCallback, useMemo, useState, useRef } from "react"
 import { useRouter } from "next/navigation"
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion"
-import { Search, ArrowLeft, RefreshCw, ArrowUpDown, SlidersHorizontal } from "lucide-react"
+import { Search, ArrowLeft, RefreshCw, ArrowUpDown, SlidersHorizontal, Sparkles, Target } from "lucide-react"
 import { logActivityEvent } from "@/lib/activity-logger"
 import {
   useCategoryStore,
@@ -363,12 +363,12 @@ if (!onboardingLoaded || loading) {
   }
 
 return (
-  <main className="navigator-page flex flex-1 flex-col">
+  <main className="navigator-page navigator-recommendations-page flex flex-1 flex-col">
     <motion.section
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ type: "spring", stiffness: 200, damping: 25 }}
-      className="navigator-hero mb-6 p-5 sm:p-6"
+      className="navigator-recommendation-hero mb-7 p-5 sm:p-8"
     >
       <div className="flex flex-col gap-4">
         <div className="flex flex-wrap items-start justify-between gap-4">
@@ -380,10 +380,10 @@ return (
               <ArrowLeft className="h-4 w-4 text-text-secondary" />
             </button>
             <div>
-              <span className="navigator-kicker">Выбор</span>
-              <h1 className="navigator-page-title mt-3">Рекомендации для выбора цели</h1>
+              <span className="navigator-kicker"><Sparkles className="h-3.5 w-3.5" /> Персональный анализ</span>
+              <h1 className="navigator-page-title mt-4 max-w-3xl">Направления, которые могут стать вашей целью</h1>
               <p className="navigator-page-subtitle mt-3">
-                Подобрано {displayedResults.length}{cityFilter || studyFormFilter ? ` из ${results.length}` : ""} направлений. Сейчас главное действие одно: выбрать одну цель и только потом уходить в детали, explain и план.
+                Мы сопоставили ваши интересы и контекст обучения с программами НЦТ. Выберите один вариант — дальше Navigator поможет превратить его в понятный план.
               </p>
             </div>
           </div>
@@ -397,9 +397,9 @@ return (
           </motion.button>
         </div>
 
-        <div className="flex flex-wrap gap-2.5">
-          <span className="navigator-chip">Следующий шаг: выбрать 1 цель</span>
-          <span className="navigator-chip">Фокус: core path, а не вторичные ветки</span>
+        <div className="flex flex-wrap items-center gap-3 border-t border-[var(--marketing-border)] pt-5">
+          <span className="navigator-chip"><Target className="h-4 w-4 text-primary" /> Следующий шаг: выбрать 1 цель</span>
+          <span className="navigator-chip">{displayedResults.length} направлений найдено</span>
           {overallConfidence !== null ? (
             <span className="navigator-chip">Общая уверенность {Math.round(overallConfidence * 100)}%</span>
           ) : null}
@@ -417,7 +417,7 @@ return (
           transition={{ type: "spring", stiffness: 200, damping: 25 }}
           className="mb-6 overflow-hidden"
         >
-          <div className="navigator-surface grid grid-cols-1 gap-3 p-4 md:grid-cols-3">
+              <div className="navigator-recommendation-filters grid grid-cols-1 gap-3 p-4 md:grid-cols-3">
             <label className="flex flex-col gap-1.5">
               <span className="text-xs font-medium text-text-secondary">Город</span>
               <select
@@ -507,10 +507,13 @@ return (
       </section>
     ) : (
       <LayoutGroup>
-        <motion.div
-          layout
-          className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3"
-        >
+        <div className="mb-4 flex items-end justify-between gap-4">
+          <div>
+            <span className="navigator-kicker navigator-kicker--muted">Ваш shortlist</span>
+          </div>
+          <span className="hidden text-sm text-text-muted sm:block">Сначала показаны самые подходящие варианты</span>
+        </div>
+        <motion.div layout className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {displayedResults.map((result, idx) => (
             <motion.div
               key={`${result.code}-${idx}-${result.institution}`}
@@ -541,7 +544,8 @@ return (
                   study_form: result.study_form,
                   study_type: result.study_type,
                 }}
-                index={idx}
+                rank={idx < 3 ? idx + 1 : undefined}
+                variant={idx === 0 ? "featured" : "default"}
                 onSelect={() => handleSelectGoal(result)}
               />
             </motion.div>

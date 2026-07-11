@@ -1,8 +1,8 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ExternalLink, FlaskConical, GraduationCap } from "lucide-react"
+import { ChevronDown, ExternalLink, FlaskConical, GraduationCap, Medal } from "lucide-react"
 import { BookmarkButton } from "@/components/signal-cards/BookmarkButton"
 import { CompetitionMeter } from "@/components/strategy/CompetitionMeter"
 import { evaluateCompetitionForCode } from "@/features/strategy/competition-meter"
@@ -26,12 +26,13 @@ interface NCTSignalCardProps {
     study_form?: string[]
     study_type?: string[]
   }
-  index?: number
-  variant?: "default" | "compact"
+  rank?: number
+  variant?: "default" | "compact" | "featured"
   onSelect?: () => void
 }
 
-const ACCENT_COLORS = ["#2563EB", "#059669", "#D97706", "#7C3AED", "#DC2626", "#0891B2"]
+const ACCENT_COLOR = "#315fca"
+const COLLAPSED_REASON_HEIGHT = 120
 
 export function NCTSignalCard({
   code,
@@ -45,19 +46,37 @@ export function NCTSignalCard({
   cluster,
   educationLevel = "after_11",
   taxonomy,
-  index = 0,
+  rank,
   variant = "default",
   onSelect,
 }: NCTSignalCardProps) {
-  const accentColor = ACCENT_COLORS[index % ACCENT_COLORS.length]
+  const accentColor = ACCENT_COLOR
   const router = useRouter()
   const confidencePercent = Math.round(confidence * 100)
   const [showTooltip, setShowTooltip] = useState(false)
+  const [isReasonExpanded, setIsReasonExpanded] = useState(false)
+  const [canExpandReason, setCanExpandReason] = useState(false)
+  const reasonTextRef = useRef<HTMLParagraphElement>(null)
 
   const clusterName = cluster !== undefined ? CLUSTER_NAMES[cluster] : taxonomy?.cluster_name_ru
   const exams = cluster !== undefined ? CLUSTER_EXAMS[educationLevel]?.[cluster] ?? [] : []
+  const rankTone = rank === 1 ? "gold" : rank === 2 ? "silver" : rank === 3 ? "bronze" : null
 
   const competition = useMemo(() => evaluateCompetitionForCode(code, confidence), [code, confidence])
+
+  useEffect(() => {
+    const measureReason = () => {
+      const height = reasonTextRef.current?.scrollHeight ?? 0
+      setCanExpandReason(height > COLLAPSED_REASON_HEIGHT + 1)
+    }
+
+    const frame = window.requestAnimationFrame(measureReason)
+    window.addEventListener("resize", measureReason)
+    return () => {
+      window.cancelAnimationFrame(frame)
+      window.removeEventListener("resize", measureReason)
+    }
+  }, [whyItFits])
 
   const handleExplain = () => {
     logActivityEvent("view_recommendation", `Подробнее: ${code} - ${title_ru}`)
@@ -79,21 +98,30 @@ export function NCTSignalCard({
       layout
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -4, boxShadow: "0 8px 30px rgba(0,0,0,0.08)" }}
+      whileHover={{ y: -4 }}
       transition={springHover}
-      className="navigator-surface group relative overflow-hidden rounded-[20px]"
-      style={{
-        boxShadow: "0 1px 3px rgba(0,0,0,0.05), 0 8px 24px rgba(0,0,0,0.04)",
-        borderLeft: `3px solid ${accentColor}`,
-      }}
+      className={[
+        "navigator-recommendation-card group relative overflow-hidden rounded-[24px]",
+        variant === "featured" ? "navigator-recommendation-card--featured" : "",
+        variant === "compact" ? "navigator-recommendation-card--compact" : "",
+        rankTone ? `navigator-recommendation-card--rank-${rankTone}` : "",
+        isReasonExpanded ? "navigator-recommendation-card--expanded" : "",
+      ].filter(Boolean).join(" ")}
     >
-      <div className="p-6">
+      <div className="flex h-full flex-col p-6">
         <header className="flex items-start justify-between gap-4">
-          <div className="flex items-center gap-2">
+          <div className="flex min-w-0 items-center gap-2">
+            {rankTone && (
+              <span className={`navigator-recommendation-rank navigator-recommendation-rank--${rankTone}`}>
+                <span className="text-[0.65rem] uppercase tracking-[0.12em]">Топ</span>
+                <Medal className="h-3.5 w-3.5" aria-hidden="true" />
+                <strong className="text-base">{rank}</strong>
+              </span>
+            )}
             <motion.span
               whileHover={{ scale: 1.05 }}
               transition={springHover}
-              className="inline-block rounded-[8px] px-2.5 py-1 text-xs font-semibold tracking-wide"
+              className="inline-flex rounded-full border px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em]"
               style={{ backgroundColor: `${accentColor}14`, color: accentColor }}
             >
               {code}
@@ -109,7 +137,7 @@ export function NCTSignalCard({
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.1 }}
-                  className="inline-flex cursor-default items-center gap-1 rounded-[8px] bg-black/[.04] px-2.5 py-1 text-xs font-medium text-text-secondary"
+                className="inline-flex cursor-default items-center gap-1 rounded-full border border-border bg-transparent px-2.5 py-1 text-xs font-medium text-text-secondary"
                   aria-label={clusterName ? `${clusterName}: экзамены ${EDUCATION_LEVEL_LABELS[educationLevel]}` : undefined}
                 >
                   <GraduationCap className="h-3 w-3" />
@@ -123,7 +151,7 @@ export function NCTSignalCard({
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 4, scale: 0.95 }}
                       transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                      className="absolute left-0 top-full z-20 mt-2 w-72 rounded-[12px] border border-border bg-card-bg p-3 shadow-lg"
+                        className="absolute left-0 top-full z-20 mt-2 w-72 rounded-[16px] border border-border bg-card-bg p-3 shadow-lg"
                     >
                       <p className="text-xs font-semibold text-foreground">Экзамены НЦТ</p>
                       <p className="mt-1 text-[11px] leading-snug text-text-muted">
@@ -144,7 +172,7 @@ export function NCTSignalCard({
             )}
           </div>
           <div
-            className="flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold"
+            className="hidden"
             style={{
               backgroundColor:
                 confidencePercent >= 80 ? "#10B98114" : confidencePercent >= 60 ? "#F59E0B14" : "#EF444414",
@@ -157,7 +185,7 @@ export function NCTSignalCard({
         </header>
 
         <div className="mt-4">
-          <h3 className="text-lg font-semibold leading-snug text-foreground">{title_ru}</h3>
+          <h3 className="text-2xl font-semibold leading-[1.12] tracking-[-0.025em] text-foreground sm:text-[2rem]">{title_ru}</h3>
           <div className="mt-1.5 flex items-center gap-2 text-sm text-text-secondary">
             <span className="font-medium">{institution}</span>
             <span className="text-text-muted">В·</span>
@@ -179,14 +207,20 @@ export function NCTSignalCard({
         <CompetitionMeter level={competition.level} score={competition.score} reason={competition.reason} />
 
         {whyItFits && (
-          <div className="mt-5 rounded-[12px] border border-border bg-background p-4" style={{ backgroundColor: `${accentColor}06` }}>
-            <p className="text-sm leading-relaxed text-text-secondary">{whyItFits}</p>
+          <div className="navigator-recommendation-reason mt-5 rounded-[16px] border border-border p-4">
+            <motion.div
+              animate={{ maxHeight: isReasonExpanded ? 1200 : COLLAPSED_REASON_HEIGHT }}
+              transition={{ duration: 0.28, ease: "easeInOut" }}
+              className="overflow-hidden"
+            >
+              <p ref={reasonTextRef} className="text-sm leading-relaxed text-text-secondary">{whyItFits}</p>
+            </motion.div>
             {matchedInterests.length > 0 && (
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {matchedInterests.map((interest) => (
                   <span
                     key={interest}
-                    className="rounded-[6px] px-2 py-0.5 text-xs font-medium"
+                    className="rounded-full px-2.5 py-1 text-xs font-medium"
                     style={{ backgroundColor: `${accentColor}18`, color: accentColor }}
                   >
                     {interest}
@@ -194,18 +228,31 @@ export function NCTSignalCard({
                 ))}
               </div>
             )}
+            {canExpandReason && (
+              <button
+              type="button"
+              aria-expanded={isReasonExpanded}
+              onClick={() => setIsReasonExpanded((expanded) => !expanded)}
+              className="mt-3 inline-flex min-h-9 items-center gap-1.5 rounded-full px-2 text-xs font-semibold text-primary transition-colors hover:bg-primary-light/60"
+            >
+              {isReasonExpanded ? "Свернуть" : "Показать полностью"}
+              <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isReasonExpanded ? "rotate-180" : ""}`} />
+              </button>
+            )}
           </div>
         )}
 
-        <footer className="mt-5 flex flex-wrap items-center gap-3 border-t border-border pt-4">
-          <BookmarkButton nctCode={code} nctTitle={title_ru} institution={institution} city={city} />
-          {variant === "default" && (
+        <footer className="navigator-recommendation-actions mt-auto flex flex-nowrap items-center gap-2 border-t border-border pt-4">
+          <span className="shrink-0">
+            <BookmarkButton nctCode={code} nctTitle={title_ru} institution={institution} city={city} />
+          </span>
+          {variant !== "compact" && (
             <>
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={handleExplain}
-                className="inline-flex h-10 items-center gap-2 rounded-[12px] border border-border bg-card-bg px-4 text-sm font-medium text-foreground transition-colors hover:bg-background"
+                className="inline-flex h-11 min-w-0 shrink items-center gap-2 whitespace-nowrap rounded-full border border-border bg-transparent px-3 text-sm font-medium text-foreground transition-colors hover:bg-background"
               >
                 <ExternalLink className="h-4 w-4 text-text-muted" />
                 Подробнее
@@ -214,7 +261,7 @@ export function NCTSignalCard({
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={handleSelectGoal}
-                className="inline-flex h-10 items-center gap-2 rounded-[12px] bg-primary px-4 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
+                className="inline-flex h-11 min-w-0 shrink items-center gap-2 whitespace-nowrap rounded-full bg-[image:var(--marketing-cta-bg)] px-3 text-sm font-semibold text-white transition-colors hover:bg-[image:var(--marketing-cta-hover)]"
               >
                 <FlaskConical className="h-4 w-4" />
                 Выбрать цель

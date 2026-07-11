@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Toaster } from "sonner";
 import { AppShell } from "@/components/app-shell";
 import "./globals.css";
@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "NCT Navigator",
   description:
     "Подбор кодов НЦТ, объяснение выбора и план подготовки в одном спокойном интерфейсе.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({

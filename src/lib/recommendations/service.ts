@@ -1,7 +1,11 @@
 import { analyzeInterestProfile } from "@/lib/ai/analyze-interest-profile";
 import { finalizeRecommendationsWithAI } from "@/lib/ai/finalize-recommendations";
 import { matchNCTByCluster, matchNCTByKeywords, type PrefilterOptions } from "@/lib/ai/nct-match";
-import { calculateOverallConfidence, rankNCTResults } from "@/lib/ai/rank-nct";
+import {
+  calculateOverallConfidence,
+  rankNCTResults,
+  recalibrateRecommendationConfidence,
+} from "@/lib/ai/rank-nct";
 import type { AnalysisStep } from "@/types/analysis";
 import type { NCTMatchResult, RankedNCT } from "@/types/nct";
 import type { RecommendationResultSet } from "@/types/recommendations";
@@ -216,13 +220,13 @@ async function applyFinalRanking(args: {
       }));
 
     if (reranked.length > 0) {
-      return reranked;
+      return recalibrateRecommendationConfidence(reranked);
     }
   } catch {
     usedFallbacks.push("final-ai-ranking");
   }
 
-  return locallyRanked
+  const fallbackRanked = locallyRanked
     .filter((item) => item.confidence >= minConfidence)
     .slice(0, topK)
     .map((item, index) => ({
@@ -231,6 +235,8 @@ async function applyFinalRanking(args: {
       matchedInterests: item.matchedKeywords.slice(0, 4),
       matchedCareers: item.career_matches.slice(0, 4),
     }));
+
+  return recalibrateRecommendationConfidence(fallbackRanked);
 }
 
 function mergeMatches(matches: NCTMatchResult[], limit: number): NCTMatchResult[] {

@@ -131,3 +131,46 @@ export function calculateOverallConfidence(ranked: RankedNCT[]): number {
   const topBonus = ranked[0].finalScore > 0.7 ? 0.1 : 0
   return Math.min(avg + topBonus, 1)
 }
+
+/**
+ * Converts the internal ranking score into a more useful user-facing match
+ * percentage. The raw score is intentionally conservative and is not a
+ * probability; this calibration keeps the result evidence-based while making
+ * meaningful differences between shortlisted recommendations visible.
+ */
+export function recalibrateRecommendationConfidence(ranked: RankedNCT[]): RankedNCT[] {
+  if (ranked.length === 0) return ranked
+
+  const scores = ranked.map((item) => item.finalScore)
+  const minimum = Math.min(...scores)
+  const maximum = Math.max(...scores)
+  const spread = maximum - minimum
+
+  return ranked.map((item, index) => {
+    const relativePosition = spread > 0.015
+      ? clamp01((item.finalScore - minimum) / spread)
+      : 1 - index / Math.max(ranked.length - 1, 1)
+    const componentEvidence = weightedEvidence(item)
+    const calibrated = clamp01(0.24 + componentEvidence * 0.56 + relativePosition * 0.2)
+
+    return {
+      ...item,
+      confidence: Number(calibrated.toFixed(3)),
+    }
+  })
+}
+
+function weightedEvidence(item: RankedNCT): number {
+  const fallback = clamp01(item.finalScore)
+  return clamp01(
+    fallback * 0.55 +
+      clamp01(item.semanticScore ?? fallback) * 0.15 +
+      clamp01(item.taxonomyScore ?? fallback) * 0.15 +
+      clamp01(item.lexicalScore ?? fallback) * 0.1 +
+      clamp01(item.facetScore ?? fallback) * 0.05,
+  )
+}
+
+function clamp01(value: number): number {
+  return Math.min(1, Math.max(0, Number.isFinite(value) ? value : 0))
+}
