@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { motion, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { Stethoscope } from "lucide-react";
 import { AnalysisTimeline } from "@/components/analysis/AnalysisProgress";
 import { CATEGORIES } from "@/constants/categories";
@@ -28,15 +28,32 @@ const STEP_ORDER: AnalysisStep[] = [
   "forming_recommendations",
 ];
 
-function ProgressBar({ progress }: { progress: number }) {
-  const scaleX = useSpring(progress, { stiffness: 70, damping: 22 });
+function ProgressSummary({ progress, stageNumber }: { progress: number; stageNumber: number }) {
+  const percentage = Math.round(progress * 100);
+  const circumference = 2 * Math.PI * 17;
+  const dashOffset = circumference * (1 - progress);
 
   return (
-    <div className="h-2 w-full overflow-hidden rounded-full bg-foreground/8">
-      <motion.div
-        className="h-full w-full rounded-full bg-primary"
-        style={{ scaleX, transformOrigin: "left" }}
-      />
+    <div className="flex w-full items-center justify-between gap-3 rounded-full border border-[var(--marketing-border)] bg-[var(--marketing-surface)] px-3 py-2 shadow-[0_12px_28px_rgba(31,27,22,0.06)] sm:w-auto sm:min-w-[18rem] sm:justify-start dark:shadow-[0_12px_28px_rgba(0,0,0,0.2)]">
+      <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--marketing-soft)]">
+        <svg aria-hidden="true" className="absolute inset-0 h-10 w-10 -rotate-90" viewBox="0 0 40 40">
+          <circle cx="20" cy="20" r="17" fill="none" stroke="var(--border)" strokeWidth="2.5" opacity="0.45" />
+          <motion.circle
+            cx="20"
+            cy="20"
+            r="17"
+            fill="none"
+            stroke="var(--primary)"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeDasharray={circumference}
+            animate={{ strokeDashoffset: dashOffset }}
+            transition={{ type: "spring", stiffness: 80, damping: 18 }}
+          />
+        </svg>
+      </span>
+      <span className="text-sm font-semibold text-[var(--marketing-foreground)]"><span className="text-[var(--primary)]">{percentage}%</span> завершено</span>
+      <span className="rounded-full bg-[var(--primary)]/10 px-3 py-1.5 text-sm font-semibold text-[var(--primary)]">{stageNumber} / {STEP_ORDER.length}</span>
     </div>
   );
 }
@@ -63,6 +80,7 @@ export default function AnalyzePage() {
         .filter(Boolean) as Category[],
     [selectedIds],
   );
+  const currentStepIndex = Math.max(0, STEP_ORDER.indexOf(currentStep));
 
   const goToResults = useCallback(
     () => router.replace("/recommendations"),
@@ -212,7 +230,7 @@ export default function AnalyzePage() {
 
   if (!onboardingLoaded) {
     return (
-      <main className="flex flex-1 items-center justify-center px-6 py-24">
+      <main className="flex flex-1 items-center justify-center bg-[var(--marketing-bg)] px-6 py-24 text-[var(--marketing-foreground)]">
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
       </main>
     );
@@ -220,12 +238,12 @@ export default function AnalyzePage() {
 
   if (status === "error") {
     return (
-      <main className="flex flex-1 flex-col items-center justify-center px-6 py-24">
+      <main className="flex flex-1 flex-col items-center justify-center bg-[var(--marketing-bg)] px-6 py-24 text-[var(--marketing-foreground)]">
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", stiffness: 200, damping: 20 }}
-          className="max-w-md rounded-[28px] border border-border bg-card-bg px-8 py-10 text-center shadow-[0_24px_80px_rgba(15,23,42,0.08)]"
+          className="max-w-md rounded-[2rem] border border-[var(--marketing-border)] bg-[var(--marketing-surface)] px-8 py-10 text-center shadow-[0_24px_80px_rgba(31,27,22,0.08)] backdrop-blur-xl dark:shadow-[0_24px_80px_rgba(0,0,0,0.3)]"
         >
           <p className="text-sm font-medium text-error">
             Ошибка при выполнении анализа
@@ -251,27 +269,28 @@ export default function AnalyzePage() {
   }
 
   return (
-    <main className="relative flex flex-1 items-center justify-center overflow-hidden px-4 py-10 sm:px-6 sm:py-16">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.12),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.10),transparent_28%)]" />
+    <main className="relative flex min-h-[calc(100dvh-6rem)] flex-1 items-center justify-center overflow-hidden bg-[var(--marketing-bg)] px-4 py-10 text-[var(--marketing-foreground)] sm:px-6 sm:py-16">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[34rem] bg-[radial-gradient(circle_at_top,rgba(236,227,215,0.72),transparent_58%)] dark:bg-[radial-gradient(circle_at_top,rgba(88,99,125,0.18),transparent_58%)]" />
+      <div className="pointer-events-none absolute inset-0 opacity-70 [background-image:radial-gradient(circle_at_1px_1px,rgba(91,78,64,0.08)_1px,transparent_0)] [background-size:22px_22px] dark:[background-image:radial-gradient(circle_at_1px_1px,rgba(221,216,209,0.08)_1px,transparent_0)]" />
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 180, damping: 24 }}
-        className="relative w-full max-w-3xl rounded-[32px] border border-border/80 bg-card-bg/95 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur sm:p-8"
+        className="relative w-full max-w-6xl rounded-[2.5rem] border border-[var(--marketing-border)] bg-[var(--marketing-surface)] p-5 shadow-[0_30px_90px_rgba(31,27,22,0.08)] backdrop-blur-xl sm:p-8 lg:p-10 dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]"
       >
         <div className="flex flex-col gap-6">
           <div className="flex items-start gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[var(--marketing-border)] bg-[var(--marketing-soft)] text-[var(--marketing-accent)]">
               <Stethoscope className="h-6 w-6" />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-text-muted">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--marketing-muted)]">
                 Recommendation pipeline
               </p>
-              <h1 className="mt-2 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+              <h1 className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-[var(--marketing-foreground)] sm:text-3xl">
                 Формируем ваши рекомендации НЦТ
               </h1>
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-text-secondary sm:text-base">
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--marketing-muted)] sm:text-base">
                 Сначала анализируем профиль и интересы, затем ищем подходящие
                 коды по локальной базе и только после этого просим AI помочь с
                 финальным ранжированием shortlist.
@@ -279,27 +298,15 @@ export default function AnalyzePage() {
             </div>
           </div>
 
-          <div className="rounded-[24px] border border-border/80 bg-background/70 p-5 sm:p-6">
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <p className="text-sm font-medium text-foreground">
-                  {Math.round(progress * 100)}% завершено
-                </p>
-                <p className="mt-1 text-xs text-text-muted">
-                  Этапы переключаются только по фактическому состоянию серверного
-                  пайплайна
-                </p>
-              </div>
-              <div className="rounded-full border border-border bg-card-bg px-3 py-1 text-xs font-medium text-text-secondary">
-                {STEP_ORDER.indexOf(currentStep) + 1} / {STEP_ORDER.length}
-              </div>
+          <div className="rounded-[2rem] border border-[var(--marketing-border)] bg-[var(--marketing-surface-muted)] p-5 sm:p-7">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <p className="max-w-xl text-xs leading-5 text-[var(--marketing-muted)] sm:text-sm">
+                Этапы переключаются только по фактическому состоянию серверного пайплайна
+              </p>
+              <ProgressSummary progress={progress} stageNumber={Math.min(currentStepIndex + 1, STEP_ORDER.length)} />
             </div>
 
-            <div className="mt-4">
-              <ProgressBar progress={progress} />
-            </div>
-
-            <div className="mt-8">
+            <div className="mt-6 sm:mt-8">
               <AnalysisTimeline currentStep={currentStep} status={status} />
             </div>
           </div>

@@ -3,7 +3,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowLeft, Bot, GraduationCap, MessageCircle } from "lucide-react";
+import { ArrowLeft, Bot, GraduationCap, MessageCircle, Sparkles } from "lucide-react";
 import { ProfileButton, ProfileDrawer } from "@/components/profile";
 import { LoginModal } from "@/components/auth/LoginModal";
 import { MaintenanceScreen } from "@/components/system/MaintenanceScreen";
@@ -16,6 +16,7 @@ import { useMobileChatNavStore } from "@/stores/mobile-chat-nav-store";
 import { useUserChatStore } from "@/lib/user-chat/store";
 import { AnimatedShellTitle } from "@/components/animated-shell-title";
 import { ThemeSync } from "@/components/theme/ThemeSync";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 export function AppShell({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -140,32 +141,34 @@ export function AppShell({ children }: { children: ReactNode }) {
   return (
     <>
       <ThemeSync />
-      <header className="sticky top-0 z-40 border-b border-border bg-card-bg/78 shadow-[0_1px_0_rgb(255_255_255_/_0.18)] backdrop-blur">
-        <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6">
-          <div className="flex items-center gap-2">
+      <header className="pointer-events-none fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-5 lg:px-6">
+        <div className="pointer-events-auto relative mx-auto max-w-7xl overflow-hidden rounded-[1.9rem] border border-[var(--marketing-border)] bg-[var(--marketing-header-bg)] px-3 py-2.5 shadow-[0_24px_80px_rgba(28,24,18,0.14)] ring-1 ring-[rgba(255,255,255,0.28)] backdrop-blur-[22px] dark:shadow-[0_24px_80px_rgba(0,0,0,0.45)] dark:ring-[rgba(255,255,255,0.08)]">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.28),transparent_45%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_45%)]" />
+          <div className="relative flex min-h-12 items-center justify-between gap-3">
+          <div className="flex min-w-0 items-center gap-2">
             {showBackButton ? (
               <button
                 type="button"
                 onClick={openMobileChatNav}
                 aria-label="Показать чаты"
                 title="Показать чаты"
-                className="-ml-2 flex h-9 w-9 items-center justify-center rounded-lg text-text-secondary transition-colors hover:bg-border/40 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+                className="flex h-10 w-10 items-center justify-center rounded-2xl text-[var(--marketing-muted)] transition-colors hover:bg-[var(--marketing-nav-chip-hover)] hover:text-[var(--marketing-foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--marketing-accent)]/30"
               >
                 <ArrowLeft className="h-5 w-5" />
               </button>
             ) : null}
-            <a
-              href="/"
-              className="text-sm font-semibold tracking-tight text-foreground"
-            >
-              <AnimatedShellTitle isChat={!!isChatRoute} />
-            </a>
+            <Link href="/" className="inline-flex min-w-0 items-center gap-3 text-sm font-semibold tracking-[-0.02em] text-[var(--marketing-foreground)]">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-[var(--marketing-border)] bg-[var(--marketing-surface)] shadow-[0_12px_30px_rgba(32,28,24,0.1)] backdrop-blur-xl dark:shadow-[0_12px_30px_rgba(0,0,0,0.32)]">
+                <Sparkles className="h-4 w-4 text-[var(--marketing-accent)]" />
+              </span>
+              <span className="truncate"><AnimatedShellTitle isChat={!!isChatRoute} /></span>
+            </Link>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="relative flex shrink-0 items-center gap-2">
             {isAuthenticated && (
               <Link
                 href="/coach"
-                className="inline-flex h-10 items-center gap-1.5 rounded-full bg-primary px-4 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
+                className="inline-flex h-10 items-center gap-1.5 rounded-2xl bg-primary px-3.5 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(37,99,235,0.24)] transition duration-200 hover:bg-primary-hover dark:bg-primary-hover dark:hover:bg-primary sm:px-4"
                 aria-label={activeGoal ? "Coach" : "Основной путь"}
               >
                 <GraduationCap className="h-4 w-4" />
@@ -176,7 +179,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               <>
                 <Link
                   href="/teacher"
-                  className="hidden h-10 items-center gap-1.5 rounded-full border border-border bg-card-bg px-3 text-sm font-medium text-text-secondary transition-colors hover:bg-background hover:text-foreground sm:inline-flex"
+                  className="hidden h-10 items-center gap-1.5 rounded-2xl border border-[var(--marketing-border)] bg-[var(--marketing-surface)] px-3 text-sm font-medium text-[var(--marketing-muted)] shadow-[0_10px_24px_rgba(32,28,24,0.06)] backdrop-blur-xl transition-colors hover:border-[var(--marketing-border-strong)] hover:text-[var(--marketing-foreground)] sm:inline-flex"
                   aria-label="AI Help"
                 >
                   <Bot className="h-4 w-4" />
@@ -184,7 +187,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                 </Link>
                 <Link
                   href="/chat"
-                  className="hidden h-10 items-center gap-1.5 rounded-full border border-border bg-card-bg px-3 text-sm font-medium text-text-secondary transition-colors hover:bg-background hover:text-foreground sm:inline-flex"
+                  className="hidden h-10 items-center gap-1.5 rounded-2xl border border-[var(--marketing-border)] bg-[var(--marketing-surface)] px-3 text-sm font-medium text-[var(--marketing-muted)] shadow-[0_10px_24px_rgba(32,28,24,0.06)] backdrop-blur-xl transition-colors hover:border-[var(--marketing-border-strong)] hover:text-[var(--marketing-foreground)] sm:inline-flex"
                   aria-label="Community"
                 >
                   <MessageCircle className="h-4 w-4" />
@@ -192,11 +195,13 @@ export function AppShell({ children }: { children: ReactNode }) {
                 </Link>
               </>
             ) : null}
+            <ThemeToggle variant="marketing" />
             <ProfileButton />
+          </div>
           </div>
         </div>
       </header>
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 pt-24 sm:pt-28">{children}</main>
       <ProfileDrawer open={open} onClose={() => setOpen(false)} />
       <LoginModal />
     </>
