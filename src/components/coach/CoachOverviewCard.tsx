@@ -12,14 +12,19 @@ interface CoachOverviewCardProps {
 }
 
 export function CoachOverviewCard({ compact = false }: CoachOverviewCardProps) {
-  const goal = useCoachStore((s) => s.goal)
-  const roadmap = useCoachStore((s) => s.roadmap)
-  const dayPlan = useCoachStore((s) => s.dayPlan)
-  const dailyHistory = useCoachStore((s) => s.dailyHistory)
+  const storedGoal = useCoachStore((s) => s.goal)
+  const storedRoadmap = useCoachStore((s) => s.roadmap)
+  const storedDayPlan = useCoachStore((s) => s.dayPlan)
+  const storedDailyHistory = useCoachStore((s) => s.dailyHistory)
   const [loading, setLoading] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    if (goal || roadmap || dayPlan || dailyHistory.length > 0) return
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (storedGoal || storedRoadmap || storedDayPlan || storedDailyHistory.length > 0) return
 
     let cancelled = false
 
@@ -46,12 +51,20 @@ export function CoachOverviewCard({ compact = false }: CoachOverviewCardProps) {
     return () => {
       cancelled = true
     }
-  }, [dayPlan, dailyHistory.length, goal, roadmap])
+  }, [storedDayPlan, storedDailyHistory.length, storedGoal, storedRoadmap])
 
-  const completedToday = dayPlan?.tasks.filter((task) => task.completed).length ?? 0
-  const totalToday = dayPlan?.tasks.length ?? 0
-  const totalRoadmapTasks = roadmap?.weeks.reduce((sum, week) => sum + week.tasks.length, 0) ?? 0
-  const completedRoadmapTasks = dailyHistory.reduce(
+  const goal = mounted ? storedGoal : null
+  const roadmap = mounted ? storedRoadmap : null
+  const dayPlan = mounted ? storedDayPlan : null
+  const dailyHistory = mounted ? storedDailyHistory : []
+  const visibleGoal = goal
+  const visibleRoadmap = roadmap
+  const visibleDayPlan = dayPlan
+  const visibleDailyHistory = dailyHistory
+  const completedToday = visibleDayPlan?.tasks.filter((task) => task.completed).length ?? 0
+  const totalToday = visibleDayPlan?.tasks.length ?? 0
+  const totalRoadmapTasks = visibleRoadmap?.weeks.reduce((sum, week) => sum + week.tasks.length, 0) ?? 0
+  const completedRoadmapTasks = visibleDailyHistory.reduce(
     (sum, plan) => sum + plan.tasks.filter((task) => task.completed).length,
     0,
   )
@@ -59,8 +72,8 @@ export function CoachOverviewCard({ compact = false }: CoachOverviewCardProps) {
     ? Math.round((completedRoadmapTasks / totalRoadmapTasks) * 100)
     : 0
   const activeWeek = useMemo(
-    () => roadmap?.weeks.find((week) => week.status === "active") ?? roadmap?.weeks[0] ?? null,
-    [roadmap],
+    () => visibleRoadmap?.weeks.find((week) => week.status === "active") ?? visibleRoadmap?.weeks[0] ?? null,
+    [visibleRoadmap],
   )
 
   const items = [
@@ -108,7 +121,7 @@ export function CoachOverviewCard({ compact = false }: CoachOverviewCardProps) {
         </div>
       ) : null}
 
-      {!loading && dayPlan ? (
+      {!loading && visibleDayPlan ? (
         <div className="mt-4 rounded-[14px] bg-background p-4">
           <div className="flex items-center justify-between gap-3">
             <div>
@@ -122,7 +135,7 @@ export function CoachOverviewCard({ compact = false }: CoachOverviewCardProps) {
             </span>
           </div>
           <div className="mt-3 space-y-2">
-            {dayPlan.tasks.slice(0, compact ? 2 : 3).map((task) => (
+            {visibleDayPlan.tasks.slice(0, compact ? 2 : 3).map((task) => (
               <div key={task.id} className="flex items-start gap-2 rounded-[12px] bg-card-bg px-3 py-2">
                 <span className={`mt-1.5 h-2 w-2 rounded-full ${task.completed ? "bg-success" : "bg-primary"}`} />
                 <div className="min-w-0">
@@ -135,7 +148,7 @@ export function CoachOverviewCard({ compact = false }: CoachOverviewCardProps) {
         </div>
       ) : null}
 
-      {!loading && roadmap ? (
+      {!loading && visibleRoadmap ? (
         <div className="mt-4 rounded-[14px] bg-background p-4">
           <div className="flex items-center justify-between gap-3">
             <div>
@@ -151,7 +164,7 @@ export function CoachOverviewCard({ compact = false }: CoachOverviewCardProps) {
             ) : null}
           </div>
           <div className="mt-3 space-y-2">
-            {roadmap.weeks.slice(0, compact ? 2 : 3).map((week) => (
+            {visibleRoadmap.weeks.slice(0, compact ? 2 : 3).map((week) => (
               <div key={week.id} className="rounded-[12px] bg-card-bg px-3 py-2">
                 <p className="text-sm font-medium text-foreground">
                   Неделя {week.number}: {week.title}
@@ -163,7 +176,7 @@ export function CoachOverviewCard({ compact = false }: CoachOverviewCardProps) {
         </div>
       ) : null}
 
-      {!loading && !goal && !roadmap && !dayPlan ? (
+      {!loading && !visibleGoal && !visibleRoadmap && !visibleDayPlan ? (
         <div className="mt-4 rounded-[14px] bg-background p-4 text-sm text-text-muted">
           Сначала создайте общий план, потом здесь появятся roadmap и ежедневные задачи Coach.
         </div>

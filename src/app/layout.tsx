@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className="h-full antialiased" suppressHydrationWarning>
+    <html lang="ru" className="h-full antialiased" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head />
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <AppShell>{children}</AppShell>

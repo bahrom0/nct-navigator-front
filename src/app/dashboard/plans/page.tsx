@@ -10,10 +10,13 @@ type SortKey = "newest" | "oldest" | "level"
 
 function getPlanProgress(plan: { completedSteps: string[]; stages: { id: string }[] }) {
   const total = plan.stages.length
-  const completed = plan.completedSteps.length
-  const percent = total > 0 ? Math.round((completed / total) * 100) : 0
+  const completed = Math.max(0, plan.completedSteps.length)
+  // Keep the presentation safe while legacy/server data is being reconciled.
+  // The underlying completed step list is intentionally left untouched here.
+  const completedForDisplay = total > 0 ? Math.min(completed, total) : 0
+  const percent = total > 0 ? Math.round((completedForDisplay / total) * 100) : 0
 
-  return { total, completed, percent }
+  return { total, completed: completedForDisplay, percent }
 }
 
 export default function DashboardPlans() {
@@ -185,7 +188,7 @@ export default function DashboardPlans() {
                         <span>Прогресс по этапам</span>
                         <span>{progress.completed}/{progress.total || 0}</span>
                       </div>
-                      <div className="mt-2 h-2 rounded-full bg-background">
+                      <div className="mt-2 h-2 w-full max-w-full overflow-hidden rounded-full bg-background">
                         <div
                           className="h-2 rounded-full bg-primary transition-[width]"
                           style={{ width: `${progress.percent}%` }}

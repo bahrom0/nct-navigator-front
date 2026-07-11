@@ -39,7 +39,7 @@ export function DashboardSidebar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/40 md:hidden"
+            className="fixed inset-x-0 bottom-0 top-24 z-30 bg-black/40 lg:hidden"
             onClick={() => setMobileOpen(false)}
           />
         )}
@@ -47,9 +47,9 @@ export function DashboardSidebar() {
 
       <aside
         className={`
-          dashboard-sidebar fixed left-3 top-4 z-50 flex max-h-[calc(100dvh-2rem)] w-[min(18rem,calc(100vw-1.5rem))] flex-col
+          dashboard-sidebar fixed left-0 top-[6.5rem] z-50 flex max-h-[calc(100dvh-7.5rem)] w-[min(18rem,calc(100vw-1.5rem))] flex-col
           transition-transform duration-200
-          lg:relative lg:left-auto lg:top-auto lg:translate-x-0 lg:self-start lg:my-5 lg:ml-4
+          lg:left-6 lg:top-1/2 lg:max-h-[calc(100dvh-3rem)] lg:translate-x-0 lg:-translate-y-1/2
           ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
