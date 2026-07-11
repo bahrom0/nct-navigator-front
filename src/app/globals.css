@@ -621,6 +621,170 @@ button {
   }
 }
 
+/* Dashboard: the application area reuses the landing's warm, glass-like surface system. */
+.dashboard-route {
+  background-color: var(--marketing-bg);
+  background-image:
+    radial-gradient(circle at 72% 8%, rgb(218 196 164 / 0.24), transparent 22%),
+    radial-gradient(circle at 100% 70%, rgb(248 231 209 / 0.52), transparent 28%),
+    radial-gradient(circle at 1px 1px, rgb(91 78 64 / 0.07) 1px, transparent 0);
+  background-attachment: fixed;
+  background-size: auto, auto, 22px 22px;
+}
+
+.dashboard-shell {
+  --background: var(--marketing-bg);
+  --foreground: var(--marketing-foreground);
+  --primary: #2f2a26;
+  --primary-hover: #1f1b18;
+  --primary-light: #eee6da;
+  --text-secondary: var(--marketing-muted);
+  --text-muted: color-mix(in srgb, var(--marketing-muted) 78%, transparent);
+  --border: var(--marketing-border);
+  --border-hover: var(--marketing-border-strong);
+  --card-bg: var(--marketing-surface);
+  --surface-soft: var(--marketing-soft);
+  --surface-raised: var(--marketing-surface-strong);
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+}
+
+[data-theme="dark"] .dashboard-shell {
+  --primary: #69a3ff;
+  --primary-hover: #7db1ff;
+  --primary-light: rgb(105 163 255 / 0.16);
+}
+
+.dashboard-main {
+  min-width: 0;
+}
+
+.dashboard-content {
+  padding-bottom: 2.5rem;
+}
+
+.dashboard-sidebar {
+  overflow: hidden;
+  align-self: flex-start;
+  border: 1px solid var(--marketing-border);
+  border-radius: 1.9rem;
+  background: var(--marketing-header-bg);
+  box-shadow: 0 24px 80px rgb(28 24 18 / 0.14);
+  backdrop-filter: blur(22px);
+  isolation: isolate;
+}
+
+.dashboard-sidebar::before,
+.dashboard-sidebar::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+}
+
+.dashboard-sidebar > * {
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-sidebar::before {
+  background: radial-gradient(circle at top left, rgb(255 255 255 / 0.3), transparent 46%);
+}
+
+.dashboard-sidebar::after {
+  opacity: 0.42;
+  background-image: radial-gradient(circle at 1px 1px, rgb(78 66 52 / 0.08) 1px, transparent 0);
+  background-size: 16px 16px;
+}
+
+[data-theme="dark"] .dashboard-sidebar {
+  box-shadow: 0 24px 80px rgb(0 0 0 / 0.42);
+}
+
+[data-theme="dark"] .dashboard-sidebar::after {
+  background-image: radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.08) 1px, transparent 0);
+}
+
+.dashboard-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--marketing-border);
+  border-radius: 999px;
+  background: var(--marketing-surface-muted);
+  padding: 0.42rem 0.76rem;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.dashboard-shell [class~="rounded-[18px]"],
+.dashboard-shell [class~="rounded-[20px]"] {
+  border-radius: 1.75rem;
+}
+
+.dashboard-shell [class~="rounded-[16px]"] {
+  border-radius: 1.4rem;
+}
+
+.dashboard-shell [class~="rounded-[14px]"] {
+  border-radius: 1.15rem;
+}
+
+.dashboard-shell [class~="rounded-[12px]"] {
+  border-radius: 1rem;
+}
+
+.dashboard-shell .bg-card-bg {
+  box-shadow: 0 16px 42px rgb(42 34 25 / 0.06);
+}
+
+.dashboard-shell .bg-background {
+  background-color: color-mix(in srgb, var(--marketing-soft) 76%, transparent);
+}
+
+.dashboard-shell input.bg-card-bg,
+.dashboard-shell button.bg-card-bg {
+  box-shadow: 0 10px 26px rgb(42 34 25 / 0.05);
+}
+
+.dashboard-shell .dashboard-stat-card,
+.dashboard-shell .dashboard-feature-card {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 100% 0%, rgb(255 255 255 / 0.68), transparent 36%),
+    var(--marketing-surface);
+}
+
+.dashboard-shell .dashboard-feature-card {
+  box-shadow: 0 22px 62px rgb(42 34 25 / 0.09);
+}
+
+.dashboard-shell a:focus-visible,
+.dashboard-shell button:focus-visible,
+.dashboard-shell input:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary) 30%, transparent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1023px) {
+  .dashboard-shell {
+    display: block;
+  }
+
+  .dashboard-main {
+    width: 100%;
+  }
+
+  .dashboard-sidebar {
+    box-shadow: 0 24px 70px rgb(42 34 25 / 0.22);
+  }
+}
+
 @media (max-width: 640px) {
   .navigator-page {
     padding: 1.25rem 1rem 5rem;

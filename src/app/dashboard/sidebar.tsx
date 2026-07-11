@@ -27,7 +27,7 @@ export function DashboardSidebar() {
     <>
       <button
         onClick={() => setMobileOpen(true)}
-        className="fixed bottom-4 right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-lg md:hidden"
+        className="fixed bottom-4 right-4 z-40 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white shadow-[0_18px_40px_rgba(42,34,25,0.24)] transition-transform duration-200 hover:scale-[1.03] md:hidden"
         aria-label="Меню"
       >
         <Menu className="h-5 w-5" />
@@ -47,26 +47,26 @@ export function DashboardSidebar() {
 
       <aside
         className={`
-          fixed inset-y-0 left-0 z-50 flex w-60 flex-col border-r border-border bg-card-bg
+          dashboard-sidebar fixed left-3 top-4 z-50 flex max-h-[calc(100dvh-2rem)] w-[min(18rem,calc(100vw-1.5rem))] flex-col
           transition-transform duration-200
-          md:relative md:translate-x-0
+          lg:relative lg:left-auto lg:top-auto lg:translate-x-0 lg:self-start lg:my-5 lg:ml-4
           ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
-        <div className="flex h-14 items-center justify-between border-b border-border px-3">
+        <div className="flex min-h-[4.25rem] items-center justify-between border-b border-border px-4">
           <Link
             href="/"
-            className="flex items-center gap-2 rounded-[10px] px-2 py-1.5 text-sm font-medium text-text-muted transition-colors hover:bg-foreground/5 hover:text-foreground"
+            className="flex items-center gap-2 rounded-2xl px-3 py-2 text-sm font-medium text-text-muted transition-colors hover:bg-foreground/5 hover:text-foreground"
           >
             <ArrowLeft className="h-4 w-4" />
             На главную
           </Link>
-          <button onClick={() => setMobileOpen(false)} className="rounded-full p-1 md:hidden" aria-label="Закрыть">
+          <button onClick={() => setMobileOpen(false)} className="rounded-xl p-2 md:hidden" aria-label="Закрыть">
             <X className="h-4 w-4 text-text-secondary" />
           </button>
         </div>
 
-        <nav className="flex-1 space-y-1 overflow-y-auto p-3">
+        <nav className="flex-1 space-y-1.5 overflow-y-auto p-3 pb-4">
           {NAV_ITEMS.map((item) => {
             const isActive = pathname === item.href
             return (
@@ -75,8 +75,8 @@ export function DashboardSidebar() {
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
                 className={`
-                  flex items-center gap-3 rounded-[12px] px-3 py-2.5 text-sm font-medium transition-colors
-                  ${isActive ? "bg-primary/10 text-primary" : "text-text-secondary hover:bg-foreground/5 hover:text-foreground"}
+                  flex items-center gap-3 rounded-2xl px-3.5 py-3 text-sm font-medium transition-all duration-200
+                  ${isActive ? "bg-primary text-white shadow-[0_12px_24px_rgba(42,34,25,0.16)]" : "text-text-secondary hover:translate-x-0.5 hover:bg-foreground/5 hover:text-foreground"}
                 `}
               >
                 <item.icon className="h-4 w-4 shrink-0" />

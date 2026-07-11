@@ -113,10 +113,11 @@ export default function DashboardOverview() {
   ]), [bundle, completedToday, progressPercent, roadmapWeeks, totalToday])
 
   return (
-    <div>
+    <div className="dashboard-overview">
       <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
-        <h1 className="text-2xl font-bold tracking-tight text-foreground">Обзор</h1>
-        <p className="mt-1 text-sm text-text-secondary">
+        <p className="dashboard-eyebrow">Личный кабинет</p>
+        <h1 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-foreground sm:text-4xl">Обзор</h1>
+        <p className="mt-3 max-w-2xl text-sm leading-6 text-text-secondary sm:text-base">
           Дашборд показывает, куда движется активная цель и какой следующий лучший шаг.
         </p>
       </motion.div>
@@ -128,9 +129,9 @@ export default function DashboardOverview() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.05 }}
-            className="rounded-[18px] border border-border bg-card-bg p-5"
+            className="dashboard-stat-card rounded-[18px] border border-border bg-card-bg p-5"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
               <stat.icon className="h-5 w-5" />
             </div>
             <p className="mt-4 text-2xl font-bold text-foreground">{loading ? "…" : stat.value}</p>
@@ -141,7 +142,7 @@ export default function DashboardOverview() {
       </div>
 
       <div className="mt-10 grid gap-6 xl:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)]">
-        <section className="rounded-[20px] border border-border bg-card-bg p-6">
+        <section className="dashboard-feature-card rounded-[20px] border border-border bg-card-bg p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-text-muted">Следующий шаг</p>
           <h2 className="mt-3 text-xl font-semibold text-foreground">
             {bundle?.goal ? bundle.goal.nctTitle : "Соберите активную цель"}
@@ -163,14 +164,14 @@ export default function DashboardOverview() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href={nextStep.href}
-              className="inline-flex items-center gap-2 rounded-[12px] bg-primary px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-2xl bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-[0_14px_28px_rgba(42,34,25,0.18)] transition duration-200 hover:-translate-y-0.5 hover:opacity-90"
             >
               {nextStep.label}
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/dashboard/history"
-              className="inline-flex items-center gap-2 rounded-[12px] border border-border bg-background px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-card-bg"
+              className="inline-flex items-center gap-2 rounded-2xl border border-border bg-background px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-card-bg"
             >
               Открыть history
             </Link>
