@@ -17,7 +17,7 @@ export interface CoachTabContentProps {
 
 export function CoachTabContent({ tab, onGenerateRoadmap, onGenerateDailyPlan, onRequestTaskDetail, onNavigateDate }: CoachTabContentProps) {
   if (tab === "roadmap") {
-    return <CoachRoadmap onGenerate={onGenerateRoadmap} />
+    return <CoachRoadmap onGenerate={onGenerateRoadmap} onNavigateDate={onNavigateDate} />
   }
 
   if (tab === "today") {

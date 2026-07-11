@@ -1,208 +1,167 @@
-"use client";
+"use client"
 
-import type { ReactNode } from "react";
-import { motion } from "framer-motion";
-import {
-  Flame,
-  Map,
-  MessageCircle,
-  Settings2,
-  Target,
-  TrendingUp,
-} from "lucide-react";
-import { useCoachStore } from "@/stores/coach-store";
-import { useProfileStore } from "@/stores/profile-store";
-import type { CoachActiveTab } from "@/types/coach";
+import { useState, type ReactNode } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import { Flame, Map, Menu, MessageCircle, Target, TrendingUp, X } from "lucide-react"
+import { useCoachStore } from "@/stores/coach-store"
+import { useProfileStore } from "@/stores/profile-store"
+import type { CoachActiveTab } from "@/types/coach"
 
 interface TabConfig {
-  id: CoachActiveTab;
-  label: string;
-  icon: typeof Map;
+  id: CoachActiveTab
+  label: string
+  description: string
+  icon: typeof Map
 }
 
 const TABS: TabConfig[] = [
-  { id: "roadmap", label: "Roadmap", icon: Map },
-  { id: "today", label: "Сегодня", icon: Target },
-  { id: "chat", label: "Чат", icon: MessageCircle },
-  { id: "progress", label: "Прогресс", icon: TrendingUp },
-];
+  { id: "roadmap", label: "Roadmap", description: "Маршрут подготовки", icon: Map },
+  { id: "today", label: "Сегодня", description: "План на день", icon: Target },
+  { id: "chat", label: "Чат", description: "Помощь Coach", icon: MessageCircle },
+  { id: "progress", label: "Прогресс", description: "Ваши результаты", icon: TrendingUp },
+]
 
 interface CoachShellProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export function CoachShell({ children }: CoachShellProps) {
-  const goal = useCoachStore((s) => s.goal);
-  const profileGoal = useProfileStore((s) => s.activeGoal);
-  const streak = useCoachStore((s) => s.progress.currentStreak);
-  const activeTab = useCoachStore((s) => s.activeTab);
-  const setActiveTab = useCoachStore((s) => s.setActiveTab);
-  const archiveGoal = useCoachStore((s) => s.archiveGoal);
-  const resolvedGoal = goal ?? profileGoal;
+  const goal = useCoachStore((s) => s.goal)
+  const profileGoal = useProfileStore((s) => s.activeGoal)
+  const streak = useCoachStore((s) => s.progress.currentStreak)
+  const activeTab = useCoachStore((s) => s.activeTab)
+  const setActiveTab = useCoachStore((s) => s.setActiveTab)
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const resolvedGoal = goal ?? profileGoal
+
+  const changeTab = (tab: CoachActiveTab) => {
+    setActiveTab(tab)
+    setMobileOpen(false)
+  }
 
   return (
-    <div className={`bg-background ${
-      activeTab === "chat" ? "-mt-px h-[calc(100dvh-3.5rem)] flex flex-col" : "-mt-px"
-    }`}>
-      <header className="sticky top-14 z-30 border-b border-border bg-card-bg/88 backdrop-blur">
-        <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
-          <div className="min-w-0 flex-1">
-            {/* <span className="navigator-kicker">Main workspace · coach</span> */}
-            <p className="mt-2 truncate text-[15px] font-semibold text-foreground">
-              {resolvedGoal?.nctTitle ?? "Цель не выбрана"}
-            </p>
-            <p className="truncate text-xs text-text-secondary">
-              {resolvedGoal?.nctCode ? `${resolvedGoal.nctCode} · ` : ""}
-              {resolvedGoal?.university ?? "Coach поможет выбрать цель"}
-            </p>
-          </div>
-          <div className="flex shrink-0 items-center gap-2">
-            <StreakBadge value={streak} />
-            {/* {resolvedGoal ? (
-              <button
-                type="button"
-                onClick={archiveGoal}
-                aria-label="Сменить цель"
-                title="Сменить цель"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-[12px] border border-border bg-background text-text-secondary transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
-              >
-                <Settings2 className="h-4 w-4" />
-              </button>
-            ) : null} */}
-          </div>
-        </div>
-        <div className="mt-2 hidden md:block">
-          <DesktopTabs activeTab={activeTab} onChange={setActiveTab} />
-        </div>
-      </header>
+    <div className={`dashboard-shell coach-shell min-h-[calc(100dvh-3.5rem)] ${activeTab === "chat" ? "flex" : ""}`}>
+      <button
+        type="button"
+        onClick={() => setMobileOpen(true)}
+        aria-label="Открыть разделы Coach"
+        className="fixed bottom-5 right-4 z-40 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white shadow-[0_18px_40px_rgba(42,34,25,0.24)] transition-transform duration-200 hover:scale-[1.03] focus-visible:outline-none lg:hidden"
+      >
+        <Menu className="h-5 w-5" aria-hidden="true" />
+      </button>
 
-      <main className={`mx-auto w-full ${
-        activeTab === "chat"
-          ? "flex min-h-0 flex-col flex-1 overflow-hidden"
-          : "max-w-3xl px-4 pb-24 pt-5 sm:px-6 md:pb-8"
-      }`}>
-        {activeTab === "chat" ? (
-          children
-        ) : (
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.18, ease: "easeOut" }}
+      <AnimatePresence>
+        {mobileOpen ? (
+          <motion.button
+            type="button"
+            aria-label="Закрыть меню Coach"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setMobileOpen(false)}
+            className="fixed inset-x-0 bottom-0 top-14 z-30 bg-black/40 lg:hidden"
+          />
+        ) : null}
+      </AnimatePresence>
+
+      <aside
+        aria-label="Разделы Coach"
+        className={`dashboard-sidebar fixed left-0 top-[4.5rem] z-50 flex max-h-[calc(100dvh-5.5rem)] w-[min(19rem,calc(100vw-1.5rem))] flex-col transition-transform duration-200 lg:left-6 lg:top-1/2 lg:max-h-[calc(100dvh-3rem)] lg:-translate-y-1/2 ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
+      >
+        <div className="flex items-start justify-between border-b border-border px-5 py-5">
+          <div className="min-w-0">
+            <p className="dashboard-eyebrow">Личный Coach</p>
+            <p className="mt-3 truncate text-sm font-semibold text-foreground">
+              {resolvedGoal?.nctTitle ?? "Цель подготовки"}
+            </p>
+            <p className="mt-1 truncate text-xs text-text-muted">
+              {resolvedGoal?.nctCode ?? "Выберите направление"}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setMobileOpen(false)}
+            aria-label="Закрыть меню"
+            className="-mr-2 -mt-1 rounded-xl p-2 text-text-secondary hover:bg-foreground/5 lg:hidden"
           >
-            {children}
-          </motion.div>
-        )}
+            <X className="h-4 w-4" aria-hidden="true" />
+          </button>
+        </div>
+
+        <nav className="flex-1 space-y-1.5 overflow-y-auto p-3" role="tablist">
+          {TABS.map((tab) => (
+            <CoachNavButton key={tab.id} tab={tab} active={activeTab === tab.id} onSelect={changeTab} />
+          ))}
+        </nav>
+
+        <div className="m-3 rounded-2xl border border-border bg-background p-4">
+          <div className="flex items-center gap-2 text-warning">
+            <Flame className="h-4 w-4" aria-hidden="true" />
+            <span className="text-sm font-semibold tabular-nums">{streak} {pluralDays(streak)}</span>
+          </div>
+          <p className="mt-2 text-xs leading-5 text-text-muted">Сохраняйте ритм: один завершённый день укрепляет вашу серию.</p>
+        </div>
+      </aside>
+
+      <main className={`coach-main min-w-0 flex-1 px-4 py-5 sm:px-6 sm:py-7 lg:pl-[22rem] lg:pr-10 ${activeTab === "chat" ? "flex min-h-0 flex-col" : ""}`}>
+        <div className={`mx-auto w-full ${activeTab === "chat" ? "flex min-h-0 max-w-6xl flex-1 flex-col" : "max-w-6xl"}`}>
+          {activeTab !== "chat" ? <CoachHeading goalTitle={resolvedGoal?.nctTitle} activeTab={activeTab} /> : null}
+          {activeTab === "chat" ? (
+            children
+          ) : (
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+            >
+              {children}
+            </motion.div>
+          )}
+        </div>
       </main>
-
-      <MobileTabs activeTab={activeTab} onChange={setActiveTab} />
     </div>
-  );
+  )
 }
 
-function StreakBadge({ value }: { value: number }) {
-  return (
-    <div
-      className="inline-flex h-9 items-center gap-1.5 rounded-full bg-warning/10 px-3 text-warning"
-      aria-label={`Текущая серия: ${value} ${pluralDays(value)}`}
-    >
-      <Flame className="h-4 w-4" aria-hidden="true" />
-      <span className="text-sm font-semibold tabular-nums">
-        {value}
-      </span>
-    </div>
-  );
-}
-
-function TabButton({
-  tab,
-  active,
-  onClick,
-}: {
-  tab: TabConfig;
-  active: boolean;
-  onClick: (id: CoachActiveTab) => void;
-}) {
-  const Icon = tab.icon;
+function CoachNavButton({ tab, active, onSelect }: { tab: TabConfig; active: boolean; onSelect: (tab: CoachActiveTab) => void }) {
+  const Icon = tab.icon
   return (
     <button
       type="button"
       role="tab"
       aria-selected={active}
-      onClick={() => onClick(tab.id)}
-      className={`relative flex flex-1 items-center justify-center gap-1.5 px-3 py-3 text-xs font-medium transition-colors md:flex-none md:px-4 md:text-sm ${
-        active
-          ? "text-primary"
-          : "text-text-secondary hover:text-foreground"
-      }`}
+      onClick={() => onSelect(tab.id)}
+      className={`flex min-h-14 w-full items-center gap-3 rounded-2xl px-3.5 py-3 text-left transition-all duration-200 ${active ? "bg-primary text-white shadow-[0_12px_24px_rgba(42,34,25,0.16)]" : "text-text-secondary hover:translate-x-0.5 hover:bg-foreground/5 hover:text-foreground"}`}
     >
-      <Icon className="h-4 w-4" aria-hidden="true" />
-      <span>{tab.label}</span>
-      {active ? (
-        <motion.span
-          layoutId="coach-tab-underline"
-          className="absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-primary md:inset-x-3"
-          transition={{ type: "spring", stiffness: 400, damping: 30 }}
-        />
-      ) : null}
+      <Icon className="h-4 w-4 shrink-0" aria-hidden="true" />
+      <span className="min-w-0">
+        <span className="block text-sm font-semibold">{tab.label}</span>
+        <span className={`mt-0.5 block text-xs ${active ? "text-white/70" : "text-text-muted"}`}>{tab.description}</span>
+      </span>
     </button>
-  );
+  )
 }
 
-function DesktopTabs({
-  activeTab,
-  onChange,
-}: {
-  activeTab: CoachActiveTab;
-  onChange: (tab: CoachActiveTab) => void;
-}) {
+function CoachHeading({ goalTitle, activeTab }: { goalTitle?: string; activeTab: CoachActiveTab }) {
+  const heading = TABS.find((item) => item.id === activeTab)
   return (
-    <div
-      role="tablist"
-      aria-label="Разделы Coach"
-      className="mx-auto flex max-w-3xl items-stretch px-2 sm:px-4"
-    >
-      {TABS.map((tab) => (
-        <TabButton
-          key={tab.id}
-          tab={tab}
-          active={activeTab === tab.id}
-          onClick={onChange}
-        />
-      ))}
-    </div>
-  );
-}
-
-function MobileTabs({
-  activeTab,
-  onChange,
-}: {
-  activeTab: CoachActiveTab;
-  onChange: (tab: CoachActiveTab) => void;
-}) {
-  return (
-    <nav
-      role="tablist"
-      aria-label="Разделы Coach"
-      className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-4 border-t border-border bg-card-bg pb-[env(safe-area-inset-bottom)] md:hidden"
-    >
-      {TABS.map((tab) => (
-        <TabButton
-          key={tab.id}
-          tab={tab}
-          active={activeTab === tab.id}
-          onClick={onChange}
-        />
-      ))}
-    </nav>
-  );
+    <header className="dashboard-feature-card mb-6 overflow-hidden rounded-[20px] border border-border bg-card-bg p-5 sm:p-6">
+      <p className="dashboard-eyebrow">Coach · {heading?.label}</p>
+      <div className="mt-3 flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <h1 className="text-2xl font-semibold tracking-[-0.035em] text-foreground sm:text-3xl">{heading?.label}</h1>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-text-secondary">{goalTitle ?? "Соберите персональный маршрут и двигайтесь по нему шаг за шагом."}</p>
+        </div>
+      </div>
+    </header>
+  )
 }
 
 function pluralDays(n: number): string {
-  const mod10 = n % 10;
-  const mod100 = n % 100;
-  if (mod10 === 1 && mod100 !== 11) return "день";
-  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return "дня";
-  return "дней";
+  const mod10 = n % 10
+  const mod100 = n % 100
+  if (mod10 === 1 && mod100 !== 11) return "день"
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return "дня"
+  return "дней"
 }

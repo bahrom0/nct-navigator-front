@@ -92,8 +92,16 @@ export function CoachDailyPlan({ onGenerate, onRequestTaskDetail, onNavigateDate
   }
 
   return (
-    <section>
-      <div className="mb-4 flex items-center justify-between">
+    <section className="space-y-5">
+      <TodayHero
+        date={formatDate(navigateDate)}
+        weekNumber={matchedWeek?.number}
+        completed={completed}
+        total={total}
+        progress={pct}
+        streak={streak}
+      />
+      <div className="sr-only">
         <div>
           <h2 className="text-base font-semibold text-foreground">Today</h2>
           <p className="mt-0.5 text-sm text-text-secondary">
@@ -111,7 +119,7 @@ export function CoachDailyPlan({ onGenerate, onRequestTaskDetail, onNavigateDate
         </span>
       </div>
 
-      <div className="mb-4 flex justify-end">
+      <div className="flex justify-end">
         <Link
           href={`/teacher?source=coach_today&topic=${encodeURIComponent(isDraft ? "daily_plan_draft" : "today_plan")}&prompt=${encodeURIComponent(isDraft ? "Помоги понять, как подойти к этому дню подготовки и что лучше сделать в первую очередь." : "Помоги понять, как пройти сегодняшний план и на что обратить внимание при выполнении задач.")}`}
           className="inline-flex min-h-11 items-center gap-2 rounded-[12px] border border-border bg-card-bg px-4 text-sm font-medium text-foreground transition-colors hover:bg-background"
@@ -121,7 +129,7 @@ export function CoachDailyPlan({ onGenerate, onRequestTaskDetail, onNavigateDate
         </Link>
       </div>
 
-      <div className="mb-4 flex items-center justify-between">
+      <div className="flex items-center justify-between rounded-2xl border border-border bg-card-bg p-3 shadow-[0_10px_26px_rgba(42,34,25,0.04)]">
         <button
           type="button"
           onClick={goBack}
@@ -156,7 +164,7 @@ export function CoachDailyPlan({ onGenerate, onRequestTaskDetail, onNavigateDate
           weekTitle={matchedWeek?.title}
         />
       ) : (
-        <div className="rounded-[18px] border border-border bg-card-bg p-4">
+        <div className="dashboard-feature-card rounded-[20px] border border-border bg-card-bg p-4 sm:p-5">
           <div className="mb-4">
             <p className="text-sm font-semibold text-foreground">{effectivePlan.title ?? matchedWeek?.title ?? "План дня"}</p>
             {matchedWeek?.title ? <p className="mt-1 text-xs text-text-secondary">Фокус недели: {matchedWeek.title}</p> : null}
@@ -197,6 +205,48 @@ export function CoachDailyPlan({ onGenerate, onRequestTaskDetail, onNavigateDate
         </div>
       )}
     </section>
+  )
+}
+
+function TodayHero({
+  date,
+  weekNumber,
+  completed,
+  total,
+  progress,
+  streak,
+}: {
+  date: string
+  weekNumber?: number
+  completed: number
+  total: number
+  progress: number
+  streak: number
+}) {
+  return (
+    <div className="dashboard-feature-card overflow-hidden rounded-[20px] border border-border bg-card-bg p-5 sm:p-6">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-text-muted">Ежедневный фокус</p>
+          <h2 className="mt-2 text-2xl font-semibold tracking-[-0.035em] text-foreground">Сегодня</h2>
+          <p className="mt-2 text-sm text-text-secondary">{date}{weekNumber ? ` · Неделя ${weekNumber}` : ""}</p>
+        </div>
+        <div className="rounded-2xl bg-primary px-4 py-3 text-white shadow-[0_14px_28px_rgba(42,34,25,0.16)]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-white/70">Выполнено</p>
+          <p className="mt-1 text-xl font-bold tabular-nums">{completed}/{total || "—"}</p>
+        </div>
+      </div>
+      <div className="mt-5 grid gap-3 sm:grid-cols-2">
+        <div className="rounded-2xl border border-border bg-background p-3.5">
+          <p className="text-xs text-text-muted">Ритм подготовки</p>
+          <p className="mt-1 flex items-center gap-1.5 text-sm font-semibold text-foreground"><Flame className="h-4 w-4 text-warning" aria-hidden="true" /> {streak > 0 ? `${streak} ${pluralDays(streak)}` : "Начните серию сегодня"}</p>
+        </div>
+        <div className="rounded-2xl border border-border bg-background p-3.5">
+          <p className="text-xs text-text-muted">Прогресс дня</p>
+          <p className="mt-1 text-sm font-semibold text-foreground">{total > 0 ? `${progress}% задач уже в работе` : "Создайте первый план на день"}</p>
+        </div>
+      </div>
+    </div>
   )
 }
 

@@ -14,6 +14,7 @@ import {
 import { useRouter } from "next/navigation"
 import { useCoachStore } from "@/stores/coach-store"
 import { RoadmapDurationModal } from "@/components/coach/RoadmapDurationModal"
+import { RoadmapCalendar } from "@/components/coach/RoadmapCalendar"
 import type { CoachWeek, CoachWeekStatus, RoadmapDurationWeeks } from "@/types/coach"
 
 const STATUS_ICONS: Record<CoachWeekStatus, typeof CheckCircle> = {
@@ -30,6 +31,7 @@ const STATUS_COLORS: Record<CoachWeekStatus, string> = {
 
 export interface CoachRoadmapProps {
   onGenerate?: (durationWeeks?: RoadmapDurationWeeks) => void
+  onNavigateDate?: (date: string) => void
 }
 
 function durationLabel(weeks?: number): string {
@@ -39,10 +41,12 @@ function durationLabel(weeks?: number): string {
   return `${weeks} недель`
 }
 
-export function CoachRoadmap({ onGenerate }: CoachRoadmapProps) {
+export function CoachRoadmap({ onGenerate, onNavigateDate }: CoachRoadmapProps) {
   const router = useRouter()
   const roadmap = useCoachStore((s) => s.roadmap)
+  const dailyHistory = useCoachStore((s) => s.dailyHistory)
   const isLoading = useCoachStore((s) => s.isLoading)
+  const setActiveTab = useCoachStore((s) => s.setActiveTab)
   const [showModal, setShowModal] = useState(false)
 
   if (isLoading) return <RoadmapSkeleton />
@@ -66,12 +70,18 @@ export function CoachRoadmap({ onGenerate }: CoachRoadmapProps) {
   const completedCount = roadmap.weeks.filter((week) => week.status === "completed").length
   const activeWeek = roadmap.weeks.find((week) => week.status === "active") ?? roadmap.weeks[0] ?? null
 
+  const openDay = (date: string) => {
+    onNavigateDate?.(date)
+    setActiveTab("today")
+  }
+
   return (
-    <section>
+    <section className="space-y-6">
       <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
         <div>
-          <h2 className="text-base font-semibold text-foreground">Roadmap</h2>
-          <p className="mt-0.5 flex items-center gap-1.5 text-sm text-text-secondary">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-text-muted">Маршрут подготовки</p>
+          <h2 className="mt-2 text-xl font-semibold tracking-[-0.025em] text-foreground">Roadmap</h2>
+          <p className="mt-1 flex items-center gap-1.5 text-sm text-text-secondary">
             <span>{roadmap.weeks.length} недель · пройдено {completedCount}</span>
             {roadmap.durationWeeks ? (
               <span className="inline-flex items-center gap-1 text-xs text-text-muted">
@@ -103,21 +113,25 @@ export function CoachRoadmap({ onGenerate }: CoachRoadmapProps) {
           </div>
         ) : null}
       </div>
-      <div className="space-y-2">
-        {roadmap.weeks.map((week, index) => (
-          <motion.div
-            key={week.id}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: index * 0.04,
-              duration: 0.25,
-              ease: "easeOut",
-            }}
-          >
-            <WeekCard week={week} />
-          </motion.div>
-        ))}
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(360px,0.9fr)]">
+        <div className="space-y-2">
+          <p className="mb-3 text-sm font-semibold text-foreground">Недельный маршрут</p>
+          {roadmap.weeks.map((week, index) => (
+            <motion.div
+              key={week.id}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 0, y: 0 }}
+              transition={{
+                delay: index * 0.04,
+                duration: 0.25,
+                ease: "easeOut",
+              }}
+            >
+              <WeekCard week={week} />
+            </motion.div>
+          ))}
+        </div>
+        <RoadmapCalendar roadmap={roadmap} history={dailyHistory} onSelectDate={openDay} />
       </div>
     </section>
   )
