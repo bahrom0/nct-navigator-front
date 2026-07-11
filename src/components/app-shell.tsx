@@ -201,7 +201,15 @@ export function AppShell({ children }: { children: ReactNode }) {
           </div>
         </div>
       </header>
-      <main className="flex-1 pt-24 sm:pt-28">{children}</main>
+      <main
+        className={`flex-1 pt-24 sm:pt-28 ${
+          pathname?.startsWith("/categories")
+            ? "bg-[var(--marketing-bg)]"
+            : ""
+        }`}
+      >
+        {children}
+      </main>
       <ProfileDrawer open={open} onClose={() => setOpen(false)} />
       <LoginModal />
     </>

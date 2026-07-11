@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import type { AnalysisStep } from "@/types/analysis";
 import { STEPS as STEP_LIST } from "@/types/analysis";
 import { AnimatePresence, motion } from "framer-motion";
@@ -78,14 +79,16 @@ function StageLabel({
   index,
   active,
   completed,
+  compact = false,
 }: {
   step: (typeof STEP_LIST)[number];
   index: number;
   active: boolean;
   completed: boolean;
+  compact?: boolean;
 }) {
   return (
-    <div className={active ? "mt-5" : "mt-4"}>
+    <div className={compact ? "mt-0" : active ? "mt-5" : "mt-4"}>
       <p
         className={`text-sm font-semibold tracking-[-0.01em] ${
           active
@@ -115,6 +118,34 @@ function StageLabel({
   );
 }
 
+function ActiveStageFrame({
+  active,
+  children,
+  className = "",
+  radius = "rounded-[2rem]",
+}: {
+  active: boolean;
+  children: React.ReactNode;
+  className?: string;
+  radius?: string;
+}) {
+  return (
+    <div className={`relative overflow-visible ${radius} ${className}`}>
+      {children}
+      <motion.div
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-0 z-20 border-2 border-[var(--primary)] ${radius}`}
+        initial={{ opacity: 0, scale: 0.985 }}
+        animate={{
+          opacity: active ? 1 : 0,
+          scale: active ? 1 : 0.985,
+        }}
+        transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
+      />
+    </div>
+  );
+}
+
 function DesktopTimeline({ currentIndex, status }: { currentIndex: number; status: string }) {
   return (
     <div className="relative hidden min-h-[18rem] items-center md:flex">
@@ -139,13 +170,19 @@ function DesktopTimeline({ currentIndex, status }: { currentIndex: number; statu
               transition={{ delay: index * 0.06, duration: 0.3, ease: "easeOut" }}
               className={`relative flex min-w-0 flex-col items-center text-center ${active ? "z-10" : "z-0"}`}
             >
+              <ActiveStageFrame
+                active={active}
+                className={active ? "w-full max-w-[15rem]" : "w-full"}
+                radius="rounded-[2rem]"
+              >
               <motion.div
                 layout
-                className={active ? "flex min-h-[15rem] w-full max-w-[15rem] flex-col items-center justify-start rounded-[2rem] border border-[var(--primary)]/40 bg-[var(--marketing-surface)] px-4 py-5 shadow-[0_20px_50px_rgb(37_99_235_/_0.14)] ring-1 ring-[var(--primary)]/10" : "flex min-h-[15rem] w-full flex-col items-center justify-start px-2 py-5"}
+                className={active ? "flex min-h-[15rem] w-full max-w-[15rem] flex-col items-center justify-start rounded-[2rem] bg-[var(--marketing-surface)] px-4 py-5 shadow-[0_20px_50px_rgb(37_99_235_/_0.14)]" : "flex min-h-[15rem] w-full flex-col items-center justify-start px-2 py-5"}
               >
                 <StageIcon step={step.key} active={active} completed={completed} />
                 <StageLabel step={step} index={index} active={active} completed={completed} />
               </motion.div>
+              </ActiveStageFrame>
             </motion.div>
           );
         })}
@@ -156,10 +193,10 @@ function DesktopTimeline({ currentIndex, status }: { currentIndex: number; statu
 
 function MobileTimeline({ currentIndex, status }: { currentIndex: number; status: string }) {
   return (
-    <div className="relative md:hidden">
-      <div className="absolute bottom-10 left-6 top-6 w-px bg-[var(--marketing-border-strong)]" />
+    <div className="relative pl-3 md:hidden">
+      <div className="absolute bottom-10 left-[2.75rem] top-6 z-0 w-px bg-[var(--marketing-border-strong)]" />
       <motion.div
-        className="absolute left-6 top-6 w-px origin-top bg-[var(--primary)]"
+        className="absolute left-[2.75rem] top-6 z-0 w-px origin-top bg-[var(--primary)]"
         animate={{ height: `${Math.max(0, Math.min(currentIndex, STEP_LIST.length - 1)) * 33.333}%` }}
         transition={{ type: "spring", stiffness: 80, damping: 18 }}
       />
@@ -176,12 +213,20 @@ function MobileTimeline({ currentIndex, status }: { currentIndex: number; status
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.06, duration: 0.3, ease: "easeOut" }}
-              className={`relative flex items-center gap-4 rounded-[1.35rem] px-2 py-3 ${active ? "border border-[var(--primary)]/40 bg-[var(--marketing-surface)] px-4 py-4 shadow-[0_16px_36px_rgb(37_99_235_/_0.12)]" : ""}`}
+              className="relative z-10 grid grid-cols-[4rem_minmax(0,1fr)] items-center gap-4 py-3 pr-2 pl-0"
             >
-              <StageIcon step={step.key} active={active} completed={completed} />
-              <div className="min-w-0 flex-1">
-                <StageLabel step={step} index={index} active={active} completed={completed} />
-              </div>
+              <ActiveStageFrame
+                active={active}
+                className={`col-span-2 grid grid-cols-[4rem_minmax(0,1fr)] items-center gap-4 overflow-visible rounded-[1.35rem] py-3 ${active ? "-ml-3 bg-[var(--marketing-surface)] py-4 pr-4 pl-3 shadow-[0_16px_36px_rgb(37_99_235_/_0.12)]" : ""}`}
+                radius="rounded-[1.35rem]"
+              >
+                <div className="flex items-center justify-center">
+                  <StageIcon step={step.key} active={active} completed={completed} />
+                </div>
+                <div className="min-w-0">
+                  <StageLabel step={step} index={index} active={active} completed={completed} compact />
+                </div>
+              </ActiveStageFrame>
             </motion.div>
           );
         })}
@@ -197,12 +242,23 @@ export function AnalysisTimeline({
   currentStep: AnalysisStep;
   status: "idle" | "running" | "success" | "error";
 }) {
-  const currentIndex = STEP_LIST.findIndex((step) => step.key === currentStep);
+  const targetIndex = Math.max(0, STEP_LIST.findIndex((step) => step.key === currentStep));
+  const [displayedIndex, setDisplayedIndex] = useState(targetIndex);
+
+  useEffect(() => {
+    if (targetIndex <= displayedIndex) return;
+
+    const timer = window.setTimeout(() => {
+      setDisplayedIndex((index) => Math.min(index + 1, targetIndex));
+    }, 820);
+
+    return () => window.clearTimeout(timer);
+  }, [displayedIndex, targetIndex]);
 
   return (
     <div className="w-full">
-      <DesktopTimeline currentIndex={currentIndex} status={status} />
-      <MobileTimeline currentIndex={currentIndex} status={status} />
+      <DesktopTimeline currentIndex={displayedIndex} status={status} />
+      <MobileTimeline currentIndex={displayedIndex} status={status} />
     </div>
   );
 }
