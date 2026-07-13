@@ -6,15 +6,19 @@ function Pulse({ className }: { className?: string }) {
   return <div className={`animate-pulse rounded-xl bg-border/30 ${className ?? ""}`} />
 }
 
-export function SidebarSkeleton({ collapsed }: { collapsed: boolean }) {
+export function SidebarSkeleton({ collapsed, desktop = false }: { collapsed: boolean; desktop?: boolean }) {
   return (
     <div
-      className={`h-full flex-shrink-0 overflow-hidden border-r border-border bg-card-bg transition-[width] duration-200 ${
-        collapsed ? "w-0" : "w-[260px]"
+      className={`${
+        desktop
+          ? "h-full rounded-[2rem] border border-[var(--marketing-border)] bg-[var(--marketing-header-panel-bg)] shadow-[0_24px_70px_rgba(28,24,18,0.12)]"
+          : "h-full border-r border-border bg-card-bg"
+      } flex-shrink-0 overflow-hidden transition-[width] duration-200 ${
+        collapsed ? "w-0" : desktop ? "w-[300px]" : "w-[260px]"
       }`}
     >
-      <div className="flex h-full w-[260px] flex-col">
-        <div className="flex h-14 shrink-0 items-center justify-between border-b border-border px-4">
+      <div className={`flex h-full flex-col ${desktop ? "w-[300px]" : "w-[260px]"}`}>
+        <div className={`flex shrink-0 items-center justify-between border-b border-border px-4 ${desktop ? "h-16" : "h-14"}`}>
           <Pulse className="h-4 w-16" />
           <Pulse className="h-8 w-8" />
         </div>

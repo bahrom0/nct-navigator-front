@@ -70,7 +70,7 @@ export function CoachShell({ children }: CoachShellProps) {
       >
         <div className="flex items-start justify-between border-b border-border px-5 py-5">
           <div className="min-w-0">
-            <p className="dashboard-eyebrow">Личный Coach</p>
+            {/* <p className="dashboard-eyebrow">Личный Coach</p> */}
             <p className="mt-3 truncate text-sm font-semibold text-foreground">
               {resolvedGoal?.nctTitle ?? "Цель подготовки"}
             </p>
@@ -150,8 +150,8 @@ function CoachHeading({ goalTitle, activeTab }: { goalTitle?: string; activeTab:
       <p className="dashboard-eyebrow">Coach · {heading?.label}</p>
       <div className="mt-3 flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-semibold tracking-[-0.035em] text-foreground sm:text-3xl">{heading?.label}</h1>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-text-secondary">{goalTitle ?? "Соберите персональный маршрут и двигайтесь по нему шаг за шагом."}</p>
+          <h1 className="text-2xl font-semibold tracking-[-0.035em] text-foreground sm:text-3xl">{heading?.label}</h1>
         </div>
       </div>
     </header>

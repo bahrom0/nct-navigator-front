@@ -484,11 +484,11 @@ function TeacherPageContent() {
   }
 
   return (
-    <div className="relative flex h-[calc(100dvh-3.5rem)] min-h-0 overflow-hidden">
+    <div className="relative flex h-[calc(100dvh-6rem)] min-h-0 overflow-hidden sm:h-[calc(100dvh-7rem)]">
       {/* Desktop sidebar */}
-      <div className="hidden md:block">
+      <div className={`hidden h-full items-center justify-center px-3 py-5 md:flex ${sidebarCollapsed ? "w-0 px-0" : "w-[324px]"}`}>
         {sessionsLoadingState ? (
-          <SidebarSkeleton collapsed={sidebarCollapsed} />
+          <SidebarSkeleton collapsed={sidebarCollapsed} desktop />
         ) : (
           <ChatSidebar
             groups={groupsWithCurrent}
@@ -497,6 +497,7 @@ function TeacherPageContent() {
             onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
             onSessionSelect={handleSessionSelect}
             onNewChat={startNewChat}
+            desktop
           />
         )}
       </div>

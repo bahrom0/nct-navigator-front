@@ -10,6 +10,7 @@ interface ChatSidebarProps {
   onToggle: () => void
   onSessionSelect: (id: string) => void
   onNewChat: () => void
+  desktop?: boolean
 }
 
 export function ChatSidebar({
@@ -19,15 +20,20 @@ export function ChatSidebar({
   onToggle,
   onSessionSelect,
   onNewChat,
+  desktop = false,
 }: ChatSidebarProps) {
   return (
     <div
-      className={`h-full flex-shrink-0 overflow-hidden border-r border-border bg-card-bg/86 backdrop-blur transition-[width] duration-200 ${
-        collapsed ? "w-0" : "w-[260px]"
+      className={`${
+        desktop
+          ? "h-full w-full rounded-[2rem] border border-[var(--marketing-border)] bg-[var(--marketing-header-panel-bg)] shadow-[0_24px_70px_rgba(28,24,18,0.12)]"
+          : "h-full border-r border-border bg-card-bg/86"
+      } flex-shrink-0 overflow-hidden backdrop-blur transition-[width] duration-200 ${
+        collapsed ? "w-0" : desktop ? "w-[300px]" : "w-[260px]"
       }`}
     >
-      <div className="flex h-full w-[260px] flex-col">
-        <div className="flex h-14 shrink-0 items-center justify-between border-b border-border px-4">
+      <div className={`flex h-full flex-col ${desktop ? "w-[300px]" : "w-[260px]"}`}>
+        <div className={`flex shrink-0 items-center justify-between border-b border-border px-4 ${desktop ? "h-16" : "h-14"}`}>
           <span className="text-sm font-semibold tracking-tight text-foreground">
             История AI Chat
           </span>
@@ -44,7 +50,7 @@ export function ChatSidebar({
           <button
             type="button"
             onClick={onNewChat}
-            className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-primary px-3 text-sm font-medium text-white transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+            className={`flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-primary px-3 text-sm font-medium text-white transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 ${desktop ? "rounded-2xl shadow-[0_12px_28px_rgba(37,99,235,0.2)]" : ""}`}
           >
             <Plus className="h-4 w-4" />
             Новый разбор
@@ -66,7 +72,9 @@ export function ChatSidebar({
                       onClick={() => onSessionSelect(session.id)}
                       className={`flex min-h-11 w-full items-center gap-2.5 rounded-lg px-3 py-2 text-left text-sm transition-colors ${
                         isActive
-                          ? "bg-border/50 font-medium text-foreground"
+                          ? desktop
+                            ? "bg-primary font-medium text-white shadow-[0_10px_22px_rgba(37,99,235,0.18)]"
+                            : "bg-border/50 font-medium text-foreground"
                           : "text-text-secondary hover:bg-foreground/5 hover:text-foreground"
                       }`}
                     >

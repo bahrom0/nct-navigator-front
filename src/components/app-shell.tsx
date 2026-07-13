@@ -13,6 +13,7 @@ import { useServerStatusStore } from "@/stores/server-status-store";
 import { logActivityEvent } from "@/lib/activity-logger";
 import { useProfileSync } from "@/lib/chat/use-profile-sync";
 import { useMobileChatNavStore } from "@/stores/mobile-chat-nav-store";
+import { useDashboardMobileNavStore } from "@/stores/dashboard-mobile-nav-store";
 import { useUserChatStore } from "@/lib/user-chat/store";
 import { AnimatedShellTitle } from "@/components/animated-shell-title";
 import { ThemeSync } from "@/components/theme/ThemeSync";
@@ -26,6 +27,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const activeConversationId = useUserChatStore((s) => s.activeConversationId);
   const openMobileChatNav = useMobileChatNavStore((s) => s.open);
+  const dashboardMobileNavOpen = useDashboardMobileNavStore((s) => s.isOpen);
   const isServerAvailable = useServerStatusStore((s) => s.isAvailable);
   const serverMessage = useServerStatusStore((s) => s.message);
   const maintenanceVariant = useServerStatusStore((s) => s.maintenanceVariant);
@@ -143,7 +145,7 @@ export function AppShell({ children }: { children: ReactNode }) {
     <div className={isDashboardRoute ? "dashboard-route flex min-h-full flex-col" : "flex min-h-full flex-col"}>
       <ThemeSync />
       <header className="pointer-events-none fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-5 lg:px-6">
-        <div className="pointer-events-auto relative mx-auto max-w-7xl overflow-hidden rounded-[1.9rem] border border-[var(--marketing-border)] bg-[var(--marketing-header-bg)] px-3 py-2.5 shadow-[0_24px_80px_rgba(28,24,18,0.14)] ring-1 ring-[rgba(255,255,255,0.28)] backdrop-blur-[22px] dark:shadow-[0_24px_80px_rgba(0,0,0,0.45)] dark:ring-[rgba(255,255,255,0.08)]">
+        <div className={`pointer-events-auto relative mx-auto max-w-7xl overflow-hidden rounded-[1.9rem] border border-[var(--marketing-border)] bg-[var(--marketing-header-bg)] px-3 py-2.5 shadow-[0_24px_80px_rgba(28,24,18,0.14)] ring-1 ring-[rgba(255,255,255,0.28)] backdrop-blur-[22px] transition-opacity duration-300 dark:shadow-[0_24px_80px_rgba(0,0,0,0.45)] dark:ring-[rgba(255,255,255,0.08)] ${isDashboardRoute && dashboardMobileNavOpen ? "opacity-[.55]" : ""}`}>
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.28),transparent_45%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_45%)]" />
           <div className="relative flex min-h-12 items-center justify-between gap-3">
           <div className="flex min-w-0 items-center gap-2">
