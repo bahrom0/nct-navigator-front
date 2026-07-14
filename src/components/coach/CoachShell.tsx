@@ -58,21 +58,20 @@ export function CoachShell({ children }: CoachShellProps) {
 
       <AnimatePresence>
         {mobileOpen ? (
-          <motion.button
-            type="button"
+          <motion.div
             aria-label="Закрыть меню Coach"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setMobileOpen(false)}
-            className="fixed inset-x-0 bottom-0 top-14 z-30 bg-black/40 lg:hidden"
+            className="fixed inset-0 z-30 bg-black/45 lg:hidden"
           />
         ) : null}
       </AnimatePresence>
 
       <aside
         aria-label="Разделы Coach"
-        className={`dashboard-sidebar fixed left-0 top-[4.5rem] z-50 flex max-h-[calc(100dvh-5.5rem)] w-[min(19rem,calc(100vw-1.5rem))] flex-col transition-transform duration-200 lg:left-6 lg:top-1/2 lg:max-h-[calc(100dvh-3rem)] lg:-translate-y-1/2 ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
+        className={`dashboard-sidebar fixed left-1/2 top-1/2 z-50 flex max-h-[calc(100dvh-3rem)] w-[min(18rem,calc(100vw-1.5rem))] -translate-x-1/2 -translate-y-1/2 flex-col transition-[transform,opacity] duration-300 ease-out lg:left-6 lg:top-1/2 lg:max-h-[calc(100dvh-3rem)] lg:translate-x-0 lg:-translate-y-1/2 ${mobileOpen ? "scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0 lg:pointer-events-auto lg:scale-100 lg:opacity-100"}`}
       >
         <div className="flex items-start justify-between border-b border-border px-5 py-5">
           <div className="min-w-0">
