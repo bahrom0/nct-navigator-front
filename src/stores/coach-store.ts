@@ -69,6 +69,9 @@ interface CoachStore {
   activeTab: CoachActiveTab
   setActiveTab: (tab: CoachActiveTab) => void
 
+  mobileHistoryOpen: boolean
+  setMobileHistoryOpen: (open: boolean) => void
+
   isLoading: boolean
   setLoading: (loading: boolean) => void
 
@@ -388,6 +391,8 @@ export const useCoachStore = create<CoachStore>((set, get) => {
     set((state) => ({ taskSteps: { ...state.taskSteps, [taskId]: steps } })),
 
   activeTab: persisted.activeTab,
+  mobileHistoryOpen: false,
+  setMobileHistoryOpen: (open) => set({ mobileHistoryOpen: open }),
   setActiveTab: (tab) => set((state) => {
     const next = { ...state, activeTab: tab }
     persistCoachState(next)
@@ -415,6 +420,7 @@ export const useCoachStore = create<CoachStore>((set, get) => {
       progress: initialProgress,
       taskSteps: {},
       activeTab: "today",
+      mobileHistoryOpen: false,
       isLoading: false,
       error: null,
     })

@@ -3,12 +3,13 @@
 import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowLeft, Bot, GraduationCap, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowLeft, Bot, GraduationCap, History, MessageCircle, Sparkles } from "lucide-react";
 import { ProfileButton, ProfileDrawer } from "@/components/profile";
 import { LoginModal } from "@/components/auth/LoginModal";
 import { MaintenanceScreen } from "@/components/system/MaintenanceScreen";
 import { useAuthStore } from "@/stores/auth-store";
 import { useProfileStore } from "@/stores/profile-store";
+import { useCoachStore } from "@/stores/coach-store";
 import { useServerStatusStore } from "@/stores/server-status-store";
 import { logActivityEvent } from "@/lib/activity-logger";
 import { useProfileSync } from "@/lib/chat/use-profile-sync";
@@ -24,6 +25,8 @@ export function AppShell({ children }: { children: ReactNode }) {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const hydrate = useAuthStore((s) => s.hydrate);
   const activeGoal = useProfileStore((s) => s.activeGoal);
+  const coachActiveTab = useCoachStore((s) => s.activeTab);
+  const setCoachHistoryOpen = useCoachStore((s) => s.setMobileHistoryOpen);
   const pathname = usePathname();
   const activeConversationId = useUserChatStore((s) => s.activeConversationId);
   const openMobileChatNav = useMobileChatNavStore((s) => s.open);
@@ -52,6 +55,7 @@ export function AppShell({ children }: { children: ReactNode }) {
     pathname?.startsWith("/plan") ||
     pathname?.startsWith("/coach");
   const showBackButton = isChatRoute && !!activeConversationId;
+  const isCoachChat = pathname === "/coach" && coachActiveTab === "chat";
 
   useEffect(() => {
     const handler = () => {
@@ -198,8 +202,25 @@ export function AppShell({ children }: { children: ReactNode }) {
                 </Link>
               </>
             ) : null}
-            <ThemeToggle variant="marketing" />
+            {isCoachChat ? (
+              <span className="hidden sm:block">
+                <ThemeToggle variant="marketing" />
+              </span>
+            ) : (
+              <ThemeToggle variant="marketing" />
+            )}
             <ProfileButton />
+            {isCoachChat ? (
+              <button
+                type="button"
+                onClick={() => setCoachHistoryOpen(true)}
+                aria-label="Открыть историю чатов"
+                title="История чатов"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-[var(--marketing-border)] bg-[var(--marketing-surface)] text-[var(--marketing-foreground)] shadow-[0_10px_24px_rgba(32,28,24,0.06)] backdrop-blur-xl transition-colors hover:border-[var(--marketing-border-strong)] hover:bg-[var(--marketing-nav-chip-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--marketing-accent)]/30 sm:hidden"
+              >
+                <History className="h-[18px] w-[18px]" aria-hidden="true" />
+              </button>
+            ) : null}
           </div>
           </div>
         </div>

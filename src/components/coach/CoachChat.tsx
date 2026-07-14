@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useCallback, useEffect, useRef } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import { MessageSquare, Sparkles } from "lucide-react"
+import { Sparkles } from "lucide-react"
 import { useCoachStore } from "@/stores/coach-store"
 import { useProfileStore } from "@/stores/profile-store"
 import { ChatMessages } from "@/components/chat/chat-messages"
@@ -118,13 +118,14 @@ export function CoachChat() {
     setLoading,
     error,
     setError,
+    mobileHistoryOpen,
+    setMobileHistoryOpen,
   } = useCoachStore()
   const profileGoal = useProfileStore((s) => s.activeGoal)
   const resolvedGoal = goal ?? profileGoal
 
   const [input, setInput] = useState("")
   const [streamingId, setStreamingId] = useState<string | null>(null)
-  const [historyOpen, setHistoryOpen] = useState(false)
   const hydratedGoalRef = useRef<string | null>(null)
   const messages = useMemo(() => (Array.isArray(rawMessages) ? rawMessages : []), [rawMessages])
   const diagnostics = useMemo(() => (Array.isArray(rawDiagnostics) ? rawDiagnostics : []), [rawDiagnostics])
@@ -356,20 +357,12 @@ export function CoachChat() {
     setInput("")
     setStreamingId(null)
     setError(null)
-    setHistoryOpen(false)
-  }, [clearMessages, setError])
+    setMobileHistoryOpen(false)
+  }, [clearMessages, setError, setMobileHistoryOpen])
 
   return (
-    <div className="flex min-h-0 flex-1 overflow-hidden bg-background lg:rounded-[1.75rem] lg:border lg:border-border lg:bg-card-bg/45 lg:shadow-[0_18px_54px_rgba(28,24,18,0.06)] lg:backdrop-blur">
+    <div className="flex h-full min-h-0 flex-1 overflow-hidden bg-background lg:rounded-[1.75rem] lg:border lg:border-border lg:bg-card-bg/45 lg:shadow-[0_18px_54px_rgba(28,24,18,0.06)] lg:backdrop-blur">
       <div className="relative flex min-w-0 flex-1 flex-col">
-        <button
-          type="button"
-          onClick={() => setHistoryOpen(true)}
-          className="absolute right-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-2xl border border-border bg-surface-raised/95 text-text-secondary shadow-sm backdrop-blur transition-colors hover:text-foreground lg:hidden"
-          aria-label="Открыть историю чата"
-        >
-          <MessageSquare className="h-4 w-4" aria-hidden="true" />
-        </button>
         <ChatMessages
           messages={chatMessages}
           isLoading={isLoading}
@@ -424,8 +417,8 @@ export function CoachChat() {
         </div>
       </div>
       <CoachChatHistory
-        mobileOpen={historyOpen}
-        onMobileClose={() => setHistoryOpen(false)}
+        mobileOpen={mobileHistoryOpen}
+        onMobileClose={() => setMobileHistoryOpen(false)}
         onNewChat={startNewChat}
       />
     </div>

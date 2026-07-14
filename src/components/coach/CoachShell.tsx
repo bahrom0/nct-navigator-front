@@ -43,7 +43,7 @@ export function CoachShell({ children }: CoachShellProps) {
     <div
       className={`dashboard-shell coach-shell ${
         activeTab === "chat"
-          ? "flex h-[calc(100dvh-4.5rem)] max-h-[calc(100dvh-4.5rem)] overflow-hidden"
+          ? "flex h-[calc(100dvh-6rem)] max-h-[calc(100dvh-6rem)] overflow-hidden sm:h-[calc(100dvh-7rem)] sm:max-h-[calc(100dvh-7rem)]"
           : "min-h-[calc(100dvh-3.5rem)]"
       }`}
     >
@@ -51,7 +51,7 @@ export function CoachShell({ children }: CoachShellProps) {
         type="button"
         onClick={() => setMobileOpen(true)}
         aria-label="Открыть разделы Coach"
-        className="fixed bottom-5 right-4 z-40 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white shadow-[0_18px_40px_rgba(42,34,25,0.24)] transition-transform duration-200 hover:scale-[1.03] focus-visible:outline-none lg:hidden"
+        className="fixed left-4 top-[5.5rem] z-40 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white shadow-[0_18px_40px_rgba(42,34,25,0.24)] transition-transform duration-200 hover:scale-[1.03] focus-visible:outline-none lg:hidden"
       >
         <Menu className="h-5 w-5" aria-hidden="true" />
       </button>

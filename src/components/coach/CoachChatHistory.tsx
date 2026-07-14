@@ -1,5 +1,7 @@
 "use client"
 
+import { useSyncExternalStore } from "react"
+import { createPortal } from "react-dom"
 import { AnimatePresence, motion } from "framer-motion"
 import { Bot, MessageSquare, PanelRightClose, Plus, UserRound, X } from "lucide-react"
 import { useCoachStore } from "@/stores/coach-store"
@@ -19,7 +21,7 @@ export function CoachChatHistory({ mobileOpen = false, onMobileClose, onNewChat 
 
       <AnimatePresence>
         {mobileOpen ? (
-          <div className="fixed inset-0 z-50 lg:hidden">
+          <div className="hidden">
             <motion.button
               type="button"
               aria-label="Закрыть историю чата"
@@ -42,7 +44,47 @@ export function CoachChatHistory({ mobileOpen = false, onMobileClose, onNewChat 
           </div>
         ) : null}
       </AnimatePresence>
+      <MobileHistoryPortal mobileOpen={mobileOpen} onMobileClose={onMobileClose} onNewChat={onNewChat} />
     </>
+  )
+}
+
+function MobileHistoryPortal({ mobileOpen, onMobileClose, onNewChat }: CoachChatHistoryProps) {
+  const mounted = useSyncExternalStore(
+    () => () => undefined,
+    () => true,
+    () => false,
+  )
+
+  if (!mounted) return null
+
+  return createPortal(
+    <AnimatePresence>
+      {mobileOpen ? (
+        <div className="fixed inset-0 z-[100] lg:hidden">
+          <motion.button
+            type="button"
+            aria-label="Закрыть историю чата"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.16 }}
+            className="absolute inset-0 bg-black/45"
+            onClick={onMobileClose}
+          />
+          <motion.aside
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            className="absolute inset-y-0 right-0 w-[min(88vw,340px)] p-2"
+          >
+            <HistoryPanel onClose={onMobileClose} onNewChat={onNewChat} />
+          </motion.aside>
+        </div>
+      ) : null}
+    </AnimatePresence>,
+    document.body,
   )
 }
 
