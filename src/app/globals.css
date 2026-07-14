@@ -41,6 +41,15 @@
     linear-gradient(180deg, rgba(52, 45, 37, 0.26), rgba(52, 45, 37, 0.42));
   --marketing-nav-chip: rgba(255, 255, 255, 0.92);
   --marketing-nav-chip-hover: rgba(255, 255, 255, 0.98);
+  --rank-gold-bg: #fffaf0;
+  --rank-gold-border: rgb(190 145 48 / 0.42);
+  --rank-gold-foreground: #8a6a20;
+  --rank-silver-bg: #f4f6f8;
+  --rank-silver-border: rgb(124 139 158 / 0.38);
+  --rank-silver-foreground: #64748b;
+  --rank-bronze-bg: #fbf1e9;
+  --rank-bronze-border: rgb(174 104 61 / 0.34);
+  --rank-bronze-foreground: #925f43;
 }
 
 [data-theme="dark"] {
@@ -84,6 +93,15 @@
     linear-gradient(180deg, rgba(4, 6, 10, 0.68), rgba(4, 6, 10, 0.38));
   --marketing-nav-chip: rgba(27, 31, 38, 0.86);
   --marketing-nav-chip-hover: rgba(34, 39, 47, 0.98);
+  --rank-gold-bg: rgb(67 57 31 / 0.68);
+  --rank-gold-border: rgb(220 181 88 / 0.38);
+  --rank-gold-foreground: #d8b86c;
+  --rank-silver-bg: rgb(43 49 58 / 0.82);
+  --rank-silver-border: rgb(165 177 193 / 0.32);
+  --rank-silver-foreground: #b5c0cf;
+  --rank-bronze-bg: rgb(61 47 40 / 0.82);
+  --rank-bronze-border: rgb(199 133 97 / 0.34);
+  --rank-bronze-foreground: #d2a087;
 }
 
 @theme inline {
@@ -317,15 +335,15 @@ button {
 }
 
 .navigator-recommendation-card--rank-gold {
-  border-color: rgb(190 145 48 / 0.42);
+  border-color: var(--rank-gold-border);
 }
 
 .navigator-recommendation-card--rank-silver {
-  border-color: rgb(124 139 158 / 0.42);
+  border-color: var(--rank-silver-border);
 }
 
 .navigator-recommendation-card--rank-bronze {
-  border-color: rgb(174 104 61 / 0.42);
+  border-color: var(--rank-bronze-border);
 }
 
 .navigator-recommendation-rank {
@@ -344,18 +362,21 @@ button {
 }
 
 .navigator-recommendation-rank--gold {
-  color: #a87812;
-  background: linear-gradient(145deg, #fff7d6, #e7b93f);
+  color: var(--rank-gold-foreground);
+  background: var(--rank-gold-bg);
+  border-color: var(--rank-gold-border);
 }
 
 .navigator-recommendation-rank--silver {
-  color: #64748b;
-  background: linear-gradient(145deg, #f8fafc, #cbd5e1);
+  color: var(--rank-silver-foreground);
+  background: var(--rank-silver-bg);
+  border-color: var(--rank-silver-border);
 }
 
 .navigator-recommendation-rank--bronze {
-  color: #934b2b;
-  background: linear-gradient(145deg, #ffe4d4, #c9825b);
+  color: var(--rank-bronze-foreground);
+  background: var(--rank-bronze-bg);
+  border-color: var(--rank-bronze-border);
 }
 
 .navigator-recommendation-reason {
