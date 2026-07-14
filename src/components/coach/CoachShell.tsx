@@ -40,7 +40,13 @@ export function CoachShell({ children }: CoachShellProps) {
   }
 
   return (
-    <div className={`dashboard-shell coach-shell min-h-[calc(100dvh-3.5rem)] ${activeTab === "chat" ? "flex" : ""}`}>
+    <div
+      className={`dashboard-shell coach-shell ${
+        activeTab === "chat"
+          ? "flex h-[calc(100dvh-4.5rem)] max-h-[calc(100dvh-4.5rem)] overflow-hidden"
+          : "min-h-[calc(100dvh-3.5rem)]"
+      }`}
+    >
       <button
         type="button"
         onClick={() => setMobileOpen(true)}
@@ -103,8 +109,14 @@ export function CoachShell({ children }: CoachShellProps) {
         </div>
       </aside>
 
-      <main className={`coach-main min-w-0 flex-1 px-4 py-5 sm:px-6 sm:py-7 lg:pl-[22rem] lg:pr-10 ${activeTab === "chat" ? "flex min-h-0 flex-col" : ""}`}>
-        <div className={`mx-auto w-full ${activeTab === "chat" ? "flex min-h-0 max-w-6xl flex-1 flex-col" : "max-w-6xl"}`}>
+      <main
+        className={`coach-main min-w-0 flex-1 ${
+          activeTab === "chat"
+            ? "flex h-full min-h-0 flex-col overflow-hidden px-0 py-0 lg:px-0 lg:py-7 lg:pl-[22rem] lg:pr-10"
+            : "px-4 py-5 sm:px-6 sm:py-7 lg:pl-[22rem] lg:pr-10"
+        }`}
+      >
+        <div className={`mx-auto w-full ${activeTab === "chat" ? "flex h-full min-h-0 flex-1 flex-col overflow-hidden lg:max-w-6xl" : "max-w-6xl"}`}>
           {activeTab !== "chat" ? <CoachHeading goalTitle={resolvedGoal?.nctTitle} activeTab={activeTab} /> : null}
           {activeTab === "chat" ? (
             children

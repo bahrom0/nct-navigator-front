@@ -1,6 +1,8 @@
 "use client"
 
 import { useState, useMemo, useCallback, useEffect, useRef } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import { MessageSquare, Sparkles } from "lucide-react"
 import { useCoachStore } from "@/stores/coach-store"
 import { useProfileStore } from "@/stores/profile-store"
 import { ChatMessages } from "@/components/chat/chat-messages"
@@ -110,6 +112,7 @@ export function CoachChat() {
     setMiniTests,
     addMiniTest,
     setMiniTestResult,
+    clearMessages,
     progress,
     isLoading,
     setLoading,
@@ -121,10 +124,12 @@ export function CoachChat() {
 
   const [input, setInput] = useState("")
   const [streamingId, setStreamingId] = useState<string | null>(null)
+  const [historyOpen, setHistoryOpen] = useState(false)
   const hydratedGoalRef = useRef<string | null>(null)
-  const messages = Array.isArray(rawMessages) ? rawMessages : []
-  const diagnostics = Array.isArray(rawDiagnostics) ? rawDiagnostics : []
-  const miniTests = Array.isArray(rawMiniTests) ? rawMiniTests : []
+  const messages = useMemo(() => (Array.isArray(rawMessages) ? rawMessages : []), [rawMessages])
+  const diagnostics = useMemo(() => (Array.isArray(rawDiagnostics) ? rawDiagnostics : []), [rawDiagnostics])
+  const miniTests = useMemo(() => (Array.isArray(rawMiniTests) ? rawMiniTests : []), [rawMiniTests])
+  const resolvedGoalId = resolvedGoal?.id
 
   const chatMessages = useMemo<TeacherMessage[]>(
     () =>
@@ -138,7 +143,7 @@ export function CoachChat() {
   )
 
   useEffect(() => {
-    const goalId = resolvedGoal?.id
+    const goalId = resolvedGoalId
     if (!goalId || hydratedGoalRef.current === goalId) return
     const activeGoalId = goalId
 
@@ -177,7 +182,7 @@ export function CoachChat() {
     return () => {
       cancelled = true
     }
-  }, [resolvedGoal?.id, setMessages, setMiniTests])
+  }, [resolvedGoalId, setMessages, setMiniTests])
 
   const handleSend = useCallback(async (prefilledText?: string) => {
     const text = (prefilledText ?? input).trim()
@@ -194,8 +199,8 @@ export function CoachChat() {
       timestamp: Date.now(),
     }
     addMessage(userMsg)
-    if (resolvedGoal?.id) {
-      void persistCoachMessage(userMsg, resolvedGoal.id)
+    if (resolvedGoalId) {
+      void persistCoachMessage(userMsg, resolvedGoalId)
     }
 
     setLoading(true)
@@ -254,15 +259,15 @@ export function CoachChat() {
       addMessage(coachMsg)
       setStreamingId(coachMsg.id)
 
-      if (resolvedGoal?.id) {
-        void persistCoachMessage(coachMsg, resolvedGoal.id)
+      if (resolvedGoalId) {
+        void persistCoachMessage(coachMsg, resolvedGoalId)
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Ошибка сети")
     } finally {
       setLoading(false)
     }
-  }, [input, isLoading, addMessage, messages, resolvedGoal, setLoading, setError, plan, roadmap, dayPlan, dailyHistory, diagnostics, miniTests, progress, addMiniTest])
+  }, [input, isLoading, addMessage, messages, resolvedGoal, resolvedGoalId, setLoading, setError, plan, roadmap, dayPlan, dailyHistory, diagnostics, miniTests, progress, addMiniTest])
 
   const handleMiniTestComplete = useCallback(async (
     testId: string,
@@ -323,13 +328,13 @@ export function CoachChat() {
       }
 
       addMessage(reportMessage)
-      if (resolvedGoal?.id) {
-        void persistCoachMessage(reportMessage, resolvedGoal.id)
+      if (resolvedGoalId) {
+        void persistCoachMessage(reportMessage, resolvedGoalId)
       }
     } catch {
       // Non-blocking: the quiz result is already saved locally/server-side.
     }
-  }, [miniTests, messages, setMiniTestResult, addMessage, resolvedGoal?.id])
+  }, [miniTests, messages, setMiniTestResult, addMessage, resolvedGoalId])
 
   const regenerateMessage = useCallback(
     (messageId: string) => {
@@ -346,15 +351,52 @@ export function CoachChat() {
     [chatMessages, handleSend],
   )
 
+  const startNewChat = useCallback(() => {
+    clearMessages()
+    setInput("")
+    setStreamingId(null)
+    setError(null)
+    setHistoryOpen(false)
+  }, [clearMessages, setError])
+
   return (
-    <div className="flex min-h-0 flex-1 overflow-hidden">
-      <div className="flex min-w-0 flex-1 flex-col">
+    <div className="flex min-h-0 flex-1 overflow-hidden bg-background lg:rounded-[1.75rem] lg:border lg:border-border lg:bg-card-bg/45 lg:shadow-[0_18px_54px_rgba(28,24,18,0.06)] lg:backdrop-blur">
+      <div className="relative flex min-w-0 flex-1 flex-col">
+        <button
+          type="button"
+          onClick={() => setHistoryOpen(true)}
+          className="absolute right-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-2xl border border-border bg-surface-raised/95 text-text-secondary shadow-sm backdrop-blur transition-colors hover:text-foreground lg:hidden"
+          aria-label="Открыть историю чата"
+        >
+          <MessageSquare className="h-4 w-4" aria-hidden="true" />
+        </button>
         <ChatMessages
           messages={chatMessages}
           isLoading={isLoading}
           error={error}
           streamingId={streamingId}
           onRegenerate={regenerateMessage}
+          loadingText="Coach думает..."
+          emptyState={(
+            <AnimatePresence mode="wait">
+              <motion.div
+                key="coach-empty"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                className="mx-auto flex max-w-xl flex-col items-center text-center"
+              >
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-border bg-surface-soft text-primary">
+                  <Sparkles className="h-7 w-7" aria-hidden="true" />
+                </div>
+                <h1 className="text-xl font-semibold tracking-[-0.02em] text-foreground">С чего начнём?</h1>
+                <p className="mt-2 max-w-md text-sm leading-6 text-text-secondary">
+                  Спросите наставника о теме, задании, плане подготовки или мини-тесте по текущей цели.
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          )}
           renderAfterMessage={(messageId) => {
             const message = messages.find((item) => item.id === messageId)
             if (!message?.miniTest) return null
@@ -371,16 +413,21 @@ export function CoachChat() {
             )
           }}
         />
-        <div className="z-20 shrink-0 bg-gradient-to-t from-background via-background to-transparent pt-4">
+        <div className="z-20 shrink-0 bg-gradient-to-t from-background via-background/95 to-transparent pt-3 sm:pt-4">
           <ChatComposer
             input={input}
             onInputChange={setInput}
             onSend={handleSend}
             isLoading={isLoading}
+            placeholder="Спросите наставника..."
           />
         </div>
       </div>
-      <CoachChatHistory />
+      <CoachChatHistory
+        mobileOpen={historyOpen}
+        onMobileClose={() => setHistoryOpen(false)}
+        onNewChat={startNewChat}
+      />
     </div>
   )
 }

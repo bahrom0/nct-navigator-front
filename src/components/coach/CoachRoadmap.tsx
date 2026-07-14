@@ -77,7 +77,7 @@ export function CoachRoadmap({ onGenerate, onNavigateDate }: CoachRoadmapProps) 
 
   return (
     <section className="space-y-6">
-      {/* <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+      <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-text-muted">Маршрут подготовки</p>
           <h2 className="mt-2 text-xl font-semibold tracking-[-0.025em] text-foreground">Roadmap</h2>
@@ -112,7 +112,7 @@ export function CoachRoadmap({ onGenerate, onNavigateDate }: CoachRoadmapProps) 
             </button>
           </div>
         ) : null}
-      </div> */}
+      </div>
       <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(360px,0.9fr)]">
         <div className="space-y-2">
           <p className="mb-3 text-sm font-semibold text-foreground">Недельный маршрут</p>
@@ -120,7 +120,7 @@ export function CoachRoadmap({ onGenerate, onNavigateDate }: CoachRoadmapProps) 
             <motion.div
               key={week.id}
               initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 0, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{
                 delay: index * 0.04,
                 duration: 0.25,
