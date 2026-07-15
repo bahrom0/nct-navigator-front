@@ -1,4 +1,4 @@
-const TOKEN_RE = /[a-zа-я0-9]+/g
+const TOKEN_RE = /[\p{L}\p{N}]+/gu
 const MULTISPACE_RE = /\s+/g
 const CODE_RE = /^(?:\d{6,}|[a-z]?\d{6,}|\d{2}(?:\.\d{2}){1,2})$/i
 
@@ -79,7 +79,7 @@ export function normalizeText(value: string): string {
     .replace(/ё/g, "е")
     .replace(/[\u2010-\u2015]/g, "-")
     .replace(/['"’"«»„“”]/g, " ")
-    .replace(/[^a-zа-я0-9.\s-]+/gi, " ")
+    .replace(/[^\p{L}\p{N}.\s-]+/gu, " ")
     .replace(/[-/]+/g, " ")
     .replace(MULTISPACE_RE, " ")
     .trim()

@@ -1,0 +1,10 @@
+{
+  "source_document_id": "legacy_new_db_json_b252a874cda9",
+  "source_id": "legacy_new_db_json",
+  "source_kind": "legacy_json",
+  "usage": "legacy_compare_only",
+  "original_path": "src/data/new_db.json",
+  "local_path": "data/raw/ntc/legacy/legacy_new_db_json.json",
+  "checksum": "b252a874cda937f05fd6e1ad49d146dc59481a27022f7c4c50ad9ddb13f572f1",
+  "downloaded_at": "2026-07-15T15:07:46.886Z"
+}

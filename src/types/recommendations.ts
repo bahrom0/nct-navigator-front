@@ -21,6 +21,51 @@ export interface RecommendationDecisionContext {
     professions: string[]
     directions: string[]
     searchIntents: string[]
+    professionRoutes?: Array<{
+      professionKey: string
+      title: string
+      score: number
+      relationTypes: string[]
+      matchedInterests: string[]
+    }>
+    professionRouting?: {
+      catalogVersion: string
+      activeProfessionCount: number
+      scoredProfessionCount: number
+      selectedProfessionKeys: string[]
+      catalogGaps: string[]
+      linkedSpecialtyFamilies: string[]
+      allowedClusterIds: number[]
+      candidateCounts: {
+        beforeProfessionRoute: number
+        afterProfessionRoute: number
+      }
+    }
+    diagnostics?: {
+      catalogVersion: string
+      selectedCityId: string
+      selectedEducationLevel: string
+      candidateCounts: {
+        rawNct: number
+        afterCity: number
+        afterEducation: number
+        afterProfessionRoute: number
+        afterDedupe: number
+        final: number
+      }
+      ai: {
+        professionRerankUsed: boolean
+        nctRerankUsed: boolean
+        fallbackUsed: boolean
+        rejectedKeys: string[]
+      }
+      violations: {
+        wrongCity: number
+        hardFilter: number
+        unknownCode: number
+        unknownProfessionKey: number
+      }
+    }
   }
 }
 
@@ -43,6 +88,8 @@ export interface RecommendationSnapshot {
     categories: { id: string; name: string }[]
     keywords: string[]
     onboarding: RecommendationOnboardingContext | null
+    selectedCity?: string
+    selectedEducationLevel?: "after_9" | "after_11" | "applicant" | ""
   }
   selection: {
     code: string
@@ -54,6 +101,51 @@ export interface RecommendationSnapshot {
     matchedInterests: string[]
     matchedCareers: string[]
     relatedCodes: string[]
+    selectedProfessionKey?: string
+    professionRouteRelation?: "direct" | "adjacent" | "foundation"
+    routeScore?: number
+    professionRoutes?: Array<{
+      professionKey: string
+      professionTitle: string
+      relationType: "direct" | "adjacent" | "foundation"
+      confidence: number
+      routeScore: number
+    }>
+    scoreBreakdown?: {
+      matchScore: number
+      finalScore: number
+      confidence: number
+      lexicalScore?: number
+      semanticScore?: number
+      taxonomyScore?: number
+      facetScore?: number
+      qualityScore?: number
+    }
+    explanationFacts?: {
+      selectedCity?: string
+      selectedEducationLevel?: "after_9" | "after_11" | "applicant" | ""
+      institution: string
+      specialtyFamilyKey?: string
+      taxonomyPath: string[]
+      matchedKeywords: string[]
+      matchedInterests: string[]
+      matchedCareers: string[]
+      selectedProfessionKey?: string
+      professionRouteRelation?: "direct" | "adjacent" | "foundation"
+      routeScore?: number
+    }
+  }
+  diagnostics?: {
+    catalogVersion?: string
+    aiFallbackUsed: boolean
+    usedFallbacks: string[]
+    rejectedKeys: string[]
+    violations?: {
+      wrongCity: number
+      hardFilter: number
+      unknownCode: number
+      unknownProfessionKey: number
+    }
   }
   filters: {
     city?: string

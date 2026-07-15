@@ -8,6 +8,12 @@
     "dev": "next dev --webpack -H 0.0.0.0",
     "build": "next build",
     "build:backend": "npm --prefix backend run build",
+    "nct:stage1": "node scripts/nct_db/stage1.mjs",
+    "nct:stage2": "node scripts/nct_db/stage2.mjs",
+    "nct:stage2:verify": "node scripts/nct_db/verify-stage2.mjs",
+    "nct:stage3": "node scripts/nct_db/stage3.mjs",
+    "nct:stage3:verify": "node scripts/nct_db/verify-stage3.mjs",
+    "nct:recommendations:verify": "tsx --tsconfig backend/tsconfig.json backend/scripts/evaluate-recommendation-production.ts",
     "start": "next start",
     "lint": "eslint"
   },
@@ -30,6 +36,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.7",
+    "pdfjs-dist": "^6.1.200",
     "prettier": "^3.8.4",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "qrcode-terminal": "^0.12.0",
@@ -37,5 +44,4 @@
     "typescript": "^5",
     "vercel": "^54.14.0"
   }
-  
 }

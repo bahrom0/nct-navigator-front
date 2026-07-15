@@ -1,0 +1,10 @@
+{
+  "source_document_id": "legacy_nct_codes_json_4771fca81362",
+  "source_id": "legacy_nct_codes_json",
+  "source_kind": "legacy_json",
+  "usage": "legacy_compare_only",
+  "original_path": "src/data/nct-codes.json",
+  "local_path": "data/raw/ntc/legacy/legacy_nct_codes_json.json",
+  "checksum": "4771fca813624ca530f8535f5640194e3bc939139136a1effc75241823efd65b",
+  "downloaded_at": "2026-07-15T15:07:46.889Z"
+}

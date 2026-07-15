@@ -42,6 +42,7 @@ export interface NCTMatchResult {
   primaryTaxonomyNodeId?: string
   rootTaxonomyNodeIds?: string[]
   branchKey?: string
+  specialtyFamilyKey?: string
   lexicalScore?: number
   semanticScore?: number
   taxonomyScore?: number
@@ -49,6 +50,16 @@ export interface NCTMatchResult {
   qualityScore?: number
   searchIntent?: "broad" | "narrow" | "facet" | "code" | "comparison"
   education_level?: "after_9" | "after_11"
+  professionRoutes?: Array<{
+    professionKey: string
+    professionTitle: string
+    relationType: "direct" | "adjacent" | "foundation"
+    confidence: number
+    routeScore: number
+  }>
+  selectedProfessionKey?: string
+  professionRouteRelation?: "direct" | "adjacent" | "foundation"
+  routeScore?: number
 }
 
 export interface RankedNCT extends NCTMatchResult {

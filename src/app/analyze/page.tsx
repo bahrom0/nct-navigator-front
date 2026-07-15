@@ -28,6 +28,16 @@ const STEP_ORDER: AnalysisStep[] = [
   "forming_recommendations",
 ];
 
+function optionalString(value: unknown): string | undefined {
+  return typeof value === "string" && value.trim().length > 0 ? value : undefined;
+}
+
+function stringList(value: unknown): string[] | undefined {
+  if (!Array.isArray(value)) return undefined;
+  const values = value.filter((item): item is string => typeof item === "string" && item.trim().length > 0);
+  return values.length > 0 ? values : undefined;
+}
+
 function ProgressSummary({ progress, stageNumber }: { progress: number; stageNumber: number }) {
   const percentage = Math.round(progress * 100);
   const circumference = 2 * Math.PI * 17;
@@ -52,7 +62,7 @@ function ProgressSummary({ progress, stageNumber }: { progress: number; stageNum
           />
         </svg>
       </span>
-      <span className="text-sm font-semibold text-[var(--marketing-foreground)]"><span className="text-[var(--primary)]">{percentage}%</span> завершено</span>
+      <span className="text-sm font-semibold text-[var(--marketing-foreground)]"><span className="text-[var(--primary)]">{percentage}%</span> по реальным этапам</span>
       <span className="rounded-full bg-[var(--primary)]/10 px-3 py-1.5 text-sm font-semibold text-[var(--primary)]">{stageNumber} / {STEP_ORDER.length}</span>
     </div>
   );
@@ -70,6 +80,7 @@ export default function AnalyzePage() {
   const reset = useAnalysisStore((state) => state.reset);
   const [progress, setProgress] = useState(0);
   const onboardingLoaded = useOnboardingStore((state) => state._loaded);
+  const onboardingData = useOnboardingStore((state) => state.data);
   const selectedIds = useCategoryStore((state) => state.selected);
   const analysisFiredRef = useRef(false);
 
@@ -130,7 +141,6 @@ export default function AnalyzePage() {
       startAnalysis();
       updateStep("submitting_request");
 
-      const onboardingData = useOnboardingStore.getState().data;
       const payload = {
         categories: categories.map((category) => ({
           id: category.id,
@@ -140,11 +150,11 @@ export default function AnalyzePage() {
         topK: 8,
         minConfidence: 0.3,
         onboarding: {
-          userCity: onboardingData.userCity,
-          studyCity: onboardingData.studyCity,
-          userType: onboardingData.userType,
-          educationLevel: onboardingData.educationLevel,
-          interests: onboardingData.interests,
+          userCity: optionalString(onboardingData.userCity),
+          studyCity: optionalString(onboardingData.studyCity),
+          userType: optionalString(onboardingData.userType),
+          educationLevel: onboardingData.educationLevel ?? "",
+          interests: stringList(onboardingData.interests),
         },
       };
 
@@ -285,24 +295,41 @@ export default function AnalyzePage() {
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--marketing-muted)]">
-                Recommendation pipeline
+                Живой pipeline рекомендаций
               </p>
               <h1 className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-[var(--marketing-foreground)] sm:text-3xl">
-                Формируем ваши рекомендации НЦТ
+                Собираем рекомендации НЦТ по локальным фактам
               </h1>
               <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--marketing-muted)] sm:text-base">
-                Сначала анализируем профиль и интересы, затем ищем подходящие
-                коды по локальной базе и только после этого просим AI помочь с
-                финальным ранжированием shortlist.
+                Сначала строим profession shortlist, потом ищем коды НЦТ с жёсткими фильтрами по городу и уровню.
+                AI подключается только к валидному локальному shortlist и не может добавить свои коды.
               </p>
             </div>
           </div>
 
           <div className="rounded-[2rem] border border-[var(--marketing-border)] bg-[var(--marketing-surface-muted)] p-5 sm:p-7">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <p className="max-w-xl text-xs leading-5 text-[var(--marketing-muted)] sm:text-sm">
-                Этапы переключаются только по фактическому состоянию серверного пайплайна
-              </p>
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+              <div className="min-w-0">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--marketing-muted)]">
+                  Учитываем в подборе
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {[
+                    onboardingData.studyCity ? `Город: ${onboardingData.studyCity}` : "Город не выбран",
+                    onboardingData.educationLevel ? `Уровень: ${onboardingData.educationLevel}` : "Уровень не выбран",
+                    `${categories.length} направл. интересов`,
+                    "local shortlist",
+                    "allowlist validation",
+                  ].map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-[var(--marketing-border)] bg-[var(--marketing-surface)] px-3 py-1.5 text-xs font-semibold text-[var(--marketing-foreground)]"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
               <ProgressSummary progress={progress} stageNumber={Math.min(currentStepIndex + 1, STEP_ORDER.length)} />
             </div>
 

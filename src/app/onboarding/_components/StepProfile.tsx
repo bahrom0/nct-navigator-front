@@ -20,7 +20,7 @@ const WORKING_GOALS: { value: WorkingGoal; label: string }[] = [
 type ProfileMode = "schoolboy" | "working" | "none"
 
 function getProfileMode(userType: string): ProfileMode {
-  if (userType === "schoolboy") return "schoolboy"
+  if (userType === "schoolboy" || userType === "applicant") return "schoolboy"
   if (userType === "working") return "working"
   return "none"
 }
@@ -98,7 +98,7 @@ export function StepProfile() {
               type="button"
               onClick={() => {
                 setError("")
-                if (type.id === "schoolboy") {
+                if (type.id === "schoolboy" || type.id === "applicant") {
                   setData({
                     userType: type.id,
                     educationLevel: data.educationLevel === "after_9" || data.educationLevel === "after_11" ? data.educationLevel : "",

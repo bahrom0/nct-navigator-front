@@ -1,0 +1,22 @@
+[
+  {
+    "cluster": 1,
+    "offer_count": 549
+  },
+  {
+    "cluster": 2,
+    "offer_count": 350
+  },
+  {
+    "cluster": 3,
+    "offer_count": 300
+  },
+  {
+    "cluster": 4,
+    "offer_count": 100
+  },
+  {
+    "cluster": 5,
+    "offer_count": 230
+  }
+]

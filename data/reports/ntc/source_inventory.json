@@ -1,0 +1,223 @@
+{
+  "generated_at": "2026-07-15T15:07:50.910Z",
+  "online_access_attempted": true,
+  "online_access_summary": "See availability and notes for each official_html source. Local PDFs and legacy inventory continue independently.",
+  "sources": [
+    {
+      "source_id": "ntc_pdf_after_11_remaining_2025",
+      "source_type": "local_pdf",
+      "title": "Перечень оставшихся мест, база 11 классов, четвертый период",
+      "url": null,
+      "local_path": "pdf/11_class_all.pdf",
+      "academic_year": "2025",
+      "admission_period": "fourth_or_remaining_seats",
+      "education_level": "after_11",
+      "language": "ru",
+      "page_count": 69,
+      "checksum": "762356aeda2c6bf43a3d30099d6e46e0e83f138f0c49cf20cda37e4d3a2f1c09",
+      "downloaded_at": "2026-07-15T15:07:46.877Z",
+      "is_official": true,
+      "completeness": "remaining_seats",
+      "availability": "available_local",
+      "notes": [
+        "Официальный локальный PDF; не является полным планом 2026-2027."
+      ],
+      "layout_profile": "after_11_ru_remaining_seats_2025"
+    },
+    {
+      "source_id": "ntc_pdf_after_9_plan_2026_2027",
+      "source_type": "local_pdf",
+      "title": "План приема 2026-2027, база 9 классов, первый период",
+      "url": null,
+      "local_path": "pdf/9_class.pdf",
+      "academic_year": "2026-2027",
+      "admission_period": "first",
+      "education_level": "after_9",
+      "language": "tg",
+      "page_count": 37,
+      "checksum": "36a1f3e443673a4f2a519b816445bd13cde659a8d88dd3548539c3ad42ab60af",
+      "downloaded_at": "2026-07-15T15:07:46.882Z",
+      "is_official": true,
+      "completeness": "full_plan",
+      "availability": "available_local",
+      "notes": [
+        "Официальный локальный PDF."
+      ],
+      "layout_profile": "after_9_tg_full_plan_2026"
+    },
+    {
+      "source_id": "legacy_new_db_json",
+      "source_type": "legacy_json",
+      "title": "Legacy new_db.json",
+      "url": null,
+      "local_path": "src/data/new_db.json",
+      "academic_year": null,
+      "admission_period": null,
+      "education_level": null,
+      "language": "mixed",
+      "page_count": null,
+      "checksum": "b252a874cda937f05fd6e1ad49d146dc59481a27022f7c4c50ad9ddb13f572f1",
+      "downloaded_at": "2026-07-15T15:07:46.886Z",
+      "is_official": false,
+      "completeness": "unknown",
+      "availability": "available_local",
+      "notes": [
+        "Только legacy_compare/inventory; не источник истины и не вход staging."
+      ],
+      "layout_profile": null
+    },
+    {
+      "source_id": "legacy_nct_codes_json",
+      "source_type": "legacy_json",
+      "title": "Legacy nct-codes.json",
+      "url": null,
+      "local_path": "src/data/nct-codes.json",
+      "academic_year": null,
+      "admission_period": null,
+      "education_level": null,
+      "language": "mixed",
+      "page_count": null,
+      "checksum": "4771fca813624ca530f8535f5640194e3bc939139136a1effc75241823efd65b",
+      "downloaded_at": "2026-07-15T15:07:46.889Z",
+      "is_official": false,
+      "completeness": "unknown",
+      "availability": "available_local",
+      "notes": [
+        "Только legacy_compare/inventory; не источник истины и не вход staging."
+      ],
+      "layout_profile": null
+    },
+    {
+      "source_id": "ntc_admission_plan_page",
+      "source_type": "official_html",
+      "title": "План приема НЦТ",
+      "url": "https://ntc.tj/tj/ba-dovtalab/nakshai-kabul.html",
+      "local_path": null,
+      "academic_year": null,
+      "admission_period": null,
+      "education_level": null,
+      "language": "tg",
+      "page_count": null,
+      "checksum": null,
+      "downloaded_at": null,
+      "is_official": true,
+      "completeness": "unknown",
+      "availability": "unavailable",
+      "notes": [
+        "HTML snapshot будет добавлен при доступности сети.",
+        "Snapshot error: fetch failed"
+      ],
+      "layout_profile": null
+    },
+    {
+      "source_id": "stat_ntc_y26_rplan",
+      "source_type": "official_html",
+      "title": "Статистический план приема Y26",
+      "url": "https://stat.ntc.tj/Y26/RPlan",
+      "local_path": null,
+      "academic_year": "2026-2027",
+      "admission_period": null,
+      "education_level": null,
+      "language": "tg",
+      "page_count": null,
+      "checksum": null,
+      "downloaded_at": null,
+      "is_official": true,
+      "completeness": "full_plan",
+      "availability": "unavailable",
+      "notes": [
+        "HTML snapshot будет добавлен при доступности сети.",
+        "Snapshot error: fetch failed"
+      ],
+      "layout_profile": null
+    },
+    {
+      "source_id": "spec_ntc",
+      "source_type": "official_html",
+      "title": "Справочник специальностей НЦТ",
+      "url": "https://spec.ntc.tj/",
+      "local_path": null,
+      "academic_year": null,
+      "admission_period": null,
+      "education_level": null,
+      "language": "tg",
+      "page_count": null,
+      "checksum": null,
+      "downloaded_at": null,
+      "is_official": true,
+      "completeness": "guide",
+      "availability": "unavailable",
+      "notes": [
+        "HTML snapshot будет добавлен при доступности сети.",
+        "Snapshot error: fetch failed"
+      ],
+      "layout_profile": null
+    },
+    {
+      "source_id": "ntc_announcements",
+      "source_type": "official_html",
+      "title": "Объявления НЦТ",
+      "url": "https://ntc.tj/tj/elon1-3.html",
+      "local_path": null,
+      "academic_year": null,
+      "admission_period": null,
+      "education_level": null,
+      "language": "tg",
+      "page_count": null,
+      "checksum": null,
+      "downloaded_at": null,
+      "is_official": true,
+      "completeness": "unknown",
+      "availability": "unavailable",
+      "notes": [
+        "HTML snapshot будет добавлен при доступности сети.",
+        "Snapshot error: fetch failed"
+      ],
+      "layout_profile": null
+    },
+    {
+      "source_id": "ntc_institutions",
+      "source_type": "official_html",
+      "title": "Учреждения НЦТ",
+      "url": "https://ntc.tj/tj/ba-dovtalab/muassisaho.html",
+      "local_path": null,
+      "academic_year": null,
+      "admission_period": null,
+      "education_level": null,
+      "language": "tg",
+      "page_count": null,
+      "checksum": null,
+      "downloaded_at": null,
+      "is_official": true,
+      "completeness": "institution_list",
+      "availability": "unavailable",
+      "notes": [
+        "HTML snapshot будет добавлен при доступности сети.",
+        "Snapshot error: fetch failed"
+      ],
+      "layout_profile": null
+    },
+    {
+      "source_id": "ntc_applicant_guide",
+      "source_type": "official_html",
+      "title": "Руководство абитуриента НЦТ",
+      "url": "https://ntc.tj/tj/ba-dovtalab/rohnamoi-dovtalab.html",
+      "local_path": null,
+      "academic_year": null,
+      "admission_period": null,
+      "education_level": null,
+      "language": "tg",
+      "page_count": null,
+      "checksum": null,
+      "downloaded_at": null,
+      "is_official": true,
+      "completeness": "guide",
+      "availability": "unavailable",
+      "notes": [
+        "HTML snapshot будет добавлен при доступности сети.",
+        "Snapshot error: fetch failed"
+      ],
+      "layout_profile": null
+    }
+  ]
+}

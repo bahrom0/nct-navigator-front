@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-07-15T15:22:03.195Z",
+  "schema_version": "nct-search-v1",
+  "record_count": 1389,
+  "source_record_count": 1389,
+  "derived_fields": [
+    "keywords",
+    "transliterations",
+    "synonyms",
+    "taxonomy",
+    "professions"
+  ]
+}

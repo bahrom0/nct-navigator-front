@@ -1,0 +1,5108 @@
+[
+  {
+    "campus_key": "campus_ae018517844872ba4dd61859",
+    "institution_key": "institution_cf18d51f7ef243a05545a464",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский государственный университет права, бизнеса и политики"
+    ],
+    "source_row_ids": [
+      "3-1",
+      "3-7",
+      "5-12",
+      "7-4",
+      "38-9"
+    ],
+    "offer_count": 5,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_77b90c98afb0e289e190feb9",
+    "institution_key": "institution_b106b3e285c8e675638f203e",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Кулябский государственный университет имени Абуабдулло Рудаки"
+    ],
+    "source_row_ids": [
+      "3-2",
+      "4-14",
+      "5-9",
+      "9-7",
+      "46-7",
+      "47-4",
+      "53-10",
+      "54-5",
+      "54-12",
+      "55-4",
+      "55-10"
+    ],
+    "offer_count": 11,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_6eb132324bfe6da730fd346d",
+    "institution_key": "institution_592e0afa20d57a43aff4603f",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Институт экономики и торговли Таджикского государственного университета коммерции в городе Худжанд"
+    ],
+    "source_row_ids": [
+      "3-3",
+      "49-16",
+      "50-3"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_2e0d5b38556c2b8cc860c06c",
+    "institution_key": "institution_ec722cc42917209ada7326e8",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Государственный институт изобразительного искусства и дизайна Таджикистана"
+    ],
+    "source_row_ids": [
+      "3-4",
+      "5-5",
+      "37-7",
+      "37-8",
+      "38-4",
+      "38-8",
+      "38-12"
+    ],
+    "offer_count": 7,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_68e92a6a9386e7b4ede3ec65",
+    "institution_key": "institution_4b0c5a8ebe71d2ca40387e75",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Институт точных наук и технологий Таджикистана в городе Худжанд (негосударственный)"
+    ],
+    "source_row_ids": [
+      "3-5",
+      "5-10",
+      "5-17",
+      "9-3",
+      "40-1"
+    ],
+    "offer_count": 5,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_f0f3dae3d01281acf55900f8",
+    "institution_key": "institution_bef3e00d59e578ec9682af0b",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский технический университет имени академика М. С. Осими"
+    ],
+    "source_row_ids": [
+      "3-6",
+      "3-8",
+      "3-13",
+      "4-2",
+      "6-10",
+      "6-13",
+      "7-8",
+      "7-13",
+      "7-16",
+      "8-2",
+      "8-3",
+      "8-4",
+      "8-5",
+      "8-6",
+      "8-11",
+      "9-8",
+      "9-9",
+      "9-11",
+      "54-17"
+    ],
+    "offer_count": 19,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_4ccf5e4a19cee1efb2107115",
+    "institution_key": "institution_80268b0798ba2ed3cee6da25",
+    "location": "Kushoniyon",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Институт энергетики Таджикистана"
+    ],
+    "source_row_ids": [
+      "3-9"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_4bb1dfc913f44f03fb6c938a",
+    "institution_key": "institution_d6464ebb3afd3ab9a4f5383d",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Институт промышленности и сервиса (негосударственный)"
+    ],
+    "source_row_ids": [
+      "3-10",
+      "6-7",
+      "7-1"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_35dc1fc58ae8f100f3ab33a4",
+    "institution_key": "institution_f8d2d181b1a123cc41f8f609",
+    "location": "город Душанбе город Душанбе",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский национальный университет Таджикский технический университет"
+    ],
+    "source_row_ids": [
+      "3-11"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_b74067bec6c62434d8781e91",
+    "institution_key": "institution_31aab9f320377dcaa7842758",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "имени академика М. С. Осими Таджикский аграрный университет имени Шириншоха Шотемура"
+    ],
+    "source_row_ids": [
+      "3-12"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_f10b9fbe9ffac0f92695c361",
+    "institution_key": "institution_eacc6061cd19d0439ada0647",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский аграрный университет имени Шириншоха Шотемура"
+    ],
+    "source_row_ids": [
+      "3-14",
+      "4-5",
+      "4-8",
+      "4-9",
+      "8-7",
+      "53-12",
+      "53-13",
+      "54-2",
+      "54-3",
+      "55-12"
+    ],
+    "offer_count": 10,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_c016b6679e8a6743aa111722",
+    "institution_key": "institution_50a8811f6baf5c80ec862a9e",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский национальный университет"
+    ],
+    "source_row_ids": [
+      "4-1",
+      "4-3",
+      "4-4",
+      "6-5",
+      "7-15",
+      "46-1",
+      "53-14"
+    ],
+    "offer_count": 7,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_190723a95409675faf80d38f",
+    "institution_key": "institution_d8f2da5f32c34598c0562638",
+    "location": "Khorog",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Хорогский государственный университет имени Моёншо Назаршоева"
+    ],
+    "source_row_ids": [
+      "4-6",
+      "4-13",
+      "5-6",
+      "5-7",
+      "39-8",
+      "40-3",
+      "40-4",
+      "53-9",
+      "54-11",
+      "55-11"
+    ],
+    "offer_count": 10,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_eae77fa663f8856d0014fa26",
+    "institution_key": "institution_a24d04f99c17dd82aaf8bb7d",
+    "location": "район Дангара город Бустон",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Дангаринский государственный университет Горно - металлургический институт Таджикистана"
+    ],
+    "source_row_ids": [
+      "4-7"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_6ea5dbe5fa88d88e399c6ee7",
+    "institution_key": "institution_f879f5ba387edf4aaaa06f59",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Университет инновации и цифровых технологий Таджикистана Таджикский аграрный университет имени"
+    ],
+    "source_row_ids": [
+      "4-10"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_cd79a4f8699c88042081f931",
+    "institution_key": "institution_c6a643afaa9640d12e0e52f2",
+    "location": "город Душанбе город Бустон",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Шириншоха Шотемура Горно - металлургический институт Таджикистана"
+    ],
+    "source_row_ids": [
+      "4-11"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_b9cd9df7d2f4531f56529e28",
+    "institution_key": "institution_5b73454ef8338e1a051fd99d",
+    "location": "Isfara",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Филиал Технологического университета Таджикистана в городе Исфара"
+    ],
+    "source_row_ids": [
+      "4-12",
+      "5-1",
+      "6-1",
+      "8-16",
+      "54-16"
+    ],
+    "offer_count": 5,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_779efe595b27cbf8f8f35179",
+    "institution_key": "institution_9f4cdce3aa19f1fe0481f673",
+    "location": "Danghara",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Дангаринский государственный университет"
+    ],
+    "source_row_ids": [
+      "4-15",
+      "5-3",
+      "5-11",
+      "9-4",
+      "9-12",
+      "37-9",
+      "46-12",
+      "47-5",
+      "49-3",
+      "53-5",
+      "53-11",
+      "54-15",
+      "55-5"
+    ],
+    "offer_count": 13,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_020dc719dba9a2befec1ea84",
+    "institution_key": "institution_300fa4937de106aed20054d8",
+    "location": "Rasht",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический институт Таджикистана в районе Рашт"
+    ],
+    "source_row_ids": [
+      "4-16",
+      "5-15",
+      "5-16",
+      "39-14",
+      "40-2",
+      "46-3",
+      "46-13",
+      "46-14",
+      "48-11",
+      "53-6",
+      "54-9",
+      "54-10",
+      "55-6",
+      "55-7"
+    ],
+    "offer_count": 14,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_f975702d8c2068afe60c9927",
+    "institution_key": "institution_91a3f1ab9c58b1887573e187",
+    "location": "Rasht",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический институт Таджикистана в районе Рашт Таджикский государственный институт культуры"
+    ],
+    "source_row_ids": [
+      "4-17"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_23726c1d362f9c962fcfe12c",
+    "institution_key": "institution_e36c16229f4e081afbc71fee",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Технологический университет Таджикистана"
+    ],
+    "source_row_ids": [
+      "5-2",
+      "5-4",
+      "6-6",
+      "6-9",
+      "8-1",
+      "8-10",
+      "8-15"
+    ],
+    "offer_count": 7,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_0306b4b3232b2d9d4281e030",
+    "institution_key": "institution_65962cd72ec15c70206703ba",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Худжандский государственный университет имени академика Бободжона Гафурова"
+    ],
+    "source_row_ids": [
+      "5-8",
+      "5-14",
+      "6-8",
+      "7-2",
+      "9-2",
+      "37-5",
+      "39-2",
+      "39-4",
+      "39-6",
+      "39-10",
+      "46-5",
+      "46-10",
+      "46-15",
+      "49-7",
+      "54-1",
+      "54-4"
+    ],
+    "offer_count": 16,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_eab06723a7ef3bc6e3e549cd",
+    "institution_key": "institution_d84f325c21553a398a3d3af7",
+    "location": "Panjakent",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский педагогический институт в городе Пенджикент"
+    ],
+    "source_row_ids": [
+      "5-13",
+      "8-8",
+      "9-1",
+      "9-6",
+      "39-7",
+      "40-6",
+      "46-9",
+      "46-11",
+      "47-10",
+      "49-6",
+      "53-7",
+      "54-7",
+      "54-8"
+    ],
+    "offer_count": 13,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_1d2623c004ae3219a32154a2",
+    "institution_key": "institution_dae4e70e9a6fb463662dc2c8",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский аграрный университет имени Шириншоха Шотемура Таджикский аграрный университет имени"
+    ],
+    "source_row_ids": [
+      "6-2",
+      "8-13"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_8553167d4aec80b1bb33ecfa",
+    "institution_key": "institution_c88ec6cd2e21a8384a57794d",
+    "location": "город Душанбе город Душанбе",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Шириншоха Шотемура Таджикский технический университет имени академика М. С. Осими Таджикский технический университет"
+    ],
+    "source_row_ids": [
+      "6-3"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_bcd7299dc6ca38ba68a3d037",
+    "institution_key": "institution_31aab9f320377dcaa7842758",
+    "location": "город Душанбе город Душанбе",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "имени академика М. С. Осими Таджикский аграрный университет имени Шириншоха Шотемура"
+    ],
+    "source_row_ids": [
+      "6-4"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_fb2b951519a7ce4fd640fec1",
+    "institution_key": "institution_2d03d7ea7649f9a28ae6daba",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Университет инновации и цифровых технологий Таджикистана"
+    ],
+    "source_row_ids": [
+      "6-11",
+      "6-12",
+      "7-5",
+      "7-9",
+      "7-11",
+      "7-12",
+      "7-14",
+      "8-9",
+      "46-4"
+    ],
+    "offer_count": 9,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_70cc702bc83bbea169d9318c",
+    "institution_key": "institution_4b4c1e145423f2e9758c0261",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Политехнический институт Таджикского технического университета имени академика"
+    ],
+    "source_row_ids": [
+      "6-14"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_0021a85f66b4c713fe489c08",
+    "institution_key": "institution_e7a99e13839f17314b06568b",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "М. С. Осими в городе Худжанд Таджикский технический университет имени академика М. С. Осими"
+    ],
+    "source_row_ids": [
+      "6-15"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_1b2e0d8f50b58272858ced0d",
+    "institution_key": "institution_78d5cc6328f86a69eff7d494",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Международный университет туризма и предпринимательства Таджикистана"
+    ],
+    "source_row_ids": [
+      "7-3",
+      "37-3",
+      "37-10",
+      "38-2",
+      "40-5",
+      "47-12",
+      "48-5"
+    ],
+    "offer_count": 7,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_35086b0ac4e0b7d186b67bce",
+    "institution_key": "institution_47f9721bd6dde6d66fb8e007",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Институт экономики и торговли Таджикского государственного университета коммерции"
+    ],
+    "source_row_ids": [
+      "7-6",
+      "38-10"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_57e1146d1b38e279307bf93e",
+    "institution_key": "institution_c804a0d8eb5403075b2e6a69",
+    "location": "Rasht",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "в городе Худжанд Педагогический институт Таджикистана в районе Рашт"
+    ],
+    "source_row_ids": [
+      "7-7"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_782400177ea2c111d24b0c3a",
+    "institution_key": "institution_2a2624bca7af89e6832b86bb",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Бохтарский Государственный университет имени Носири Хусрава"
+    ],
+    "source_row_ids": [
+      "7-10"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_8d18581a9cefff6247ac61c4",
+    "institution_key": "institution_1dd887f2eb217d47dc989b5a",
+    "location": "Buston",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Горно - металлургический институт Таджикистана"
+    ],
+    "source_row_ids": [
+      "7-17",
+      "8-12"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_8b415b9b105381697a74b8ba",
+    "institution_key": "institution_0976f06c85a573300e994898",
+    "location": "город Душанбе город Душанбе",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Шириншоха Шотемура Таджикский аграрный университет имени Шириншоха Шотемура"
+    ],
+    "source_row_ids": [
+      "8-14"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_e103b49e932ccc5f637f88f8",
+    "institution_key": "institution_f5e4a9d3cd561ca7fa687517",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Худжандский государственный университет имени академика Бободжона Гафурова изменение суммы обучения в платных группах зависит"
+    ],
+    "source_row_ids": [
+      "8-17"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_5fcf98615424f177a0ce9921",
+    "institution_key": "institution_69ac0de6bcf28c596465a756",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский государственный педагогический университет имени Садриддина Айни"
+    ],
+    "source_row_ids": [
+      "9-5",
+      "48-4",
+      "49-5",
+      "49-9",
+      "49-10"
+    ],
+    "offer_count": 5,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_68eb07fe97656ab06fd2335d",
+    "institution_key": "institution_90217dd242699916979e905e",
+    "location": "город Душанбе район Кушониён",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский аграрный университет имени Шириншоха Шотемура Институт энергетики Таджикистана"
+    ],
+    "source_row_ids": [
+      "9-10"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_86d617b0ad8a33180c1e60d2",
+    "institution_key": "institution_0476f3d8b93842aa7bcd2416",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Политехнический институт Таджикского технического университета имени академика М. С. Осими в городе Худжанд"
+    ],
+    "source_row_ids": [
+      "9-13"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_5e520d8f4413b84174e1e720",
+    "institution_key": "institution_9458c32ec8559d823e2018b9",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Технический колледж Таджикского технического университета имени академика М. С. Осими"
+    ],
+    "source_row_ids": [
+      "10-1",
+      "10-2",
+      "10-13",
+      "10-14",
+      "12-2",
+      "12-3",
+      "15-8",
+      "15-9",
+      "17-3",
+      "17-4",
+      "19-13",
+      "19-14",
+      "20-8",
+      "20-9"
+    ],
+    "offer_count": 14,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_5fc8e14ede06509b7bd91a11",
+    "institution_key": "institution_8110c52b91afa3efc9155929",
+    "location": "Danghara",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Политехнический колледж государственного университета Дангары"
+    ],
+    "source_row_ids": [
+      "10-3",
+      "10-4",
+      "10-5",
+      "10-6",
+      "10-7",
+      "10-8",
+      "10-9",
+      "10-10",
+      "10-11",
+      "10-12",
+      "11-3",
+      "11-4",
+      "11-9",
+      "11-10",
+      "11-11",
+      "11-12",
+      "12-1",
+      "12-4",
+      "12-5",
+      "12-6",
+      "12-7",
+      "13-12",
+      "13-13",
+      "13-14",
+      "13-15",
+      "13-16",
+      "13-17",
+      "14-1",
+      "14-2",
+      "14-3",
+      "14-4",
+      "14-6",
+      "14-7",
+      "14-8",
+      "14-9",
+      "14-13",
+      "14-14",
+      "14-16",
+      "15-1",
+      "15-4",
+      "15-5",
+      "15-6",
+      "15-7",
+      "16-1",
+      "16-2",
+      "16-14",
+      "16-15",
+      "16-16",
+      "16-17",
+      "17-1",
+      "17-2",
+      "17-13",
+      "18-3",
+      "18-4",
+      "18-5",
+      "18-6",
+      "18-8",
+      "18-9",
+      "18-14",
+      "18-15",
+      "19-3",
+      "19-4",
+      "19-5",
+      "19-6",
+      "19-7",
+      "19-8",
+      "19-11",
+      "19-12",
+      "20-1",
+      "20-2",
+      "20-14",
+      "20-15",
+      "34-15",
+      "35-1",
+      "35-2",
+      "35-3",
+      "35-12",
+      "35-13",
+      "36-7",
+      "36-8"
+    ],
+    "offer_count": 80,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_9276f44d243eb666cd5bf11e",
+    "institution_key": "institution_3572b1aa82dd1c5fb21eb1c4",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Колледж педагогики и цифровизации города Бохтар (негосударственный) изменение суммы обучения в платных группах зависит"
+    ],
+    "source_row_ids": [
+      "10-15"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_77c1dd1c8bad344cf1be8d2d",
+    "institution_key": "institution_438eec5850ec54d091eb62e6",
+    "location": "Rogun",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Инженерно - технический колледж города Рогун"
+    ],
+    "source_row_ids": [
+      "11-1",
+      "11-2",
+      "17-5",
+      "17-6",
+      "19-15",
+      "19-16"
+    ],
+    "offer_count": 6,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_b3425b675653a6fc98fe85f5",
+    "institution_key": "institution_5c98279386b95c7a734edb3a",
+    "location": "Mastchoh",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Аграрный колледж Матчинского района"
+    ],
+    "source_row_ids": [
+      "11-5",
+      "11-6",
+      "15-2",
+      "15-3",
+      "15-10",
+      "15-11",
+      "19-9",
+      "19-10",
+      "33-18",
+      "33-19"
+    ],
+    "offer_count": 10,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_3be014c5375ec5b6fdc57d93",
+    "institution_key": "institution_49bde37e28f9a625efbec90d",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Специализированный колледж в городе Бохтар"
+    ],
+    "source_row_ids": [
+      "11-7",
+      "11-8",
+      "33-6",
+      "33-7",
+      "34-5",
+      "34-6",
+      "35-9",
+      "35-10"
+    ],
+    "offer_count": 8,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_213100e9a8512b20f03134f5",
+    "institution_key": "institution_d67d63304730991747c009a6",
+    "location": "Vahdat",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Статистический колледж города Вахдат"
+    ],
+    "source_row_ids": [
+      "11-13",
+      "11-14",
+      "12-10",
+      "12-11",
+      "16-11",
+      "16-12",
+      "33-5",
+      "33-16",
+      "33-17",
+      "35-14",
+      "35-15"
+    ],
+    "offer_count": 11,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_8101c38cdde24b0fab218653",
+    "institution_key": "institution_e66894aa39b4400f912d47ce",
+    "location": "Tursunzoda",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический колледж города Турсунзода"
+    ],
+    "source_row_ids": [
+      "11-15",
+      "11-16",
+      "12-12",
+      "12-13",
+      "41-5",
+      "41-6",
+      "42-9"
+    ],
+    "offer_count": 7,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_65781013a3f42fcc59942b22",
+    "institution_key": "institution_f5d1b79b0964f4915658acc2",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический колледж Бохтарского государственного университета имени Носири Хусрава"
+    ],
+    "source_row_ids": [
+      "11-17",
+      "13-1",
+      "13-2",
+      "18-12",
+      "18-13",
+      "34-13",
+      "34-14",
+      "41-17",
+      "43-5",
+      "44-4",
+      "45-9"
+    ],
+    "offer_count": 11,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_0ada5ee833cc50e0dfa0236e",
+    "institution_key": "institution_9c6899e2f84442f1c89feea4",
+    "location": "район Дусти район Дангара",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Филиал инженерно - педагогического колледжа района Джайхун в районе Дусти (негосударственный) Политехнический колледж государственного университета Дангары Политехнический колледж государственного"
+    ],
+    "source_row_ids": [
+      "11-18"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_0a20c5d6c330eae875eb7e35",
+    "institution_key": "institution_d9380c8a993349a87a662618",
+    "location": "район Дангара город Бохтар район Дангара",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "университета Дангары Колледж педагогики и цифровизации города Бохтар (негосударственный) Политехнический колледж государственного университета Дангары изменение суммы обучения в платных группах зависит"
+    ],
+    "source_row_ids": [
+      "11-19"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_9e65d249b266d85d69a66c70",
+    "institution_key": "institution_e1f39af0de924b1a8a340bb8",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический колледж имени Хосият Махсумовой Таджикского государственного педагогического университета имени Садриддина Айни"
+    ],
+    "source_row_ids": [
+      "12-8",
+      "12-9",
+      "13-7",
+      "13-8",
+      "34-11",
+      "34-12",
+      "41-1",
+      "41-2",
+      "42-5",
+      "43-13",
+      "43-14",
+      "44-11"
+    ],
+    "offer_count": 12,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_921c2265dc650e4d8357aa60",
+    "institution_key": "institution_5d2bd2d0ff58ea21b4262e37",
+    "location": "Hisor",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический колледж города Гиссар"
+    ],
+    "source_row_ids": [
+      "12-14",
+      "12-15",
+      "41-7",
+      "41-8",
+      "42-10",
+      "42-11",
+      "43-17",
+      "43-18",
+      "44-15",
+      "44-16"
+    ],
+    "offer_count": 10,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_8e67dedadd60cfe9a574593a",
+    "institution_key": "institution_454da49999bc1b44cd23926f",
+    "location": "Konibodom",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический колледж имени М. Турсунзода города Канибадам"
+    ],
+    "source_row_ids": [
+      "12-16",
+      "12-17",
+      "41-13",
+      "42-18",
+      "42-19",
+      "44-20"
+    ],
+    "offer_count": 6,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_5af0de93a98c2a3c470e91b9",
+    "institution_key": "institution_aa838fa56663c59f1ac2ca38",
+    "location": "Zafarobod",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический колледж районa Зафаробод"
+    ],
+    "source_row_ids": [
+      "12-18",
+      "12-19",
+      "45-3",
+      "45-4"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_69cb4806fc80fb62e98ac208",
+    "institution_key": "institution_ce67c8680ab95ccd069173fc",
+    "location": "Mastchoh",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический колледж Матчинского района"
+    ],
+    "source_row_ids": [
+      "12-20",
+      "12-21",
+      "43-2",
+      "45-5",
+      "45-6"
+    ],
+    "offer_count": 5,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_501633a3e54848eb54b4a633",
+    "institution_key": "institution_ad7d37e0a3c5f9cc2877ebb8",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический колледж Кулябского государственного университета имени Абуабдулло Рудаки"
+    ],
+    "source_row_ids": [
+      "13-3",
+      "13-4",
+      "42-1",
+      "43-6",
+      "44-5",
+      "44-6",
+      "45-10"
+    ],
+    "offer_count": 7,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_0df6f72118d42b320373b2d2",
+    "institution_key": "institution_46e62da0376985200bbe35fa",
+    "location": "Qubodiyon",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический колледж района Кубодиён"
+    ],
+    "source_row_ids": [
+      "13-5",
+      "13-6",
+      "43-7",
+      "45-11"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_5952cc271fa3167e442fabf9",
+    "institution_key": "institution_adb6422530895e66c97d5963",
+    "location": "Panjakent",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический колледж города Пенджикент"
+    ],
+    "source_row_ids": [
+      "13-9",
+      "43-3",
+      "44-2",
+      "45-7"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_34e441b082bb8c33e7dc9769",
+    "institution_key": "institution_676405bdb5f41d92a4be865e",
+    "location": "Shahritus",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Филиал инженерно - педагогического колледжа города Бохтар (негосударственный) в районе Шахритус"
+    ],
+    "source_row_ids": [
+      "13-10",
+      "43-11",
+      "44-8"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_dad7644b55c9f48d8b67ea14",
+    "institution_key": "institution_5f6ad3ef64528f94caf03000",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Колледж педагогики и цифровизации города Бохтар (негосударственный)"
+    ],
+    "source_row_ids": [
+      "13-11",
+      "14-5",
+      "17-14",
+      "34-10",
+      "36-1",
+      "42-2",
+      "42-4",
+      "43-12",
+      "44-9",
+      "45-14"
+    ],
+    "offer_count": 10,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_1f02395920bf8c0f93605421",
+    "institution_key": "institution_826e6372509eca549fd5323e",
+    "location": "Zafarobod",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Политехнический колледж районa Зафаробод изменение суммы обучения в платных группах зависит"
+    ],
+    "source_row_ids": [
+      "13-18"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_d78d6b0b89ec440fcf727a5f",
+    "institution_key": "institution_dc467b7effb9131b91539692",
+    "location": "Tursunzoda",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Металлургический колледж города Турсунзода"
+    ],
+    "source_row_ids": [
+      "14-10",
+      "18-7",
+      "20-3",
+      "33-13"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_38ac8569bade8f61d67e5536",
+    "institution_key": "institution_f1ced1a9545dd5437cbac359",
+    "location": "Konibodom",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Технологический колледж имени А. Каххорова города Канибадам"
+    ],
+    "source_row_ids": [
+      "14-11",
+      "14-12",
+      "15-13",
+      "15-14",
+      "19-1",
+      "19-2",
+      "34-3"
+    ],
+    "offer_count": 7,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_696fcd1d699285d7ca7c5e3c",
+    "institution_key": "institution_8836a8487ff196c95eea54cf",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Экономико - технический колледж города Куляб (негосударственный)"
+    ],
+    "source_row_ids": [
+      "14-15",
+      "34-8",
+      "35-11"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_68246a28d8d91360a94252a3",
+    "institution_key": "institution_6e995d68f7116354bbd1a1d7",
+    "location": "Zafarobod",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Политехнический колледж районa Зафаробод"
+    ],
+    "source_row_ids": [
+      "15-12",
+      "16-7",
+      "17-7",
+      "20-4",
+      "34-2",
+      "35-8"
+    ],
+    "offer_count": 6,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_ea52dd1abe388aba014f35fe",
+    "institution_key": "institution_edf12946112d389075733b99",
+    "location": "Jaloliddin Balkhi",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Энергетический колледж района Джалолиддина Балхи"
+    ],
+    "source_row_ids": [
+      "15-15",
+      "15-16",
+      "19-17",
+      "19-18",
+      "20-12",
+      "20-13",
+      "36-4",
+      "36-5"
+    ],
+    "offer_count": 8,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_f38dd6f13e27ab228a181aaf",
+    "institution_key": "institution_004149fa21b0a717e1bf6de7",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Колледж информатики и компьютерной техники города Душанбе"
+    ],
+    "source_row_ids": [
+      "16-3",
+      "16-4",
+      "33-1",
+      "33-2",
+      "33-8",
+      "33-9",
+      "35-4",
+      "35-5",
+      "35-16",
+      "35-17"
+    ],
+    "offer_count": 10,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_bf4c909f9c17c89c1a706938",
+    "institution_key": "institution_0645dfe326a3bac964968985",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Технологический колледж города Душанбе"
+    ],
+    "source_row_ids": [
+      "16-5",
+      "16-6",
+      "16-9",
+      "16-10",
+      "33-3",
+      "33-4",
+      "33-11",
+      "33-12",
+      "35-6",
+      "35-7",
+      "35-18"
+    ],
+    "offer_count": 11,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_42a03497190486d9cb5038c8",
+    "institution_key": "institution_347bf538cee90cba8c40a7e6",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Инженерно - педагогический колледж города Бохтар (негосударственный)"
+    ],
+    "source_row_ids": [
+      "16-8",
+      "17-10",
+      "20-7",
+      "34-7",
+      "41-16",
+      "42-3",
+      "43-4",
+      "44-3",
+      "45-8"
+    ],
+    "offer_count": 9,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_0d90e571f9ddabd9e7d71b13",
+    "institution_key": "institution_92ecea7925013aab627e9a80",
+    "location": "Panjakent",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Технологический и инновационный колледж в городе Пенджикент (негосударственный)"
+    ],
+    "source_row_ids": [
+      "16-13",
+      "34-4"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_dab18b8696c77023e6f1a892",
+    "institution_key": "institution_00f9dfd1cdad1c7973fcfb27",
+    "location": "Jabbor Rasulov",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Инженерно - педагогический колледж района Джаббора Расулова"
+    ],
+    "source_row_ids": [
+      "17-8",
+      "17-9",
+      "18-10",
+      "18-11",
+      "33-20",
+      "34-1",
+      "41-11",
+      "41-12",
+      "42-16",
+      "42-17",
+      "44-18",
+      "44-19"
+    ],
+    "offer_count": 12,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_ae48ddda0f969beab6af397e",
+    "institution_key": "institution_361f92c0347e72854ae21ef4",
+    "location": "Hamadoni",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Филиал инженерно - педагогического колледжа города Бохтар (негосударственный) в районе"
+    ],
+    "source_row_ids": [
+      "17-11"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_1c919325efcdf3718b18c998",
+    "institution_key": "institution_767968f7a4f5a7d785e2ff77",
+    "location": "Danghara",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Хамадони Политехнический колледж государственного университета Дангары"
+    ],
+    "source_row_ids": [
+      "17-12"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_b972e19ad3a2e6197eacf3d6",
+    "institution_key": "institution_020fe2672206759c59fde5d8",
+    "location": "Nurobod",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Инженерно - технический колледж района Нуробод"
+    ],
+    "source_row_ids": [
+      "17-15",
+      "17-16",
+      "17-17",
+      "18-1",
+      "20-10",
+      "20-11",
+      "33-14",
+      "33-15"
+    ],
+    "offer_count": 8,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_e3fb0ac9c295c407ed1b171d",
+    "institution_key": "institution_3c7e83910a8ebb779fc268ca",
+    "location": "Levakant",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Колледж промышленности и социальных услуг в городе Левакант"
+    ],
+    "source_row_ids": [
+      "18-2",
+      "36-3",
+      "44-10"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_37b2da00fa0a71938bdda44c",
+    "institution_key": "institution_34e84177b69961a757099997",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Инженерно - педагогический колледж города Душанбе"
+    ],
+    "source_row_ids": [
+      "20-5",
+      "20-6"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_d1e041e95c7a7a176796b437",
+    "institution_key": "institution_389beb2c511f36cb06c037aa",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "государственный университет коммерции"
+    ],
+    "source_row_ids": [
+      "21-1",
+      "22-1",
+      "29-13",
+      "31-4",
+      "32-3"
+    ],
+    "offer_count": 5,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_30f0f5183228a3d091afa818",
+    "institution_key": "institution_495d79b1beb88442f0e47c99",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "государственный университет имени академика Гафурова"
+    ],
+    "source_row_ids": [
+      "21-2",
+      "21-8",
+      "22-3",
+      "23-10",
+      "24-1",
+      "24-3",
+      "24-5",
+      "26-11",
+      "27-2",
+      "29-15",
+      "32-6"
+    ],
+    "offer_count": 11,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_973aa972fad6edfedd436fde",
+    "institution_key": "institution_7e0ddfe6bccd0405f6bb028b",
+    "location": "Danghara",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "государственный университет"
+    ],
+    "source_row_ids": [
+      "21-3",
+      "21-10",
+      "22-6",
+      "24-9",
+      "27-5",
+      "28-4",
+      "28-17",
+      "29-9",
+      "31-9"
+    ],
+    "offer_count": 9,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_e213e51d3a06d46fdd6eca6f",
+    "institution_key": "institution_776980877668b7fd40b9412d",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "государственный финансово - экономический"
+    ],
+    "source_row_ids": [
+      "21-4",
+      "23-2",
+      "24-7",
+      "24-15",
+      "24-16",
+      "25-3",
+      "25-6",
+      "25-13",
+      "26-2",
+      "26-13",
+      "29-1",
+      "29-5",
+      "29-10",
+      "29-12",
+      "31-2",
+      "31-10",
+      "32-4"
+    ],
+    "offer_count": 17,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_35c842da3b3be0a52da63003",
+    "institution_key": "institution_f5d3784ab69f1992638052c3",
+    "location": "Rasht",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "институт Таджикистана в районе Рашт"
+    ],
+    "source_row_ids": [
+      "21-5",
+      "21-12",
+      "23-3",
+      "23-12",
+      "24-2",
+      "27-13",
+      "27-14",
+      "29-2",
+      "30-4"
+    ],
+    "offer_count": 9,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_7a867d5b852655637da7261f",
+    "institution_key": "institution_dd41c113538e9d36d416c670",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "международный институт Международного туризма и предпринимательства Таджикистана"
+    ],
+    "source_row_ids": [
+      "21-6",
+      "21-15",
+      "22-9",
+      "24-12",
+      "26-7",
+      "27-9",
+      "29-3",
+      "30-6",
+      "32-2"
+    ],
+    "offer_count": 9,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_3e726bcd9d849a10d217af5d",
+    "institution_key": "institution_3df8af6ec5f8b8391f2b9d3c",
+    "location": "Khorog",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "государственный университет имени Назаршоева"
+    ],
+    "source_row_ids": [
+      "21-7",
+      "22-2",
+      "23-8",
+      "23-9",
+      "28-10",
+      "32-8"
+    ],
+    "offer_count": 6,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_1a9b862dd26d847bbfa6f46e",
+    "institution_key": "institution_d8b8f600149439787e5d1f8f",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "государственный университет имени Рудаки"
+    ],
+    "source_row_ids": [
+      "21-9",
+      "23-1",
+      "23-11",
+      "24-14",
+      "25-8",
+      "27-3",
+      "27-12",
+      "28-2",
+      "29-16",
+      "31-7"
+    ],
+    "offer_count": 10,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_b1885aafa032631e6a12b711",
+    "institution_key": "institution_76d319b9cc72f4370261dd30",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "университет туризма и предпринимательства"
+    ],
+    "source_row_ids": [
+      "21-11",
+      "22-7",
+      "22-12",
+      "23-5",
+      "24-10",
+      "25-4",
+      "26-3",
+      "26-5",
+      "26-6",
+      "27-6",
+      "28-5",
+      "29-6",
+      "30-1",
+      "32-1"
+    ],
+    "offer_count": 14,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_73e8d08412ffa0b5c6070045",
+    "institution_key": "institution_82f7939dba042921622658a3",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "точных наук и технологий Таджикистана в городе (негосударственный)"
+    ],
+    "source_row_ids": [
+      "21-13",
+      "22-8",
+      "27-7"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_d5cfb0ad0e310f8e7756f679",
+    "institution_key": "institution_dd41c113538e9d36d416c670",
+    "location": "Danghara",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "международный институт Международного туризма и предпринимательства Таджикистана"
+    ],
+    "source_row_ids": [
+      "21-14",
+      "22-13",
+      "27-8",
+      "28-6",
+      "30-5"
+    ],
+    "offer_count": 5,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_2da845aeecae57b9159ac87a",
+    "institution_key": "institution_23f2fdae643a02a19bd8e24b",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "государственный университет права, бизнеса"
+    ],
+    "source_row_ids": [
+      "22-4",
+      "24-8",
+      "26-1",
+      "28-1",
+      "31-6"
+    ],
+    "offer_count": 5,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_3204fff00e9a1f5a1d0ac157",
+    "institution_key": "institution_4fe3290770b7ab0b81782779",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Государственный университет имени Хусрава"
+    ],
+    "source_row_ids": [
+      "22-5",
+      "22-11",
+      "26-12",
+      "27-4",
+      "28-3",
+      "28-15",
+      "29-4",
+      "31-8"
+    ],
+    "offer_count": 8,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_c6c1ad5894183626eb078aee",
+    "institution_key": "institution_c97f3ea65c9d5723e7673073",
+    "location": "город Худжанд город Душанбе",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "государственный университет права, бизнеса государственный университет коммерции"
+    ],
+    "source_row_ids": [
+      "22-10"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_e35475d876ae41e4fb08e504",
+    "institution_key": "institution_75395bdf315eec740f6b2272",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "университет Таджикистана"
+    ],
+    "source_row_ids": [
+      "23-4",
+      "25-2",
+      "25-10",
+      "25-12",
+      "26-10",
+      "29-14",
+      "31-5"
+    ],
+    "offer_count": 7,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_56c84ceaab29bce96304640e",
+    "institution_key": "institution_b463fd1fcb6da95331db39d4",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "инновации и цифровых технологий Таджикистана"
+    ],
+    "source_row_ids": [
+      "23-6",
+      "30-2"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_ac1ec78f183f354fe4c7e1b7",
+    "institution_key": "institution_0e0756815f7ceb5abb1140ac",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "промышленности и сервиса (негосударственный)"
+    ],
+    "source_row_ids": [
+      "23-7",
+      "25-11"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_23e6ac2f00db19828eb79d04",
+    "institution_key": "institution_d5b69a169165225e06a5a918",
+    "location": "Rasht",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "институт Таджикистана в районе Рашт государственный университет имени"
+    ],
+    "source_row_ids": [
+      "23-13"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_a3d4dec753411ff12e268371",
+    "institution_key": "institution_e3c489241d4841a1cc606efe",
+    "location": "Isfara",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Технологического университета Таджикистана Исфара"
+    ],
+    "source_row_ids": [
+      "24-4",
+      "31-15"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_e214751ed5f6a94bdd7ee8cc",
+    "institution_key": "institution_ed1bb16f0a4dc2e10333dbd3",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "национальный университет"
+    ],
+    "source_row_ids": [
+      "24-6",
+      "25-1",
+      "31-3",
+      "31-13",
+      "31-14"
+    ],
+    "offer_count": 5,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_3ba6e5ae0e5c912e56619cab",
+    "institution_key": "institution_6a1bc64b987746b8b8bc03a0",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "экономики и торговли Таджикского государственного коммерции в городе Худжанд"
+    ],
+    "source_row_ids": [
+      "24-11",
+      "27-1",
+      "28-9",
+      "30-10",
+      "30-11",
+      "31-12",
+      "32-5"
+    ],
+    "offer_count": 7,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_ec5b6203a676233d32c69c95",
+    "institution_key": "institution_dd41c113538e9d36d416c670",
+    "location": "Levakant",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "международный институт Международного туризма и предпринимательства Таджикистана"
+    ],
+    "source_row_ids": [
+      "24-13",
+      "25-14",
+      "28-7",
+      "28-14",
+      "30-7",
+      "32-9"
+    ],
+    "offer_count": 6,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_c19675fe33ceef791d0c0a63",
+    "institution_key": "institution_10f2c04334e5c1b8307aa78e",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "институт Таджикского технического имени академика М. С. Осими в городе Худжанд"
+    ],
+    "source_row_ids": [
+      "25-5",
+      "30-3",
+      "31-11"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_5e56928c8f800eef15a314c7",
+    "institution_key": "institution_9caa348e7e49942201cb8aca",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "институт изобразительного искусства Таджикистана"
+    ],
+    "source_row_ids": [
+      "25-7"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_05a8ba2573e7f8396e6dcd5b",
+    "institution_key": "institution_011376c115e422018fa6af7c",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "аграрный университет имени Шотемура"
+    ],
+    "source_row_ids": [
+      "25-9",
+      "27-15",
+      "29-11",
+      "31-1"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_926dd343c6d609331e300d98",
+    "institution_key": "institution_674fb87d3d9900f792cdc239",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "государственный университет коммерции изменение суммы обучения в платных группах зависит"
+    ],
+    "source_row_ids": [
+      "25-15"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_73fa4c09abac3eb088a772c2",
+    "institution_key": "institution_e9124f572882d57cca02a28a",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "экономики и торговли Таджикского университета коммерции в городе"
+    ],
+    "source_row_ids": [
+      "26-4"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_40cc181b8d7e59ea58230dd9",
+    "institution_key": "institution_455ba66721c687f0138ee015",
+    "location": "город Левакант город Душанбе",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "международный институт Международного туризма и предпринимательства Таджикистана государственный институт культуры и искусств Мирзо Турсунзаде"
+    ],
+    "source_row_ids": [
+      "26-8"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_518dbba35eedc68397f68c08",
+    "institution_key": "institution_1f53bda908f2ee8ee87ba3e2",
+    "location": "город Душанбе город Душанбе",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "государственный институт культуры и искусств Мирзо Турсунзаде государственный университет коммерции"
+    ],
+    "source_row_ids": [
+      "26-9"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_c4216c235b5cd965d74a22c6",
+    "institution_key": "institution_4ba3697bed896ce4d61e2e74",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "университет туризма и предпринимательства изменение суммы обучения в платных группах зависит"
+    ],
+    "source_row_ids": [
+      "26-14"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_99777ec049a4f47bc9e73397",
+    "institution_key": "institution_05ff0271d0d493bf58034375",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "технический университет имени академика Осими"
+    ],
+    "source_row_ids": [
+      "27-10",
+      "30-12",
+      "30-13",
+      "30-14"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_32bc3c44221ec10a3fa1c69b",
+    "institution_key": "institution_8ee4fa61f27051e15e6b5f08",
+    "location": "Panjakent",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "педагогический институт в городе Пенджикент"
+    ],
+    "source_row_ids": [
+      "27-11",
+      "28-13"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_5efe543aca996d4beea54373",
+    "institution_key": "institution_e1725c328e2ecbf97e973bd2",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "государственный финансово - экономический изменение суммы обучения в платных группах зависит"
+    ],
+    "source_row_ids": [
+      "27-16"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_77490542b462e91005e84f06",
+    "institution_key": "institution_bf51dfa3788575d7a5255feb",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "- Таджикский (славянский) университет"
+    ],
+    "source_row_ids": [
+      "28-8",
+      "28-11"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_234fb7396470c7418bc5223a",
+    "institution_key": "institution_bfdee51517aabdcd2fbe4e16",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "государственный институт культуры и искусств Мирзо Турсунзаде"
+    ],
+    "source_row_ids": [
+      "28-12"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_5e857921f69e973ddb1dd90e",
+    "institution_key": "institution_8d017076ce7a9a7289401dbe",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "государственного управления при Президенте Таджикистан"
+    ],
+    "source_row_ids": [
+      "28-16",
+      "29-7"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_4616c2fd8f743f2ab05bf64c",
+    "institution_key": "institution_ea1d69ac3eb9e1584805d3c5",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "государственный педагогический университет Садриддина Айни"
+    ],
+    "source_row_ids": [
+      "29-8",
+      "32-7"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_edc53477e27985a12ef8c5ac",
+    "institution_key": "institution_d48cdf84060dffdff52153cf",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Государственный университет имени Хусрава изменение суммы обучения в платных группах зависит"
+    ],
+    "source_row_ids": [
+      "29-17"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_78c3fe21e00881d00c7a2407",
+    "institution_key": "institution_9e38cb3545de7363d232084d",
+    "location": "Isfara",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Технологического университета Таджикистана Исфара государственный университет права, бизнеса"
+    ],
+    "source_row_ids": [
+      "30-8"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_bf3ee1953d5fc689d26ac56f",
+    "institution_key": "institution_776980877668b7fd40b9412d",
+    "location": "город Худжанд город Душанбе",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "государственный финансово - экономический"
+    ],
+    "source_row_ids": [
+      "30-9"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_5957e683498000ad7894c7d3",
+    "institution_key": "institution_ef78bc77552a983b4eca01c5",
+    "location": "Kushoniyon",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "энергетики Таджикистана"
+    ],
+    "source_row_ids": [
+      "30-15"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_e03fe8f1c6ee20c8c03e58c0",
+    "institution_key": "institution_f7bee2911a03b030e7a66e24",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Горный колледж имени С. Юсуповой города Душанбе"
+    ],
+    "source_row_ids": [
+      "33-10"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_c281101b00ff79293bdb243a",
+    "institution_key": "institution_d03c4df123c452c3b775b572",
+    "location": "Hamadoni",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Филиал инженерно - педагогического колледжа города Бохтар (негосударственный) в районе Хамадони"
+    ],
+    "source_row_ids": [
+      "34-9",
+      "43-9",
+      "44-7"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_fb72084933bd80d84b03a226",
+    "institution_key": "institution_692fa88cde5d9141bfe40d3b",
+    "location": "город Душанбе город Бохтар",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Технологический колледж города Душанбе Специализированный колледж в городе Бохтар"
+    ],
+    "source_row_ids": [
+      "35-19"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_91805c514c80ff5e5467277c",
+    "institution_key": "institution_66a1727bd06f75109ca8c6e4",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Колледж туризма и социальных услуг в городе Худжанд"
+    ],
+    "source_row_ids": [
+      "36-2"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_b05b956bace9188570b989bd",
+    "institution_key": "institution_ea3fa7b57c2ca7b710a053d0",
+    "location": "Vahdat",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Колледж педагогики и туризма в городе Вахдат (негосударственный)"
+    ],
+    "source_row_ids": [
+      "36-6",
+      "42-14"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_20b641c7fbaa4694574178ad",
+    "institution_key": "institution_4568f102dc94658f7068da78",
+    "location": "город Душанбе город Душанбе город Душанбе",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский государственный институт культуры и искусств имени Мирзо Турсунзаде Таджикский государственный институт культуры и искусств имени Мирзо Турсунзаде Таджикский технический университет"
+    ],
+    "source_row_ids": [
+      "37-1"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_225b982162d48d246c6d0886",
+    "institution_key": "institution_1c35e36f8896fabeb1cdd3c3",
+    "location": "город Душанбе город Душанбе",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "имени академика М. С. Осими Технологический университет Таджикистана Таджикский международный университет иностранных языков имени Сотима Улугзаде"
+    ],
+    "source_row_ids": [
+      "37-2"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_e84f80e445dd2511d7e397cb",
+    "institution_key": "institution_6d1422e84178703176e1233e",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский государственный институт культуры и искусств имени Мирзо Турсунзаде"
+    ],
+    "source_row_ids": [
+      "37-4",
+      "38-3",
+      "38-5",
+      "38-7",
+      "38-13",
+      "39-1",
+      "39-3",
+      "39-5",
+      "39-11",
+      "39-12",
+      "39-13",
+      "40-9"
+    ],
+    "offer_count": 12,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_81f146652cd36f373639b1f4",
+    "institution_key": "institution_485c31ec8627040041907278",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Российско - Таджикский (славянский) университет"
+    ],
+    "source_row_ids": [
+      "37-6",
+      "38-6",
+      "46-8",
+      "49-11"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_823a03e04a9fb27f278c2ef0",
+    "institution_key": "institution_36cba88527c9197a26474caf",
+    "location": "Danghara",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Дангаринский международный институт Международного университета туризма и предпринимательства Таджикистана"
+    ],
+    "source_row_ids": [
+      "38-1",
+      "49-14"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_dcd600e68ea2baa5d70392f8",
+    "institution_key": "institution_14f5b98fe72d3512c600ec8f",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "в городе Худжанд Таджикский государственный университет права, бизнеса и политики"
+    ],
+    "source_row_ids": [
+      "38-11"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_f8b22bb77619c06bef0888be",
+    "institution_key": "institution_1d8ebff09584f706d6bc077b",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Худжандский международный институт Международного университета туризма и предпринимательства Таджикистана"
+    ],
+    "source_row_ids": [
+      "39-9",
+      "47-14",
+      "48-6",
+      "49-15"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_77c45893a4a3338507ed2de0",
+    "institution_key": "institution_0d40454e8e2e260ff5f1bef1",
+    "location": "город Душанбе город Худжанд",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский государственный институт культуры и искусств имени Мирзо Турсунзаде Худжандский государственный университет имени академика Бободжона Гафурова"
+    ],
+    "source_row_ids": [
+      "40-7",
+      "40-8"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_6781e4a3ef2cd18d7e43a7fa",
+    "institution_key": "institution_9b3d01961610331369ae0d72",
+    "location": "Lakhsh",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический колледж района Лахш"
+    ],
+    "source_row_ids": [
+      "41-3",
+      "41-4",
+      "42-6",
+      "43-15",
+      "43-16",
+      "44-12"
+    ],
+    "offer_count": 6,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_82944e56e101a8f246016d44",
+    "institution_key": "institution_354028637e255b70f21f95ff",
+    "location": "Rudaki",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Технико - педагогический колледж района Рудаки"
+    ],
+    "source_row_ids": [
+      "41-9",
+      "41-10",
+      "42-12",
+      "42-13",
+      "44-17"
+    ],
+    "offer_count": 5,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_6a4fb23a43b553297efe96cc",
+    "institution_key": "institution_a609b10ca4639a161e9d53ac",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический колледж Худжандского государственного университета имени академика Бободжона Гафурова"
+    ],
+    "source_row_ids": [
+      "41-14",
+      "41-15",
+      "42-20",
+      "43-1",
+      "44-1",
+      "45-1",
+      "45-2"
+    ],
+    "offer_count": 7,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_6644846187880fade0a8c5e3",
+    "institution_key": "institution_07caade577cd66dff9450665",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический колледж Кулябского государственного университета имени Абуабдулло Рудаки изменение суммы обучения в платных группах зависит"
+    ],
+    "source_row_ids": [
+      "41-18"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_3de7967c99d7e0358c675b08",
+    "institution_key": "institution_0c44e91743c35b7d369274b9",
+    "location": "Rasht",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Инженерно - просветительский колледж Раштского района"
+    ],
+    "source_row_ids": [
+      "42-7",
+      "42-8",
+      "44-13",
+      "44-14"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_628e85c79181198f580f28b5",
+    "institution_key": "institution_313b2ee1491d57b25e14ac75",
+    "location": "Tursunzoda",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический колледж Асосгузор города Турсунзода (негосударственный)"
+    ],
+    "source_row_ids": [
+      "42-15",
+      "43-19"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_c8b92eda71e0dbe6bc35cc97",
+    "institution_key": "institution_e19df87c1e60e11d601beb9a",
+    "location": "Jayhun",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Инженерно - педагогический колледж района Джайхун (негосударственный)"
+    ],
+    "source_row_ids": [
+      "43-8",
+      "45-12"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_68b77863c2de026e0bdee2e7",
+    "institution_key": "institution_30ccb82f3b58d942be9e3350",
+    "location": "Dusti",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Филиал инженерно - педагогического колледжа района Джайхун в районе Дусти (негосударственный)"
+    ],
+    "source_row_ids": [
+      "43-10",
+      "45-13"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_df14d2aeff4258e9e6c5c116",
+    "institution_key": "institution_8e6d2b61999c8afa77a968d8",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический колледж Худжандского государственного университета имени академика Бободжона Гафурова изменение суммы обучения в платных группах зависит"
+    ],
+    "source_row_ids": [
+      "43-20"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_743169b1038139455e7da45d",
+    "institution_key": "institution_2df8986bec830cb8a427bee5",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский государственный институт культуры искусств имени Мирзо Турсунзаде"
+    ],
+    "source_row_ids": [
+      "46-2",
+      "47-1"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_f66ac95045e6e6d50342de5b",
+    "institution_key": "institution_d240a9339e4d6f0d66669f14",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский государственный университет права, и политики"
+    ],
+    "source_row_ids": [
+      "46-6"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_5dfa73facf6fcebacfd75788",
+    "institution_key": "institution_c60cda4b15a1a77210d991e9",
+    "location": "Panjakent",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский педагогический институт в городе Пенджикент Таджикский государственный институт культуры"
+    ],
+    "source_row_ids": [
+      "47-2"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_e1d67a56a27db1e4786784de",
+    "institution_key": "institution_0a04bfaa5a6ade68f4549e8a",
+    "location": "город Душанбе город Хорог",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "искусств имени Мирзо Турсунзаде Хорогский государственный университет имени Моёншо Назаршоева"
+    ],
+    "source_row_ids": [
+      "47-3"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_b3260188f21eeaf67a7d9430",
+    "institution_key": "institution_5f9c21ae1086f64b937a67b2",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Институт точных наук и технологий Таджикистана городе Худжанд (негосударственный)"
+    ],
+    "source_row_ids": [
+      "47-6",
+      "53-3",
+      "53-8",
+      "54-13",
+      "54-14",
+      "55-1",
+      "55-8"
+    ],
+    "offer_count": 7,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_30f17671b78c99532a42f31f",
+    "institution_key": "institution_5517a89ae3928bd4de9b3fef",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Худжандский международный институт Международного университета туризма и предпринимательства"
+    ],
+    "source_row_ids": [
+      "47-7"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_51e9a97b5cf167d3e699878f",
+    "institution_key": "institution_1ce6a32f72d66763407fe7d0",
+    "location": "Panjakent",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикистана Таджикский педагогический институт в городе Пенджикент"
+    ],
+    "source_row_ids": [
+      "47-8"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_116df3c385fb00087d3b41b2",
+    "institution_key": "institution_800416ef2432e50643ac61fd",
+    "location": "район Рашт город Пенджикент",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Педагогический институт Таджикистана в районе Рашт Таджикский педагогический институт в городе Пенджикент"
+    ],
+    "source_row_ids": [
+      "47-9"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_149737a0c8a2a04a229db080",
+    "institution_key": "institution_71f68b5e1ab30ff0ac5b3285",
+    "location": "Levakant",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Левакантский международный институт Международного университета туризма и предпринимательства Таджикистана"
+    ],
+    "source_row_ids": [
+      "47-11",
+      "48-7"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_8e28dbe3aa94d8744580f1b7",
+    "institution_key": "institution_0bb398308b234d2654960958",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Институт экономики и торговли Таджикского государ - ственного университета коммерции в городе Худжанд"
+    ],
+    "source_row_ids": [
+      "47-13"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_0fb875422109fa0d7dcb17ae",
+    "institution_key": "institution_eb1fd0728b7d15e94e1b10e7",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Академия государственного управления при Президенте Республики Таджикистан"
+    ],
+    "source_row_ids": [
+      "48-1"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_bf4cf5dc9584d9d3f6c962ce",
+    "institution_key": "institution_38cc830bf61c8a79b6718005",
+    "location": "город Душанбе город Куляб город Бохтар",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Международный университет туризма и предпринима - тельства Таджикистана Кулябский государственный университет имени Абуабдулло Рудаки Бохтарский Государственный университет имени Хусрава"
+    ],
+    "source_row_ids": [
+      "48-2"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_5a5a7d2dc6a580a6fc2d7ffe",
+    "institution_key": "institution_99d560010647313f78da5210",
+    "location": "город Душанбе город Душанбе город Бохтар",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Академия государственного управления при Президенте Республики Таджикистан Академия государственного управления при Президенте Республики Таджикистан Бохтарский Государственный университет имени Хусрава"
+    ],
+    "source_row_ids": [
+      "48-3"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_3740aa1887b42d5c8e8f5c5a",
+    "institution_key": "institution_8575c0428df1046d01086d80",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский государственный финансово - экономический университет"
+    ],
+    "source_row_ids": [
+      "48-8",
+      "49-1",
+      "50-2"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_f2e66370f9ecdf46e273ef18",
+    "institution_key": "institution_a15870eaca0d08d162175d3c",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Международный университет туризма и предпринима - тельства Таджикистана"
+    ],
+    "source_row_ids": [
+      "48-9",
+      "49-4",
+      "49-13"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_cb583f5a9b60072b674bad63",
+    "institution_key": "institution_d1e8664a4f5a736fb25082a6",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Бохтарский Государственный университет имени Хусрава"
+    ],
+    "source_row_ids": [
+      "48-10",
+      "49-2",
+      "50-1",
+      "50-4"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_f3db1bebc15e687a60e6a071",
+    "institution_key": "institution_756bc5af4865592d4df75c73",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский международный университет иностранных имени Сотима Улугзаде"
+    ],
+    "source_row_ids": [
+      "49-8"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_ebf78a7d809a9858017d3754",
+    "institution_key": "institution_15fefecd3aa01cd0d136cf5e",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский государственный университет коммерции"
+    ],
+    "source_row_ids": [
+      "49-12"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_e2a12f3c90af62fbf8562e07",
+    "institution_key": "institution_41eae9fb359a7e1bc88d4801",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "колледж имени Хосият Махсумовой Таджикского педагогического университета имени Садриддина Айни"
+    ],
+    "source_row_ids": [
+      "51-1",
+      "51-2",
+      "56-3",
+      "56-18",
+      "56-19"
+    ],
+    "offer_count": 5,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_0638bc70f1ab97062dbd1845",
+    "institution_key": "institution_7baecbfed9991cf21116c798",
+    "location": "Tursunzoda",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "колледж города Турсунзода"
+    ],
+    "source_row_ids": [
+      "51-3",
+      "51-4",
+      "56-4",
+      "56-5"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_9c65e1d21bf90bedfaac5aa5",
+    "institution_key": "institution_4c720aa7fecd1427c3c9a896",
+    "location": "Hisor",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "колледж города Гиссар"
+    ],
+    "source_row_ids": [
+      "51-5",
+      "51-6",
+      "56-6",
+      "56-7"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_6a176f6bd90b6cb75f28377a",
+    "institution_key": "institution_8d0fa01160429da9e74f36a1",
+    "location": "Rudaki",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "колледж района Рудаки"
+    ],
+    "source_row_ids": [
+      "51-7",
+      "51-8",
+      "56-8",
+      "56-9"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_9bf8298a62de35ad9881241a",
+    "institution_key": "institution_3fc3dee09c9e0a89fac86611",
+    "location": "Konibodom",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "колледж имени М. Турсунзода города Канибадам"
+    ],
+    "source_row_ids": [
+      "51-9",
+      "57-9",
+      "57-10"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_14b280967b46e9c7e5d5e00f",
+    "institution_key": "institution_00778cd9f5b040856d86acb0",
+    "location": "Zafarobod",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "колледж районa Зафаробод"
+    ],
+    "source_row_ids": [
+      "51-10",
+      "51-11"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_82cfbde80f59d1bc34b19c7c",
+    "institution_key": "institution_e641a0ea05d661db34cb39df",
+    "location": "Mastchoh",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "колледж Матчинского района"
+    ],
+    "source_row_ids": [
+      "51-12",
+      "51-13",
+      "56-11",
+      "56-12"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_ff58e832bfed4e1f35336052",
+    "institution_key": "institution_dc6c1a780cdf5be1c83100e4",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "педагогический колледж города Бохтар (негосударственный)"
+    ],
+    "source_row_ids": [
+      "51-14",
+      "52-3",
+      "56-13"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_0bd7c8107c018f061d92af4e",
+    "institution_key": "institution_0b181e5e62d0d0519a87eb5f",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "колледж Бохтарского государственного университета Хусрава"
+    ],
+    "source_row_ids": [
+      "51-15",
+      "51-16",
+      "56-14",
+      "56-15",
+      "56-20",
+      "56-21",
+      "57-11",
+      "57-12"
+    ],
+    "offer_count": 8,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_8fee861208f056fce289e8d0",
+    "institution_key": "institution_45221409e9b2bc1687611759",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "колледж Кулябского государственного университета Рудаки"
+    ],
+    "source_row_ids": [
+      "51-17",
+      "51-18"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_8e4c9b8ee1b5d0f28554ee4c",
+    "institution_key": "institution_f17a63e8d88450fda02a8961",
+    "location": "Hamadoni",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "- педагогического колледжа города Бохтар в районе Хамадони"
+    ],
+    "source_row_ids": [
+      "51-19",
+      "56-16"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_9872911f56eb728ba9192e57",
+    "institution_key": "institution_353cc48d53b31aa1ac04ecd3",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "и цифровизации города Бохтар (негосударственный)"
+    ],
+    "source_row_ids": [
+      "52-1",
+      "56-17"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_c237cb195551cd2e5b0afa9e",
+    "institution_key": "institution_7d36e0e871ed504912c607e5",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "социальных услуг в городе Худжанд"
+    ],
+    "source_row_ids": [
+      "52-2"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_8fd0b63482e20f2e9c3bcb69",
+    "institution_key": "institution_71a62f9dc01f5cbaeb11fc99",
+    "location": "район Дангара город Душанбе",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Название Дангаринский государственный университет Таджикский аграрный университет имени"
+    ],
+    "source_row_ids": [
+      "53-1"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_68a79d7cce04465e0fe85780",
+    "institution_key": "institution_a74cde2bdb5936410ed28061",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Шириншоха Шотемура Бохтарский Государственный университет имени Носири Хусрава"
+    ],
+    "source_row_ids": [
+      "53-2"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_f0cdfe14a74bc6f520184d6b",
+    "institution_key": "institution_e8bae70dc220e551ae8f752c",
+    "location": "Isfara",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Филиал Технологического университета Таджикистана городе Исфара"
+    ],
+    "source_row_ids": [
+      "53-4",
+      "55-9"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_ce7488f2901c775bd204977d",
+    "institution_key": "institution_2034ad279f4055cc630bd1fa",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Таджикский институт физической культуры имени Саймумина Рахимова"
+    ],
+    "source_row_ids": [
+      "54-6"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_34b9a6337f67f1b436bf30ed",
+    "institution_key": "institution_a7e9b895fe19345ca2b33901",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Университет инновации и цифровых технологий Таджикистана Кулябский государственный университет имени"
+    ],
+    "source_row_ids": [
+      "55-2"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_d87976b0ed660e575bff523a",
+    "institution_key": "institution_b5a33191cecf24f303b30135",
+    "location": "город Куляб город Худжанд",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Абуабдулло Рудаки Таджикский государственный университет права, бизнеса и политики"
+    ],
+    "source_row_ids": [
+      "55-3"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.45
+  },
+  {
+    "campus_key": "campus_f3bde5e4cd2d3ed5ee686861",
+    "institution_key": "institution_e3d364ccb9ca6ade14c87e67",
+    "location": "Mastchoh",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Матчинского района"
+    ],
+    "source_row_ids": [
+      "56-1",
+      "56-2",
+      "56-22",
+      "57-1"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_a7df79062e364d7b38a566c3",
+    "institution_key": "institution_fd452d523a19d1fa48601ecd",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "колледж Худжанда (негосударственный)"
+    ],
+    "source_row_ids": [
+      "56-10"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_50e35a8a627b75aaedd36487",
+    "institution_key": "institution_edfcb9d53704fa7e9f83b061",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "колледж в городе Бохтар"
+    ],
+    "source_row_ids": [
+      "57-2",
+      "57-3",
+      "57-4",
+      "57-5"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_30ae9c8b0a63064577f720c4",
+    "institution_key": "institution_da91213820b5947500ce90dd",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "имени С. Юсуповой города Душанбе"
+    ],
+    "source_row_ids": [
+      "57-6"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_4822b9feda7d0ad288412105",
+    "institution_key": "institution_4dd9ec929fcd33654c2e9e77",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "культуры Таджикистана"
+    ],
+    "source_row_ids": [
+      "57-7",
+      "57-8"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.62
+  },
+  {
+    "campus_key": "campus_d9253b05add7c6b21defa660",
+    "institution_key": "institution_6ed051ae453619206278f018",
+    "location": "Jayhun",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "педагогический колледж района Джайхун"
+    ],
+    "source_row_ids": [
+      "57-13"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_4d607f96002a2c193bf74f94",
+    "institution_key": "institution_87d7f98b7af3bcc543199880",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи техникии Донишгоҳи техникии Тоҷикистон ба номи академик М. С. Осимӣ"
+    ],
+    "source_row_ids": [
+      "5108",
+      "5109",
+      "5133",
+      "5134",
+      "5145",
+      "5146",
+      "5174",
+      "5202",
+      "5203",
+      "5212",
+      "5213",
+      "5218",
+      "5219",
+      "5220",
+      "5221",
+      "5225",
+      "5226",
+      "5231",
+      "5232",
+      "5251",
+      "5252",
+      "5316",
+      "5317",
+      "5330",
+      "5331",
+      "5340",
+      "5341",
+      "5354",
+      "5355",
+      "5400",
+      "5401",
+      "5413",
+      "5414",
+      "5425",
+      "5426",
+      "5449",
+      "5450",
+      "5461",
+      "5462",
+      "5688",
+      "5689",
+      "5804",
+      "5805"
+    ],
+    "offer_count": 43,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_ebff15e1b105a8cbf39ab4c4",
+    "institution_key": "institution_263be721c6506a0bae3a74e2",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи технологии шаҳри Душанбе"
+    ],
+    "source_row_ids": [
+      "5110",
+      "5111",
+      "5237",
+      "5238",
+      "5241",
+      "5242",
+      "5243",
+      "5244",
+      "5246",
+      "5308",
+      "5309",
+      "5288",
+      "5289",
+      "5364",
+      "5365",
+      "5374",
+      "5375",
+      "5427",
+      "5428",
+      "5445",
+      "5446",
+      "5463",
+      "5464"
+    ],
+    "offer_count": 23,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_56590e57dbeecbdb5f7ce3e3",
+    "institution_key": "institution_1cb906455fca7083ca6e3b44",
+    "location": "Danghara",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи политехникии Донишгоҳи давлатии Данғара"
+    ],
+    "source_row_ids": [
+      "5112",
+      "5113",
+      "5130",
+      "5131",
+      "5149",
+      "5150",
+      "5153",
+      "5154",
+      "5204",
+      "5205",
+      "5206",
+      "5207",
+      "5239",
+      "5240",
+      "5259",
+      "5260",
+      "5261",
+      "5262",
+      "5310",
+      "5311",
+      "5306",
+      "5307",
+      "5322",
+      "5323",
+      "5342",
+      "5343",
+      "5344",
+      "5345",
+      "5350",
+      "5351",
+      "5360",
+      "5361",
+      "5421",
+      "5422"
+    ],
+    "offer_count": 34,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_1671c96c807ede089860fabf",
+    "institution_key": "institution_cb64bce45fdeee5912ba3996",
+    "location": "Rudaki",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи техникию омӯзгории ноҳияи Рӯдакӣ"
+    ],
+    "source_row_ids": [
+      "5879",
+      "5880",
+      "5114",
+      "5115",
+      "5126",
+      "5127",
+      "5296",
+      "5297",
+      "5483",
+      "5484",
+      "5516",
+      "5517",
+      "5543",
+      "5544",
+      "5581",
+      "5582",
+      "5615",
+      "5616",
+      "5663",
+      "5664"
+    ],
+    "offer_count": 20,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_d92d988c9ce27dec2e7caa55",
+    "institution_key": "institution_7af285d0836bf21c64cd85db",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи муҳандисию омӯзгории шаҳри Душанбе"
+    ],
+    "source_row_ids": [
+      "5116",
+      "5117",
+      "5121",
+      "5122",
+      "5157",
+      "5158",
+      "5200",
+      "5201",
+      "5210",
+      "5211",
+      "5263",
+      "5264",
+      "5265",
+      "5269",
+      "5270",
+      "5271",
+      "5272",
+      "5286",
+      "5287",
+      "5328",
+      "5329",
+      "5352",
+      "5353",
+      "5388",
+      "5389",
+      "5402",
+      "5403",
+      "5415",
+      "5416",
+      "5504",
+      "5505",
+      "5569",
+      "5570",
+      "5607",
+      "5608",
+      "5655",
+      "5656",
+      "5810",
+      "5811"
+    ],
+    "offer_count": 39,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_2b6f6c5b6cc15f23d3e2ce0f",
+    "institution_key": "institution_a514784517e79035f2f992cd",
+    "location": "Konibodom",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи технологии ба номи А. Қаҳҳорови шаҳри Конибодом"
+    ],
+    "source_row_ids": [
+      "5118",
+      "5119",
+      "5128",
+      "5129",
+      "5247",
+      "5248",
+      "5332",
+      "5333"
+    ],
+    "offer_count": 8,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_36590c0bcdcd61e169f334f7",
+    "institution_key": "institution_83c6cb357c799139f451d1fb",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи технологияҳои инноватсионӣ ва иттилоотӣ - коммуникатсионии Кӯлоб"
+    ],
+    "source_row_ids": [
+      "5120",
+      "5123",
+      "5132",
+      "5173",
+      "5178",
+      "5281",
+      "5320",
+      "5321",
+      "5399",
+      "5404",
+      "5456"
+    ],
+    "offer_count": 11,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_8b8041a5855068e707ac081c",
+    "institution_key": "institution_98ef6e844f7061f3ffb7cf54",
+    "location": "Tursunzoda",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи металлургии шаҳри Турсунзода"
+    ],
+    "source_row_ids": [
+      "5124",
+      "5125",
+      "5176",
+      "5177",
+      "5290",
+      "5291",
+      "5356",
+      "5357",
+      "5465",
+      "5466"
+    ],
+    "offer_count": 10,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_2ccc2d5fb7e437946c1cb30e",
+    "institution_key": "institution_62af10598ced79dbea74d92d",
+    "location": "Rogun",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи муҳандисӣ - техникии шаҳри Роғун"
+    ],
+    "source_row_ids": [
+      "5135",
+      "5136",
+      "5214",
+      "5215",
+      "5233",
+      "5234"
+    ],
+    "offer_count": 6,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_2f85cb0f0250c41ea12e27c9",
+    "institution_key": "institution_629c869372679bbf96f6e961",
+    "location": "Mastchoh",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи кишоварзии ноҳияи Мастчоҳ"
+    ],
+    "source_row_ids": [
+      "5137",
+      "5138",
+      "5253",
+      "5254",
+      "5275",
+      "5276",
+      "5304",
+      "5305",
+      "5471",
+      "5472",
+      "5653",
+      "5654",
+      "5684",
+      "5685",
+      "5794",
+      "5795",
+      "5798",
+      "5799"
+    ],
+    "offer_count": 18,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_8ef9b993756285981b2a107b",
+    "institution_key": "institution_73352aa394bfc4acab97d1d2",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи кӯҳии ба номи С. Юсуповаи шаҳри Душанбе"
+    ],
+    "source_row_ids": [
+      "5139",
+      "5140",
+      "5141",
+      "5142",
+      "5179",
+      "5180",
+      "5208",
+      "5209",
+      "5249",
+      "5250",
+      "5284",
+      "5314",
+      "5315",
+      "5338",
+      "5339",
+      "5346",
+      "5393",
+      "5394",
+      "5405",
+      "5406",
+      "5433",
+      "5434",
+      "5459",
+      "5460",
+      "5808",
+      "5809"
+    ],
+    "offer_count": 26,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_c2c57529b46f5399ce4c3a47",
+    "institution_key": "institution_8e35e3abee6bc13cf965ca07",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи информатика ва техникаи компютерии шаҳри Душанбе"
+    ],
+    "source_row_ids": [
+      "5143",
+      "5144",
+      "5152",
+      "5155",
+      "5156",
+      "5223",
+      "5224",
+      "5277",
+      "5278",
+      "5282",
+      "5283",
+      "5312",
+      "5313",
+      "5334",
+      "5335",
+      "5348",
+      "5349",
+      "5362",
+      "5363",
+      "5372",
+      "5373",
+      "5391",
+      "5392",
+      "5417",
+      "5418",
+      "5423",
+      "5424",
+      "5437",
+      "5438",
+      "5443",
+      "5444",
+      "5457",
+      "5458"
+    ],
+    "offer_count": 33,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_976bc1abd2e08c7d346b8eaa",
+    "institution_key": "institution_5829ef89a08f22c0e12d3a5a",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи махсусгардонидашудаи шаҳри Бохтар"
+    ],
+    "source_row_ids": [
+      "5147",
+      "5148",
+      "5267",
+      "5268",
+      "5358",
+      "5359",
+      "5368",
+      "5369",
+      "5370",
+      "5371",
+      "5411",
+      "5412",
+      "5419",
+      "5420",
+      "5431",
+      "5432",
+      "5441",
+      "5442",
+      "5451",
+      "5452",
+      "5651",
+      "5652",
+      "5796",
+      "5797",
+      "5800",
+      "5801"
+    ],
+    "offer_count": 26,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_7c841596acf2f1fbc70406a3",
+    "institution_key": "institution_6a5b483d038a7bb105e597a8",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи информатика ва техникаи компютерии шаҳри Душанбе маблағи таҳсил дар гурӯҳҳои пулакӣ аз муассисаҳои таълимӣ"
+    ],
+    "source_row_ids": [
+      "5151"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_02c4172dfbdc4f2f72038de8",
+    "institution_key": "institution_72a795fc412f46781123aab1",
+    "location": "Vahdat",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омори шаҳри Ваҳдат"
+    ],
+    "source_row_ids": [
+      "5159",
+      "5160",
+      "5181",
+      "5182",
+      "5279",
+      "5280",
+      "5294",
+      "5295",
+      "5366",
+      "5367",
+      "5376",
+      "5377",
+      "5395",
+      "5396",
+      "5409",
+      "5410",
+      "5429",
+      "5435",
+      "5436",
+      "5439",
+      "5440",
+      "5447",
+      "5448",
+      "5454",
+      "5455",
+      "5469",
+      "5470"
+    ],
+    "offer_count": 27,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_6728980cebf8d859ab87353f",
+    "institution_key": "institution_4959adbaa00ac7e7fb93ad1a",
+    "location": "Tursunzoda",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгории шаҳри Турсунзода"
+    ],
+    "source_row_ids": [
+      "5161",
+      "5162",
+      "5183",
+      "5184",
+      "5380",
+      "5381",
+      "5479",
+      "5480",
+      "5512",
+      "5513",
+      "5551",
+      "5552",
+      "5577",
+      "5578",
+      "5611",
+      "5612",
+      "5637",
+      "5638",
+      "5659",
+      "5660",
+      "5806",
+      "5807"
+    ],
+    "offer_count": 22,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_5bed58806fbe72a12f19dab4",
+    "institution_key": "institution_07819abdf66953fc20f6da56",
+    "location": "Hisor",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгории шаҳри Ҳисор"
+    ],
+    "source_row_ids": [
+      "5163",
+      "5164",
+      "5382",
+      "5383",
+      "5481",
+      "5482",
+      "5514",
+      "5515",
+      "5553",
+      "5554",
+      "5579",
+      "5580",
+      "5613",
+      "5614",
+      "5639",
+      "5640",
+      "5661",
+      "5662"
+    ],
+    "offer_count": 18,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_8b07d704f49e7087bce2f57c",
+    "institution_key": "institution_97bce46bc357463e79a5de41",
+    "location": "Jabbor Rasulov",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи муҳандисӣ‐омӯзгории ноҳияи Ҷаббор Расулов"
+    ],
+    "source_row_ids": [
+      "5165",
+      "5166",
+      "5185",
+      "5186",
+      "5486",
+      "5487",
+      "5519",
+      "5520",
+      "5584",
+      "5618",
+      "5619",
+      "5790",
+      "5791"
+    ],
+    "offer_count": 13,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_7eed0a963b869d4de128ee49",
+    "institution_key": "institution_fd2c1ed0fc79e37320f7ed96",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгории Донишгоҳи давлатии Хуҷанд ба номи академик Бобоҷон Ғафуров"
+    ],
+    "source_row_ids": [
+      "5167",
+      "5168",
+      "5187",
+      "5188",
+      "5490",
+      "5491",
+      "5523",
+      "5524",
+      "5557",
+      "5558",
+      "5586",
+      "5587",
+      "5620",
+      "5621",
+      "5669",
+      "5670",
+      "5686",
+      "5687"
+    ],
+    "offer_count": 18,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_4c25096e27b97d250124f80f",
+    "institution_key": "institution_1d2100495b8f625b21c208c0",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгории Донишгоҳи давлатии Бохтар ба номи Носири Хусрав"
+    ],
+    "source_row_ids": [
+      "5169",
+      "5170",
+      "5191",
+      "5192",
+      "5532",
+      "5533",
+      "5545",
+      "5546",
+      "5595",
+      "5596",
+      "5675",
+      "5676"
+    ],
+    "offer_count": 12,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_8354c91d785ff72d9e8ace6b",
+    "institution_key": "institution_57899a892c36da4418666fdb",
+    "location": "Jayhun",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгорӣ - муҳандисии ноҳияи Ҷайҳун (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5171",
+      "5501",
+      "5538",
+      "5601",
+      "5627"
+    ],
+    "offer_count": 5,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_5cb194a8554f1ad877ad33e1",
+    "institution_key": "institution_d0afc43d7a2ea6bb17daa8fe",
+    "location": "Dusti",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Филиали Коллеҷи омӯзгорӣ - муҳандисии ноҳияи Ҷайҳун ( ғайридавлатӣ) дар ноҳияи Дӯстӣ",
+      "Филиали Коллеҷи омӯзгорӣ - муҳандисии ноҳияи Ҷайҳун (ғайридавлатӣ) дар ноҳияи Дӯстӣ"
+    ],
+    "source_row_ids": [
+      "5172",
+      "5540",
+      "5603"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_c40eadee3357bbd9da44dde4",
+    "institution_key": "institution_a39693bd5545eef52a94219f",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи техникии Донишгоҳи техникии Тоҷикистон ба номи академик М. С. Осимӣ маблағи таҳсил дар гурӯҳҳои пулакӣ аз муассисаҳои таълимӣ"
+    ],
+    "source_row_ids": [
+      "5175"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_bc2e5c0e6aa4b6d94842b5ac",
+    "institution_key": "institution_8b3d707a13fe8e81cc402315",
+    "location": "Mastchoh",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгории ноҳияи Мастчоҳ"
+    ],
+    "source_row_ids": [
+      "5189",
+      "5190",
+      "5492",
+      "5493",
+      "5527",
+      "5528",
+      "5561",
+      "5562",
+      "5590",
+      "5591",
+      "5631",
+      "5632",
+      "5641",
+      "5642",
+      "5671",
+      "5672"
+    ],
+    "offer_count": 16,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_0fd7d20dbcf43b47c08836b7",
+    "institution_key": "institution_5b3d48be6ae1171f6041064e",
+    "location": "Panjakent",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгории шаҳри Панҷакент"
+    ],
+    "source_row_ids": [
+      "5195",
+      "5196",
+      "5384",
+      "5385",
+      "5494",
+      "5495",
+      "5529",
+      "5530",
+      "5592",
+      "5593",
+      "5643",
+      "5644",
+      "5673",
+      "5674"
+    ],
+    "offer_count": 14,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_b501525bc4929b361f1e0c0d",
+    "institution_key": "institution_82be1cb79a879eb846a55c2f",
+    "location": "Shahritus",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Филиали Коллеҷи муҳандисӣ - омӯзгории шаҳри Бохтар (ғайридавлатӣ) дар ноҳияи Шаҳритус"
+    ],
+    "source_row_ids": [
+      "5197",
+      "5502",
+      "5604"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_d5869138db0701875d210c26",
+    "institution_key": "institution_8b6ab491e16dfa99f1869bd5",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгорӣ ва рақамикунонии шаҳри Бохтар ( ғайридавлатӣ)",
+      "Коллеҷи омӯзгорӣ ва рақамикунонии шаҳри Бохтар (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5198",
+      "5453",
+      "5476",
+      "5503",
+      "5541",
+      "5565",
+      "5605",
+      "5628",
+      "5650",
+      "5680"
+    ],
+    "offer_count": 10,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_df012c941cc567d0672d7e77",
+    "institution_key": "institution_aec02cd6ad255a085b2dfae2",
+    "location": "Yovon",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Филиали Коллеҷи муҳандисӣ - омӯзгории шаҳри Бохтар (ғайридавлатӣ) дар ноҳияи Ёвон маблағи таҳсил дар гурӯҳҳои пулакӣ аз муассисаҳои таълимӣ"
+    ],
+    "source_row_ids": [
+      "5199"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_2be740f01599d0da6746fe8b",
+    "institution_key": "institution_11d590d5b0213192740c87ca",
+    "location": "Jaloliddin Balkhi",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи энергетикии ноҳияи Ҷалолиддини Балхӣ"
+    ],
+    "source_row_ids": [
+      "5216",
+      "5217",
+      "5257",
+      "5258",
+      "5318",
+      "5319",
+      "5407"
+    ],
+    "offer_count": 7,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_af2f766aa0abbdd43705f77f",
+    "institution_key": "institution_ae94b9788676585753ea7d7c",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи технологияҳои инноватсионӣ ва иттилоотӣ - коммуникатсионии Кӯлоб маблағи таҳсил дар гурӯҳҳои пулакӣ аз муассисаҳои таълимӣ"
+    ],
+    "source_row_ids": [
+      "5222"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_ba0539ca3f63dd8d62b87531",
+    "institution_key": "institution_393553e589e3a88eb0d83add",
+    "location": "Nurobod",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи муҳандисӣ - техникии ноҳияи Нуробод"
+    ],
+    "source_row_ids": [
+      "5227",
+      "5228",
+      "5229",
+      "5230",
+      "5273",
+      "5274",
+      "5292",
+      "5293",
+      "5467",
+      "5468"
+    ],
+    "offer_count": 10,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_4236bde02b8e197eb5cea711",
+    "institution_key": "institution_74fced32fdba257c96333226",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи технологии шаҳри Душанбе маблағи таҳсил дар гурӯҳҳои пулакӣ аз муассисаҳои таълимӣ"
+    ],
+    "source_row_ids": [
+      "5245"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_5f356f754e0501ffe0be1435",
+    "institution_key": "institution_649e026d3f11025f68cff35b",
+    "location": "Zafarobod",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи политехникии ноҳияи Зафаробод"
+    ],
+    "source_row_ids": [
+      "5255",
+      "5256",
+      "5473",
+      "5474"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_e13b40dcb6aa782f070d7021",
+    "institution_key": "institution_4e4eea1fee6e63c7e5cbda53",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи муҳандисию омӯзгории шаҳри Душанбе маблағи таҳсил дар гурӯҳҳои пулакӣ аз муассисаҳои таълимӣ"
+    ],
+    "source_row_ids": [
+      "5266"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_4382bf5133c5d863fa0d6384",
+    "institution_key": "institution_0ad8d49e167e30341406b398",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи кӯҳии ба номи С. Юсуповаи шаҳри Душанбе маблағи таҳсил дар гурӯҳҳои пулакӣ аз муассисаҳои таълимӣ"
+    ],
+    "source_row_ids": [
+      "5285",
+      "5347"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_39a099753efe7d058debf6c8",
+    "institution_key": "institution_05f88b392d666ec329656ad3",
+    "location": "Vahdat",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгорӣ ва сайёҳӣ дар шаҳри Ваҳдат (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5298",
+      "5390",
+      "5485",
+      "5518",
+      "5568",
+      "5583",
+      "5617",
+      "5665"
+    ],
+    "offer_count": 8,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_5a45f025c9ccbd58074d8d7a",
+    "institution_key": "institution_4101d9bae30cbba6bc027586",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи инноватсионии Хуҷанд (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5299",
+      "5666",
+      "5706",
+      "5716"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_481de2dcfc3d68183f6a6d2a",
+    "institution_key": "institution_14ac4084d9741a218d51145a",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи сайёҳӣ ва хизматрасониҳои иҷтимоии шаҳри Хуҷанд"
+    ],
+    "source_row_ids": [
+      "5300",
+      "5301",
+      "5496",
+      "5497",
+      "5563",
+      "5564",
+      "5622",
+      "5623",
+      "5633",
+      "5634",
+      "5786",
+      "5787"
+    ],
+    "offer_count": 12,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_5f4e24f20f18d5d326e951d3",
+    "institution_key": "institution_92f98680288138887ca58741",
+    "location": "Levakant",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи саноат ва хизматрасониҳои иҷтимоии шаҳри Левакант"
+    ],
+    "source_row_ids": [
+      "5302",
+      "5336",
+      "5337",
+      "5635",
+      "5636"
+    ],
+    "offer_count": 5,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_2c8c312a41086b44cdee243e",
+    "institution_key": "institution_8b1290d32a082ee899487c54",
+    "location": "Levakant",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи саноат ва хизматрасониҳои иҷтимоии шаҳри Левакант маблағи таҳсил дар гурӯҳҳои пулакӣ аз муассисаҳои таълимӣ"
+    ],
+    "source_row_ids": [
+      "5303"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_5e015fe7fde97d53ef82eea8",
+    "institution_key": "institution_355c90569f1b9ec3213f82d2",
+    "location": "Rasht",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи муҳандисӣ - маърифатии ноҳияи Рашт"
+    ],
+    "source_row_ids": [
+      "5324",
+      "5325",
+      "5510",
+      "5511",
+      "5549",
+      "5550",
+      "5575",
+      "5576",
+      "5629",
+      "5630"
+    ],
+    "offer_count": 10,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_7974fb889abda58359dda33e",
+    "institution_key": "institution_576c7eaee89dec3e3e2e8c4b",
+    "location": "Jabbor Rasulov",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи муҳандисӣ‐омӯзгории ноҳияи Ҷаббор Расулов маблағи таҳсил дар гурӯҳҳои пулакӣ аз муассисаҳои таълимӣ"
+    ],
+    "source_row_ids": [
+      "5326",
+      "5585"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_361530d8ba43a1ce3dfc8df9",
+    "institution_key": "institution_6328ea0458425bb7e0a8a06e",
+    "location": "Yovon",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Филиали Коллеҷи муҳандисӣ - омӯзгории шаҳри Бохтар (ғайридавлатӣ) дар ноҳияи Ёвон"
+    ],
+    "source_row_ids": [
+      "5327",
+      "5542",
+      "5606",
+      "5681"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_8c35c4ba4d97f57a8e5521a2",
+    "institution_key": "institution_7b64b5148589fb9e3cde6b6f",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгории ба номи Хосият Махсумоваи Донишгоҳи давлатии омӯзгории Тоҷикистон ба номи Садриддин Айнӣ"
+    ],
+    "source_row_ids": [
+      "5378",
+      "5379",
+      "5881",
+      "5882",
+      "5506",
+      "5507",
+      "5566",
+      "5567",
+      "5571",
+      "5572",
+      "5609",
+      "5657",
+      "5658",
+      "5682",
+      "5683"
+    ],
+    "offer_count": 15,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_10078427eb2821b2d2d60d46",
+    "institution_key": "institution_05186b5140cb5481296799c9",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгории Донишгоҳи давлатии Кӯлоб ба номи Абӯабдуллоҳи Рӯдакӣ"
+    ],
+    "source_row_ids": [
+      "5386",
+      "5534",
+      "5535",
+      "5597",
+      "5598",
+      "5646",
+      "5647",
+      "5677",
+      "5678"
+    ],
+    "offer_count": 9,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_38e77f318de1b31fb10904d9",
+    "institution_key": "institution_e103583ab01fbc28a9f86247",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгории Донишгоҳи давлатии Кӯлоб ба номи Абӯабдуллоҳи Рӯдакӣ маблағи таҳсил дар гурӯҳҳои пулакӣ аз муассисаҳои таълимӣ"
+    ],
+    "source_row_ids": [
+      "5387"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_b4b13608d18e48961f33861b",
+    "institution_key": "institution_da62c5e13382f0a5c34b1868",
+    "location": "Jaloliddin Balkhi",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи энергетикии ноҳияи Ҷалолиддини Балхӣ маблағи таҳсил дар гурӯҳҳои пулакӣ аз муассисаҳои таълимӣ"
+    ],
+    "source_row_ids": [
+      "5408"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_27b7a60aa03def252d7859a1",
+    "institution_key": "institution_d4db86a7660660394d0fe7c1",
+    "location": "Vahdat",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омори шаҳри Ваҳдат маблағи таҳсил дар гурӯҳҳои пулакӣ аз муассисаҳои таълимӣ"
+    ],
+    "source_row_ids": [
+      "5430"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_41e68011b91bd6e42ef82c12",
+    "institution_key": "institution_b40a68dbe0459e9facac9efb",
+    "location": "Panjakent",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи технологӣ ва инноватсионӣ дар шаҳри Панҷакент (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5475"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_539d47459546a0fc01879f16",
+    "institution_key": "institution_a8538b08067c69d878ed744f",
+    "location": "Lakhsh",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгории ноҳияи Лахш"
+    ],
+    "source_row_ids": [
+      "5477",
+      "5478",
+      "5508",
+      "5509",
+      "5547",
+      "5548",
+      "5573",
+      "5574"
+    ],
+    "offer_count": 8,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_43dee59c77a023d51671a6bc",
+    "institution_key": "institution_de4f785d716180a7e90e0e39",
+    "location": "Konibodom",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгории ба номи М. Турсунзодаи шаҳри Конибодом"
+    ],
+    "source_row_ids": [
+      "5488",
+      "5489",
+      "5521",
+      "5522",
+      "5555",
+      "5556",
+      "5667",
+      "5668"
+    ],
+    "offer_count": 8,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_ca529b7fb5a48d2341a3f546",
+    "institution_key": "institution_c69b4f1686eff30317c93722",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи муҳандисӣ - омӯзгории шаҳри Бохтар (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5498",
+      "5531",
+      "5594",
+      "5624",
+      "5645"
+    ],
+    "offer_count": 5,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_7527be01100540ff6c7768a0",
+    "institution_key": "institution_dcbc0bb028536331168a8cff",
+    "location": "Qubodiyon",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгории ноҳияи Қубодиён"
+    ],
+    "source_row_ids": [
+      "5499",
+      "5500",
+      "5536",
+      "5537",
+      "5599",
+      "5600",
+      "5625",
+      "5626",
+      "5648",
+      "5679"
+    ],
+    "offer_count": 10,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_caa132eaad663c33b64a97ca",
+    "institution_key": "institution_9ba917648a282e5c1583982b",
+    "location": "Zafarobod",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгории ноҳияи Зафаробод"
+    ],
+    "source_row_ids": [
+      "5525",
+      "5526",
+      "5559",
+      "5560",
+      "5588",
+      "5589"
+    ],
+    "offer_count": 6,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_54ef4f7b90b71c20c60437e1",
+    "institution_key": "institution_2e361fc007698201c8fe81c9",
+    "location": "Hamadoni",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Филиали Коллеҷи муҳандисӣ - омӯзгории шаҳри Бохтар (ғайридавлатӣ) дар ноҳияи Ҳамадонӣ"
+    ],
+    "source_row_ids": [
+      "5539",
+      "5602",
+      "5649"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_480d32a7aa512e11235e66ed",
+    "institution_key": "institution_c20faa57384682d83c5ffccc",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи омӯзгории ба номи Хосият Махсумоваи Донишгоҳи давлатии омӯзгории Тоҷикистон ба номи Садриддин Айнӣ маблағи таҳсил дар гурӯҳҳои пулакӣ аз муассисаҳои таълимӣ"
+    ],
+    "source_row_ids": [
+      "5610"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.86
+  },
+  {
+    "campus_key": "campus_e3e4841e4c36f852dab0fa67",
+    "institution_key": "institution_b47ad1202d51829e8c1b7d7f",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии ҷумҳуриявӣ"
+    ],
+    "source_row_ids": [
+      "5690",
+      "5703",
+      "5710",
+      "5739"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_73ea752415e8ceb2aee88073",
+    "institution_key": "institution_c073d2eb3261a2686ec250cb",
+    "location": "Hisor",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии шаҳри Ҳисор"
+    ],
+    "source_row_ids": [
+      "5691",
+      "5705",
+      "5747",
+      "5748"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_8bdcfc63b40b6bf38d2cc12c",
+    "institution_key": "institution_a95d2a7afe32e0d432ab2728",
+    "location": "Khujand",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии шаҳри Хуҷанд ба номи Ю. Б. Исҳоқӣ"
+    ],
+    "source_row_ids": [
+      "5692",
+      "5721",
+      "5758"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_35880428bdb7f395eb0b23db",
+    "institution_key": "institution_1fb8ebffdb16175627c8c08e",
+    "location": "Yovon",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи технологӣ - фарматсевтии Тоҷикистон"
+    ],
+    "source_row_ids": [
+      "5693",
+      "5707",
+      "5723",
+      "5760",
+      "5793"
+    ],
+    "offer_count": 5,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_b15d948ce8cda8b44fc32e43",
+    "institution_key": "institution_0709f21e00118ac40c2a6da7",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии шаҳри Кӯлоб (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5694",
+      "5729",
+      "5769"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_23e839ce3b55fa5e9b382a64",
+    "institution_key": "institution_f82f72bc6b5a1d087c7289db",
+    "location": "Shahritus",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббӣ - иҷтимоии ноҳияи Шаҳритус (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5695",
+      "5709",
+      "5736",
+      "5780"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_1be3f96ed0ae9f50549194e2",
+    "institution_key": "institution_1992e27d5fc5255a451617b8",
+    "location": "Rudaki",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии ноҳияи Рӯдакӣ (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5699",
+      "5701",
+      "5704",
+      "5711",
+      "5742",
+      "5785"
+    ],
+    "offer_count": 6,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_7cb0bbae51eb5e336ef24910",
+    "institution_key": "institution_8b3f450fd7f81129df103b80",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббӣ - инноватсионии шаҳри Бохтар (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5700",
+      "5734",
+      "5777"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_cc5397ecf00da662eb09e8d2",
+    "institution_key": "institution_75feb2c813d9126d3e36d63c",
+    "location": "Levakant",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббӣ - иҷтимоии шаҳри Левакант (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5708",
+      "5731",
+      "5771"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_c21df0145256322ffd9e9eb4",
+    "institution_key": "institution_ed6e1244d28f81d960a34563",
+    "location": "Vahdat",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии шаҳри Ваҳдат"
+    ],
+    "source_row_ids": [
+      "5712",
+      "5743",
+      "5744"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_8da373efb48c37fadc74775e",
+    "institution_key": "institution_91c23e532cad2c33694fed4b",
+    "location": "Tursunzoda",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии шаҳри Турсунзода"
+    ],
+    "source_row_ids": [
+      "5713",
+      "5745",
+      "5746"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_b78a3f98cd0cb5b51dde5b27",
+    "institution_key": "institution_d443a1d4fc124a4435fb239d",
+    "location": "Rogun",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии \"Оби Гарм\" - и шаҳри Роғун (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5714",
+      "5749"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_0721b8da86897695ed58977e",
+    "institution_key": "institution_c66473ee6bdfa51af47424c9",
+    "location": "Tojikobod",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Филиали Коллеҷи тиббӣ - инноватсионии ноҳияи Панҷ (ғайридавлатӣ) дар ноҳияи Тоҷикобод"
+    ],
+    "source_row_ids": [
+      "5715",
+      "5750"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_095f661a73a7dfc72558d20d",
+    "institution_key": "institution_0327fd1a63495650495388fb",
+    "location": "Bobojon Ghafurov",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии ноҳияи Бобоҷон Ғафуров (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5717",
+      "5751"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_e82d49674edacb8a6c353c07",
+    "institution_key": "institution_ebe9e774ad395cc01b1570ed",
+    "location": "Guliston",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии шаҳри Гулистон (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5718",
+      "5752"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_aa38f2d203c44ff631007409",
+    "institution_key": "institution_275486d6d37c10afc6b8168b",
+    "location": "Istaravshan",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии шаҳри Истаравшан"
+    ],
+    "source_row_ids": [
+      "5719",
+      "5753"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_05cf08134ac5d1ba7b5e24ba",
+    "institution_key": "institution_bb671463f9bf8157c89bbb36",
+    "location": "Konibodom",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии шаҳри Конибодом"
+    ],
+    "source_row_ids": [
+      "5720",
+      "5754",
+      "5755"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_6d2005f89aae3fa6ec389e52",
+    "institution_key": "institution_01c25bb868272561fb956792",
+    "location": "Panjakent",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии шаҳри Панҷакент"
+    ],
+    "source_row_ids": [
+      "5696",
+      "5756",
+      "5757"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_96375e9944b42f3d088c2b24",
+    "institution_key": "institution_9d691e778690509d0b12bb76",
+    "location": "Panj",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббӣ - инноватсионии ноҳияи Панҷ (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5722",
+      "5759"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_70047ff5e0a3506a4ef10ab0",
+    "institution_key": "institution_1d7284b1abb5c93eb76644e7",
+    "location": "Danghara",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии Донишгоҳи давлатии тиббии Хатлон дар ноҳияи Данғара"
+    ],
+    "source_row_ids": [
+      "5724",
+      "5762",
+      "5763"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_9a2d36facab53e3b1ecef2b9",
+    "institution_key": "institution_ebdb26013d78f828ffb1062a",
+    "location": "Yovon",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии ноҳияи Ёвон"
+    ],
+    "source_row_ids": [
+      "5725",
+      "5764",
+      "5765"
+    ],
+    "offer_count": 3,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_278667ceec648e4608d5fb26",
+    "institution_key": "institution_4c08b6cb25d0774c16793637",
+    "location": "Hamadoni",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии ноҳияи Мир Сайид Алии Ҳамадонӣ (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5726",
+      "5766"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_e1657aa98adb3843c624652b",
+    "institution_key": "institution_23c209f2ba81a7eb302f6c35",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии шаҳри Бохтар"
+    ],
+    "source_row_ids": [
+      "5727",
+      "5767"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_cd54c3827c524a5401c23b8d",
+    "institution_key": "institution_856eb38883e374f8a873baf0",
+    "location": "Kulob",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии шаҳри Кӯлоб"
+    ],
+    "source_row_ids": [
+      "5728",
+      "5768"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_b058013f588f0c24bc306d24",
+    "institution_key": "institution_7ebb9a409c93242315374f0a",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббӣ - иҷтимоии шаҳри Бохтар (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5730",
+      "5770"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_db647a53120e7e9ec9ad6bf3",
+    "institution_key": "institution_9c4515b1e1bcedf62529a668",
+    "location": "Bokhtar",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии хусусии \"Даво\" - и шаҳри Бохтар"
+    ],
+    "source_row_ids": [
+      "5732",
+      "5772"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_cc51b9a5a733b48a72d17028",
+    "institution_key": "institution_af38dd31cf2c6172351f5cbe",
+    "location": "Danghara",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббӣ - иҷтимоии ноҳияи Данғара (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5733",
+      "5773"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_3a3afe3313d6dc57fc962a5c",
+    "institution_key": "institution_b559ef2fa48bfb9ee006f69b",
+    "location": "Khovaling",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии ноҳияи Ховалинг (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5735",
+      "5778"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_cab8517fd8dc976a1886cab5",
+    "institution_key": "institution_f1d4ba47321139d26e1ee697",
+    "location": "Farkhor",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии ноҳияи Фархор (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5697",
+      "5779"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_4dfef58f671e3b4f936b1fc0",
+    "institution_key": "institution_86272b12b53aafaa5aa0dce4",
+    "location": "Nurek",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Филиали Коллеҷи тиббӣ - иҷтимоии шаҳри Левакант (ғайридавлатӣ) дар шаҳри Норак"
+    ],
+    "source_row_ids": [
+      "5737",
+      "5781"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_ab6e87b223d6eb6b04806108",
+    "institution_key": "institution_bd6f8630da156b718c9bef8d",
+    "location": "Rasht",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии ноҳияи Рашт"
+    ],
+    "source_row_ids": [
+      "5740",
+      "5741"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_4a79393e0be97de93282d91f",
+    "institution_key": "institution_5d85efb78f2980634883926c",
+    "location": "Vakhsh",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии ноҳияи Вахш (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5761"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_f7fc333bb1e634a780808add",
+    "institution_key": "institution_4d346b8de42a07aa1afcebdb",
+    "location": "Vose",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии ноҳияи Восеъ (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5774"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_92dfb0f16ee387ab4b358533",
+    "institution_key": "institution_07af6cb8ba5baebcf6d5ad9b",
+    "location": "Temurmalik",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии Донишгоҳи давлатии тиббии Хатлон дар деҳаи Кангурти ноҳияи Темурмалик"
+    ],
+    "source_row_ids": [
+      "5775",
+      "5776"
+    ],
+    "offer_count": 2,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_e1e0df7672795f90992ca243",
+    "institution_key": "institution_86fda6a96324a30be59fb77b",
+    "location": "Muminobod",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тиббии ноҳияи Муъминобод (ғайридавлатӣ)"
+    ],
+    "source_row_ids": [
+      "5782"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_fd3c1b3ade23635b090751a8",
+    "institution_key": "institution_09778e47255cafb4d5f539b3",
+    "location": "Dushanbe",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Коллеҷи тарбияи ҷисмонии Тоҷикистон"
+    ],
+    "source_row_ids": [
+      "5788",
+      "5789",
+      "5802",
+      "5803"
+    ],
+    "offer_count": 4,
+    "confidence_min": 0.96
+  },
+  {
+    "campus_key": "campus_408f4ff0f539c4428f075b9e",
+    "institution_key": "institution_69ffbd3beb171d94b759a042",
+    "location": "Buston",
+    "campus_kind": "main_or_unspecified",
+    "aliases": [
+      "Филиали Коллеҷи тарбияи ҷисмонии Тоҷикистон дар шаҳри Бӯстон"
+    ],
+    "source_row_ids": [
+      "5792"
+    ],
+    "offer_count": 1,
+    "confidence_min": 0.96
+  }
+]

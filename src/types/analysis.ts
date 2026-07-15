@@ -7,8 +7,8 @@ export type AnalysisStep =
 export type AnalysisStatus = "idle" | "running" | "success" | "error";
 
 export const STEPS: { key: AnalysisStep; label: string }[] = [
-  { key: "submitting_request", label: "Отправка запроса" },
-  { key: "analyzing_interests", label: "Анализ интересов" },
-  { key: "searching_nct_codes", label: "Поиск кодов НЦТ" },
-  { key: "forming_recommendations", label: "Формирование рекомендаций" },
+  { key: "submitting_request", label: "Составляем список профессий" },
+  { key: "analyzing_interests", label: "Сверяем интересы с каталогом" },
+  { key: "searching_nct_codes", label: "Ищем коды из НЦТ" },
+  { key: "forming_recommendations", label: "Проверяем shortlist и ранжируем" },
 ];

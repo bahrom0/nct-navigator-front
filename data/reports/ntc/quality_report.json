@@ -1,0 +1,578 @@
+{
+  "generated_at": "2026-07-15T15:22:03.132Z",
+  "dataset": {
+    "grain": "one draft admission offer per Stage 1 staging row",
+    "intended_use": "Stage 2 normalization and review only; not a published product release",
+    "staging_rows": 1529,
+    "draft_core_offers": 1529,
+    "explained_row_delta": 0
+  },
+  "checks_performed": [
+    "required field completeness",
+    "stable-key uniqueness",
+    "source-row uniqueness",
+    "domain validity",
+    "confidence distribution",
+    "candidate duplicate detection",
+    "source year/period consistency",
+    "review issue coverage"
+  ],
+  "completeness": {
+    "specialty_code": {
+      "populated": 1529,
+      "missing": 0,
+      "rate": 1
+    },
+    "specialty_name": {
+      "populated": 1528,
+      "missing": 1,
+      "rate": 0.999346
+    },
+    "institution": {
+      "populated": 1529,
+      "missing": 0,
+      "rate": 1
+    },
+    "location": {
+      "populated": 1529,
+      "missing": 0,
+      "rate": 1
+    },
+    "education_form": {
+      "populated": 1529,
+      "missing": 0,
+      "rate": 1
+    },
+    "education_type": {
+      "populated": 1526,
+      "missing": 3,
+      "rate": 0.998038
+    },
+    "language": {
+      "populated": 1529,
+      "missing": 0,
+      "rate": 1
+    },
+    "admission_plan": {
+      "populated": 1505,
+      "missing": 24,
+      "rate": 0.984303
+    },
+    "cluster": {
+      "populated": 1529,
+      "missing": 0,
+      "rate": 1
+    },
+    "education_level": {
+      "populated": 1529,
+      "missing": 0,
+      "rate": 1
+    },
+    "academic_year": {
+      "populated": 1529,
+      "missing": 0,
+      "rate": 1
+    },
+    "admission_period": {
+      "populated": 1529,
+      "missing": 0,
+      "rate": 1
+    }
+  },
+  "uniqueness": {
+    "duplicate_stable_keys": 0,
+    "duplicate_source_rows": 0,
+    "duplicate_candidate_groups": 1,
+    "duplicate_candidate_samples": [
+      {
+        "dedupe_key": "2025|fourth_or_remaining_seats|after_11|224010235|педагогический колледж города бохтар негосударственный|Bokhtar|part_time|paid|tg|20",
+        "stable_keys": [
+          "offer_59b92192e4d91dbbb9f52ed1",
+          "offer_559479abce89daed50d864d4"
+        ]
+      }
+    ]
+  },
+  "issue_counts": {
+    "low_confidence_field": 472,
+    "shifted_columns": 124,
+    "missing_required_field": 28,
+    "unknown_city": 24,
+    "duplicate_candidate": 2,
+    "institution_location_conflict": 1
+  },
+  "severity_counts": {
+    "medium": 347,
+    "high": 304
+  },
+  "confidence_bands": {
+    "0.00-0.49": 127,
+    "0.50-0.84": 345,
+    "0.85-0.94": 953,
+    "0.95-1.00": 23039
+  },
+  "reference_counts": {
+    "cities": 17,
+    "regions": 25,
+    "institutions": 271,
+    "institution_campuses": 275,
+    "institution_aliases": 273,
+    "specialties": 399,
+    "clusters": 5,
+    "languages": 4,
+    "education_forms": 3,
+    "education_types": 2
+  },
+  "findings": [
+    {
+      "severity": "high",
+      "finding": "Unresolved official locations",
+      "evidence": {
+        "rows": 24,
+        "rate": 0.015697
+      },
+      "risk": "City and campus filtering cannot safely use these rows without review.",
+      "likely_cause": "Location spelling or parsing artifact is outside the current explicit alias dictionary.",
+      "remediation": "Review unknown_city issues and add only source-backed aliases."
+    },
+    {
+      "severity": "medium",
+      "finding": "Possible duplicate admission offers",
+      "evidence": {
+        "groups": 1,
+        "affected_rows": 2
+      },
+      "risk": "Stage 3 export could double-count capacity if candidates are not adjudicated.",
+      "likely_cause": "Repeated official rows or coordinate overlap.",
+      "remediation": "Resolve duplicate_candidate review issues; do not auto-merge by specialty code."
+    },
+    {
+      "severity": "high",
+      "finding": "Coordinate row-overlap warnings remain",
+      "evidence": {
+        "rows": 115
+      },
+      "risk": "Institution or specialty text may contain fragments from adjacent rows.",
+      "likely_cause": "Variable-height multiline cells in the 2025 remaining-seats PDF.",
+      "remediation": "Manually review affected evidence or improve horizontal-border extraction before Stage 3."
+    }
+  ],
+  "quality_gates": {
+    "every_offer_has_source_row": true,
+    "no_stable_key_duplicates": true,
+    "all_unknown_cities_in_review": true,
+    "raw_staging_core_count_explained": true,
+    "low_confidence_fields_are_reviewed": true,
+    "year_period_mismatch_excluded": true,
+    "khujand_report_present": true
+  },
+  "automated_test_recommendations": [
+    "stable_key must be unique and non-null",
+    "source_document_id + source_row_id must be unique",
+    "cluster must be 1..5",
+    "education_level and admission_period must match source inventory",
+    "unknown city and confidence below 0.50 must always produce review issues"
+  ],
+  "top_review_samples": [
+    {
+      "issue_id": "review_e81c92f62765b57fc630b81b",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p3:r11",
+      "issue_type": "missing_required_field",
+      "severity": "high",
+      "field_name": "admission_plan",
+      "message": "Required normalized field admission_plan is missing."
+    },
+    {
+      "issue_id": "review_8432f1b78b28fdbcb43f6a1c",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p3:r11",
+      "issue_type": "unknown_city",
+      "severity": "high",
+      "field_name": "city",
+      "message": "Official location could not be mapped to a reviewed city or district alias."
+    },
+    {
+      "issue_id": "review_d2f5f98ed609735277c6e834",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p3:r11",
+      "issue_type": "shifted_columns",
+      "severity": "high",
+      "field_name": "row",
+      "message": "A coordinate or column repair candidate requires review."
+    },
+    {
+      "issue_id": "review_b2a41f4e75777a77a024fd13",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p3:r11",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "location",
+      "message": "Field confidence is 0.45."
+    },
+    {
+      "issue_id": "review_e0ba12b52f07e1489886a097",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p3:r11",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "city",
+      "message": "Field confidence is 0.25."
+    },
+    {
+      "issue_id": "review_f11fbf2b843483f7a3f0900c",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p3:r11",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "region",
+      "message": "Field confidence is 0.25."
+    },
+    {
+      "issue_id": "review_3ba94b10bc684c8b47054040",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p3:r11",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "campus",
+      "message": "Field confidence is 0.45."
+    },
+    {
+      "issue_id": "review_1335f5b31da4e1f15b80409a",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p3:r11",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "education_form",
+      "message": "Field confidence is 0.4."
+    },
+    {
+      "issue_id": "review_7323525c1b3a10ee8374b7cc",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p3:r11",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "admission_plan",
+      "message": "Field confidence is 0.25."
+    },
+    {
+      "issue_id": "review_8160c086ea95c1204d5fe796",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p3:r12",
+      "issue_type": "shifted_columns",
+      "severity": "high",
+      "field_name": "row",
+      "message": "A coordinate or column repair candidate requires review."
+    },
+    {
+      "issue_id": "review_edb0e0b814be40cf887fd978",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p3:r12",
+      "issue_type": "low_confidence_field",
+      "severity": "medium",
+      "field_name": "specialty_name",
+      "message": "Field confidence is 0.65."
+    },
+    {
+      "issue_id": "review_aebe9dd08a8f8ca59a99eb62",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p3:r12",
+      "issue_type": "low_confidence_field",
+      "severity": "medium",
+      "field_name": "institution",
+      "message": "Field confidence is 0.62."
+    },
+    {
+      "issue_id": "review_aa82766a4478df8ce63d86ac",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p3:r12",
+      "issue_type": "low_confidence_field",
+      "severity": "medium",
+      "field_name": "campus",
+      "message": "Field confidence is 0.62."
+    },
+    {
+      "issue_id": "review_5d73e121af66f0b63e126c12",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r7",
+      "issue_type": "missing_required_field",
+      "severity": "high",
+      "field_name": "admission_plan",
+      "message": "Required normalized field admission_plan is missing."
+    },
+    {
+      "issue_id": "review_ed324f281ac89a7d1add619e",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r7",
+      "issue_type": "unknown_city",
+      "severity": "high",
+      "field_name": "city",
+      "message": "Official location could not be mapped to a reviewed city or district alias."
+    },
+    {
+      "issue_id": "review_4a7c33d42f8aea507d669d0a",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r7",
+      "issue_type": "shifted_columns",
+      "severity": "high",
+      "field_name": "row",
+      "message": "A coordinate or column repair candidate requires review."
+    },
+    {
+      "issue_id": "review_ccedc2e089755759293c3674",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r7",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "location",
+      "message": "Field confidence is 0.45."
+    },
+    {
+      "issue_id": "review_b9a25c4c6fc64612416c7f24",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r7",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "city",
+      "message": "Field confidence is 0.25."
+    },
+    {
+      "issue_id": "review_79e470b58920b8925a153a22",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r7",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "region",
+      "message": "Field confidence is 0.25."
+    },
+    {
+      "issue_id": "review_9f8592f3e0d01c63b6712394",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r7",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "campus",
+      "message": "Field confidence is 0.45."
+    },
+    {
+      "issue_id": "review_fdd2378cb857de7ac2d77746",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r7",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "admission_plan",
+      "message": "Field confidence is 0.25."
+    },
+    {
+      "issue_id": "review_a3879dbc03b26c4c8962b8c2",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r11",
+      "issue_type": "missing_required_field",
+      "severity": "high",
+      "field_name": "admission_plan",
+      "message": "Required normalized field admission_plan is missing."
+    },
+    {
+      "issue_id": "review_c5a746278af2bb07de0cf0a4",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r11",
+      "issue_type": "unknown_city",
+      "severity": "high",
+      "field_name": "city",
+      "message": "Official location could not be mapped to a reviewed city or district alias."
+    },
+    {
+      "issue_id": "review_f857eb231b76c8c3ad93c920",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r11",
+      "issue_type": "shifted_columns",
+      "severity": "high",
+      "field_name": "row",
+      "message": "A coordinate or column repair candidate requires review."
+    },
+    {
+      "issue_id": "review_042c47d997408438e87da5f9",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r11",
+      "issue_type": "low_confidence_field",
+      "severity": "medium",
+      "field_name": "specialty_name",
+      "message": "Field confidence is 0.65."
+    },
+    {
+      "issue_id": "review_3ef5618b0ba6b601b6a2d48d",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r11",
+      "issue_type": "low_confidence_field",
+      "severity": "medium",
+      "field_name": "institution",
+      "message": "Field confidence is 0.62."
+    },
+    {
+      "issue_id": "review_82cc8081d83a6ea3d912966e",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r11",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "location",
+      "message": "Field confidence is 0.45."
+    },
+    {
+      "issue_id": "review_ca32cee550370e16e18c079b",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r11",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "city",
+      "message": "Field confidence is 0.25."
+    },
+    {
+      "issue_id": "review_9b921f52258542a334b72fe5",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r11",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "region",
+      "message": "Field confidence is 0.25."
+    },
+    {
+      "issue_id": "review_ef2aae264f39736639eb7329",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r11",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "campus",
+      "message": "Field confidence is 0.45."
+    },
+    {
+      "issue_id": "review_5bd3abc006865ee09818d820",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p4:r11",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "admission_plan",
+      "message": "Field confidence is 0.25."
+    },
+    {
+      "issue_id": "review_03062cc8cc025de1092c9ada",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r3",
+      "issue_type": "missing_required_field",
+      "severity": "high",
+      "field_name": "admission_plan",
+      "message": "Required normalized field admission_plan is missing."
+    },
+    {
+      "issue_id": "review_e39a75de4728488aada2951f",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r3",
+      "issue_type": "unknown_city",
+      "severity": "high",
+      "field_name": "city",
+      "message": "Official location could not be mapped to a reviewed city or district alias."
+    },
+    {
+      "issue_id": "review_c8afff0e1fb56e3204f0ec14",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r3",
+      "issue_type": "shifted_columns",
+      "severity": "high",
+      "field_name": "row",
+      "message": "A coordinate or column repair candidate requires review."
+    },
+    {
+      "issue_id": "review_9b518e7b0f117335891862f8",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r3",
+      "issue_type": "low_confidence_field",
+      "severity": "medium",
+      "field_name": "specialty_name",
+      "message": "Field confidence is 0.65."
+    },
+    {
+      "issue_id": "review_c45c7ac28ecedebcdd59ce91",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r3",
+      "issue_type": "low_confidence_field",
+      "severity": "medium",
+      "field_name": "institution",
+      "message": "Field confidence is 0.62."
+    },
+    {
+      "issue_id": "review_f9aeec75b9af3b06e874d375",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r3",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "location",
+      "message": "Field confidence is 0.45."
+    },
+    {
+      "issue_id": "review_5daf849f2ab0dfeab285c5a0",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r3",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "city",
+      "message": "Field confidence is 0.25."
+    },
+    {
+      "issue_id": "review_7f6a996db3b8f92b84882cf0",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r3",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "region",
+      "message": "Field confidence is 0.25."
+    },
+    {
+      "issue_id": "review_14ce531347949da6ca785de0",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r3",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "campus",
+      "message": "Field confidence is 0.45."
+    },
+    {
+      "issue_id": "review_907cd63cef3bf0c9007a9911",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r3",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "admission_plan",
+      "message": "Field confidence is 0.25."
+    },
+    {
+      "issue_id": "review_c5b63f64cec49badd3fff97c",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r4",
+      "issue_type": "missing_required_field",
+      "severity": "high",
+      "field_name": "admission_plan",
+      "message": "Required normalized field admission_plan is missing."
+    },
+    {
+      "issue_id": "review_bdae8a63060ca2d5eedc3c7a",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r4",
+      "issue_type": "unknown_city",
+      "severity": "high",
+      "field_name": "city",
+      "message": "Official location could not be mapped to a reviewed city or district alias."
+    },
+    {
+      "issue_id": "review_a0a849e56831025e01e0d29c",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r4",
+      "issue_type": "shifted_columns",
+      "severity": "high",
+      "field_name": "row",
+      "message": "A coordinate or column repair candidate requires review."
+    },
+    {
+      "issue_id": "review_a7a2b2b2d74f9398c9262803",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r4",
+      "issue_type": "low_confidence_field",
+      "severity": "medium",
+      "field_name": "specialty_name",
+      "message": "Field confidence is 0.65."
+    },
+    {
+      "issue_id": "review_7a08194047985a62a90ec136",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r4",
+      "issue_type": "low_confidence_field",
+      "severity": "medium",
+      "field_name": "institution",
+      "message": "Field confidence is 0.62."
+    },
+    {
+      "issue_id": "review_d09d5ec5488c1f64c884f0ee",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r4",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "location",
+      "message": "Field confidence is 0.45."
+    },
+    {
+      "issue_id": "review_1d7be7dff2487c5e40befe0a",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r4",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "city",
+      "message": "Field confidence is 0.25."
+    },
+    {
+      "issue_id": "review_7ba4bbef476d67932b9bb6bb",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r4",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "region",
+      "message": "Field confidence is 0.25."
+    },
+    {
+      "issue_id": "review_bcd12be4c3332ef2527cbc05",
+      "staging_row_id": "ntc_pdf_after_11_remaining_2025:p6:r4",
+      "issue_type": "low_confidence_field",
+      "severity": "high",
+      "field_name": "campus",
+      "message": "Field confidence is 0.45."
+    }
+  ]
+}

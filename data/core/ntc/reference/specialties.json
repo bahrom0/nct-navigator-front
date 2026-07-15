@@ -1,0 +1,8221 @@
+[
+  {
+    "specialty_key": "specialty_afe4ec303670398adaa896be",
+    "code": "131030408",
+    "names": [
+      "WEB- дизайн и компьютерная графика"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "3-1",
+      "3-2",
+      "3-3",
+      "3-4",
+      "3-5"
+    ],
+    "offer_count": 5
+  },
+  {
+    "specialty_key": "specialty_3ffc71f12ba54ed559db2f72",
+    "code": "153010403",
+    "names": [
+      "Автоматизация и релейная защита электроустановок"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "3-6"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_7315374910f05a7e584e59ae",
+    "code": "140010102",
+    "names": [
+      "Автоматизированные системы"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "3-7"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_68f3e6faec24a3f4b6a33efa",
+    "code": "1530105",
+    "names": [
+      "Автоматизированные электроприводы"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "3-8",
+      "3-9"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_80937f6bc368f447ea66e29f",
+    "code": "1370107",
+    "names": [
+      "Автосервис"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "3-10"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_4311b02ec2bb423600c5d4f4",
+    "code": "102050405",
+    "names": [
+      "Астрономия 19801010105 - Безопасность автоматизированных"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "3-11"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_8033e7422714a627cc35bef7",
+    "code": "174060302",
+    "names": [
+      "Безопасность технологических процессов и производств"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "3-12"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_06828da05ad0865e1eebb354",
+    "code": "137020201",
+    "names": [
+      "Вагоны"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "3-13"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_ad83ea422f8d17c500799548",
+    "code": "1560201",
+    "names": [
+      "Геодезия"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "3-14"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_cc954ed509cf6d0b300cd998",
+    "code": "151010104",
+    "names": [
+      "Геология, поиск и разведка нефтяных и газовых месторождений"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "4-1"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_f35bec30404b560aea939786",
+    "code": "1370110",
+    "names": [
+      "Гибридные силовые установки и электромобили"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "4-2"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_1bc446996beb88901b16d687",
+    "code": "151010103",
+    "names": [
+      "Гидрогеология и инженерная геология"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "4-3"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_cec6522f31eb269bfd4fda5d",
+    "code": "151010111",
+    "names": [
+      "Гидрология и ледниковедение"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "4-4"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_77ed0584df9554c9ee7d7dd5",
+    "code": "170040101",
+    "names": [
+      "Гидротехническое строительство",
+      "Гидротехническое строительство 14401010105 - Грузовые автомобильные перевозки"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "4-5",
+      "4-6",
+      "4-7"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_6073a2945d746780c1fe32e7",
+    "code": "1560102",
+    "names": [
+      "Земельный кадастр"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "4-8"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_8216e5e5a5d385ce4a611aa7",
+    "code": "1560101",
+    "names": [
+      "Землеустройство",
+      "Землеустройство 174060136012501 - Инженер - машиностроитель -"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "4-9",
+      "4-10"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_c00f60d59c7a467917a14e5e",
+    "code": "133010105",
+    "names": [
+      "Инженерная защита окружающей среды"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "4-11"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_202bdcc27d1627cd80dfa829",
+    "code": "140030102",
+    "names": [
+      "Интеллектуальные компьютерные технологии защиты информации"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "4-12"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_4484a56c7370b6f25a8de83d",
+    "code": "1310304",
+    "names": [
+      "Информатика",
+      "Информатика 12104010203 - Информационные системы"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "4-13",
+      "4-15",
+      "4-16",
+      "4-17"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_8d287e98d810ba1fdfcb2042",
+    "code": "1020505",
+    "names": [
+      "Информатика"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "4-14"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_c196e3d18324c91faf4ed08c",
+    "code": "140010201",
+    "names": [
+      "Информационные системы и технологии (в проектировании и производстве)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "5-1"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_103213ed8d496562ddd75138",
+    "code": "140010101",
+    "names": [
+      "Компьютерные системы и интернет - технологии"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "5-2",
+      "5-3"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_2135cbd8097fe14b5e737773",
+    "code": "150010204",
+    "names": [
+      "Конструирование и технология швейных изделий"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "5-4"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_f077bb1dd077de39e2940e0a",
+    "code": "1500102",
+    "names": [
+      "Конструирование и технология швейных изделий"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "5-5"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_e0292b7eccbfc76a81dadf37",
+    "code": "1020501",
+    "names": [
+      "Математика"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "5-6",
+      "5-7",
+      "5-8",
+      "5-9",
+      "5-10"
+    ],
+    "offer_count": 5
+  },
+  {
+    "specialty_key": "specialty_4bd670be8e586208868d1b26",
+    "code": "131030102",
+    "names": [
+      "Математика (научно - педагогическая деятельность)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "5-11"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_4858ade187af60b63b4c4021",
+    "code": "102050302",
+    "names": [
+      "Математика. Информатика",
+      "Физика. Информатика"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "5-12",
+      "5-13",
+      "9-6"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_c6d862123ecabc1c7acc5b15",
+    "code": "102050301",
+    "names": [
+      "Математика. Физика"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "5-14",
+      "5-15",
+      "5-16",
+      "5-17",
+      "6-1"
+    ],
+    "offer_count": 5
+  },
+  {
+    "specialty_key": "specialty_b6bf8027ea062fbad29e5abf",
+    "code": "1740501",
+    "names": [
+      "Мелиорация и водное хозяйство 17405012501 - Мелиорация - экономика и"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "6-2"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_f889d1087f85fbed15f33d02",
+    "code": "136020105",
+    "names": [
+      "Металлургические машины и станки"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "6-3"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_cd5f78d4242fdbb6fec43245",
+    "code": "154010106",
+    "names": [
+      "Метрология, стандартизация и сертификация (агропромышленный комплекс)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "6-4"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_edc4371a5e4ee35fba6870f0",
+    "code": "154010104",
+    "names": [
+      "Метрология, стандартизация и сертификация (легкая промышленность)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "6-5"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_b0957e37fe68a9acc21bbf87",
+    "code": "154010105",
+    "names": [
+      "Метрология, стандартизация и сертификация (пищевая промышленность)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "6-6",
+      "6-7"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_e2db0ab223ebc4388331c90b",
+    "code": "1450101",
+    "names": [
+      "Многоканальные системы телекоммуникаций"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "6-8"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_fdbd623918cc0497e85f9a22",
+    "code": "143010505",
+    "names": [
+      "Нетрадиционные возобновляемые источники энергии"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "6-9"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_d9ec023367f49387318b6ab4",
+    "code": "1440302",
+    "names": [
+      "Организация дорожного движения"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "6-10"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_de608d4dac7eebe40de63776",
+    "code": "144010303",
+    "names": [
+      "Организация и безопасность дорожного движения"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "6-11",
+      "6-12"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_f6807bd356aebc7023baa8a1",
+    "code": "1440101",
+    "names": [
+      "Организация перевозок и управление автомобильным и городским транспортом"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "6-13",
+      "6-14"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_1d1e432d6c16a9def0fc2541",
+    "code": "1440103",
+    "names": [
+      "Организация перевозок и управление на железнодорожном транспорте"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "6-15"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_d793fc0bcfdbfbfe7046cead",
+    "code": "144010102",
+    "names": [
+      "Перевозки пассажиров автомобильным и городским транспортом"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "7-1"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_b84e2bbed4f54dcb5d79a699",
+    "code": "131030302",
+    "names": [
+      "Прикладная математика",
+      "Прикладная математика (научно - педагогическая деятельность)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "7-2",
+      "7-3"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_fadb79297496ac7623b3449a",
+    "code": "140010108",
+    "names": [
+      "Программная инженерия"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "7-4"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_ab29b7ed685d0caf1a22a90d",
+    "code": "1400101",
+    "names": [
+      "Программное обеспечение информационных технологий"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "7-5",
+      "7-6",
+      "7-7"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_b4867d83390702c81741bbee",
+    "code": "170020105",
+    "names": [
+      "Проектирование зданий и сооружений"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "7-8"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_f13d59d4a57ac78b78215e99",
+    "code": "143010202",
+    "names": [
+      "Проектирование, монтаж и эксплуатация электрических сетей"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "7-9"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_e0dcb3fd6af3f55169dc5999",
+    "code": "1700201",
+    "names": [
+      "Промышленное и гражданское строительство"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "7-10",
+      "7-11",
+      "7-12"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_9a5ec8e0129a5fc42c8c1751",
+    "code": "108010107",
+    "names": [
+      "Профессиональное обучение (информатика)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "7-13",
+      "7-14"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_e5f3f1ab8014293a948be792",
+    "code": "1310402",
+    "names": [
+      "Радиофизика"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "7-15"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_015c550fcc182eacef581731",
+    "code": "1510202",
+    "names": [
+      "Разработка и эксплуатация нефтяных и газовых месторождений"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "7-16",
+      "7-17"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_fd325a3e806bc1e40390f8af",
+    "code": "154010302",
+    "names": [
+      "Сертификация продовольственных товаров"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "8-1"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_f6e0cd95ce1e0731b282086e",
+    "code": "145010302",
+    "names": [
+      "Сети связи и распределение информации"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "8-2"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_f6f81366f623cb617fabeb98",
+    "code": "170040301",
+    "names": [
+      "Система водоснабжения и водоотведения"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "8-3"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_27343d829023ff4addfdcb2c",
+    "code": "170030101",
+    "names": [
+      "Строительство дорог и аэродромов"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "8-4"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_0810390708faf3b4536fc108",
+    "code": "170040103",
+    "names": [
+      "Строительство и эксплуатация гидроэлектрических станций"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "8-5"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_652183609a92c5e95db2e3f9",
+    "code": "1370401",
+    "names": [
+      "Техническая эксплуатация воздушных судов и двигателей"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "8-6"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_4b0c2fe7483f49c1d7eaba0f",
+    "code": "1740601",
+    "names": [
+      "Техническое обеспечение процессов сельскохозяйственного производства"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "8-7"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_848b2da7a0cfaff7c96f6196",
+    "code": "102060102",
+    "names": [
+      "Технология (технический труд и черчение)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "8-8"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_d3632b634cd03c4dc9152f81",
+    "code": "1400102",
+    "names": [
+      "Технология и информационные системы (энергетика)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "8-9"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_984316e9569b0bfc54e5e63e",
+    "code": "150010108",
+    "names": [
+      "Технология и оборудование производства природных волокон"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "8-10"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_7e65c056dd5c6d96a8970f93",
+    "code": "1360101",
+    "names": [
+      "Технология машиностроения"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "8-11",
+      "8-12"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_7bc9e5301fc7194070c43b56",
+    "code": "119030205",
+    "names": [
+      "Технология обеспечения качества и безопасности пишевой продукции 17402062501 - Технология хранения и обработка"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "8-13"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_35db7a79f0a7f338246ab3b9",
+    "code": "1490101",
+    "names": [
+      "Технология хранения и переработки пищевого растительного сырья"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "8-14",
+      "8-15",
+      "8-16"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_227f6c37a3c35edf21ff9571",
+    "code": "1020602",
+    "names": [
+      "Технология. Учитель - инженер Примечание: Напоминаем, что",
+      "Технология. Учитель - инженер"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "8-17",
+      "9-1"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_ffda3efd5a1c62aa016a7b04",
+    "code": "1020502",
+    "names": [
+      "Физика"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "9-2",
+      "9-3"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_73487e503bdef75137f36ce9",
+    "code": "131040103",
+    "names": [
+      "Физика (научно - педагогическая деятельность)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "9-4"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_dcee9ef1c0522622e330beff",
+    "code": "102050402",
+    "names": [
+      "Физика. Информатика"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "9-5"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_1bcd4f421a9f76dfba8305d2",
+    "code": "102050401",
+    "names": [
+      "Физика. Математика"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "9-7"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_ae69821969364e5689c5a7cd",
+    "code": "1480101",
+    "names": [
+      "Химическая технология неорганических веществ, материалов и изделий"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "9-8"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_b5986fa85268d71d33ae8c94",
+    "code": "1330104",
+    "names": [
+      "Экологический мониторинг. Менеджмент и аудит"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "9-9"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_e00b6f467579ba903b512696",
+    "code": "1430101",
+    "names": [
+      "Электрические станции"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "9-10"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_a063150fcb9cc0752e787219",
+    "code": "1430103",
+    "names": [
+      "Электроснабжение (по отраслям)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "9-11",
+      "9-12",
+      "9-13"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_424ba1ed0c1eb63b9e0e3b06",
+    "code": "225013201",
+    "names": [
+      "Автоматизация банковских работ",
+      "Автоматикунонии кори бонк"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "10-1",
+      "10-2",
+      "5108",
+      "5109",
+      "5110",
+      "5111"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_82cef7e208f2aa18694ecdf4",
+    "code": "2370105",
+    "names": [
+      "Автомобиль и автомобильное хозяйство",
+      "Автомобил ва хоҷагии автомобилӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "10-3",
+      "10-4",
+      "5112",
+      "5113"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_64e9e1fd7131293c87b865e9",
+    "code": "236040203",
+    "names": [
+      "Автомобильное электрооборудование",
+      "Электроникаи техникаи автомобилӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "10-5",
+      "10-6",
+      "5360",
+      "5361"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_9339dcb65250ff1b7da6440c",
+    "code": "236090105",
+    "names": [
+      "Аппараты винодельческой промышленности"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "10-7",
+      "10-8"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_1f3c5a64babe75d32b682ba8",
+    "code": "236090101",
+    "names": [
+      "Аппараты предприятий пищевых производств"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "10-9",
+      "10-10"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_6d9604e28e8dd0dbc5ca5632",
+    "code": "236090108",
+    "names": [
+      "Аппараты производства и добычи масел"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "10-11",
+      "10-12"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_20b92a4deca1d2dc379559ad",
+    "code": "2690101",
+    "names": [
+      "Архитектура (ТЭилиЭСН)",
+      "Меъморӣ (ИЭваММ)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "10-13",
+      "10-14",
+      "5200",
+      "5201",
+      "5202",
+      "5203"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_76a77907aa6c6ec861ea8c74",
+    "code": "240010103",
+    "names": [
+      "Банковские компьютерные системы Примечание: Напоминаем, что",
+      "Системаҳои компютерии бонкӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "10-15",
+      "5223",
+      "5224"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_4c0f91abd51ca3a3a4a19660",
+    "code": "256020131",
+    "names": [
+      "Геодезия в строительстве",
+      "Геодезия дар сохтмон"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "11-1",
+      "11-2",
+      "5133",
+      "5134",
+      "5135",
+      "5136"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_3a421a43940a0af9820b805e",
+    "code": "237010102",
+    "names": [
+      "Двигатели малой техники",
+      "Муҳаррики техникаҳои хурд"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "11-3",
+      "11-4",
+      "5206",
+      "5207"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_52388cfe26ad07fdf724bfe0",
+    "code": "2560101",
+    "names": [
+      "Землеустройство",
+      "Заминсозӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "11-5",
+      "11-6",
+      "11-7",
+      "11-8",
+      "11-9",
+      "11-10",
+      "5147",
+      "5148"
+    ],
+    "offer_count": 8
+  },
+  {
+    "specialty_key": "specialty_99e9da951d0a2aebdf4f1491",
+    "code": "240030102",
+    "names": [
+      "Интеллектуальные компьютерные технологии защиты информации",
+      "Технологияҳои зеҳнии компютерии ҳифзи иттилоот"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "11-11",
+      "11-12",
+      "5348",
+      "5349",
+      "5350",
+      "5351"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_f5ada97a63ef5f9c4b358ccb",
+    "code": "2020505",
+    "names": [
+      "Информатика",
+      "Информатика 24001020201 - Информационные технологии бухгалтерского учета 24001020201 - Информационные технологии"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "11-13",
+      "11-14",
+      "11-15",
+      "11-16",
+      "11-17",
+      "11-18",
+      "5155",
+      "5156",
+      "5157",
+      "5158",
+      "5159",
+      "5160",
+      "5161",
+      "5162",
+      "5163",
+      "5164",
+      "5165",
+      "5166",
+      "5167",
+      "5168",
+      "5169",
+      "5170",
+      "5171",
+      "5172"
+    ],
+    "offer_count": 24
+  },
+  {
+    "specialty_key": "specialty_0b354fab355f02cb3be778d3",
+    "code": "2530107",
+    "names": [
+      "Информационные технологии и управление в технических системах Примечание: Напоминаем, что 1- ый кластер: естественный и технический",
+      "Информационные технологии и управление в технических системах"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "11-19",
+      "12-1"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_bc5567819f82f1c0f049fc22",
+    "code": "240010133",
+    "names": [
+      "Компьютерная графика",
+      "Графикаи компютерӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "12-2",
+      "12-3",
+      "5143",
+      "5144",
+      "5145",
+      "5146"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_2e0ca7fe5009ffceb1d9a606",
+    "code": "240010101",
+    "names": [
+      "Компьютерные системы и интернет - технологии"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "12-4",
+      "12-5"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_ba181445bdd1e5a990e279a0",
+    "code": "269010106",
+    "names": [
+      "Ландшафтная архитектура"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "12-6",
+      "12-7"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_e474688d04e7ba9e4b37e190",
+    "code": "2020501",
+    "names": [
+      "Математика"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "12-8",
+      "12-9",
+      "12-10",
+      "12-11",
+      "12-12",
+      "12-13",
+      "12-14",
+      "12-15",
+      "12-16",
+      "12-17",
+      "12-18",
+      "12-19",
+      "12-20",
+      "12-21",
+      "13-1",
+      "13-2",
+      "13-3",
+      "13-4",
+      "13-5",
+      "13-6",
+      "5181",
+      "5182",
+      "5183",
+      "5184",
+      "5185",
+      "5186",
+      "5187",
+      "5188",
+      "5189",
+      "5190",
+      "5191",
+      "5192"
+    ],
+    "offer_count": 32
+  },
+  {
+    "specialty_key": "specialty_62cdaee163e9dfa98a6948d4",
+    "code": "202050302",
+    "names": [
+      "Математика. Информатика",
+      "Математика. Информатика Эзоҳ: Таъкид менамоем, ки тағйирёбии"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "13-7",
+      "13-8",
+      "13-9",
+      "13-10",
+      "13-11",
+      "5195",
+      "5196",
+      "5197",
+      "5198",
+      "5199"
+    ],
+    "offer_count": 10
+  },
+  {
+    "specialty_key": "specialty_d239ebebb7a410589851cb09",
+    "code": "2360102",
+    "names": [
+      "Материаловедение в машиностроении"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "13-12",
+      "13-13"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_374e41089f828d1ba6c51d5a",
+    "code": "2360801",
+    "names": [
+      "Машины и аппараты легкой, текстильной промышленности и бытового обслуживания",
+      "Мошин ва дастгоҳҳои саноати сабук, саноати нассоҷӣ ва хизматрасонии маишӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "13-14",
+      "13-15",
+      "5204",
+      "5205"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_4dcfb61e1aa18b4f3edece91",
+    "code": "236070101",
+    "names": [
+      "Машины и аппараты химических производств"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "13-16",
+      "13-17"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_769b06dbffad984b3e56ae13",
+    "code": "2740501",
+    "names": [
+      "Мелиорация и водное хозяйство Примечание: Напоминаем, что",
+      "Мелиорация, регенерация и защита почвы"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "13-18",
+      "14-1",
+      "14-2"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_3f3db4694055c6f062732678",
+    "code": "245010101",
+    "names": [
+      "Многоканальные цифровые системы передачи данных"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "14-3",
+      "14-4",
+      "14-5"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_2c58149d2f3c49adea1c5860",
+    "code": "2500134",
+    "names": [
+      "Моделирование и конструирование швейных изделий",
+      "Тарроҳӣ ва поракунии масолеҳи дӯзандагӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "14-6",
+      "14-7",
+      "5239",
+      "5240"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_928b7e25609f578dfe2c22af",
+    "code": "2360331",
+    "names": [
+      "Монтаж и эксплуатация электрооборудования",
+      "Монтаж и эксплуатация электро - оборудования предприятий и гражданских зданий",
+      "Васл ва истифодабарии таҷҳизоти барқӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "14-8",
+      "14-9",
+      "14-11",
+      "14-12",
+      "5123"
+    ],
+    "offer_count": 5
+  },
+  {
+    "specialty_key": "specialty_2192be96b182cb63d2c732b3",
+    "code": "236033101",
+    "names": [
+      "Монтаж и эксплуатация электро - оборудования предприятий и гражданских зданий",
+      "Васл ва истифодабарии таҷҳизоти барқии корхона ва биноҳои истиқоматӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "14-10",
+      "14-13",
+      "14-14",
+      "14-15",
+      "5124",
+      "5125",
+      "5126",
+      "5127",
+      "5128",
+      "5129",
+      "5130",
+      "5131"
+    ],
+    "offer_count": 12
+  },
+  {
+    "specialty_key": "specialty_ca65d179115e44681af4fb37",
+    "code": "236033102",
+    "names": [
+      "Монтаж и эксплуатация электро - оборудования предприятий химической и"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "14-16",
+      "15-1"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_9ee6b7e95241183e07280a89",
+    "code": "274060101",
+    "names": [
+      "Обеспечение эксплуатации сельско - хозяйственной техники",
+      "Таъмини истифодабарии техникаи кишоварзӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "15-2",
+      "15-3",
+      "5304",
+      "5305"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_e5bb0b9daf10b979031a77a0",
+    "code": "236090104",
+    "names": [
+      "Оборудование хлебопекарного, макаронного и пищевых предприятий высушенных"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "15-4",
+      "15-5"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_e7d7b294fc78df67ce1b2db2",
+    "code": "2440302",
+    "names": [
+      "Организация дорожного движения",
+      "Ташкили ҳаракат дар роҳ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "15-6",
+      "15-7",
+      "5259",
+      "5260"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_166c1baa7ec75b5ca74070e9",
+    "code": "244010132",
+    "names": [
+      "Организация перевозок и управление на автомобильном транспорте",
+      "Ташкили ҳамлу нақл ва идоракунии нақлиёти автомобилӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "15-8",
+      "15-9",
+      "15-10",
+      "15-11",
+      "15-12",
+      "15-13",
+      "15-14",
+      "15-15",
+      "15-16",
+      "5249",
+      "5250",
+      "5251",
+      "5252",
+      "5253",
+      "5254",
+      "5255",
+      "5256",
+      "5257",
+      "5258"
+    ],
+    "offer_count": 19
+  },
+  {
+    "specialty_key": "specialty_77bc4dac43656faca80566c9",
+    "code": "248013301",
+    "names": [
+      "Отделка ткани"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "16-1",
+      "16-2"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_b00e5ad917eecffa6245475a",
+    "code": "2400101",
+    "names": [
+      "Программное обеспечение информационных технологий",
+      "Таъмини барномавии технологияи иттилоотӣ",
+      "Таъмини барномавии технологияи иттилоотӣ Эзоҳ: Таъкид менамоем, ки тағйирёбии"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "16-3",
+      "16-4",
+      "16-5",
+      "16-6",
+      "16-7",
+      "16-8",
+      "5282",
+      "5283",
+      "5284",
+      "5285",
+      "5286",
+      "5287",
+      "5288",
+      "5289",
+      "5290",
+      "5291",
+      "5292",
+      "5293",
+      "5294",
+      "5295",
+      "5296",
+      "5297",
+      "5298",
+      "5299",
+      "5300",
+      "5301",
+      "5302",
+      "5303"
+    ],
+    "offer_count": 28
+  },
+  {
+    "specialty_key": "specialty_83a19a2fcff9b8cab2e9d987",
+    "code": "240010135",
+    "names": [
+      "Программное обеспечение обработки экономической и деловой информации",
+      "Таъмини барномавии коркарди маълумоти иқтисодӣ ва иттилооти корӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "16-9",
+      "16-10",
+      "16-11",
+      "16-12",
+      "16-13",
+      "16-14",
+      "16-15",
+      "5277",
+      "5278",
+      "5308",
+      "5309",
+      "5279",
+      "5280",
+      "5310",
+      "5311",
+      "5281"
+    ],
+    "offer_count": 16
+  },
+  {
+    "specialty_key": "specialty_bed26e66fff57b3a446633e2",
+    "code": "240010108",
+    "names": [
+      "Программный инженер"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "16-16",
+      "16-17"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_d0dbc87428b85b0020ccb8b5",
+    "code": "270010102",
+    "names": [
+      "Производство стеновых, декоративных и гидроизоляционных изделий и материалов"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "17-1",
+      "17-2"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_baa678f55d0adadb8a600f7e",
+    "code": "2700201",
+    "names": [
+      "Промышленное и гражданское строительство",
+      "Сохтмони саноатӣ ва шаҳрвандӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "17-3",
+      "17-4",
+      "17-5",
+      "17-6",
+      "17-7",
+      "5231",
+      "5232",
+      "5233",
+      "5234"
+    ],
+    "offer_count": 9
+  },
+  {
+    "specialty_key": "specialty_d0cf55013057322992b974e2",
+    "code": "208010131",
+    "names": [
+      "Профессиональное обучение (автомобильный транспорт)",
+      "Таълими касбӣ (нақлиёти автомобилӣ)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "17-8",
+      "17-9",
+      "17-10",
+      "17-11",
+      "5263",
+      "5264"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_c384a2ee233f2411b71787d1",
+    "code": "243010202",
+    "names": [
+      "Проэктирование, установка и использование электроэнергетических сетей"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "17-12",
+      "17-13"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_cfbfafe23da06194e1d3f3cc",
+    "code": "20010104",
+    "names": [
+      "Система обеспечения информационной безопасности"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "17-14"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_0de0fcc973c59525ec7dea66",
+    "code": "270020131",
+    "names": [
+      "Строительство и эксплуатация зданий и сооружений"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "17-15",
+      "17-16"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_2d7d40083d4d7eb9b1ddf1ed",
+    "code": "270033101",
+    "names": [
+      "Строительство, содержание и ремонт автомобильных дорог и транспортных объектов",
+      "Сохтмон, нигоҳдорӣ ва таъмири роҳҳои автомобилгард ва иншооти нақлиётӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "17-17",
+      "18-1",
+      "5225",
+      "5226",
+      "5227",
+      "5228"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_f4fcb9206cd34accb6a775ba",
+    "code": "2500133",
+    "names": [
+      "Текстильная технология и продукция"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "18-2"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_dc8803cde00b466187b4ef22",
+    "code": "2790136",
+    "names": [
+      "Техника и медицинское оборудование",
+      "Техника ва таҷҳизоти тиббӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "18-3",
+      "18-4",
+      "5322",
+      "5323"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_2512bb91031ec77ada0ccfd0",
+    "code": "274060403",
+    "names": [
+      "Техническое обеспечение строительства дорог и сооружений",
+      "Таъмини техникии сохтмони роҳҳо ва иншоот"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "18-5",
+      "18-6",
+      "5306",
+      "5307"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_82e295ad30e1194a035e9285",
+    "code": "237010133",
+    "names": [
+      "Техническое обслуживание и ремонт двигателей внутреннего сгорания",
+      "Хизматрасонии техникӣ ва таъмири муҳаррикони дарунсӯз"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "18-7",
+      "5352",
+      "5353",
+      "5354",
+      "5355",
+      "5356",
+      "5357"
+    ],
+    "offer_count": 7
+  },
+  {
+    "specialty_key": "specialty_1c8940ba03aee1946eab4bd1",
+    "code": "236080134",
+    "names": [
+      "Техническое обслуживание и ремонт оборудования трикотажного производства"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "18-8",
+      "18-9"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_9cf74de17589651054b7c3fc",
+    "code": "202060102",
+    "names": [
+      "Технология (технический труд и черчение)",
+      "Технология (меҳнати техникӣ, нақшакашӣ)",
+      "Технология (меҳнати техникӣ, нақшакашӣ) Эзоҳ: Таъкид менамоем, ки тағйирёбии"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "18-10",
+      "18-11",
+      "5324",
+      "5325",
+      "5326",
+      "5327"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_0d2f38a52ae9e08ee0e50ca6",
+    "code": "202060202",
+    "names": [
+      "Технология (технический труд и черчение)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "18-12",
+      "18-13"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_362a1129344bbeeb1ea9a886",
+    "code": "248030201",
+    "names": [
+      "Технология основного органического и нефтехимического синтеза",
+      "Технологияи синтези асосии органикӣ ва нафту химиявӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "18-14",
+      "18-15",
+      "5344",
+      "5345"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_60de4b73f4997a67ba9c2c5e",
+    "code": "2500135",
+    "names": [
+      "Технология швейного производства"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "19-1",
+      "19-2"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_912081328509d656b41adb30",
+    "code": "236010102",
+    "names": [
+      "Технология электронного машиностроения",
+      "Технологияи мошинсозии электронӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "19-3",
+      "19-4",
+      "5342",
+      "5343"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_267eac4b6e5ca76d5c09ee09",
+    "code": "244010201",
+    "names": [
+      "Управление движением на дороге",
+      "Идораи ҳаракат дар роҳ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "19-5",
+      "19-6",
+      "5153",
+      "5154"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_8a90dde80a92b2b297423bba",
+    "code": "237010603",
+    "names": [
+      "Управление частичного и полного ремонта техники"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "19-7",
+      "19-8"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_25a508f12c551d04345260fe",
+    "code": "274063102",
+    "names": [
+      "Электрификация сельскохозяйственной отрасли",
+      "Таъмини барқии соҳаи кишоварзӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "19-9",
+      "19-10",
+      "5275",
+      "5276"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_ceaae6ecfaba2366630e2709",
+    "code": "2360301",
+    "names": [
+      "Электрические машины и аппараты"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "19-11",
+      "19-12"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_708dbfe0c9d6420ed5c3536a",
+    "code": "2430101",
+    "names": [
+      "Электрические станции",
+      "Нерӯгоҳҳои барқӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "19-13",
+      "19-14",
+      "19-15",
+      "19-16",
+      "19-17",
+      "19-18",
+      "5208",
+      "5209",
+      "5212",
+      "5213",
+      "5214",
+      "5215",
+      "5216",
+      "5217"
+    ],
+    "offer_count": 14
+  },
+  {
+    "specialty_key": "specialty_37a21a9afa3acd2a1e1d08f7",
+    "code": "236030101",
+    "names": [
+      "Электрогенераторы, двигатели и трансформаторы"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "20-1",
+      "20-2"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_be56a2a79bd96c1f568291c3",
+    "code": "242010102",
+    "names": [
+      "Электрометаллургия черных и цветных металлов"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "20-3"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_78e356ed0f1b8ab795a46e49",
+    "code": "2430103",
+    "names": [
+      "Электроснабжение",
+      "Электроснабжение (по отраслям)",
+      "Таъмини барқ (аз рӯйи соҳаҳо)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "20-4",
+      "20-5",
+      "20-6",
+      "20-7",
+      "5271",
+      "5272",
+      "5273",
+      "5274"
+    ],
+    "offer_count": 8
+  },
+  {
+    "specialty_key": "specialty_c9c5763bbb36f5826034f00f",
+    "code": "243010301",
+    "names": [
+      "Электроснабжение промышленных предприятий",
+      "Таъминоти корхонаҳои саноатӣ бо барқ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "20-8",
+      "20-9",
+      "20-10",
+      "20-11",
+      "20-12",
+      "20-13",
+      "5314",
+      "5315",
+      "5316",
+      "5317",
+      "5318",
+      "5319",
+      "5320"
+    ],
+    "offer_count": 13
+  },
+  {
+    "specialty_key": "specialty_fde1b39edf3abd5973e12bc2",
+    "code": "24300102",
+    "names": [
+      "Электроэнергетические системы и сети"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "20-14",
+      "20-15"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_db2466002663ce5761dd0a41",
+    "code": "1250111",
+    "names": [
+      "Аудит и ревизия Таджикский",
+      "Аудит и ревизия Бободжона",
+      "Аудит и ревизия Дангаринский",
+      "Аудит и ревизия университет",
+      "Аудит и ревизия Педагогический",
+      "Аудит и ревизия университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "21-1",
+      "21-2",
+      "21-3",
+      "21-4",
+      "21-5",
+      "21-6"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_6f7e1b6c9858cd1d51d5fa47",
+    "code": "125010402",
+    "names": [
+      "Банковское дело Моёншо",
+      "Банковское дело Бободжона",
+      "Банковское дело Абуабдулло",
+      "Банковское дело Дангаринский",
+      "Банковское дело Таджикистана",
+      "Банковское дело Педагогический",
+      "Банковское дело Худжанд"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "21-7",
+      "21-8",
+      "21-9",
+      "21-10",
+      "21-11",
+      "21-12",
+      "21-13"
+    ],
+    "offer_count": 7
+  },
+  {
+    "specialty_key": "specialty_b3660828ccc9b92c5f23a524",
+    "code": "125010502",
+    "names": [
+      "Банковское дело университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "21-14",
+      "21-15"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_ce591be05bb67ebc51ec1b4a",
+    "code": "125010801",
+    "names": [
+      "Бухгалтерский учет, анализ Таджикский и аудит",
+      "Бухгалтерский учет, анализ Таджикский и аудит в банках",
+      "Бухгалтерский учет, анализ Бохтарский и аудит в банках Носири",
+      "Бухгалтерский учет, анализ Международный и аудит в банках Таджикистана",
+      "Бухгалтерский учет, анализ Дангаринский и аудит в банках университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "22-1",
+      "22-10",
+      "22-11",
+      "22-12",
+      "22-13"
+    ],
+    "offer_count": 5
+  },
+  {
+    "specialty_key": "specialty_db3d4d2da2dfe46e2c646b66",
+    "code": "1250108",
+    "names": [
+      "Бухгалтерский учет, анализ Хорогский и аудит Моёншо",
+      "Бухгалтерский учет, анализ Худжандский и аудит Бободжона",
+      "Бухгалтерский учет, анализ Таджикский и аудит и политики",
+      "Бухгалтерский учет, анализ Бохтарский и аудит Носири",
+      "Бухгалтерский учет, анализ Дангаринский и аудит",
+      "Бухгалтерский учет, анализ Международный и аудит Таджикистана",
+      "Бухгалтерский учет, анализ Институт и аудит Худжанд"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "22-2",
+      "22-3",
+      "22-4",
+      "22-5",
+      "22-6",
+      "22-7",
+      "22-8"
+    ],
+    "offer_count": 7
+  },
+  {
+    "specialty_key": "specialty_ec5e090c4952925dd5b446c6",
+    "code": "125010800",
+    "names": [
+      "Бухгалтерский учет, анализ Худжандский и аудит университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "22-9"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_501bbbfb0fcc2f344010abbb",
+    "code": "125010803",
+    "names": [
+      "Бухгалтерский учет, анализ Кулябский и аудит в бюджетных и научных Абуабдулло",
+      "Бухгалтерский учет, анализ Таджикский и аудит в бюджетных и научных университет",
+      "Бухгалтерский учет, анализ и аудит в бюджетных и научных Педагогический"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "23-1",
+      "23-2",
+      "23-3"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_7bd37a9ecdf3c1a4ff780a35",
+    "code": "125010805",
+    "names": [
+      "Бухгалтерский учет, анализ Технологический и аудит в промышленности",
+      "Бухгалтерский учет, анализ Международный и аудит в промышленности Таджикистана",
+      "Бухгалтерский учет, анализ Университет и аудит в промышленности",
+      "Бухгалтерский учет, анализ Институт и аудит в промышленности"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "23-4",
+      "23-5",
+      "23-6",
+      "23-7"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_b21f34073e9c03482d564a7f",
+    "code": "1020402",
+    "names": [
+      "География Моёншо",
+      "География Бободжона",
+      "География Абуабдулло",
+      "География Педагогический",
+      "География Педагогический 13102010203 - География и менеджмент Кулябский"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "23-8",
+      "23-9",
+      "23-10",
+      "23-11",
+      "23-12",
+      "23-13"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_c9cb9751b85f91399eaacf23",
+    "code": "102040501",
+    "names": [
+      "География. Биология Бободжона",
+      "География. Биология Педагогический"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "24-1",
+      "24-2"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_98a3661f4cd67d3448e9401a",
+    "code": "1020405",
+    "names": [
+      "География. Дополнительная Худжандский специальность (демография) Бободжона"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "24-3"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_bc19520af4316844bca3a8d6",
+    "code": "102040503",
+    "names": [
+      "География. Экономика в городе"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "24-4"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_427d9140380650d64b1961f1",
+    "code": "1330102",
+    "names": [
+      "Геоэкология Бободжона"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "24-5"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_908e8afddab2ef05d368e66a",
+    "code": "126010301",
+    "names": [
+      "Государственное Таджикский регулирование национальной экономики",
+      "Государственное Таджикский регулирование национальной экономики университет"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "24-6",
+      "24-7"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_ecfec29c16ce1d6b700c44e8",
+    "code": "1260101",
+    "names": [
+      "Государственное управление и политики",
+      "Государственное управление Дангаринский",
+      "Государственное управление Таджикистана",
+      "Государственное управление университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "24-8",
+      "24-9",
+      "24-10",
+      "24-11",
+      "24-12",
+      "24-13"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_e40b9497cf35748af8caa9be",
+    "code": "1260103",
+    "names": [
+      "Государственное управление Кулябский и экономика Абуабдулло",
+      "Государственное управление Таджикский и экономика университет"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "24-14",
+      "24-15"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_fa6a4af2b862ae35f76fa238",
+    "code": "125010412",
+    "names": [
+      "Государственный Таджикский финансовый надзор университет"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "24-16"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_83cb3246e9b15c37dfcd9f09",
+    "code": "140010202",
+    "names": [
+      "Информационные системы Таджикский и технологии (в экономике)",
+      "Информационные системы Технологический и технологии (в экономике)",
+      "Информационные системы Таджикский и технологии (в экономике) университет",
+      "Информационные системы Международный и технологии (в экономике) Таджикистана",
+      "Информационные системы Политехнический и технологии (в экономике) университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "25-1",
+      "25-2",
+      "25-3",
+      "25-4",
+      "25-5"
+    ],
+    "offer_count": 5
+  },
+  {
+    "specialty_key": "specialty_a9348cae575aee9192c51b4b",
+    "code": "131030407",
+    "names": [
+      "Информационные Таджикский технологии финансовых систем университет"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "25-6"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_bae5df8ddf6fa198140e3ccd",
+    "code": "126020103",
+    "names": [
+      "Коммуникационный Государственный дизайн в сфере производства и услуг и дизайна"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "25-7"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_2026505d0e0ea388a6f9ed78",
+    "code": "1260203",
+    "names": [
+      "Маркетинг Абуабдулло"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "25-8"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_ab280f1bb252ff4a980e243e",
+    "code": "126020309",
+    "names": [
+      "Маркетинг в агропромыш - Таджикский ленном комплексе Шириншоха"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "25-9"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_f133dca2425a50a2fe99069c",
+    "code": "126020307",
+    "names": [
+      "Маркетинг предприятий Технологический промышленности",
+      "Маркетинг предприятий Институт промышленности"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "25-10",
+      "25-11"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_f004a70515d9a0998baa0ab0",
+    "code": "126020202",
+    "names": [
+      "Международный Технологический менеджмент",
+      "Международный Таджикский менеджмент университет",
+      "Международный Левакантский менеджмент университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "25-12",
+      "25-13",
+      "25-14"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_2e1b8253ebe445a819e40d5f",
+    "code": "1260202",
+    "names": [
+      "Менеджмент Таджикский Примечание: Напоминаем, что",
+      "Менеджмент и политики",
+      "Менеджмент университет",
+      "Менеджмент Таджикистана",
+      "Менеджмент государственного Худжанд"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "25-15",
+      "26-1",
+      "26-2",
+      "26-3",
+      "26-4"
+    ],
+    "offer_count": 5
+  },
+  {
+    "specialty_key": "specialty_92e377e8eba56713595b7325",
+    "code": "126020217",
+    "names": [
+      "Менеджмент в банковской Международный сфере Таджикистана",
+      "Финансовый менеджмент Таджикский в сфере образования имени"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "26-5",
+      "29-8"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_79c741bc41b2ee3784d49e71",
+    "code": "126020210",
+    "names": [
+      "Менеджмент в сфере Международный международного туризма Таджикистана",
+      "Менеджмент в сфере Худжандский международного туризма университета",
+      "Менеджмент в сфере Левакантский международного туризма университета 12104010202 - Менеджмент Таджикский международных культурных связей имени"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "26-6",
+      "26-7",
+      "26-8"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_073b1cf20fb2af42a0148e95",
+    "code": "1250103",
+    "names": [
+      "Мировая экономика Таджикский",
+      "Мировая экономика Технологический",
+      "Мировая экономика Бободжона",
+      "Мировая экономика Носири",
+      "Мировая экономика университет",
+      "Мировая экономика Таджикистана Примечание: Напоминаем, что",
+      "Мировая экономика университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "26-9",
+      "26-10",
+      "26-11",
+      "26-12",
+      "26-13",
+      "26-14",
+      "27-1"
+    ],
+    "offer_count": 7
+  },
+  {
+    "specialty_key": "specialty_33c078f23d8447f24f3ad1a1",
+    "code": "125010403",
+    "names": [
+      "Налоги и налогообложение Бободжона",
+      "Налоги и налогообложение Абуабдулло",
+      "Налоги и налогообложение Носири",
+      "Налоги и налогообложение Дангаринский",
+      "Налоги и налогообложение Таджикистана",
+      "Налоги и налогообложение Худжанд",
+      "Налоги и налогообложение университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "27-2",
+      "27-3",
+      "27-4",
+      "27-5",
+      "27-6",
+      "27-7",
+      "27-8",
+      "27-9"
+    ],
+    "offer_count": 8
+  },
+  {
+    "specialty_key": "specialty_50d31246d0a251b49b015fe3",
+    "code": "126020207",
+    "names": [
+      "Производственный Таджикский менеджмент М. С."
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "27-10"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_e9e11223daa524eb5997d7a1",
+    "code": "126020206",
+    "names": [
+      "Социальный менеджмент Таджикский",
+      "Социальный менеджмент Кулябский (в сфере образования) Абуабдулло",
+      "Социальный менеджмент Педагогический (в сфере образования)"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "27-11",
+      "27-12",
+      "27-13",
+      "27-14"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_1479555a24b2f3c6a56d16fa",
+    "code": "125010501",
+    "names": [
+      "Статистика в агропромыш - Таджикский ленном комплексе Шириншоха"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "27-15"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_f9bdd57b6a686f310ccfa3d2",
+    "code": "125010404",
+    "names": [
+      "Страхование университет Примечание: Напоминаем, что"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "27-16"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_fae41cc249675068d5f4d349",
+    "code": "1960101",
+    "names": [
+      "Таможенное дело и политики",
+      "Таможенное дело Абуабдулло",
+      "Таможенное дело Носири",
+      "Таможенное дело Дангаринский",
+      "Таможенное дело Таджикистана",
+      "Таможенное дело университета",
+      "Таможенное дело (специалист) Российско"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "28-1",
+      "28-2",
+      "28-3",
+      "28-4",
+      "28-5",
+      "28-6",
+      "28-7",
+      "28-8"
+    ],
+    "offer_count": 8
+  },
+  {
+    "specialty_key": "specialty_9276de306c1831c410114e2d",
+    "code": "1250109",
+    "names": [
+      "Товароведение и экспертиза Институт товаров университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "28-9"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_681ce4673eb1b28b058fde67",
+    "code": "1890101",
+    "names": [
+      "Туризм и гостеприимство Моёншо",
+      "Туризм и гостеприимство Российско",
+      "Туризм и гостеприимство имени",
+      "Туризм и гостеприимство Таджикский"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "28-10",
+      "28-11",
+      "28-12",
+      "28-13"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_442f1dfd6c3dca5071980fec",
+    "code": "189010101",
+    "names": [
+      "Туризм и гостеприимство университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "28-14"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_62c64daa39e571005427ff1f",
+    "code": "126010303",
+    "names": [
+      "Управление государствен - Бохтарский ными финансами Носири"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "28-15"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_005954255283aba829ff4d05",
+    "code": "126020212",
+    "names": [
+      "Управление персоналом Республики"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "28-16"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_c101d78667f65e8b358518c2",
+    "code": "125010202",
+    "names": [
+      "Финансовая и банковская Дангаринский экономика",
+      "Финансовая и банковская Таджикский экономика университет",
+      "Финансовая и банковская Педагогический экономика",
+      "Финансовая и банковская Худжандский экономика университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "28-17",
+      "29-1",
+      "29-2",
+      "29-3"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_38491685d0465eb30d28acf0",
+    "code": "126020201",
+    "names": [
+      "Финансовый менеджмент Носири",
+      "Финансовый менеджмент Республики"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "29-4",
+      "29-7"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_a80c296f6775c8f942305d7a",
+    "code": "125010410",
+    "names": [
+      "Финансовый менеджмент университет",
+      "Финансовый менеджмент Таджикистана"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "29-5",
+      "29-6"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_22a5303631e1bb1f84641336",
+    "code": "125010401",
+    "names": [
+      "Финансы Дангаринский",
+      "Финансы университет"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "29-9",
+      "29-10"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_a506e530fc655818cdcfdf12",
+    "code": "125010405",
+    "names": [
+      "Финансы в агропромыш - Таджикский ленном комплексе Шириншоха"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "29-11"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_2db294003ec08284106bf2e6",
+    "code": "125010409",
+    "names": [
+      "Финансы и контроль в сфере Таджикский таможенной деятельности университет"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "29-12"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_be071c3f7351bc9ac44fce4c",
+    "code": "1250104",
+    "names": [
+      "Финансы и кредит Таджикский",
+      "Финансы и кредит Технологический",
+      "Финансы и кредит Бободжона",
+      "Финансы и кредит Абуабдулло",
+      "Финансы и кредит Носири Примечание: Напоминаем, что",
+      "Финансы и кредит Таджикистана",
+      "Финансы и кредит Университет",
+      "Финансы и кредит университета",
+      "Финансы и кредит Педагогический",
+      "Финансы и кредит в городе 1250104/60410400 - Финансы и кредит Таджикский"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "29-13",
+      "29-14",
+      "29-15",
+      "29-16",
+      "29-17",
+      "30-1",
+      "30-2",
+      "30-3",
+      "30-4",
+      "30-5",
+      "30-6",
+      "30-7",
+      "30-8"
+    ],
+    "offer_count": 13
+  },
+  {
+    "specialty_key": "specialty_db130835c281bf8151232d1f",
+    "code": "125010407",
+    "names": [
+      "Финансы и кредит во Таджикский внешнеэкономической деятельности университет",
+      "Финансы и кредит во Институт внешнеэкономической деятельности университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "30-9",
+      "30-10"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_e48b22f18e6bcbf67a40972b",
+    "code": "125011026",
+    "names": [
+      "Цифровая экономика университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "30-11"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_dbb5f886d302d8105b215540",
+    "code": "127010102",
+    "names": [
+      "Экономика и организация Таджикский производства (автомобильный транспорт) М. С."
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "30-12"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_de4d0ddc828421f0d8abbf91",
+    "code": "127010117",
+    "names": [
+      "Экономика и организация Таджикский производства (строительство) М. С."
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "30-13"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_45107b06d7036b947cd5efcb",
+    "code": "127010110",
+    "names": [
+      "Экономика и организация Таджикский производства (энергетика) М. С.",
+      "Экономика и организация Институт производства (энергетика)"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "30-14",
+      "30-15"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_f8d0742870aad00bf7c76cc3",
+    "code": "125010715",
+    "names": [
+      "Экономика и управление Таджикский в агропромышленном комплексе Шириншоха",
+      "Экономика и управление на предприятии агропромышленного Таджикский"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "31-1",
+      "31-13"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_e48df526255e91a4b3a97008",
+    "code": "125010728",
+    "names": [
+      "Экономика и управление Таджикский на малых и средних предприятиях университет"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "31-2"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_dce70974ecebf2321c64279d",
+    "code": "1250107",
+    "names": [
+      "Экономика и управление Таджикский на предприятии",
+      "Экономика и управление Технологический на предприятии",
+      "Экономика и управление Таджикский на предприятии и политики",
+      "Экономика и управление Кулябский на предприятии Абуабдулло",
+      "Экономика и управление Бохтарский на предприятии Носири",
+      "Экономика и управление Дангаринский на предприятии",
+      "Экономика и управление Таджикский на предприятии университет",
+      "Экономика и управление Политехнический на предприятии университета",
+      "Экономика и управление Институт на предприятии университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "31-3",
+      "31-4",
+      "31-5",
+      "31-6",
+      "31-7",
+      "31-8",
+      "31-9",
+      "31-10",
+      "31-11",
+      "31-12"
+    ],
+    "offer_count": 10
+  },
+  {
+    "specialty_key": "specialty_ef5df2c5bf2baba6c170baa0",
+    "code": "125010711",
+    "names": [
+      "Экономика и управление Таджикский на промышленных предприятиях",
+      "Экономика и управление Филиал на промышленных предприятиях в городе"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "31-14",
+      "31-15"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_ec0a7761e0401a837739a6b5",
+    "code": "125010717",
+    "names": [
+      "Экономика и управление Международный туризмом Таджикистана",
+      "Экономика и управление Худжандский туризмом университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "32-1",
+      "32-2"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_ee8aab9d86943bc5afb2b12d",
+    "code": "1250112",
+    "names": [
+      "Экономическая информатика Таджикский",
+      "Экономическая информатика университет",
+      "Экономическая информатика университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "32-3",
+      "32-4",
+      "32-5"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_50d49d2105787e2d6fd7bfdd",
+    "code": "131030602",
+    "names": [
+      "Экономическая Худжандский кибернетика (информационные Бободжона"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "32-6"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_7ed0ebf2f2c6327880351832",
+    "code": "1250101",
+    "names": [
+      "Экономическая теория имени"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "32-7"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_e8d2a47807ec70651096cb78",
+    "code": "196010102",
+    "names": [
+      "Экономическое Хорогский обеспечение таможенной деятельности Моёншо",
+      "Экономическое Левакантский обеспечение таможенной деятельности университета"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "32-8",
+      "32-9"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_d50108af027aeb1af7f7e678",
+    "code": "2250132",
+    "names": [
+      "Банковское дело",
+      "Кори бонкӣ",
+      "Кори бонкӣ Эзоҳ: Таъкид менамоем, ки тағйирёбии"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "33-1",
+      "33-2",
+      "33-3",
+      "33-4",
+      "33-5",
+      "33-6",
+      "33-7",
+      "5423",
+      "5424",
+      "5425",
+      "5426",
+      "5427",
+      "5428",
+      "5429",
+      "5430",
+      "5431",
+      "5432"
+    ],
+    "offer_count": 17
+  },
+  {
+    "specialty_key": "specialty_888d7af27ef4a784b8a66665",
+    "code": "2250135",
+    "names": [
+      "Бухгалтерский учет, анализ и контроль",
+      "Ҳисоби муҳосибӣ, таҳлил ва назорат"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "33-8",
+      "33-9",
+      "33-10",
+      "33-11",
+      "33-12",
+      "33-13",
+      "33-14",
+      "33-15",
+      "33-16",
+      "33-17",
+      "33-18",
+      "33-19",
+      "33-20",
+      "34-1",
+      "34-2",
+      "34-3",
+      "34-4",
+      "34-5",
+      "34-6",
+      "34-7",
+      "34-8",
+      "34-9",
+      "34-10",
+      "5457",
+      "5458",
+      "5459",
+      "5460",
+      "5461",
+      "5462",
+      "5463",
+      "5464",
+      "5465",
+      "5466",
+      "5469",
+      "5470",
+      "5471",
+      "5472",
+      "5473",
+      "5474",
+      "5475",
+      "5476"
+    ],
+    "offer_count": 41
+  },
+  {
+    "specialty_key": "specialty_4f74ec1eed171185f8a440e4",
+    "code": "202040501",
+    "names": [
+      "География"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "34-11",
+      "34-12"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_1f7f295d602299198521fc7f",
+    "code": "2020402",
+    "names": [
+      "География",
+      "География Эзоҳ: Таъкид менамоем, ки тағйирёбии"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "34-13",
+      "34-14",
+      "5378",
+      "5379",
+      "5380",
+      "5381",
+      "5382",
+      "5383",
+      "5384",
+      "5385",
+      "5386",
+      "5387"
+    ],
+    "offer_count": 12
+  },
+  {
+    "specialty_key": "specialty_eb06592a77f7c222f6e6504b",
+    "code": "225010734",
+    "names": [
+      "Зелёная экономика"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "34-15",
+      "35-1"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_156dec1d30cded13d47475a5",
+    "code": "243010608",
+    "names": [
+      "Менеджмент в области энергетики"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "35-2",
+      "35-3"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_98ae35cc8311822f39844bb6",
+    "code": "225013102",
+    "names": [
+      "Налоги и налогообложение",
+      "Андоз ва андозбандӣ"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "35-4",
+      "35-5",
+      "35-6",
+      "35-7",
+      "35-8",
+      "35-9",
+      "35-10",
+      "35-11",
+      "5362",
+      "5363",
+      "5364",
+      "5365",
+      "5366",
+      "5367",
+      "5368",
+      "5369"
+    ],
+    "offer_count": 16
+  },
+  {
+    "specialty_key": "specialty_bf2248fb0081c2d69ffbc414",
+    "code": "2250133",
+    "names": [
+      "Операционно - кассовая работа в банке",
+      "Кори амалиёти хазинавӣ дар бонк"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "35-12",
+      "35-13",
+      "5421",
+      "5422"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_f1cceec0ea8c176b92f5e5cc",
+    "code": "2250105",
+    "names": [
+      "Статистика",
+      "Омор"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "35-14",
+      "35-15",
+      "5454",
+      "5455"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_78c5b483cf3d19b96abd0059",
+    "code": "2250131",
+    "names": [
+      "Финансы",
+      "Финансы 22501310101 - Финансы и кредит",
+      "Молия"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "35-16",
+      "35-17",
+      "35-18",
+      "35-19",
+      "5443",
+      "5444",
+      "5445",
+      "5446",
+      "5447",
+      "5448"
+    ],
+    "offer_count": 10
+  },
+  {
+    "specialty_key": "specialty_0e77c3ee347f2ba020d66434",
+    "code": "2250104",
+    "names": [
+      "Финансы и кредит",
+      "Молия ва қарз"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "36-1",
+      "5453"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_584692614bd00cc8580a680e",
+    "code": "227013123",
+    "names": [
+      "Экономика и организация в сфере туризма",
+      "Экономика и организация туристического хозяйства",
+      "Иқтисодиёт ва ташкил дар соҳаи сайёҳӣ"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "36-2",
+      "36-6",
+      "5390"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_7a6f487496cb1ac2aa10a8d6",
+    "code": "227013118",
+    "names": [
+      "Экономика и организация производства на предприятии химической промышленности",
+      "Иқтисодиёт ва ташкили истеҳсолот дар корхонаи саноати химия"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "36-3",
+      "5405",
+      "5406"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_2e0be0e566215c598df2fe80",
+    "code": "227013113",
+    "names": [
+      "Экономика и организация производства на предприятии энергетики",
+      "Иқтисодиёт ва ташкили истеҳсолот дар корхонаи энергетикӣ",
+      "Иқтисодиёт ва ташкили истеҳсолот дар корхонаи энергетикӣ Эзоҳ: Таъкид менамоем, ки тағйирёбии"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "36-4",
+      "36-5",
+      "5407",
+      "5408"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_5ca8c8c875cbc5b7116b24f5",
+    "code": "2250112",
+    "names": [
+      "Экономическая информатика",
+      "Информатикаи иқтисодӣ"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "36-7",
+      "36-8",
+      "5417",
+      "5418",
+      "5419",
+      "5420"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_8636bce5b978f96a1647b18a",
+    "code": "1230111",
+    "names": [
+      "Библиотековедение и библиография (по направлениям) 11901010504 - Дизайн текстильных изделий"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "37-1"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_ed7c1023a7c1e69db58f1c22",
+    "code": "1260204",
+    "names": [
+      "Документоведение и информационное обеспечение управления"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "37-2"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_fc1312fa98fa6728871001f1",
+    "code": "1010101",
+    "names": [
+      "Дошкольное образование"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "37-3"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_c27ded20d23eebe771a573aa",
+    "code": "101010202",
+    "names": [
+      "Дошкольное образование. Музыкальное искусство (ТЭилиЭСН)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "37-4"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_10574bf6d356945fd9d463da",
+    "code": "101010206",
+    "names": [
+      "Дошкольное образование. Практическая психология"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "37-5"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_1f8d753c54c76080610e05e0",
+    "code": "123010801",
+    "names": [
+      "Журналистика"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "37-6"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_5ccb61ab886be9109bdd5d53",
+    "code": "103010602",
+    "names": [
+      "Изобразительное искусство и черчение. Технология (ТЭилиЭСН)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "37-7"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_6727e2afd1ccc809ec18c6d3",
+    "code": "103010601",
+    "names": [
+      "Изобразительное искусство. Народные, художественные промыслы (ТЭилиЭСН)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "37-8"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_50b3183488ec2785d88e8b55",
+    "code": "121050208",
+    "names": [
+      "Иностранный язык (английский язык)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "37-9"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_89286b58e20202833bf8cf2a",
+    "code": "1020306",
+    "names": [
+      "Иностранный язык (английский язык)",
+      "Иностранный язык (немецкий язык)",
+      "Иностранный язык (русский язык)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "37-10",
+      "38-1",
+      "38-2"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_4eb5de20611a67a0f7c8bf48",
+    "code": "123010701",
+    "names": [
+      "Информация и коммуникация (технологии коммуникации)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "38-3"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_afa398965a327e8ab637b0ab",
+    "code": "121040203",
+    "names": [
+      "Искусствоведение"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "38-4"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_3980b8c9a20bdd92850928e7",
+    "code": "1170103",
+    "names": [
+      "Кинотелеоператорство (по направлениям) (ТЭилиЭСН)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "38-5"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_9337fdc1c9ae28907a68e562",
+    "code": "1210401",
+    "names": [
+      "Культурология"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "38-6",
+      "38-7"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_0d00b5a4b999b9eecd798411",
+    "code": "121040101",
+    "names": [
+      "Культурология (фундаментальная)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "38-8"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_ca5d5dda15b780005a7bbf9c",
+    "code": "123010205",
+    "names": [
+      "Лингвистическое обеспечение меж - культурных коммуникаций (внешнеэкономические",
+      "Лингвистическое обеспечение межкультурных коммуникаций (внешняя"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "38-9",
+      "38-10"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_c9a5cdc84793b884a877ff0c",
+    "code": "123010202",
+    "names": [
+      "Лингвистическое обеспечение межкуль - турных коммуникаций (международный туризм)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "38-11"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_45ddff0895f0f2f3ae53a221",
+    "code": "123011201",
+    "names": [
+      "Музейное дело и охрана историко - культурного наследия (искусствоведение",
+      "Музейное дело и охрана историко - культурного наследия (история и музееведение)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "38-12",
+      "38-13"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_cf5e9443fb0acd21e015d541",
+    "code": "123011203",
+    "names": [
+      "Музейное дело и охрана историко - культурного наследия (музееведение)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "39-1"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_372893d401b8010d057b7b59",
+    "code": "1030102",
+    "names": [
+      "Музыкальное искусство (ТЭилиЭСН)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "39-2",
+      "39-3"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_e2f0a06bf4e1821db6441146",
+    "code": "118010102",
+    "names": [
+      "Народное творчество (инструментальная музыка) (ТЭилиЭСН)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "39-4",
+      "39-5"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_0cac2bed32861861660a37ef",
+    "code": "101020201",
+    "names": [
+      "Начальное и дошкольное образование"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "39-6"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_7cc42c00ecd7b59183d47972",
+    "code": "1010201",
+    "names": [
+      "Начальное образование"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "39-7"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_df99fa2f1f804312b0411a20",
+    "code": "101020203",
+    "names": [
+      "Начальное образование. Музыкальное искусство (ТЭилиЭСН)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "39-8"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_0340fcdc018a510e8fe3068b",
+    "code": "101020205",
+    "names": [
+      "Начальное образование. Русский язык"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "39-9"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_fb99869b19d087bcfea1ebee",
+    "code": "116011002",
+    "names": [
+      "Пение (народное) (ТЭилиЭСН)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "39-10",
+      "39-11"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_92c6d309e26d01659f27843c",
+    "code": "117010208",
+    "names": [
+      "Режиссура (театровые представления и праздники) (ТЭилиЭСН)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "39-12"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_2ae94770baff1b66ceac9c9b",
+    "code": "117010206",
+    "names": [
+      "Режиссура (телевидение) (ТЭилиЭСН)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "39-13"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_004566b4568e97bf5316d3d2",
+    "code": "1020302",
+    "names": [
+      "Русский язык и литература"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "39-14",
+      "40-1"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_1ad6ff584d1fbfe3df0e6fa1",
+    "code": "102030401",
+    "names": [
+      "Русский язык и литература. Таджикский язык и литература"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "40-2"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_5a61dfaee9b9a6cad649a2a7",
+    "code": "103040203",
+    "names": [
+      "Социальная педагогика. Социальная работа"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "40-3"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_2a42f8ae1fdac9f55aa9485c",
+    "code": "1020301",
+    "names": [
+      "Таджикский язык и литература"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "40-4",
+      "40-5",
+      "40-6"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_ac3d0823df97a2ea0adbd3f7",
+    "code": "1020305",
+    "names": [
+      "Таджикский язык и литература. Журналистика 12301080201 - Тележурналистика (ТЭилиЭСН)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "40-7"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_a35de5bd2afc055a77f9ad89",
+    "code": "1020307",
+    "names": [
+      "Узбекский язык и литература. Русский язык и литература"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "40-8"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_d778f05822ed76579db72345",
+    "code": "117020104",
+    "names": [
+      "Хореографическое искусство (ТЭилиЭСН)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "40-9"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_ee5f6ca7a4264dfd5ff921fe",
+    "code": "2010101",
+    "names": [
+      "Дошкольное образование",
+      "Дошкольное образование Примечание: Напоминаем, что",
+      "Таҳсилоти томактабӣ",
+      "Таҳсилоти томактабӣ Эзоҳ: Таъкид менамоем, ки тағйирёбии"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "41-1",
+      "41-2",
+      "41-3",
+      "41-4",
+      "41-5",
+      "41-6",
+      "41-7",
+      "41-8",
+      "41-9",
+      "41-10",
+      "41-11",
+      "41-12",
+      "41-13",
+      "41-14",
+      "41-15",
+      "41-16",
+      "41-17",
+      "41-18",
+      "42-1",
+      "42-2",
+      "5607",
+      "5608",
+      "5609",
+      "5610",
+      "5611",
+      "5612",
+      "5613",
+      "5614",
+      "5615",
+      "5616",
+      "5617",
+      "5618",
+      "5619",
+      "5620",
+      "5621",
+      "5622",
+      "5623",
+      "5624",
+      "5625",
+      "5626",
+      "5627",
+      "5628"
+    ],
+    "offer_count": 42
+  },
+  {
+    "specialty_key": "specialty_1d1fe280a0503b5a544f4a66",
+    "code": "202030601",
+    "names": [
+      "Иностранные языки (английский)",
+      "Забони хориҷӣ (англисӣ)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "42-3",
+      "5547",
+      "5548",
+      "5549",
+      "5550",
+      "5551",
+      "5552",
+      "5557",
+      "5558",
+      "5565"
+    ],
+    "offer_count": 10
+  },
+  {
+    "specialty_key": "specialty_d0ade20d344456451b2e15fb",
+    "code": "2020306",
+    "names": [
+      "Иностранный язык (английский язык)",
+      "Забони хориҷӣ (англисӣ)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "42-4",
+      "5553",
+      "5554",
+      "5559",
+      "5560",
+      "5561",
+      "5562"
+    ],
+    "offer_count": 7
+  },
+  {
+    "specialty_key": "specialty_47fbc06f36b41b4990c437bd",
+    "code": "2010201",
+    "names": [
+      "Начальное образование",
+      "Таҳсилоти ибтидоӣ",
+      "Таҳсилоти ибтидоӣ Эзоҳ: Таъкид менамоем, ки тағйирёбии"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "42-5",
+      "42-6",
+      "42-7",
+      "42-8",
+      "42-9",
+      "42-10",
+      "42-11",
+      "42-12",
+      "42-13",
+      "42-14",
+      "42-15",
+      "42-16",
+      "42-17",
+      "42-18",
+      "42-19",
+      "42-20",
+      "43-1",
+      "43-2",
+      "43-3",
+      "43-4",
+      "43-5",
+      "43-6",
+      "43-7",
+      "43-8",
+      "43-9",
+      "43-10",
+      "43-11",
+      "43-12",
+      "5569",
+      "5570",
+      "5571",
+      "5572",
+      "5573",
+      "5574",
+      "5575",
+      "5576",
+      "5577",
+      "5578",
+      "5579",
+      "5580",
+      "5581",
+      "5582",
+      "5583",
+      "5584",
+      "5585",
+      "5586",
+      "5587",
+      "5588",
+      "5589",
+      "5590",
+      "5591",
+      "5592",
+      "5593",
+      "5594",
+      "5595",
+      "5596",
+      "5597",
+      "5598",
+      "5599",
+      "5600",
+      "5601",
+      "5602",
+      "5603",
+      "5604",
+      "5605",
+      "5606"
+    ],
+    "offer_count": 66
+  },
+  {
+    "specialty_key": "specialty_3211995cf0ee10b9584d33a5",
+    "code": "2020302",
+    "names": [
+      "Русский язык и литература",
+      "Русский язык и литература Примечание: Напоминаем, что",
+      "Забон ва адабиёти рус"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "43-13",
+      "43-14",
+      "43-15",
+      "43-16",
+      "43-20",
+      "44-1",
+      "44-2",
+      "44-3",
+      "44-4",
+      "44-5",
+      "44-6",
+      "44-7",
+      "44-8",
+      "44-9",
+      "5881",
+      "5882",
+      "5477",
+      "5478",
+      "5479",
+      "5480",
+      "5481",
+      "5482",
+      "5483",
+      "5484",
+      "5485",
+      "5490",
+      "5491",
+      "5492",
+      "5493",
+      "5494",
+      "5495",
+      "5498",
+      "5501",
+      "5502",
+      "5503"
+    ],
+    "offer_count": 35
+  },
+  {
+    "specialty_key": "specialty_85d8ab2ddf9e7385cf853e80",
+    "code": "2020134",
+    "names": [
+      "Русский язык и литература",
+      "Забон ва адабиёти рус"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "43-17",
+      "43-18",
+      "5499",
+      "5500"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_6981af40cf6756b1a998bc7d",
+    "code": "201020134",
+    "names": [
+      "Русский язык и литература",
+      "Забон ва адабиёти рус"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "43-19",
+      "5486",
+      "5487",
+      "5488",
+      "5489",
+      "5496",
+      "5497"
+    ],
+    "offer_count": 7
+  },
+  {
+    "specialty_key": "specialty_e8e6b47780964b39f8032b1d",
+    "code": "2860101",
+    "names": [
+      "Социальная работа",
+      "Корҳои ҳифзи иҷтимоӣ"
+    ],
+    "clusters": [
+      3,
+      5
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "44-10",
+      "5786",
+      "5787"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_b5574be37c7eb21f001bf785",
+    "code": "2020301",
+    "names": [
+      "Таджикский язык и литература",
+      "Забон ва адабиёти тоҷик"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "44-11",
+      "44-13",
+      "44-14",
+      "44-15",
+      "44-16",
+      "44-17",
+      "44-18",
+      "44-19",
+      "45-1",
+      "45-2",
+      "45-3",
+      "45-4",
+      "45-5",
+      "45-6",
+      "45-7",
+      "45-8",
+      "45-9",
+      "45-10",
+      "45-11",
+      "45-12",
+      "45-13",
+      "45-14",
+      "5504",
+      "5505",
+      "5506",
+      "5507",
+      "5508",
+      "5509",
+      "5510",
+      "5511",
+      "5512",
+      "5513",
+      "5514",
+      "5515",
+      "5516",
+      "5517",
+      "5518",
+      "5519",
+      "5520",
+      "5521",
+      "5522",
+      "5523",
+      "5524",
+      "5527",
+      "5528",
+      "5529",
+      "5530",
+      "5531",
+      "5534",
+      "5535",
+      "5536",
+      "5537",
+      "5538",
+      "5539",
+      "5540",
+      "5541"
+    ],
+    "offer_count": 56
+  },
+  {
+    "specialty_key": "specialty_7c867c3e274f7acf9ed1709f",
+    "code": "202030130",
+    "names": [
+      "Таджикский язык и литература"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "44-12"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_5c5344bb574d98effbb610ab",
+    "code": "2020403",
+    "names": [
+      "Таджикский язык и литература"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "44-20"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_109c4b975514547189f956b5",
+    "code": "123011301",
+    "names": [
+      "Архивоведение",
+      "Архивоведение и"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "46-1",
+      "46-2"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_08c95b31ffd5c8c21401b405",
+    "code": "1260102",
+    "names": [
+      "Государственное управление и право",
+      "Государственное управление и право (СТРФНПТ)"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "46-3",
+      "46-4"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_b73cd72b5d13331b721f1938",
+    "code": "1020101",
+    "names": [
+      "История",
+      "История бизнеса"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "46-5",
+      "46-6",
+      "46-7",
+      "46-9"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_713cb05c6313c97cae9e6afe",
+    "code": "121030101",
+    "names": [
+      "История",
+      "История (отечественная и всеобщая)"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "46-8",
+      "46-12",
+      "46-13"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_848ac2850e64ccd0a1edb732",
+    "code": "121030102",
+    "names": [
+      "История (археология)"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "46-10",
+      "46-11"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_629ef415ba872bd8a069d676",
+    "code": "121030105",
+    "names": [
+      "История (политология)"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "46-14"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_1307a97bdf1058cc7227c7fa",
+    "code": "1230113",
+    "names": [
+      "История и культуроведение",
+      "История и культуроведение и"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "46-15",
+      "47-1",
+      "47-2"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_72bf00432411072597e10872",
+    "code": "1020102",
+    "names": [
+      "История. Дополнительная специальность (право)",
+      "История. Дополнительная специальность (право) в",
+      "История. Дополнительная специальность (учитель основы государства",
+      "История. Право"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "47-3",
+      "47-4",
+      "47-5",
+      "47-6",
+      "47-7",
+      "47-8"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_59db94c739a8dce0c5d72980",
+    "code": "102010205",
+    "names": [
+      "История. Религиоведение"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "47-9"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_9ab98ac8724639e9ce5732b2",
+    "code": "102010203",
+    "names": [
+      "История. Русский язык и литература"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "47-10"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_4d8c1c57202b399d679a45c5",
+    "code": "124010105",
+    "names": [
+      "Международное право"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "47-11"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_8dcb45a040c2e6edeb828892",
+    "code": "1230101",
+    "names": [
+      "Международные отношения"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "47-12",
+      "47-13",
+      "47-14",
+      "48-1"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_4071e1040092497dc4ef4ae3",
+    "code": "124010201",
+    "names": [
+      "Организация деятельности государственных органов 12301060103 - Политика и государственное управление 12301060103 - Политика и государственное управление Носири"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "48-2"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_6cfcd412a18794a9a3cdec8a",
+    "code": "1230106010",
+    "names": [
+      "3 - Политика и государственное управление 12301060301 - Политический менеджмент 123010601 - Политология (политико - юридическая деятельность) Носири"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "48-3"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_dd280e1ef1244bebcfa0c695",
+    "code": "1240104",
+    "names": [
+      "Право. Преподаватель"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "48-4"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_a7da37a5eb777a2bf0c0c1a5",
+    "code": "1240102",
+    "names": [
+      "Правоведение",
+      "Транспортное право"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "48-5",
+      "48-6",
+      "48-7",
+      "49-16"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_1442b841738ba030e5e04782",
+    "code": "196010101",
+    "names": [
+      "Правовое обеспечение таможенной деятельности"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "48-8",
+      "48-9"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_4244f61e384935e9acace0bb",
+    "code": "126010202",
+    "names": [
+      "Правовое регулирование в сфере государственного управления Носири"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "48-10"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_d209209cf17b9d626b975b2f",
+    "code": "124010211",
+    "names": [
+      "Правовое регулирование трудовых отношений"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "48-11"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_7020f83f19b4421b9c1266f4",
+    "code": "124010302",
+    "names": [
+      "Правовое регулирование финансов и кредита"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "49-1"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_8e67a8390ef82becf37d1822",
+    "code": "1930101",
+    "names": [
+      "Правоохранительная деятельность Носири",
+      "Правоохранительная деятельность"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "49-2",
+      "49-3"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_e33b14c28e7ad389a3f7fed1",
+    "code": "193010101",
+    "names": [
+      "Правоохранительная деятельность (туристический полис)"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "49-4"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_1ffae76b4546e7b7e454c2d6",
+    "code": "1030403",
+    "names": [
+      "Практическая психология"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "49-5",
+      "49-6"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_304a5914ccb858221f9ef1aa",
+    "code": "1230104",
+    "names": [
+      "Психология",
+      "Психология языков"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "49-7",
+      "49-8"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_b80af63e8669441190e216cc",
+    "code": "123010406",
+    "names": [
+      "Психология семейных отношений"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "49-9"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_684f98bb60f9d7fa06c3be06",
+    "code": "123010402",
+    "names": [
+      "Социальная психология"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "49-10"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_5ef9b5a97034c51a8acc8e33",
+    "code": "1230105",
+    "names": [
+      "Социология"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "49-11"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_5bb827883a65d55008090a59",
+    "code": "124010205",
+    "names": [
+      "Таможенное право"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "49-12",
+      "49-15"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_e21678882c0537debe19c6f6",
+    "code": "125010205",
+    "names": [
+      "Таможенное право"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "49-13",
+      "49-14"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_4fe24dad956531696d633e53",
+    "code": "1240103",
+    "names": [
+      "Экономическое право Носири",
+      "Экономическое право"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "50-1",
+      "50-2",
+      "50-3"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_18365d1c2a038ade533fd248",
+    "code": "124010213",
+    "names": [
+      "Юридическая психология Носири"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "50-4"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_b144029211b3320ff4d2893e",
+    "code": "2020101",
+    "names": [
+      "История государственного",
+      "История Педагогический",
+      "История Технико - педагогический",
+      "История имени Носири",
+      "История имени Абуабдулло",
+      "История Колледж педагогики",
+      "Таърих"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "51-1",
+      "51-2",
+      "51-3",
+      "51-4",
+      "51-7",
+      "51-8",
+      "51-9",
+      "51-10",
+      "51-11",
+      "51-15",
+      "51-16",
+      "51-17",
+      "51-18",
+      "52-1",
+      "5637",
+      "5638",
+      "5639",
+      "5640",
+      "5641",
+      "5642",
+      "5643",
+      "5644",
+      "5645",
+      "5646",
+      "5647",
+      "5648",
+      "5649",
+      "5650"
+    ],
+    "offer_count": 28
+  },
+  {
+    "specialty_key": "specialty_5d88a4d108b6484c71408bf3",
+    "code": "2020201",
+    "names": [
+      "История Педагогический"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "51-5",
+      "51-6",
+      "51-12",
+      "51-13"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_d24a8d875d85c822f65a4f7c",
+    "code": "224010235",
+    "names": [
+      "История Инженерно -",
+      "История (негосударственный)",
+      "Право и организация социального Колледж туризма и",
+      "Право и организация социального Инженерно - обеспечения",
+      "Ҳуқуқ ва ташкили таъмини иҷтимоӣ"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "51-14",
+      "51-19",
+      "52-2",
+      "52-3",
+      "5653",
+      "5654"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_8a8cfeb60cc46a1d27dda5d9",
+    "code": "1740201",
+    "names": [
+      "Агрономия 17402032501 - Агрономия - экономика -"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "53-1"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_2c434285bc43327cb96d1ccf",
+    "code": "1020401",
+    "names": [
+      "Биология",
+      "Биология в"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "53-2",
+      "53-3"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_5fa9b1317f93a9b47b087521",
+    "code": "131010103",
+    "names": [
+      "Биология (биотехнология) в"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "53-4"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_db10f6198f9c76ac48dfc581",
+    "code": "131010102",
+    "names": [
+      "Биология (научно - педагогическая деятельность)"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "53-5"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_5d02530d4196fbb6c5f31f31",
+    "code": "1310101",
+    "names": [
+      "Биология (по направлениям)"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "53-6"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_b536a1a598ccddb72bca6833",
+    "code": "102040401",
+    "names": [
+      "Биология. Химия",
+      "Биология. Химия в"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "53-7",
+      "53-8"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_828bd5d4be51bb24718618c2",
+    "code": "102040403",
+    "names": [
+      "Биология. Экология"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "53-9"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_7e499a69c287a0ac934f6c71",
+    "code": "1020404",
+    "names": [
+      "Биология. Экология"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "53-10"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_bc37bb96e0d197a162fa6578",
+    "code": "1740302",
+    "names": [
+      "Ветеринарная медицина"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "53-11"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_e539cf201c85a41f6d8f7971",
+    "code": "1740301",
+    "names": [
+      "Зоотехния"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "53-12"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_d75d1c3d4e3214e0bb31d6a7",
+    "code": "175010101",
+    "names": [
+      "Лесоведение и лесоводство"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "53-13"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_b762a585f3b0cf912194b3b5",
+    "code": "133010101",
+    "names": [
+      "Общая экология",
+      "Экология"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "53-14",
+      "54-1",
+      "55-11"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_ba1987a8679f6a0d7d8c4c53",
+    "code": "1740204",
+    "names": [
+      "Плодоовощеводство"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "54-2"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_9022a91fc8f5acfc07b2b4f5",
+    "code": "174030107",
+    "names": [
+      "Пчеловодство"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "54-3"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_d5caaacd6b8caa299c3ba91a",
+    "code": "1030201",
+    "names": [
+      "Физическая культура (ТЭилиЭСН)"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "54-4",
+      "54-5",
+      "54-6",
+      "54-7"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_3261ef287d4255376f779447",
+    "code": "1030202",
+    "names": [
+      "Физическая культура. Дополнительная специальность (ТЭилиЭСН)",
+      "Физическая культура. Начальная военная подготовка (ТЭилиЭСН)",
+      "Физическая культура. Начальная военная подготовка (ТЭилиЭСН) в"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "54-8",
+      "54-11",
+      "54-12",
+      "54-13"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_f120298ac948e846aaffcd13",
+    "code": "1880101",
+    "names": [
+      "Физическая культура. Дополнительная специальность (ТЭилиЭСН)"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "54-9",
+      "54-10"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_055daf8ee61264c112c1e61d",
+    "code": "1020403",
+    "names": [
+      "Химия в"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "54-14"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_0de42b499a5dff76019bb0cd",
+    "code": "131050102",
+    "names": [
+      "Химия (научно - педагогическая деятельность)"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "54-15",
+      "54-16"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_b49b99afc4b67966c37c04c9",
+    "code": "131050101",
+    "names": [
+      "Химия (научно - производственная деятельность)",
+      "Химия (научно - производственная деятельность) в"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "54-17",
+      "55-1"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_9bfbc17053a29ca30851a7ed",
+    "code": "131050103",
+    "names": [
+      "Химия (фармацевтическая деятельность) (СТРФНПТ) 13105010101 - Химия по направлениям"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "55-2"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_b89505ee020493eb7c1093c4",
+    "code": "102040601",
+    "names": [
+      "Химия. Биология",
+      "Химия. Биология в"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "55-3",
+      "55-4",
+      "55-5",
+      "55-6",
+      "55-7",
+      "55-8",
+      "55-9"
+    ],
+    "offer_count": 7
+  },
+  {
+    "specialty_key": "specialty_8b0fe084c5265a70ec1ce913",
+    "code": "1020406",
+    "names": [
+      "Химия. Экология"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "55-10"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_6eace6637b26b24e6d4586bf",
+    "code": "1330106",
+    "names": [
+      "Экология сельского хозяйства"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "55-12"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_2b07f95847969cb47dee4e49",
+    "code": "2740201",
+    "names": [
+      "Агрономия Аграрный колледж"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "56-1",
+      "56-2"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_1b011859ac19892a191bbdd3",
+    "code": "2020401",
+    "names": [
+      "Биология государственного",
+      "Биология Педагогический",
+      "Биология Технико - педагогический",
+      "Биология имени Носири",
+      "Биология Колледж педагогики",
+      "Биология"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "56-3",
+      "56-4",
+      "56-5",
+      "56-6",
+      "56-7",
+      "56-8",
+      "56-9",
+      "56-11",
+      "56-12",
+      "56-14",
+      "56-15",
+      "56-17",
+      "5657",
+      "5658",
+      "5659",
+      "5660",
+      "5661",
+      "5662",
+      "5663",
+      "5664",
+      "5665",
+      "5666",
+      "5667",
+      "5668",
+      "5669",
+      "5670",
+      "5671",
+      "5672",
+      "5673",
+      "5674",
+      "5675",
+      "5676",
+      "5677",
+      "5678",
+      "5679",
+      "5680",
+      "5681"
+    ],
+    "offer_count": 37
+  },
+  {
+    "specialty_key": "specialty_7770f8bb56c9b77864b0c696",
+    "code": "2310101",
+    "names": [
+      "Биология Инновационный",
+      "Биология Инженерно -",
+      "Биология (негосударственный)"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "56-10",
+      "56-13",
+      "56-16"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_f66be4003336cb7348b59b18",
+    "code": "2330101",
+    "names": [
+      "Биоэкология государственного",
+      "Биоэкология имени Носири",
+      "Биоэкология",
+      "Экология"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "56-18",
+      "56-19",
+      "56-20",
+      "56-21",
+      "5682",
+      "5683",
+      "5684",
+      "5685",
+      "5686",
+      "5687",
+      "5806",
+      "5807"
+    ],
+    "offer_count": 12
+  },
+  {
+    "specialty_key": "specialty_b8d677d979e351e9d03b8868",
+    "code": "2740302",
+    "names": [
+      "Ветеринарная Аграрный колледж медицина",
+      "Ветеринарная Специализированный медицина",
+      "Тибби байторӣ"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "56-22",
+      "57-1",
+      "57-2",
+      "57-3",
+      "5794",
+      "5795",
+      "5796",
+      "5797"
+    ],
+    "offer_count": 8
+  },
+  {
+    "specialty_key": "specialty_6658ccc4ccebb933626d97d5",
+    "code": "274030208",
+    "names": [
+      "Ветеринарно - Специализированный фармацевтическая медицина",
+      "Тибби ветеринарӣ - фарматсевтӣ"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "57-4",
+      "57-5",
+      "5798",
+      "5799",
+      "5800",
+      "5801"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_1a989a9e9f39351c4c7674ed",
+    "code": "257010101",
+    "names": [
+      "Промышленная экология и рациональное Горный колледж использование природных",
+      "Экологияи саноатӣ ва истифодаи оқилонаи сарватҳои табиӣ"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "57-6",
+      "5808",
+      "5809",
+      "5810",
+      "5811"
+    ],
+    "offer_count": 5
+  },
+  {
+    "specialty_key": "specialty_e1469e84e4b0441ea1f1d508",
+    "code": "2880231",
+    "names": [
+      "Спортивно - педагогическая деятельность Колледж физической",
+      "Фаъолияти варзишӣ - педагогӣ (ИЭваММ)"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "57-7",
+      "5802",
+      "5803"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_1ad052453e5f29d18b96bc96",
+    "code": "201020131",
+    "names": [
+      "Физическая Колледж физической культура (ТЭилиЭСН)",
+      "Физическая Педагогический культура (ТЭилиЭСН)"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_11"
+    ],
+    "source_row_ids": [
+      "57-8",
+      "57-9",
+      "57-10"
+    ],
+    "offer_count": 3
+  },
+  {
+    "specialty_key": "specialty_e580cf24f3567409701c26ad",
+    "code": "2030201",
+    "names": [
+      "Физическая Педагогический культура (ТЭилиЭСН) имени Носири",
+      "Физическая Инженерно - культура (ТЭилиЭСН) (негосударственный)",
+      "Забон ва адабиёти тоҷик",
+      "Тарбияи ҷисмонӣ (ИЭваММ)"
+    ],
+    "clusters": [
+      5,
+      3
+    ],
+    "education_levels": [
+      "after_11",
+      "after_9"
+    ],
+    "source_row_ids": [
+      "57-11",
+      "57-12",
+      "57-13",
+      "5525",
+      "5526",
+      "5788",
+      "5789",
+      "5792"
+    ],
+    "offer_count": 8
+  },
+  {
+    "specialty_key": "specialty_b96ac2b6122972c57c726917",
+    "code": "2370102",
+    "names": [
+      "Автомобилсозӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5879",
+      "5880"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_2d708eb3f3bb40a5176e5f7e",
+    "code": "2370107",
+    "names": [
+      "Автосервис (хизматрасонии мошинҳо)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5116",
+      "5117",
+      "5114",
+      "5115",
+      "5118",
+      "5119"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_a0ba0a4ccd324f18d9d33191",
+    "code": "2450304",
+    "names": [
+      "Алоқаи почта"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5120"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_33244d5d9d554e61ef75686f",
+    "code": "240010104",
+    "names": [
+      "Бехатарии иттилоотӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5121",
+      "5122"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_2e43bb3ac2389e32c544a814",
+    "code": "2400202",
+    "names": [
+      "Воситаҳои электронии ҳисоббарорӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5132"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_c674b8a723f24908c2a39879",
+    "code": "2560201",
+    "names": [
+      "Геодезия дар сохтмон"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5137",
+      "5138"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_3a314dc3e2be87e76d3a8b01",
+    "code": "2510101",
+    "names": [
+      "Геология ва иктишофи кони канданиҳои фоиданок"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5139",
+      "5140"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_13914be5c872a2730ac367b4",
+    "code": "2510231",
+    "names": [
+      "Гидрогеология ва геологияи муҳандисӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5141",
+      "5142"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_fd0016100a1796a7d2e979de",
+    "code": "2560001",
+    "names": [
+      "Заминсозӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5149",
+      "5150"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_39449143502129c6e3edcdd0",
+    "code": "2400301",
+    "names": [
+      "Зеҳни сунъӣ Эзоҳ: Таъкид менамоем, ки тағйирёбии",
+      "Зеҳни сунъӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5151",
+      "5152"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_5f93ce3e14893af40aa17acd",
+    "code": "245010331",
+    "names": [
+      "Иншооти алоқаи хаттӣ - кабелӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5173"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_3e97f6c94b696ad8c935c84e",
+    "code": "236113101",
+    "names": [
+      "Истифодабарии техникии мошину таҷҳизоти бинокорӣ ва роҳсозӣ",
+      "Истифодабарии техникии мошину таҷҳизоти бинокорӣ ва роҳсозӣ Эзоҳ: Таъкид менамоем, ки тағйирёбии"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5174",
+      "5175"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_60a67d24d82a7561402f7991",
+    "code": "236023101",
+    "names": [
+      "Истифодабарии техникии таҷҳизоти металлургӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5176",
+      "5177"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_bd5f29cb0d05a6c55995ff62",
+    "code": "245010301",
+    "names": [
+      "Истифодабарии техникии шабакаҳои телекоммуникатсионӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5178"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_cf0d8035ff9c39cdea4a863d",
+    "code": "2510201",
+    "names": [
+      "Коркарди конҳои канданиҳои фоиданок (аз рӯйи самтҳо)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5179",
+      "5180"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_f4699f7aaf79188a75ae7915",
+    "code": "243010135",
+    "names": [
+      "Нерӯгоҳҳои барқӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5210",
+      "5211"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_73c10ee175ee2043441e0b5d",
+    "code": "2400102",
+    "names": [
+      "Низоми технологияи иттилоотӣ (аз рӯйи самтҳо)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5218",
+      "5219"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_2ef668ac99b80055fc025123",
+    "code": "2390101",
+    "names": [
+      "Радиотехника"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5220",
+      "5221"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_68671c65edec691336760dbe",
+    "code": "245010234",
+    "names": [
+      "Системаи радиошунавонӣ ва телевизионӣ Эзоҳ: Таъкид менамоем, ки тағйирёбии"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5222"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_c2e0660bb991dd9bdf69e2a0",
+    "code": "2700331",
+    "names": [
+      "Сохтмони роҳҳо ва иншооти нақлиётӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5229",
+      "5230"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_dca3c19e94573584b3d7108f",
+    "code": "250013406",
+    "names": [
+      "Тарроҳӣ ва поракунии либоси нассоҷӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5237",
+      "5238"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_198a5ba993a7a34d4b3841b2",
+    "code": "250013403",
+    "names": [
+      "Тарроҳӣ ва тартиб додани либоси рӯйпӯши занона"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5241",
+      "5242"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_46a869ef630f7dbfcc4cdcbc",
+    "code": "250013404",
+    "names": [
+      "Тарроҳӣ ва тартиб додани либоси рӯйпӯши мардона"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5243",
+      "5244"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_9a88eb295403ca1c96f19732",
+    "code": "250013402",
+    "names": [
+      "Тарроҳӣ, поракунӣ ва технологияи либос Эзоҳ: Таъкид менамоем, ки тағйирёбии",
+      "Тарроҳӣ, поракунӣ ва технологияи либос"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5245",
+      "5246",
+      "5247",
+      "5248"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_6865d6cdd83bd9d17beb5635",
+    "code": "244010203",
+    "names": [
+      "Ташхиси ҳаракат дар роҳ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5261",
+      "5262"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_fea4a4c9a0a1ada1d6967fae",
+    "code": "208010101",
+    "names": [
+      "Таълимоти касбӣ (мошинсозӣ)",
+      "Таълимоти касбӣ (мошинсозӣ) Эзоҳ: Таъкид менамоем, ки тағйирёбии"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5265",
+      "5266",
+      "5267",
+      "5268"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_3b0bb060f11946eb520a23de",
+    "code": "20800105",
+    "names": [
+      "Таълимоти касбӣ (сохтмон)"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5269",
+      "5270"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_ee7a22642c43fa4c9bb3d94c",
+    "code": "2450103",
+    "names": [
+      "Таъминоти барномавии шабакаҳои телекоммуникатсионӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5312",
+      "5313"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_4c692b6a45b2ea2778ea66c8",
+    "code": "245010232",
+    "names": [
+      "Техник доир ба телекоммуникатсия"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5321"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_5cb926c06e3e190e62fe4325",
+    "code": "246010231",
+    "names": [
+      "Технологияи истеҳсоли мебел"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5328",
+      "5329",
+      "5330",
+      "5331"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_96b2b8848297f08c96277b4b",
+    "code": "249013101",
+    "names": [
+      "Технологияи истеҳсолоти анвои нонӣ, макаронӣ ва қаннодӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5332",
+      "5333"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_39dc955f7919deafd0d0f37e",
+    "code": "240010202",
+    "names": [
+      "Технологияи иттилоотии ҳисоби бухгалтерӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5334",
+      "5335"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_750163ae9fbd90607066453d",
+    "code": "250013502",
+    "names": [
+      "Технологияи масолеҳи дӯзандагӣ - нассоҷӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5336",
+      "5337"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_5bba928e2bcb3e599a8bce2a",
+    "code": "2360101",
+    "names": [
+      "Технологияи мошинсозӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5338",
+      "5339",
+      "5340",
+      "5341"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_e549127fb51aae99c1bdbb44",
+    "code": "2480133",
+    "names": [
+      "Технологияи химиявӣ дар саноати сабук",
+      "Технологияи химиявӣ дар саноати сабук Эзоҳ: Таъкид менамоем, ки тағйирёбии"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5346",
+      "5347"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_2d5309f89c999670ee5a4d55",
+    "code": "2360402",
+    "names": [
+      "Электроникаи саноатӣ"
+    ],
+    "clusters": [
+      1
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5358",
+      "5359"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_f8b6cc99592cfad2aba023d7",
+    "code": "2250111",
+    "names": [
+      "Аудит ва ревизия"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5370",
+      "5371"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_6e2471a276bd3e531272a1fd",
+    "code": "225013101",
+    "names": [
+      "Буҷет ва баҳисобгирии буҷетӣ"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5372",
+      "5373",
+      "5374",
+      "5375",
+      "5376",
+      "5377"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_4c6e14d6530fda2593a6eaa3",
+    "code": "227013124",
+    "names": [
+      "Иқтисодиёт ва ташкил дар соҳаи сайёҳӣ"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5388",
+      "5389"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_9cec9a79c0403896a25cb754",
+    "code": "2270131",
+    "names": [
+      "Иқтисодиёт ва ташкили истеҳсолот"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5391",
+      "5392",
+      "5393",
+      "5394",
+      "5395",
+      "5396"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_01b44f04fa32a3007f651a04",
+    "code": "227013114",
+    "names": [
+      "Иқтисодиёт ва ташкили истеҳсолот дар корхонаи алоқа"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5399"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_7df843bcf94a96457b58be51",
+    "code": "227013104",
+    "names": [
+      "Иқтисодиёт ва ташкили истеҳсолот дар корхонаи мошинсозӣ"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5400",
+      "5401"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_f4ccdf0ba1cecb72ba478c09",
+    "code": "227013105",
+    "names": [
+      "Иқтисодиёт ва ташкили истеҳсолот дар корхонаи нақлиёти автомобилӣ"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5402",
+      "5403"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_76faf32da327b9ecd7b839ca",
+    "code": "227013112",
+    "names": [
+      "Иқтисодиёт ва ташкили истеҳсолот дар корхонаи радиоэлектронӣ"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5404"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_ea95e95f9223289e9417f98a",
+    "code": "227013122",
+    "names": [
+      "Иқтисодиёт ва ташкили истеҳсолот дар корхонаҳо ва комплекси агросаноатӣ"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5409",
+      "5410",
+      "5411",
+      "5412"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_622e284ba4138b784eade9c8",
+    "code": "227013127",
+    "names": [
+      "Иқтисодиёт ва таъмини ҳуқуқии фаъолияти соҳибкорӣ"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5413",
+      "5414"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_f4f30c34eee8d0c4811cc57a",
+    "code": "225011026",
+    "names": [
+      "Иқтисодиёти рақамӣ"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5415",
+      "5416"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_8b3ac1b40f0a3596780b953f",
+    "code": "2260202",
+    "names": [
+      "Менеҷмент"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5433",
+      "5434",
+      "5435",
+      "5436"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_89490eb3ce0407ac7e0e7010",
+    "code": "226020201",
+    "names": [
+      "Менеҷменти молиявӣ"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5437",
+      "5438",
+      "5439",
+      "5440"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_1dff504a86268ac5bdbb86eb",
+    "code": "2250134",
+    "names": [
+      "Молиёт дар кори бонк"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5441",
+      "5442"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_4689aab0f803cec4625ce866",
+    "code": "2250131010",
+    "names": [
+      "1 - Молия ва қарз"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5449",
+      "5450",
+      "5451",
+      "5452"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_c6f2239ce5d9b5026cdf03da",
+    "code": "225011008",
+    "names": [
+      "Фаъолияти тиҷоратӣ дар бозори воситаҳои радио ва хизматрасонии иттилоотӣ"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5456"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_8fad9f6f57d291d8f2621a04",
+    "code": "2200135",
+    "names": [
+      "Ҳисоби муҳосибӣ, таҳлил ва назорат"
+    ],
+    "clusters": [
+      2
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5467",
+      "5468"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_871cb7ad7b90878819402873",
+    "code": "20220301",
+    "names": [
+      "Забон ва адабиёти тоҷик"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5532",
+      "5533"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_16fa5e2de4f4c67d8ea5aeec",
+    "code": "201020133",
+    "names": [
+      "Забон ва адабиёти тоҷик"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5542"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_a7b7ed0d02764896e9d0db0a",
+    "code": "2010306",
+    "names": [
+      "Забони хориҷӣ"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5543",
+      "5544"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_9d4d4705cf1027012108573f",
+    "code": "201010133",
+    "names": [
+      "Забони хориҷӣ",
+      "Забони хориҷӣ (англисӣ, русӣ)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5545",
+      "5546",
+      "5566",
+      "5567"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_9950828ed3116ed688dfc141",
+    "code": "202020135",
+    "names": [
+      "Забони хориҷӣ (англисӣ)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5555",
+      "5556"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_6895d65d79d42abc0933c8e6",
+    "code": "2001020135",
+    "names": [
+      "Забони хориҷӣ (англисӣ)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5563",
+      "5564"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_6b032a72946e578a28fe1faf",
+    "code": "201020135",
+    "names": [
+      "Забонҳои хориҷӣ"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5568"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_154cf77ff6635608a248568a",
+    "code": "2030131",
+    "names": [
+      "Таълими мусиқӣ (ИЭваММ)"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5629",
+      "5630",
+      "5631",
+      "5632"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_d8604efb2aec17f432493202",
+    "code": "201020138",
+    "names": [
+      "Фаъолияти иҷтимоии омӯзгорӣ"
+    ],
+    "clusters": [
+      3
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5633",
+      "5634",
+      "5635",
+      "5636"
+    ],
+    "offer_count": 4
+  },
+  {
+    "specialty_key": "specialty_3701644beebd50fc63d02834",
+    "code": "224010232",
+    "names": [
+      "Фаъолияти ҳуқуқи хоҷагӣ"
+    ],
+    "clusters": [
+      4
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5651",
+      "5652"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_faabdd9456013360bff9964f",
+    "code": "2240101",
+    "names": [
+      "Биология"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5655",
+      "5656"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_79ea71b4be4aad5b4cdbba19",
+    "code": "2380131010",
+    "names": [
+      "1 - Истифодабарии техника ва таҷҳизоти тиббӣ"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5688",
+      "5689"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_4a234109e96655a81d8e68b5",
+    "code": "2790133",
+    "names": [
+      "Кори дандонсозӣ"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5690",
+      "5691",
+      "5692",
+      "5693",
+      "5694",
+      "5695"
+    ],
+    "offer_count": 6
+  },
+  {
+    "specialty_key": "specialty_1079ed75556facaebce10fc2",
+    "code": "2790107",
+    "names": [
+      "Кори табобати дандон"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5699",
+      "5700"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_ea0dcb3738ab08bb8415dafc",
+    "code": "2790135",
+    "names": [
+      "Кори тиббӣ - офиятӣ"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5701"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_a938b453f4d86fe8d58c73ef",
+    "code": "2790104",
+    "names": [
+      "Кори тиббию ташхисӣ"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5703",
+      "5704",
+      "5705",
+      "5706",
+      "5707",
+      "5708",
+      "5709"
+    ],
+    "offer_count": 7
+  },
+  {
+    "specialty_key": "specialty_1cc8051688b8d744a8d2ae1d",
+    "code": "2790108",
+    "names": [
+      "Кори фармасевтӣ"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5710",
+      "5711",
+      "5712",
+      "5713",
+      "5714",
+      "5715",
+      "5716",
+      "5717",
+      "5718",
+      "5719",
+      "5720",
+      "5696",
+      "5721",
+      "5722",
+      "5723",
+      "5724",
+      "5725",
+      "5726",
+      "5727",
+      "5728",
+      "5729",
+      "5730",
+      "5731",
+      "5732",
+      "5733",
+      "5734",
+      "5735",
+      "5697",
+      "5736",
+      "5737"
+    ],
+    "offer_count": 30
+  },
+  {
+    "specialty_key": "specialty_81150a281b43f8c79fe34e68",
+    "code": "2790131",
+    "names": [
+      "Кори ҳамширагӣ"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5739",
+      "5758",
+      "5760",
+      "5766",
+      "5780"
+    ],
+    "offer_count": 5
+  },
+  {
+    "specialty_key": "specialty_d90d4025fd295964a71b3f43",
+    "code": "2790106",
+    "names": [
+      "Кори ҳамширагӣ"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5740",
+      "5741",
+      "5742",
+      "5743",
+      "5744",
+      "5745",
+      "5746",
+      "5747",
+      "5748",
+      "5749",
+      "5750",
+      "5751",
+      "5752",
+      "5753",
+      "5754",
+      "5755",
+      "5756",
+      "5757",
+      "5759",
+      "5761",
+      "5762",
+      "5763",
+      "5764",
+      "5765",
+      "5767",
+      "5768",
+      "5769",
+      "5770",
+      "5771",
+      "5772",
+      "5773",
+      "5774",
+      "5775",
+      "5776",
+      "5777",
+      "5778",
+      "5779",
+      "5781",
+      "5782"
+    ],
+    "offer_count": 39
+  },
+  {
+    "specialty_key": "specialty_62179a48efb78c3a8b09e2c6",
+    "code": "279010601",
+    "names": [
+      "Кори ҳамширагӣ дар косметология"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5785"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_84ccddda05b765d1dfe04271",
+    "code": "201010131",
+    "names": [
+      "Тарбияи ҷисмонӣ (ИЭваММ)"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5790",
+      "5791"
+    ],
+    "offer_count": 2
+  },
+  {
+    "specialty_key": "specialty_0c31d354d3c42395ddb1e057",
+    "code": "2790109",
+    "names": [
+      "Технологияи истеҳсоли саноати фарматсевтӣ"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5793"
+    ],
+    "offer_count": 1
+  },
+  {
+    "specialty_key": "specialty_e9bffbf4aca7281d239cb71e",
+    "code": "2570101",
+    "names": [
+      "Ҳифзи муҳити зист ва оқилона истифода намудани боигарии табиат"
+    ],
+    "clusters": [
+      5
+    ],
+    "education_levels": [
+      "after_9"
+    ],
+    "source_row_ids": [
+      "5804",
+      "5805"
+    ],
+    "offer_count": 2
+  }
+]

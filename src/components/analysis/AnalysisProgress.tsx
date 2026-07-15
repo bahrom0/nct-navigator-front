@@ -1,30 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import type { AnalysisStep } from "@/types/analysis";
 import { STEPS as STEP_LIST } from "@/types/analysis";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  Brain,
+  BriefcaseBusiness,
   Check,
-  FileText,
-  SearchCode,
-  SendHorizonal,
+  Database,
+  GitBranch,
+  ShieldCheck,
   Sparkles,
 } from "lucide-react";
 
 const ICONS: Record<AnalysisStep, typeof Sparkles> = {
-  submitting_request: SendHorizonal,
-  analyzing_interests: Brain,
-  searching_nct_codes: SearchCode,
-  forming_recommendations: FileText,
+  submitting_request: BriefcaseBusiness,
+  analyzing_interests: GitBranch,
+  searching_nct_codes: Database,
+  forming_recommendations: ShieldCheck,
 };
 
 const SUBTITLES: Record<AnalysisStep, string> = {
-  submitting_request: "Запрос успешно отправлен на сервер",
-  analyzing_interests: "Интересы проанализированы",
-  searching_nct_codes: "Ищем релевантные коды в базе НЦТ",
-  forming_recommendations: "Формируем список и объяснения",
+  submitting_request: "Берём выбранные интересы, город и уровень образования, чтобы собрать локальный profession shortlist.",
+  analyzing_interests: "Сопоставляем профиль с локальным каталогом профессий и отбрасываем неподходящие маршруты.",
+  searching_nct_codes: "Применяем жёсткие фильтры по городу и уровню, затем ищем связанные специальности в базе НЦТ.",
+  forming_recommendations: "Проверяем валидные ключи, убираем дубли семей специальностей и ранжируем финальный shortlist.",
 };
 
 function StageIcon({
@@ -243,22 +242,11 @@ export function AnalysisTimeline({
   status: "idle" | "running" | "success" | "error";
 }) {
   const targetIndex = Math.max(0, STEP_LIST.findIndex((step) => step.key === currentStep));
-  const [displayedIndex, setDisplayedIndex] = useState(targetIndex);
-
-  useEffect(() => {
-    if (targetIndex <= displayedIndex) return;
-
-    const timer = window.setTimeout(() => {
-      setDisplayedIndex((index) => Math.min(index + 1, targetIndex));
-    }, 820);
-
-    return () => window.clearTimeout(timer);
-  }, [displayedIndex, targetIndex]);
 
   return (
     <div className="w-full">
-      <DesktopTimeline currentIndex={displayedIndex} status={status} />
-      <MobileTimeline currentIndex={displayedIndex} status={status} />
+      <DesktopTimeline currentIndex={targetIndex} status={status} />
+      <MobileTimeline currentIndex={targetIndex} status={status} />
     </div>
   );
 }

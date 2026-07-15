@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-07-15T15:22:03.195Z",
+  "stage3_version": "nct-stage3-release-v1.0.0",
+  "source_stage2_quality_gates": {
+    "every_offer_has_source_row": true,
+    "no_stable_key_duplicates": true,
+    "all_unknown_cities_in_review": true,
+    "raw_staging_core_count_explained": true,
+    "low_confidence_fields_are_reviewed": true,
+    "year_period_mismatch_excluded": true,
+    "khujand_report_present": true
+  },
+  "counts": {
+    "draft": 1529,
+    "published": 1389,
+    "excluded": 140,
+    "search_documents": 1389,
+    "releases": 2
+  },
+  "published_by_release": {
+    "nct-2025-fourth-or-remaining-seats-after-11-v1": 704,
+    "nct-2026-2027-first-after-9-v1": 685
+  },
+  "published_by_education_level": {
+    "after_11": 704,
+    "after_9": 685
+  },
+  "exclusions_by_reason": {
+    "stable_key_collision": 2,
+    "stage2_needs_review": 138
+  },
+  "checks": {
+    "all_draft_rows_accounted_for": true,
+    "stable_keys_unique": true,
+    "search_matches_published": true,
+    "published_rows_have_no_conflicts": true
+  }
+}

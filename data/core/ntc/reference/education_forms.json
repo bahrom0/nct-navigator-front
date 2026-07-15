@@ -1,0 +1,14 @@
+[
+  {
+    "education_form": "full_time",
+    "offer_count": 697
+  },
+  {
+    "education_form": "part_time",
+    "offer_count": 515
+  },
+  {
+    "education_form": "distance",
+    "offer_count": 314
+  }
+]

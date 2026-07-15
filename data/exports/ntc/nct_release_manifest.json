@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-07-15T15:22:03.195Z",
+  "stage3_version": "nct-stage3-release-v1.0.0",
+  "release_count": 2,
+  "published_record_count": 1389,
+  "excluded_record_count": 140,
+  "releases": [
+    {
+      "release_id": "nct-2025-fourth-or-remaining-seats-after-11-v1",
+      "academic_year": "2025",
+      "admission_period": "fourth_or_remaining_seats",
+      "education_level": "after_11",
+      "status": "published",
+      "source_document_ids": [
+        "ntc_pdf_after_11_remaining_2025_762356aeda2c"
+      ],
+      "record_count": 704,
+      "excluded_record_count": 128,
+      "review_issue_count": 641,
+      "quality_report_path": "data/reports/ntc/quality_report.json",
+      "exclusions_report_path": "data/reports/ntc/stage3_exclusions.json",
+      "created_at": "2026-07-15T15:22:03.195Z",
+      "published_at": "2026-07-15T15:22:03.195Z",
+      "source_seed_present": true
+    },
+    {
+      "release_id": "nct-2026-2027-first-after-9-v1",
+      "academic_year": "2026-2027",
+      "admission_period": "first",
+      "education_level": "after_9",
+      "status": "published",
+      "source_document_ids": [
+        "ntc_pdf_after_9_plan_2026_2027_36a1f3e44367"
+      ],
+      "record_count": 685,
+      "excluded_record_count": 12,
+      "review_issue_count": 12,
+      "quality_report_path": "data/reports/ntc/quality_report.json",
+      "exclusions_report_path": "data/reports/ntc/stage3_exclusions.json",
+      "created_at": "2026-07-15T15:22:03.195Z",
+      "published_at": "2026-07-15T15:22:03.195Z",
+      "source_seed_present": true
+    }
+  ]
+}

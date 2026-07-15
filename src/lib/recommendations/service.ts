@@ -59,9 +59,9 @@ export async function buildRecommendations(
   ]);
 
   const educationLevel =
-    onboarding?.educationLevel === "applicant"
-      ? ("after_11" as const)
-      : onboarding?.educationLevel || "";
+    onboarding?.educationLevel === "after_9" || onboarding?.educationLevel === "after_11"
+      ? onboarding.educationLevel
+      : "";
 
   await mark("searching_nct_codes");
   const matches = await buildCandidatePool({
@@ -243,7 +243,7 @@ function mergeMatches(matches: NCTMatchResult[], limit: number): NCTMatchResult[
   const merged = new Map<string, NCTMatchResult>();
 
   for (const match of matches) {
-    const key = `${match.code}::${match.institution}::${match.city}`;
+    const key = `${match.education_level ?? "unknown"}::${match.code}`;
     const current = merged.get(key);
 
     if (!current || current.finalScore < match.finalScore) {
