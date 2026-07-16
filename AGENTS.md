@@ -49,3 +49,11 @@
 - Enable RLS for tables exposed through Supabase APIs.
 - Public APIs must expose only published NCT releases/read models.
 - Raw, Staging, draft releases, field evidence, and review queues must not be publicly readable unless a task explicitly designs admin access.
+
+## Mobile application work
+
+- Before any Android/iOS/mobile task, read `mobile_version_md/AGENTS.md` and follow its required reading order.
+- Treat `mobile_version_md/` as the canonical mobile migration plan. Do not create a competing plan elsewhere.
+- Implement only the current mobile session. Do not start a later session until the current session gate is verified and recorded.
+- The mobile client must be native React Native UI, not a WebView or a packaged copy of the Next.js site.
+- Preserve the canonical product flow and keep backend domain logic as the single source of truth.
