@@ -1,0 +1,228 @@
+- generic [active] [ref=f6e1]:
+  - generic [ref=f6e2]:
+    - banner [ref=f6e3]:
+      - button "Первый слайд" [ref=f6e4]: NCT Navigator
+      - navigation "Слайды презентации" [ref=f6e5]:
+        - 'button "Слайд 1: NCT Navigator" [ref=f6e6]':
+          - text: "01"
+          - emphasis [ref=f6e7]: Проект
+        - 'button "Слайд 2: Слишком много вариантов" [ref=f6e8]':
+          - text: "02"
+          - emphasis [ref=f6e9]: Проблема
+        - 'button "Слайд 3: От интересов к коду" [ref=f6e10]':
+          - text: "03"
+          - emphasis [ref=f6e11]: Решение
+        - 'button "Слайд 4: AI понимает, база проверяет" [ref=f6e12]':
+          - text: "04"
+          - emphasis [ref=f6e13]: Алгоритм
+        - 'button "Слайд 5: Что работает внутри" [ref=f6e14]':
+          - text: "05"
+          - emphasis [ref=f6e15]: Система
+        - 'button "Слайд 6: Конкретный следующий шаг" [ref=f6e16]':
+          - text: "06"
+          - emphasis [ref=f6e17]: Итог
+      - generic [ref=f6e18]:
+        - generic [ref=f6e19]: 01 / 06
+        - link "Открыть проект" [ref=f6e20] [cursor=pointer]:
+          - /url: https://mmtai.xyz
+        - button "Полноэкранный режим" [ref=f6e25]
+    - main [ref=f6e31]:
+      - generic [ref=f6e33]:
+        - generic [ref=f6e34]:
+          - generic [ref=f6e35]: Для абитуриентов Таджикистана
+          - heading "NCT Navigator" [level=1] [ref=f6e39]: NCTNavigator
+          - paragraph [ref=f6e40]: Превращает интересы абитуриента в конкретный код НЦТ и понятный маршрут подготовки.
+          - button "Начать презентацию" [ref=f6e41]
+          - generic [ref=f6e44]:
+            - article [ref=f6e45]:
+              - strong [ref=f6e46]: 1 562
+              - text: записи в базе
+            - article [ref=f6e47]:
+              - strong [ref=f6e48]: 5+
+              - text: этапов проверки
+            - article [ref=f6e49]:
+              - strong [ref=f6e50]: "1"
+              - text: понятный маршрут
+        - generic [ref=f6e51]:
+          - 'img "Интерфейс NCT Navigator: профиль и анализ интересов" [ref=f6e52]'
+          - generic [ref=f6e53]: Рабочий продукт
+          - generic [ref=f6e54]: ПрофильПоискПлан
+      - generic [ref=f6e60]:
+        - generic [ref=f6e61]:
+          - text: 01 · Проблема выбора
+          - heading [level=2] [ref=f6e62]: Тысячи вариантов. Ни одного уверенного ответа.
+        - generic [ref=f6e63]:
+          - article [ref=f6e64]:
+            - generic [ref=f6e65]: "01"
+            - generic [ref=f6e69]:
+              - text: СтатьиВузыКоды НЦТ
+              - strong [ref=f6e70]: "?"
+            - heading [level=3] [ref=f6e71]: Информации много
+            - paragraph [ref=f6e72]: Статьи, списки вузов и сотни кодов — но почти нигде нет ответа именно для этого абитуриента.
+          - article [ref=f6e73]:
+            - generic [ref=f6e74]: "02"
+            - generic [ref=f6e79]:
+              - text: ИнтересыПодготовка
+              - strong [ref=f6e80]: Фокус не найден
+            - heading [level=3] [ref=f6e81]: Маршрута нет
+            - paragraph [ref=f6e82]: Подготовка идёт сразу по всем направлениям. Время тратится, а фокус так и не появляется.
+          - article [ref=f6e83]:
+            - generic [ref=f6e84]: "03"
+            - generic [ref=f6e90]:
+              - text: ГородУровеньИнтересы
+              - strong [ref=f6e91]: "?"
+            - heading [level=3] [ref=f6e92]: Выбор вслепую
+            - paragraph [ref=f6e93]: "Главный вопрос остаётся без ответа: «Как понять, что этот выбор действительно мой?»"
+        - generic [ref=f6e94]:
+          - text: Главный вопрос абитуриента
+          - strong [ref=f6e95]: «Как понять, что этот выбор действительно мой?»
+      - generic [ref=f6e97]:
+        - generic [ref=f6e98]:
+          - text: 02 · Решение
+          - heading [level=2] [ref=f6e99]: От интересов до конкретного кода НЦТ.
+          - paragraph [ref=f6e100]: Пользователь задаёт ограничения один раз. Система сохраняет их на всём пути поиска.
+        - generic [ref=f6e103]:
+          - article [ref=f6e104]:
+            - generic [ref=f6e109]:
+              - heading [level=3] [ref=f6e110]: Подбирает код
+              - paragraph [ref=f6e111]: Учитывает город, уровень образования и интересы.
+          - article [ref=f6e112]:
+            - generic [ref=f6e125]:
+              - heading [level=3] [ref=f6e126]: Объясняет выбор
+              - paragraph [ref=f6e127]: Показывает, почему вариант оказался в выдаче.
+          - article [ref=f6e128]:
+            - generic [ref=f6e133]:
+              - heading [level=3] [ref=f6e134]: Строит план
+              - paragraph [ref=f6e135]: Превращает направление в следующие шаги подготовки.
+      - generic [ref=f6e137]:
+        - generic [ref=f6e138]:
+          - generic [ref=f6e139]:
+            - text: 03 · Как работает система
+            - heading [level=2] [ref=f6e140]: AI понимает намерение. База сохраняет правду.
+          - paragraph [ref=f6e141]: Сначала — жёсткие ограничения и локальный поиск. Только потом — AI rerank короткого списка.
+        - generic [ref=f6e142]:
+          - article [ref=f6e144]:
+            - text: "01"
+            - heading [level=3] [ref=f6e150]: Профиль
+            - paragraph [ref=f6e151]: город · образование · интересы
+          - article [ref=f6e155]:
+            - text: "02"
+            - heading [level=3] [ref=f6e159]: AI-анализ
+            - paragraph [ref=f6e160]: профессии и намерение
+          - article [ref=f6e164]:
+            - text: "03"
+            - heading [level=3] [ref=f6e167]: Hard filters
+            - paragraph [ref=f6e168]: ограничения до ранжирования
+          - article [ref=f6e172]:
+            - text: "04"
+            - heading [level=3] [ref=f6e177]: Локальный поиск
+            - paragraph [ref=f6e178]: только существующие записи
+          - article [ref=f6e182]:
+            - text: "05"
+            - heading [level=3] [ref=f6e187]: Ранжирование
+            - paragraph [ref=f6e188]: совпадение и качество данных
+          - article [ref=f6e192]:
+            - text: "06"
+            - heading [level=3] [ref=f6e205]: AI rerank
+            - paragraph [ref=f6e206]: порядок внутри shortlist
+          - article [ref=f6e210]:
+            - text: "07"
+            - heading [level=3] [ref=f6e214]: План
+            - paragraph [ref=f6e215]: код · объяснение · действия
+        - generic [ref=f6e220]:
+          - text: Архитектурное правило
+          - strong [ref=f6e221]: AI не может придумать код, изменить город или выйти за пределы shortlist.
+      - generic [ref=f6e223]:
+        - generic [ref=f6e224]:
+          - text: 04 · Система
+          - heading [level=2] [ref=f6e225]: Интерфейс, данные и интеллект работают вместе.
+        - generic [ref=f6e226]:
+          - article [ref=f6e227]:
+            - generic [ref=f6e228]:
+              - text: Технологический слой
+              - emphasis [ref=f6e229]: 7 инструментов
+            - generic [ref=f6e230]:
+              - generic [ref=f6e231]:
+                - text: "01"
+                - strong [ref=f6e232]: Next.js 16
+                - emphasis [ref=f6e233]: приложение и сервер
+              - generic [ref=f6e234]:
+                - text: "02"
+                - strong [ref=f6e235]: React 19
+                - emphasis [ref=f6e236]: интерактивный интерфейс
+              - generic [ref=f6e237]:
+                - text: "03"
+                - strong [ref=f6e238]: TypeScript
+                - emphasis [ref=f6e239]: типизированные контракты
+              - generic [ref=f6e240]:
+                - text: "04"
+                - strong [ref=f6e241]: Tailwind CSS 4
+                - emphasis [ref=f6e242]: адаптивная система
+              - generic [ref=f6e243]:
+                - text: "05"
+                - strong [ref=f6e244]: Zustand
+                - emphasis [ref=f6e245]: состояние клиента
+              - generic [ref=f6e246]:
+                - text: "06"
+                - strong [ref=f6e247]: Supabase
+                - emphasis [ref=f6e248]: профиль и история
+              - generic [ref=f6e249]:
+                - text: "07"
+                - strong [ref=f6e250]: DeepSeek
+                - emphasis [ref=f6e251]: анализ и объяснение
+          - article [ref=f6e252]:
+            - generic [ref=f6e253]:
+              - text: Проверяемые модули
+              - emphasis [ref=f6e254]: backend / recommendation
+            - generic [ref=f6e255]:
+              - generic [ref=f6e256]:
+                - generic [ref=f6e262]:
+                  - strong [ref=f6e263]: service.ts
+                  - text: оркестрация
+                - emphasis [ref=f6e264]: "01"
+              - generic [ref=f6e265]:
+                - generic [ref=f6e271]:
+                  - strong [ref=f6e272]: engine.ts
+                  - text: поиск и фильтры
+                - emphasis [ref=f6e273]: "02"
+              - generic [ref=f6e274]:
+                - generic [ref=f6e280]:
+                  - strong [ref=f6e281]: profession-score.ts
+                  - text: оценка профессий
+                - emphasis [ref=f6e282]: "03"
+              - generic [ref=f6e283]:
+                - generic [ref=f6e289]:
+                  - strong [ref=f6e290]: specialty-linker.ts
+                  - text: связь со специальностями
+                - emphasis [ref=f6e291]: "04"
+              - generic [ref=f6e292]:
+                - generic [ref=f6e298]:
+                  - strong [ref=f6e299]: scoring-config.json
+                  - text: веса ранжирования
+                - emphasis [ref=f6e300]: "05"
+      - generic [ref=f6e302]:
+        - generic [ref=f6e303]:
+          - text: 05 · Итог
+          - heading [level=2] [ref=f6e304]: Выбор становится следующим шагом.
+          - paragraph [ref=f6e305]: NCT Navigator уменьшает неопределённость и показывает, что делать после выбора направления.
+          - generic [ref=f6e306]:
+            - generic [ref=f6e307]: Сохраняет город и уровень образования
+            - generic [ref=f6e310]: Работает с реальными записями НЦТ
+            - generic [ref=f6e313]: Объясняет результат человеческим языком
+          - generic [ref=f6e316]:
+            - article [ref=f6e317]:
+              - strong [ref=f6e318]: 1 562
+              - text: записи в текущей базе
+            - article [ref=f6e319]:
+              - strong [ref=f6e320]: "0"
+              - text: новых кодов может добавить AI
+            - article [ref=f6e321]:
+              - strong [ref=f6e322]: 5+
+              - text: этапов поиска и проверки
+        - complementary [ref=f6e323]:
+          - generic [ref=f6e324]: Попробовать проект
+          - link [ref=f6e328] [cursor=pointer]:
+            - /url: https://mmtai.xyz
+            - text: mmtai.xyz
+          - paragraph [ref=f6e333]: Отсканируйте QR-код или откройте проект в браузере.
+  - region "Notifications alt+T"
