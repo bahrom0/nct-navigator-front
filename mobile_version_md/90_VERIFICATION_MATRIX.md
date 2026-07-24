@@ -4,8 +4,8 @@ Update this matrix with evidence links/commands. `Pending` is the default; do no
 
 | Area | Required evidence | Status |
 |---|---|---|
-| Web baseline | web build and canonical auth/core smoke test | Pending |
-| Backend baseline | backend build and representative route smoke test | Pending |
+| Web baseline | web build and canonical auth/core smoke test | Partial: build passed; native-session regression smoke remains |
+| Backend baseline | backend build and representative route smoke test | Pass: `artifacts/baseline-results.md` |
 | Native UI | cold launch with no core WebView | Pending |
 | API configuration | dev/preview/prod validation and wrong-config failure | Pending |
 | Maintenance | live `503 SERVER_DISABLED` and recovery | Pending |

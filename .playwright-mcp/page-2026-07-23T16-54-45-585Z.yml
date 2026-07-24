@@ -1,0 +1,104 @@
+- generic [active] [ref=f3e1]:
+  - main [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - generic [ref=f3e7]:
+        - link "NCT Navigator" [ref=f3e8] [cursor=pointer]:
+          - /url: /
+        - navigation [ref=f3e14]:
+          - link "О проекте" [ref=f3e15] [cursor=pointer]:
+            - /url: /#about
+          - link "Как это работает" [ref=f3e16] [cursor=pointer]:
+            - /url: /how-it-works
+          - link "Возможности" [ref=f3e17] [cursor=pointer]:
+            - /url: /features
+        - generic [ref=f3e18]:
+          - 'button "Тема: светлая. Нажмите, чтобы переключить." [ref=f3e19]':
+            - generic [ref=f3e27]: Переключить тему
+          - button "Начать подбор" [ref=f3e28]
+      - main [ref=f3e31]:
+        - generic [ref=f3e32]:
+          - generic [ref=f3e33]:
+            - generic [ref=f3e34]:
+              - paragraph [ref=f3e35]: Просто и последовательно
+              - heading "Как работает NCT Navigator" [level=1] [ref=f3e36]
+              - paragraph [ref=f3e37]: "Мы убираем лишний шум из процесса поступления: сначала собираем ваш контекст, затем показываем подходящие направления и сразу переводим выбор в спокойный маршрут подготовки."
+              - generic [ref=f3e38]:
+                - link [ref=f3e39] [cursor=pointer]:
+                  - /url: /onboarding
+                  - button [ref=f3e40]
+                - link [ref=f3e44] [cursor=pointer]:
+                  - /url: /features
+                  - button "Посмотреть возможности" [ref=f3e45]
+            - generic [ref=f3e48]:
+              - generic [ref=f3e49]:
+                - paragraph [ref=f3e50]: Меньше хаоса
+                - paragraph [ref=f3e51]: "Вместо десятков вкладок у вас один маршрут: выбор, сравнение, подготовка."
+              - generic [ref=f3e52]:
+                - paragraph [ref=f3e53]: Быстрее решение
+                - paragraph [ref=f3e54]: Первые полезные рекомендации появляются уже после короткого стартового сценария.
+              - generic [ref=f3e55]:
+                - paragraph [ref=f3e56]: Больше уверенности
+                - paragraph [ref=f3e57]: Вы понимаете не только что выбрать, но и почему это решение вам подходит.
+          - generic [ref=f3e58]:
+            - generic [ref=f3e59]:
+              - paragraph [ref=f3e60]: Маршрут по шагам
+              - heading "Понятный путь от первого вопроса до плана подготовки" [level=2] [ref=f3e61]
+              - paragraph [ref=f3e62]: Каждый шаг решает отдельную задачу и мягко подводит к следующему действию, чтобы не терялась логика выбора.
+            - generic [ref=f3e63]:
+              - article [ref=f3e65]:
+                - generic [ref=f3e66]: "1"
+                - heading "Расскажите о себе" [level=2] [ref=f3e67]
+                - paragraph [ref=f3e68]: Ответьте на короткие вопросы о классе, интересах, целях и желаемом темпе подготовки.
+              - article [ref=f3e70]:
+                - generic [ref=f3e71]: "2"
+                - heading "Получите рекомендации" [level=2] [ref=f3e72]
+                - paragraph [ref=f3e73]: Сервис подберёт коды НЦТ и объяснит, почему именно эти направления совпадают с вашим профилем.
+              - article [ref=f3e75]:
+                - generic [ref=f3e76]: "3"
+                - heading "Сравните варианты" [level=2] [ref=f3e77]
+                - paragraph [ref=f3e78]: Смотрите различия между направлениями, отсеивайте лишнее и сохраняйте самые сильные варианты.
+              - article [ref=f3e80]:
+                - generic [ref=f3e81]: "4"
+                - heading "Двигайтесь по плану" [level=2] [ref=f3e82]
+                - paragraph [ref=f3e83]: Переходите к персональному плану подготовки и держите фокус на своём поступлении.
+          - generic [ref=f3e84]:
+            - article [ref=f3e86]:
+              - heading "Диалог вместо анкеты" [level=2] [ref=f3e90]
+              - paragraph [ref=f3e91]: Путь начинается с короткого и понятного сценария вопросов, который не утомляет и быстро собирает важный контекст.
+            - article [ref=f3e93]:
+              - heading "Смысловые рекомендации" [level=2] [ref=f3e98]
+              - paragraph [ref=f3e99]: После ответов сервис объединяет сигналы и подбирает направления, которые действительно похожи на ваш профиль.
+            - article [ref=f3e101]:
+              - heading "Осознанный выбор" [level=2] [ref=f3e106]
+              - paragraph [ref=f3e107]: "Каждое направление можно разобрать подробнее: понять нагрузку, перспективы и почему оно оказалось в подборке."
+            - article [ref=f3e109]:
+              - heading "Следующий шаг без провала" [level=2] [ref=f3e114]
+              - paragraph [ref=f3e115]: Когда выбор сделан, система переводит вас из режима поиска в режим подготовки, без пустых экранов и ручной пересборки.
+          - generic [ref=f3e116]:
+            - generic [ref=f3e117]:
+              - paragraph [ref=f3e118]: Что это даёт
+              - heading "Зачем такой сценарий работает лучше" [level=2] [ref=f3e119]
+              - paragraph [ref=f3e120]: Вместо резкого перехода между разрозненными инструментами пользователь движется по одному связному сценарию.
+            - generic [ref=f3e121]:
+              - generic [ref=f3e122]: Осознанный выбор вместо случайного списка кодов
+              - generic [ref=f3e124]: Поддержка до и после подбора, а не только на первом шаге
+              - generic [ref=f3e126]: Аккуратный интерфейс без визуального шума и перегруза
+          - generic [ref=f3e130]:
+            - heading "Готовы пройти путь без перегруза?" [level=3] [ref=f3e131]
+            - paragraph [ref=f3e132]: Начните с короткого сценария, получите рекомендации и переведите выбор в рабочий план подготовки уже сегодня.
+            - generic [ref=f3e133]:
+              - button [ref=f3e134]
+              - paragraph [ref=f3e138]: Ваш навигатор в мир НЦТ
+      - generic [ref=f3e140]:
+        - generic [ref=f3e141]:
+          - generic [ref=f3e142]: NCT Navigator
+          - paragraph [ref=f3e147]: Подбор направлений, объяснение выбора и спокойный путь к поступлению.
+        - generic [ref=f3e148]:
+          - link "О проекте" [ref=f3e149] [cursor=pointer]:
+            - /url: /#about
+          - link "Как работает" [ref=f3e150] [cursor=pointer]:
+            - /url: /how-it-works
+          - link "Возможности" [ref=f3e151] [cursor=pointer]:
+            - /url: /features
+          - generic [ref=f3e152]: В© 2026 NCT Navigator
+  - region "Notifications alt+T"

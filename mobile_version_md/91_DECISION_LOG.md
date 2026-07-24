@@ -34,6 +34,20 @@ Record only durable decisions that constrain later sessions. Do not use this fil
 - Decision: landing/features/how-it-works remain web content for the mobile MVP.
 - Reason: keeps the native app focused on product workflows.
 
+## D-006: Mobile project isolation
+
+- Status: accepted
+- Decision: create `mobile/` as an independent npm project with its own `package.json`, lockfile, dependencies and generated native state; do not add root workspaces or modify root web dependencies in Session 01.
+- Reason: isolates React Native/Expo tooling from the existing Next.js web and backend builds while keeping one repository and shared history.
+- Revisit if: shared contract consumption requires a minimal workspace/package mechanism after the native foundation is proven.
+
+## D-007: Provisional application identity
+
+- Status: accepted for development only
+- Decision: use slug `nct-navigator-mobile`, scheme `nctnavigator` and provisional Android id `com.nctnavigator.mobile`, with separate development/preview suffixes.
+- Reason: Session 01 needs stable local identifiers before final organization/store identity is known.
+- Revisit if: before the first signed release or as soon as the organization-owned reverse-domain identifier is confirmed.
+
 ## New decision template
 
 ```text

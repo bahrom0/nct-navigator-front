@@ -1,0 +1,89 @@
+- generic [active] [ref=f15e1]:
+  - main [ref=f15e2]:
+    - generic [ref=f15e3]:
+      - generic [ref=f15e7]:
+        - link "NCT Navigator" [ref=f15e8] [cursor=pointer]:
+          - /url: /
+        - navigation [ref=f15e14]:
+          - link "О проекте" [ref=f15e15] [cursor=pointer]:
+            - /url: /#about
+          - link "Как это работает" [ref=f15e16] [cursor=pointer]:
+            - /url: /how-it-works
+          - link "Возможности" [ref=f15e17] [cursor=pointer]:
+            - /url: /features
+        - generic [ref=f15e18]:
+          - 'button "Тема: светлая. Нажмите, чтобы переключить." [ref=f15e19]':
+            - generic [ref=f15e27]: Переключить тему
+          - button "Начать подбор" [ref=f15e28]
+      - main [ref=f15e31]:
+        - generic [ref=f15e32]:
+          - generic [ref=f15e34]:
+            - paragraph [ref=f15e35]: Возможности платформы
+            - heading "Всё, что помогает выбрать направление и не потеряться по пути" [level=1] [ref=f15e36]
+            - paragraph [ref=f15e37]: Мы собрали в одном интерфейсе подбор направлений, объяснение выбора, сравнение вариантов и подготовку. Всё аккуратно, без визуального шума и с фокусом на понятные действия.
+            - generic [ref=f15e38]:
+              - link [ref=f15e39] [cursor=pointer]:
+                - /url: /onboarding
+                - button [ref=f15e40]
+              - link [ref=f15e44] [cursor=pointer]:
+                - /url: /how-it-works
+                - button "Как это работает" [ref=f15e45]
+          - generic [ref=f15e47]:
+            - article [ref=f15e49]:
+              - paragraph [ref=f15e55]: Поиск без шума
+              - heading "Умный подбор кодов" [level=2] [ref=f15e56]
+              - paragraph [ref=f15e57]: "Рекомендации строятся не по одному ответу, а по общей картине: интересы, цели, способности и ваш уровень."
+            - article [ref=f15e59]:
+              - paragraph [ref=f15e63]: Прозрачная логика
+              - heading "Объяснение выбора" [level=2] [ref=f15e64]
+              - paragraph [ref=f15e65]: Каждая рекомендация сопровождается понятным объяснением, чтобы выбор был осознанным, а не случайным.
+            - article [ref=f15e67]:
+              - paragraph [ref=f15e73]: Быстрая навигация
+              - heading "Сравнение вариантов" [level=2] [ref=f15e74]
+              - paragraph [ref=f15e75]: Сравнивайте направления, проходные баллы и нагрузку по обучению в одном аккуратном интерфейсе.
+            - article [ref=f15e77]:
+              - paragraph [ref=f15e82]: Фокус на результате
+              - heading "Подготовка по шагам" [level=2] [ref=f15e83]
+              - paragraph [ref=f15e84]: Личный план помогает двигаться маленькими этапами и не терять темп в течение учебного года.
+            - article [ref=f15e86]:
+              - paragraph [ref=f15e91]: Поддержка рядом
+              - heading "AI Coach" [level=2] [ref=f15e92]
+              - paragraph [ref=f15e93]: Помогает не бросать подготовку, подсказывает следующий шаг и возвращает в рабочий ритм.
+            - article [ref=f15e95]:
+              - paragraph [ref=f15e100]: Личный контекст
+              - heading "История и сохранение" [level=2] [ref=f15e101]
+              - paragraph [ref=f15e102]: Сохраняйте найденные направления, возвращайтесь к ним позже и отслеживайте прогресс без хаоса.
+          - generic [ref=f15e103]:
+            - generic [ref=f15e104]:
+              - paragraph [ref=f15e105]: Кому подойдёт
+              - heading "Платформа адаптируется под ваш этап выбора" [level=2] [ref=f15e106]
+              - paragraph [ref=f15e107]: Не важно, только начинаете вы разбираться в направлениях или уже хотите выстроить подготовку. Интерфейс подталкивает к следующему ясному шагу.
+            - generic [ref=f15e108]:
+              - article [ref=f15e110]:
+                - heading "Для тех, кто пока не уверен" [level=2] [ref=f15e116]
+                - paragraph [ref=f15e117]: Если вы ещё сомневаетесь, платформа мягко помогает сузить выбор и увидеть понятный вектор движения.
+              - article [ref=f15e119]:
+                - heading "Для тех, кто уже определился" [level=2] [ref=f15e128]
+                - paragraph [ref=f15e129]: Если цель уже есть, NCT Navigator помогает превратить её в структурированный маршрут поступления.
+              - article [ref=f15e131]:
+                - heading "Для тех, кому нужна ясность" [level=2] [ref=f15e136]
+                - paragraph [ref=f15e137]: Вместо перегруженных таблиц вы получаете объяснения, аккуратные сравнения и человеческий язык.
+          - generic [ref=f15e140]:
+            - heading "Нужен спокойный и современный старт?" [level=3] [ref=f15e141]
+            - paragraph [ref=f15e142]: Откройте платформу, пройдите короткий сценарий и получите аккуратно собранный маршрут без перегруженного интерфейса.
+            - generic [ref=f15e143]:
+              - button [ref=f15e144]
+              - paragraph [ref=f15e148]: Ваш навигатор в мир НЦТ
+      - generic [ref=f15e150]:
+        - generic [ref=f15e151]:
+          - generic [ref=f15e152]: NCT Navigator
+          - paragraph [ref=f15e157]: Подбор направлений, объяснение выбора и спокойный путь к поступлению.
+        - generic [ref=f15e158]:
+          - link "О проекте" [ref=f15e159] [cursor=pointer]:
+            - /url: /#about
+          - link "Как работает" [ref=f15e160] [cursor=pointer]:
+            - /url: /how-it-works
+          - link "Возможности" [ref=f15e161] [cursor=pointer]:
+            - /url: /features
+          - generic [ref=f15e162]: В© 2026 NCT Navigator
+  - region "Notifications alt+T"

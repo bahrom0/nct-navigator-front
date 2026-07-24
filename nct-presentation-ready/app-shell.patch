@@ -1,0 +1,9 @@
+--- a/src/components/app-shell.tsx
++++ b/src/components/app-shell.tsx
+@@
+-  if (!isServerAvailable) {
++  if (pathname === "/presentation") {
++    return <>{children}</>;
++  }
++
++  if (!isServerAvailable) {

@@ -1,0 +1,59 @@
+- generic [active] [ref=f11e1]:
+  - generic [ref=f11e2]:
+    - banner:
+      - navigation "Слайды презентации" [ref=f11e5]:
+        - 'button "Слайд 1: NCT Navigator" [ref=f11e6] [cursor=pointer]':
+          - generic [ref=f11e7]: "01"
+          - emphasis [ref=f11e8]: Проект
+        - 'button "Слайд 2: Тысячи вариантов" [ref=f11e9] [cursor=pointer]':
+          - generic [ref=f11e10]: "02"
+          - emphasis [ref=f11e11]: Проблема
+        - 'button "Слайд 3: От интересов к коду" [ref=f11e12] [cursor=pointer]':
+          - generic [ref=f11e13]: "03"
+          - emphasis [ref=f11e14]: Решение
+        - 'button "Слайд 4: Как работает система" [ref=f11e15] [cursor=pointer]':
+          - generic [ref=f11e16]: "04"
+          - emphasis [ref=f11e17]: Алгоритм
+        - 'button "Слайд 5: Что внутри" [ref=f11e18] [cursor=pointer]':
+          - generic [ref=f11e19]: "05"
+          - emphasis [ref=f11e20]: Архитектура
+        - 'button "Слайд 6: Следующий шаг" [ref=f11e21] [cursor=pointer]':
+          - generic [ref=f11e22]: "06"
+          - emphasis [ref=f11e23]: Итог
+      - generic [ref=f11e24]:
+        - generic [ref=f11e25]: 01 / 06
+        - link "Открыть проект" [ref=f11e26] [cursor=pointer]:
+          - /url: https://mmtai.xyz
+        - button "Полноэкранный режим" [ref=f11e32] [cursor=pointer]
+    - generic "Переключение слайдов" [ref=f11e38]:
+      - button "Предыдущий слайд" [disabled] [ref=f11e39]
+      - button "Следующий слайд" [ref=f11e42] [cursor=pointer]
+    - main [ref=f11e45]:
+      - generic [ref=f11e46]:
+        - generic [ref=f11e47]:
+          - generic [ref=f11e48]:
+            - generic [ref=f11e50]:
+              - img "NCT" [ref=f11e51]
+              - generic [ref=f11e52]: Navigator
+            - generic [ref=f11e53]: Для абитуриентов Таджикистана
+            - heading "Выбор кода НЦТ, который можно объяснить." [level=1] [ref=f11e57]: Выбор кода НЦТ,который можно объяснить.
+            - paragraph [ref=f11e58]: Интересы пользователя превращаются в конкретный вариант поступления и понятный маршрут подготовки.
+            - generic [ref=f11e59]:
+              - generic [ref=f11e60]: Рабочий продукт
+              - generic [ref=f11e63]: Управление стрелками
+          - generic [ref=f11e66]:
+            - generic [ref=f11e67]:
+              - generic [ref=f11e68]: NCT Navigator
+              - emphasis [ref=f11e69]: mmtai.xyz
+            - generic [ref=f11e70]:
+              - img "Интерфейс NCT Navigator" [ref=f11e71]
+              - generic [ref=f11e72]: public/photos/hero.png
+            - strong [ref=f11e81]: Профиль → локальный поиск → AI rerank
+        - button "Следующий слайд" [ref=f11e84] [cursor=pointer]
+    - generic:
+      - generic: ←
+      - generic: →
+      - emphasis: переключение
+      - generic: F
+      - emphasis: полный экран
+  - region "Notifications alt+T"

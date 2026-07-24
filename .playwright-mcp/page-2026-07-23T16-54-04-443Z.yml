@@ -1,0 +1,13 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner:
+      - generic [ref=e4]:
+        - link "NCT Navigator" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e14]:
+          - 'button "Тема: светлая. Нажмите, чтобы переключить." [ref=e15]':
+            - generic [ref=e23]: Переключить тему
+          - button "Профиль" [ref=e24]
+    - main [ref=e28]:
+      - main [ref=e29]
+  - region "Notifications alt+T"

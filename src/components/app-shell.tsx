@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
@@ -122,6 +122,10 @@ export function AppShell({ children }: { children: ReactNode }) {
     };
   }, [markServerAvailable, markServerUnavailable]);
 
+  if (pathname === "/presentation") {
+    return <>{children}</>;
+  }
+
   if (!isServerAvailable) {
     return (
       <>
@@ -239,3 +243,4 @@ export function AppShell({ children }: { children: ReactNode }) {
     </div>
   );
 }
+

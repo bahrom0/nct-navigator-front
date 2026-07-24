@@ -1,0 +1,18 @@
+<project version="4">
+  <component name="ProjectRootManager" version="2">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="StoredSessionsInfoStore">
+    <option name="sessions">
+      <list>
+        <SessionInfoState>
+          <option name="id" value="20260412-132938-4a0c0930-ae5e-46e5-9c42-f9fef095f35e" />
+          <option name="lastUpdateTimestamp" value="1775982578017" />
+          <option name="responseMode" value="Agent" />
+          <option name="title" value="New Agent Session" />
+          <option name="user" value="pytontest.py@gmail.com" />
+        </SessionInfoState>
+      </list>
+    </option>
+  </component>
+</project>
