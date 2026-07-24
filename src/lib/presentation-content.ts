@@ -79,16 +79,74 @@ export const ALGORITHM_STEPS: Array<{
   number: string;
   title: string;
   caption: string;
+  phase: string;
+  badges: readonly string[];
   icon: LucideIcon;
   kind: "input" | "ai" | "local" | "output";
 }> = [
-  { number: "01", title: "Профиль", caption: "город · образование · интересы", icon: Users, kind: "input" },
-  { number: "02", title: "AI-анализ", caption: "профессии и намерение", icon: Sparkles, kind: "ai" },
-  { number: "03", title: "Hard filters", caption: "ограничения до ранжирования", icon: Filter, kind: "local" },
-  { number: "04", title: "Локальный поиск", caption: "только существующие записи", icon: Database, kind: "local" },
-  { number: "05", title: "Ранжирование", caption: "совпадение и качество данных", icon: Target, kind: "local" },
-  { number: "06", title: "AI rerank", caption: "порядок внутри shortlist", icon: BrainCircuit, kind: "ai" },
-  { number: "07", title: "План", caption: "код · объяснение · действия", icon: GraduationCap, kind: "output" },
+  {
+    number: "01",
+    phase: "Ввод",
+    title: "Профиль",
+    caption: "Фиксируем контекст пользователя.",
+    badges: ["город", "уровень", "интересы"],
+    icon: Users,
+    kind: "input",
+  },
+  {
+    number: "02",
+    phase: "Интерпретация",
+    title: "AI-анализ",
+    caption: "Понимаем намерение и профессии.",
+    badges: ["намерение", "профессии"],
+    icon: Sparkles,
+    kind: "ai",
+  },
+  {
+    number: "03",
+    phase: "Проверка",
+    title: "Hard filters",
+    caption: "Отсекаем всё, что нарушает ограничения.",
+    badges: ["город", "образование"],
+    icon: Filter,
+    kind: "local",
+  },
+  {
+    number: "04",
+    phase: "База НЦТ",
+    title: "Локальный поиск",
+    caption: "Ищем только существующие записи.",
+    badges: ["1 562 записи", "без выдумок"],
+    icon: Database,
+    kind: "local",
+  },
+  {
+    number: "05",
+    phase: "Скоринг",
+    title: "Ранжирование",
+    caption: "Сравниваем совпадение и качество данных.",
+    badges: ["релевантность", "качество"],
+    icon: Target,
+    kind: "local",
+  },
+  {
+    number: "06",
+    phase: "Финализация",
+    title: "AI rerank",
+    caption: "Уточняем порядок внутри shortlist.",
+    badges: ["только shortlist", "объяснение"],
+    icon: BrainCircuit,
+    kind: "ai",
+  },
+  {
+    number: "07",
+    phase: "Результат",
+    title: "План",
+    caption: "Превращаем выбор в конкретные действия.",
+    badges: ["код НЦТ", "следующий шаг"],
+    icon: GraduationCap,
+    kind: "output",
+  },
 ];
 
 export const TECHNOLOGIES = [
@@ -111,7 +169,7 @@ export const ARCHITECTURE_FILES = [
 
 export const RESULT_METRICS = [
   { value: "1 562", label: "записи в текущей базе" },
-  { value: "0", label: "новых кодов может добавить AI" },
+  // { value: "0", label: "новых кодов может добавить AI" },
   { value: "5+", label: "этапов поиска и проверки" },
 ] as const;
 

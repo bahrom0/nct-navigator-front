@@ -1,0 +1,56 @@
+- generic [active] [ref=f21e1]:
+  - generic [ref=f21e2]:
+    - text: NCT
+    - banner [ref=f21e5]:
+      - button "Первый слайд" [ref=f21e6] [cursor=pointer]:
+        - generic [ref=f21e7]: NCT Navigator
+      - navigation "Слайды презентации" [ref=f21e8]:
+        - 'button "Слайд 1: NCT Navigator" [ref=f21e9] [cursor=pointer]':
+          - generic [ref=f21e10]: "01"
+          - emphasis [ref=f21e11]: Проект
+        - 'button "Слайд 2: Слишком много вариантов" [ref=f21e12] [cursor=pointer]':
+          - generic [ref=f21e13]: "02"
+          - emphasis [ref=f21e14]: Проблема
+        - 'button "Слайд 3: От интересов к коду" [ref=f21e15] [cursor=pointer]':
+          - generic [ref=f21e16]: "03"
+          - emphasis [ref=f21e17]: Решение
+        - 'button "Слайд 4: AI понимает, база проверяет" [ref=f21e18] [cursor=pointer]':
+          - generic [ref=f21e19]: "04"
+          - emphasis [ref=f21e20]: Алгоритм
+        - 'button "Слайд 5: Что работает внутри" [ref=f21e21] [cursor=pointer]':
+          - generic [ref=f21e22]: "05"
+          - emphasis [ref=f21e23]: Система
+        - 'button "Слайд 6: Конкретный следующий шаг" [ref=f21e24] [cursor=pointer]':
+          - generic [ref=f21e25]: "06"
+          - emphasis [ref=f21e26]: Итог
+      - generic [ref=f21e27]:
+        - generic [ref=f21e28]: 01 / 06
+        - link "Открыть проект" [ref=f21e29] [cursor=pointer]:
+          - /url: https://mmtai.xyz
+        - button "Полноэкранный режим" [ref=f21e35] [cursor=pointer]
+    - main [ref=f21e41]:
+      - generic [ref=f21e43]:
+        - generic [ref=f21e44]:
+          - generic [ref=f21e45]: Для абитуриентов Таджикистана
+          - heading "NCT Navigator" [level=1] [ref=f21e49]: NCTNavigator
+          - paragraph [ref=f21e50]: Превращает интересы абитуриента в конкретный код НЦТ и понятный маршрут подготовки.
+          - button "Начать презентацию" [ref=f21e51] [cursor=pointer]
+          - generic [ref=f21e54]:
+            - article [ref=f21e55]:
+              - strong [ref=f21e56]: 1 562
+              - generic [ref=f21e57]: записи в базе
+            - article [ref=f21e58]:
+              - strong [ref=f21e59]: 5+
+              - generic [ref=f21e60]: этапов проверки
+            - article [ref=f21e61]:
+              - strong [ref=f21e62]: "1"
+              - generic [ref=f21e63]: понятный маршрут
+        - generic [ref=f21e64]:
+          - 'img "Интерфейс NCT Navigator: профиль и анализ интересов" [ref=f21e66]'
+          - generic [ref=f21e67]: Рабочий продукт
+          - generic [ref=f21e69]:
+            - generic [ref=f21e70]: Профиль
+            - generic [ref=f21e73]: Поиск
+            - generic [ref=f21e76]: План
+    - text: NCT
+  - region "Notifications alt+T"

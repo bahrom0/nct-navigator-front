@@ -6,10 +6,21 @@ import {
   Database,
   ExternalLink,
   GraduationCap,
+  Heart,
+  RotateCcw,
+  ScanLine,
   ShieldCheck,
 } from "lucide-react";
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState, type TouchEvent, type WheelEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type TouchEvent,
+  type WheelEvent,
+} from "react";
 import {
   ALGORITHM_STEPS,
   ARCHITECTURE_FILES,
@@ -25,10 +36,34 @@ import { ProductVisual } from "./ProductVisual";
 import styles from "./presentation.module.css";
 
 const LAST_SLIDE_INDEX = PRESENTATION_SLIDES.length - 1;
+const STAGE_WIDTH = 1600;
+const STAGE_HEIGHT = 900;
+type AlgorithmStep = (typeof ALGORITHM_STEPS)[number];
+
+function PipelineStage({ step }: { step: AlgorithmStep }) {
+  const Icon = step.icon;
+
+  return (
+    <article className={styles.pipelineStage} data-kind={step.kind}>
+      <div className={styles.pipelineStageTop}>
+        <span>{step.phase}</span>
+        <Icon size={25} strokeWidth={1.5} />
+      </div>
+      <strong className={styles.pipelineStageNumber}>{step.number}</strong>
+      <div className={styles.pipelineStageCopy}>
+        <h3>{step.title}</h3>
+        <p>{step.caption}</p>
+      </div>
+      <div className={styles.pipelineStageBadges}>
+        {step.badges.slice(0, 2).map((badge) => <span key={badge}>{badge}</span>)}
+      </div>
+    </article>
+  );
+}
 
 function isInteractiveTarget(target: EventTarget | null) {
   return (
-    target instanceof HTMLElement &&
+    target instanceof Element &&
     Boolean(target.closest("a, button, input, textarea, select, [contenteditable='true']"))
   );
 }
@@ -41,6 +76,8 @@ function stateFor(index: number, activeIndex: number) {
 export function PresentationShell() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isQrFlipped, setIsQrFlipped] = useState(false);
+  const [stageScale, setStageScale] = useState(0);
   const rootRef = useRef<HTMLDivElement>(null);
   const wheelLockRef = useRef(false);
   const touchStartRef = useRef<{ x: number; y: number } | null>(null);
@@ -65,6 +102,22 @@ export function PresentationShell() {
     const syncFullscreen = () => setIsFullscreen(Boolean(document.fullscreenElement));
     document.addEventListener("fullscreenchange", syncFullscreen);
     return () => document.removeEventListener("fullscreenchange", syncFullscreen);
+  }, []);
+
+  useEffect(() => {
+    const updateStageScale = () => {
+      const viewportWidth = window.visualViewport?.width ?? window.innerWidth;
+      const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
+      setStageScale(Math.min(viewportWidth / STAGE_WIDTH, viewportHeight / STAGE_HEIGHT));
+    };
+
+    updateStageScale();
+    window.addEventListener("resize", updateStageScale);
+    window.visualViewport?.addEventListener("resize", updateStageScale);
+    return () => {
+      window.removeEventListener("resize", updateStageScale);
+      window.visualViewport?.removeEventListener("resize", updateStageScale);
+    };
   }, []);
 
   useEffect(() => {
@@ -138,14 +191,18 @@ export function PresentationShell() {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      <PresentationNavigation
-        activeIndex={activeIndex}
-        isFullscreen={isFullscreen}
-        onGoTo={goTo}
-        onToggleFullscreen={() => void toggleFullscreen()}
-      />
+      <div
+        className={styles.presentationStage}
+        style={{ "--stage-scale": stageScale } as CSSProperties}
+      >
+        <PresentationNavigation
+          activeIndex={activeIndex}
+          isFullscreen={isFullscreen}
+          onGoTo={goTo}
+          onToggleFullscreen={() => void toggleFullscreen()}
+        />
 
-      <main className={styles.deck}>
+        <main className={styles.deck}>
         <section
           className={`${styles.slide} ${styles.introSlide}`}
           data-state={stateFor(0, activeIndex)}
@@ -275,9 +332,9 @@ export function PresentationShell() {
 
             <div className={styles.solutionShowcase}>
               <ProductVisual
-                src="/photos/product-main.png"
+                src="/photos/select_city.png"
                 alt="Интерфейс анализа NCT Navigator"
-                label="product-main.png"
+                label="select_city.png"
                 className={styles.solutionPrimaryVisual}
               />
               <ProductVisual
@@ -322,20 +379,38 @@ export function PresentationShell() {
             </div>
 
             <div className={styles.pipeline}>
-              {ALGORITHM_STEPS.map((step, index) => {
-                const Icon = step.icon;
-                return (
-                  <div className={styles.pipelineNodeWrap} key={step.number}>
-                    <article className={styles.pipelineNode} data-kind={step.kind}>
-                      <span className={styles.pipelineNumber}>{step.number}</span>
-                      <Icon size={20} strokeWidth={1.5} />
-                      <h3>{step.title}</h3>
-                      <p>{step.caption}</p>
-                    </article>
-                    {index < ALGORITHM_STEPS.length - 1 ? <ArrowRight className={styles.pipelineArrow} size={17} /> : null}
+              <PipelineStage step={ALGORITHM_STEPS[0]} />
+              <span className={styles.pipelineConnector}><ArrowRight size={22} /></span>
+              <PipelineStage step={ALGORITHM_STEPS[1]} />
+              <span className={styles.pipelineConnector}><ArrowRight size={22} /></span>
+
+              <section className={styles.localValidation}>
+                <div className={styles.localValidationTop}>
+                  <div>
+                    <Database size={22} strokeWidth={1.5} />
+                    <span>Проверка по базе НЦТ</span>
                   </div>
-                );
-              })}
+                  <em>AI не меняет данные</em>
+                </div>
+                <div className={styles.localValidationSteps}>
+                  {ALGORITHM_STEPS.slice(2, 5).map((step) => {
+                    const Icon = step.icon;
+                    return (
+                      <article key={step.number}>
+                        <span>{step.number}</span>
+                        <Icon size={20} strokeWidth={1.5} />
+                        <h3>{step.title}</h3>
+                        <p>{step.caption}</p>
+                      </article>
+                    );
+                  })}
+                </div>
+              </section>
+
+              <span className={styles.pipelineConnector}><ArrowRight size={22} /></span>
+              <PipelineStage step={ALGORITHM_STEPS[5]} />
+              <span className={styles.pipelineConnector}><ArrowRight size={22} /></span>
+              <PipelineStage step={ALGORITHM_STEPS[6]} />
             </div>
 
             <div className={styles.algorithmRule}>
@@ -427,30 +502,104 @@ export function PresentationShell() {
               </div>
             </div>
 
-            <aside className={styles.qrPanel}>
-              <div className={styles.qrPanelTop}>
-                <Image src="/presentation/icon-nct-dark.png" alt="NCT" width={58} height={30} draggable={false} />
-                <span>Попробовать проект</span>
+            <aside
+              className={styles.qrPanel}
+              data-flipped={isQrFlipped}
+              onClick={(event) => {
+                if (!isInteractiveTarget(event.target)) setIsQrFlipped((value) => !value);
+              }}
+            >
+              <div className={styles.qrCardInner}>
+                <div className={`${styles.qrCardFace} ${styles.qrCardFront}`} aria-hidden={isQrFlipped}>
+                  <div className={styles.qrBadgeHeader}>
+                    <div className={styles.qrPanelTop}>
+                      <Image src="/presentation/icon-nct-dark.png" alt="NCT" width={58} height={30} draggable={false} />
+                      <span>Попробовать проект</span>
+                    </div>
+                    <span className={styles.qrEdition}>06 / NCT PASS</span>
+                  </div>
+
+                  <div className={styles.qrStatus}>
+                    <span />
+                    Демо доступно
+                  </div>
+
+                  <p className={styles.qrPrompt}>Протестируйте нашу программу</p>
+
+                  <div className={styles.qrCode}>
+                    <Image
+                      src="/presentation/mmtai-qr.png"
+                      alt="QR-код на сайт mmtai.xyz"
+                      width={220}
+                      height={220}
+                      draggable={false}
+                    />
+                  </div>
+
+                  <div className={styles.qrFrontFooter}>
+                    <a
+                      href="https://mmtai.xyz"
+                      target="_blank"
+                      rel="noreferrer"
+                      tabIndex={isQrFlipped ? -1 : 0}
+                    >
+                      <span>mmtai.xyz</span>
+                      <ExternalLink size={22} />
+                    </a>
+                    {/* <button
+                      type="button"
+                      onClick={() => setIsQrFlipped(true)}
+                      tabIndex={isQrFlipped ? -1 : 0}
+                      aria-label="Показать обратную сторону бейджа"
+                    >
+                      <RotateCcw size={17} />
+                      Перевернуть
+                    </button> */}
+                  </div>
+                </div>
+
+                <div className={`${styles.qrCardFace} ${styles.qrCardBack}`} aria-hidden={!isQrFlipped}>
+                  <div className={styles.qrBackHeader}>
+                    <span>Olympiad edition</span>
+                    <strong>06</strong>
+                  </div>
+
+                  <div className={styles.qrBackCenter}>
+                    <div className={styles.qrBackLogo}>
+                      <Image
+                        src="/presentation/icon-nct-light.png"
+                        alt="NCT Navigator"
+                        width={116}
+                        height={60}
+                        draggable={false}
+                      />
+                    </div>
+                    <span>NCT Navigator</span>
+                    <p className={styles.qrSignature}>
+                      Made with <strong>Uguloy and Bahrom</strong>
+                      <Heart size={24} fill="currentColor" />
+                    </p>
+                    <em>Идея код и немного смелости))</em>
+                  </div>
+
+                  <div className={styles.qrBackFooter}>
+                    <span><ScanLine size={17} /> Presentation badge</span>
+                    <button
+                      type="button"
+                      onClick={() => setIsQrFlipped(false)}
+                      tabIndex={isQrFlipped ? 0 : -1}
+                    >
+                      <RotateCcw size={17} />
+                      Вернуться
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div className={styles.qrCode}>
-                <Image
-                  src="/presentation/mmtai-qr.png"
-                  alt="QR-код на сайт mmtai.xyz"
-                  width={220}
-                  height={220}
-                  draggable={false}
-                />
-              </div>
-              <a href="https://mmtai.xyz" target="_blank" rel="noreferrer">
-                <span>mmtai.xyz</span>
-                <ExternalLink size={22} />
-              </a>
-              <p>Отсканируйте QR-код или откройте проект в браузере.</p>
             </aside>
           </div>
         </section>
-      </main>
-
+        </main>
+      </div>
     </div>
   );
 }
