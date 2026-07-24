@@ -1,32 +1,27 @@
 "use client";
 
 import {
-  ArrowDown,
   ArrowRight,
-  BrainCircuit,
   Check,
-  Code2,
+  Database,
   ExternalLink,
   GraduationCap,
-  MousePointer2,
   ShieldCheck,
-  Sparkles,
-  Users,
 } from "lucide-react";
+import Image from "next/image";
 import { useCallback, useEffect, useRef, useState, type TouchEvent, type WheelEvent } from "react";
 import {
   ALGORITHM_STEPS,
   ARCHITECTURE_FILES,
-  FILE_ICON,
   PRESENTATION_SLIDES,
   PROBLEM_CARDS,
   RESULT_METRICS,
+  RESULT_POINTS,
   SOLUTION_FEATURES,
   TECHNOLOGIES,
 } from "@/lib/presentation-content";
-import { BrandMark } from "./BrandMark";
-import { PhotoFrame } from "./PhotoFrame";
 import { PresentationNavigation } from "./PresentationNavigation";
+import { ProductVisual } from "./ProductVisual";
 import styles from "./presentation.module.css";
 
 const LAST_SLIDE_INDEX = PRESENTATION_SLIDES.length - 1;
@@ -38,37 +33,31 @@ function isInteractiveTarget(target: EventTarget | null) {
   );
 }
 
+function stateFor(index: number, activeIndex: number) {
+  if (index === activeIndex) return "active";
+  return index < activeIndex ? "before" : "after";
+}
+
 export function PresentationShell() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState<"forward" | "backward">("forward");
   const [isFullscreen, setIsFullscreen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const wheelLockRef = useRef(false);
-  const touchStartRef = useRef<number | null>(null);
-  const touchInteractiveRef = useRef(false);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
 
-  const goTo = useCallback(
-    (nextIndex: number) => {
-      const safeIndex = Math.max(0, Math.min(LAST_SLIDE_INDEX, nextIndex));
-      if (safeIndex === activeIndex) return;
-      setDirection(safeIndex > activeIndex ? "forward" : "backward");
-      setActiveIndex(safeIndex);
-    },
-    [activeIndex],
-  );
+  const goTo = useCallback((nextIndex: number) => {
+    setActiveIndex(Math.max(0, Math.min(LAST_SLIDE_INDEX, nextIndex)));
+  }, []);
 
-  const goNext = useCallback(() => goTo(activeIndex + 1), [activeIndex, goTo]);
-  const goPrevious = useCallback(() => goTo(activeIndex - 1), [activeIndex, goTo]);
+  const goNext = useCallback(() => setActiveIndex((index) => Math.min(LAST_SLIDE_INDEX, index + 1)), []);
+  const goPrevious = useCallback(() => setActiveIndex((index) => Math.max(0, index - 1)), []);
 
   const toggleFullscreen = useCallback(async () => {
     try {
-      if (!document.fullscreenElement) {
-        await rootRef.current?.requestFullscreen();
-      } else {
-        await document.exitFullscreen();
-      }
+      if (!document.fullscreenElement) await rootRef.current?.requestFullscreen();
+      else await document.exitFullscreen();
     } catch {
-      // Fullscreen can be rejected by the browser or projector policy.
+      // Browsers and projector policies can reject fullscreen.
     }
   }, []);
 
@@ -85,28 +74,16 @@ export function PresentationShell() {
       if (["ArrowRight", "ArrowDown", "PageDown", " "].includes(event.key)) {
         event.preventDefault();
         goNext();
-        return;
-      }
-
-      if (["ArrowLeft", "ArrowUp", "PageUp"].includes(event.key)) {
+      } else if (["ArrowLeft", "ArrowUp", "PageUp"].includes(event.key)) {
         event.preventDefault();
         goPrevious();
-        return;
-      }
-
-      if (event.key === "Home") {
+      } else if (event.key === "Home") {
         event.preventDefault();
         goTo(0);
-        return;
-      }
-
-      if (event.key === "End") {
+      } else if (event.key === "End") {
         event.preventDefault();
         goTo(LAST_SLIDE_INDEX);
-        return;
-      }
-
-      if (event.key.toLowerCase() === "f") {
+      } else if (event.key.toLowerCase() === "f") {
         event.preventDefault();
         void toggleFullscreen();
       }
@@ -118,44 +95,40 @@ export function PresentationShell() {
 
   const handleWheel = useCallback(
     (event: WheelEvent<HTMLDivElement>) => {
-      if (isInteractiveTarget(event.target)) return;
-      if (wheelLockRef.current || Math.abs(event.deltaY) < 26) return;
+      if (isInteractiveTarget(event.target) || wheelLockRef.current || Math.abs(event.deltaY) < 34) return;
       event.preventDefault();
       wheelLockRef.current = true;
       if (event.deltaY > 0) goNext();
       else goPrevious();
       window.setTimeout(() => {
         wheelLockRef.current = false;
-      }, 650);
+      }, 720);
     },
     [goNext, goPrevious],
   );
 
   const handleTouchStart = useCallback((event: TouchEvent<HTMLDivElement>) => {
-    touchInteractiveRef.current = isInteractiveTarget(event.target);
-    touchStartRef.current = event.touches[0]?.clientY ?? null;
+    if (isInteractiveTarget(event.target)) return;
+    const touch = event.touches[0];
+    if (touch) touchStartRef.current = { x: touch.clientX, y: touch.clientY };
   }, []);
 
   const handleTouchEnd = useCallback(
     (event: TouchEvent<HTMLDivElement>) => {
-      const startY = touchStartRef.current;
-      const endY = event.changedTouches[0]?.clientY;
+      const start = touchStartRef.current;
+      const touch = event.changedTouches[0];
       touchStartRef.current = null;
-      if (touchInteractiveRef.current) {
-        touchInteractiveRef.current = false;
-        return;
-      }
-      touchInteractiveRef.current = false;
-      if (startY == null || endY == null) return;
-      const distance = startY - endY;
-      if (Math.abs(distance) < 56) return;
+      if (!start || !touch) return;
+
+      const deltaX = start.x - touch.clientX;
+      const deltaY = start.y - touch.clientY;
+      const distance = Math.abs(deltaX) > Math.abs(deltaY) ? deltaX : deltaY;
+      if (Math.abs(distance) < 52) return;
       if (distance > 0) goNext();
       else goPrevious();
     },
     [goNext, goPrevious],
   );
-
-  const FileIcon = FILE_ICON;
 
   return (
     <div
@@ -169,113 +142,162 @@ export function PresentationShell() {
         activeIndex={activeIndex}
         isFullscreen={isFullscreen}
         onGoTo={goTo}
-        onNext={goNext}
-        onPrevious={goPrevious}
         onToggleFullscreen={() => void toggleFullscreen()}
       />
 
       <main className={styles.deck}>
         <section
-          className={`${styles.slide} ${styles.slideBlack} ${activeIndex === 0 ? styles.slideActive : styles.slideHidden} ${direction === "forward" ? styles.enterForward : styles.enterBackward}`}
+          className={`${styles.slide} ${styles.introSlide}`}
+          data-state={stateFor(0, activeIndex)}
           aria-hidden={activeIndex !== 0}
         >
-          <div className={styles.coverGrid}>
-            <div className={styles.coverCopy}>
-              <div className={styles.coverBrandWrap}>
-                <BrandMark variant="dark" />
-              </div>
-              <span className={styles.eyebrowDark}>
-                <GraduationCap size={14} /> Для абитуриентов Таджикистана
+          <div className={styles.slideCanvas}>
+            <div className={styles.introCopy}>
+              <span className={styles.eyebrow}>
+                <GraduationCap size={15} /> Для абитуриентов Таджикистана
               </span>
-              <h1>
-                Выбор кода НЦТ,
-                <br />который можно объяснить.
-              </h1>
+              <h1>NCT<br />Navigator</h1>
               <p>
-                Интересы пользователя превращаются в конкретный вариант поступления и понятный маршрут подготовки.
+                Превращает интересы абитуриента в конкретный код НЦТ и понятный маршрут подготовки.
               </p>
-              <div className={styles.coverMeta}>
-                <span><Check size={15} /> Рабочий продукт</span>
-                <span><MousePointer2 size={15} /> Управление стрелками</span>
+              <button type="button" className={styles.primaryButton} onClick={goNext}>
+                Начать презентацию <ArrowRight size={16} />
+              </button>
+
+              <div className={styles.introStats}>
+                <article>
+                  <strong>1 562</strong>
+                  <span>записи в базе</span>
+                </article>
+                <article>
+                  <strong>5+</strong>
+                  <span>этапов проверки</span>
+                </article>
+                <article>
+                  <strong>1</strong>
+                  <span>понятный маршрут</span>
+                </article>
               </div>
             </div>
 
-            <div className={styles.coverVisual}>
-              <div className={styles.coverVisualHeader}>
-                <span>NCT Navigator</span>
-                <em>mmtai.xyz</em>
-              </div>
-              <PhotoFrame
+            <div className={styles.introVisual}>
+              <ProductVisual
                 src="/photos/hero.png"
-                alt="Интерфейс NCT Navigator"
-                fileLabel="public/photos/hero.png"
-                className={styles.coverPhoto}
+                alt="Интерфейс NCT Navigator: профиль и анализ интересов"
+                label="hero.png"
+                className={styles.heroVisual}
               />
-              <div className={styles.coverVisualFooter}>
-                <strong>Профиль → локальный поиск → AI rerank</strong>
-                <ArrowRight size={19} />
+              <div className={styles.workingBadge}>
+                <span />
+                Рабочий продукт
+              </div>
+              <div className={styles.visualNote}>
+                <span>Профиль</span>
+                <ArrowRight size={15} />
+                <span>Поиск</span>
+                <ArrowRight size={15} />
+                <span>План</span>
               </div>
             </div>
           </div>
-          <button type="button" className={styles.firstNext} onClick={goNext} aria-label="Следующий слайд">
-            <ArrowDown size={22} />
-          </button>
         </section>
 
         <section
-          className={`${styles.slide} ${styles.slidePaper} ${activeIndex === 1 ? styles.slideActive : styles.slideHidden} ${direction === "forward" ? styles.enterForward : styles.enterBackward}`}
+          className={styles.slide}
+          data-state={stateFor(1, activeIndex)}
           aria-hidden={activeIndex !== 1}
         >
-          <div className={styles.sectionHeader}>
-            <span className={styles.eyebrowLight}><Users size={14} /> Проблема</span>
-            <h2>Тысячи вариантов.<br />Ни одного уверенного ответа.</h2>
-          </div>
-          <div className={styles.problemGrid}>
-            {PROBLEM_CARDS.map((card) => {
-              const Icon = card.icon;
-              return (
-                <article
-                  key={card.title}
-                  className={card.tone === "dark" ? styles.problemCardDark : styles.problemCard}
-                >
-                  <div className={styles.cardIcon}><Icon size={22} /></div>
-                  <div>
+          <div className={`${styles.slideCanvas} ${styles.problemCanvas}`}>
+            <div className={styles.sectionHeading}>
+              <span className={styles.eyebrow}>01 · Проблема выбора</span>
+              <h2>Тысячи вариантов.<br />Ни одного уверенного ответа.</h2>
+            </div>
+
+            <div className={styles.problemGrid}>
+              {PROBLEM_CARDS.map((card) => {
+                const Icon = card.icon;
+                return (
+                  <article key={card.number} className={card.tone === "dark" ? styles.problemCardDark : styles.problemCard}>
+                    <div className={styles.cardTopline}>
+                      <span>{card.number}</span>
+                      <Icon size={21} strokeWidth={1.5} />
+                    </div>
+                    {card.number === "01" ? (
+                      <div className={styles.informationMap} aria-hidden="true">
+                        <span>Статьи</span>
+                        <span>Вузы</span>
+                        <span>Коды НЦТ</span>
+                        <strong>?</strong>
+                      </div>
+                    ) : null}
+                    {card.number === "02" ? (
+                      <div className={styles.routeMap} aria-hidden="true">
+                        <span>Интересы</span>
+                        <i />
+                        <span>Подготовка</span>
+                        <i />
+                        <strong>Фокус не найден</strong>
+                      </div>
+                    ) : null}
+                    {card.number === "03" ? (
+                      <div className={styles.choiceMap} aria-hidden="true">
+                        <span>Город</span>
+                        <span>Уровень</span>
+                        <span>Интересы</span>
+                        <strong>?</strong>
+                      </div>
+                    ) : null}
                     <h3>{card.title}</h3>
                     <p>{card.text}</p>
-                  </div>
-                </article>
-              );
-            })}
+                  </article>
+                );
+              })}
+            </div>
+
+            <div className={styles.problemQuestion}>
+              <span>Главный вопрос абитуриента</span>
+              <strong>«Как понять, что этот выбор действительно мой?»</strong>
+            </div>
           </div>
         </section>
 
         <section
-          className={`${styles.slide} ${styles.slideTeal} ${activeIndex === 2 ? styles.slideActive : styles.slideHidden} ${direction === "forward" ? styles.enterForward : styles.enterBackward}`}
+          className={styles.slide}
+          data-state={stateFor(2, activeIndex)}
           aria-hidden={activeIndex !== 2}
         >
-          <div className={styles.sectionHeaderDark}>
-            <span className={styles.eyebrowDark}><Sparkles size={14} /> Решение</span>
-            <h2>От интересов пользователя<br />до конкретного кода НЦТ.</h2>
-          </div>
-
-          <div className={styles.solutionPanel}>
-            <div className={styles.solutionImageWrap}>
-              <PhotoFrame
-                src="/photos/product-main.png"
-                alt="Экран анализа NCT Navigator"
-                fileLabel="public/photos/product-main.png"
-                className={styles.solutionPhoto}
-              />
-              <span className={styles.liveBadge}>Рабочий интерфейс</span>
+          <div className={`${styles.slideCanvas} ${styles.solutionCanvas}`}>
+            <div className={styles.solutionHeading}>
+              <span className={styles.eyebrow}>02 · Решение</span>
+              <h2>От интересов<br />до конкретного кода НЦТ.</h2>
+              <p>Пользователь задаёт ограничения один раз. Система сохраняет их на всём пути поиска.</p>
             </div>
+
+            <div className={styles.solutionShowcase}>
+              <ProductVisual
+                src="/photos/product-main.png"
+                alt="Интерфейс анализа NCT Navigator"
+                label="product-main.png"
+                className={styles.solutionPrimaryVisual}
+              />
+              <ProductVisual
+                src="/photos/results.png"
+                alt="Результаты подбора NCT Navigator"
+                label="results.png"
+                className={styles.solutionSecondaryVisual}
+              />
+            </div>
+
             <div className={styles.solutionFeatures}>
               {SOLUTION_FEATURES.map((feature) => {
                 const Icon = feature.icon;
                 return (
                   <article key={feature.title}>
-                    <Icon size={22} />
-                    <h3>{feature.title}</h3>
-                    <p>{feature.text}</p>
+                    <Icon size={20} strokeWidth={1.5} />
+                    <div>
+                      <h3>{feature.title}</h3>
+                      <p>{feature.text}</p>
+                    </div>
                   </article>
                 );
               })}
@@ -284,102 +306,117 @@ export function PresentationShell() {
         </section>
 
         <section
-          className={`${styles.slide} ${styles.slidePaper} ${activeIndex === 3 ? styles.slideActive : styles.slideHidden} ${direction === "forward" ? styles.enterForward : styles.enterBackward}`}
+          className={styles.slide}
+          data-state={stateFor(3, activeIndex)}
           aria-hidden={activeIndex !== 3}
         >
-          <div className={styles.algorithmHeading}>
-            <div>
-              <span className={styles.eyebrowLight}><BrainCircuit size={14} /> Алгоритм</span>
-              <h2>ИИ понимает намерение.<br />База сохраняет правду.</h2>
+          <div className={`${styles.slideCanvas} ${styles.algorithmCanvas}`}>
+            <div className={styles.algorithmHeading}>
+              <div>
+                <span className={styles.eyebrow}>03 · Как работает система</span>
+                <h2>AI понимает намерение.<br />База сохраняет правду.</h2>
+              </div>
+              <p>
+                Сначала — жёсткие ограничения и локальный поиск. Только потом — AI rerank короткого списка.
+              </p>
             </div>
-            <p>
-              AI не получает право свободно выбирать код. Сначала система строит валидный список, и только потом модель помогает его упорядочить и объяснить.
-            </p>
-          </div>
 
-          <div className={styles.algorithmTrack}>
-            {ALGORITHM_STEPS.map((step, index) => {
-              const Icon = step.icon;
-              return (
-                <div className={styles.algorithmItemWrap} key={step.number}>
-                  <article className={`${styles.algorithmItem} ${styles[`algorithm_${step.kind}`]}`}>
-                    <span>{step.number}</span>
-                    <Icon size={22} />
-                    <h3>{step.title}</h3>
-                    <p>{step.text}</p>
-                  </article>
-                  {index < ALGORITHM_STEPS.length - 1 ? <ArrowRight className={styles.algorithmArrow} size={18} /> : null}
-                </div>
-              );
-            })}
-          </div>
+            <div className={styles.pipeline}>
+              {ALGORITHM_STEPS.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div className={styles.pipelineNodeWrap} key={step.number}>
+                    <article className={styles.pipelineNode} data-kind={step.kind}>
+                      <span className={styles.pipelineNumber}>{step.number}</span>
+                      <Icon size={20} strokeWidth={1.5} />
+                      <h3>{step.title}</h3>
+                      <p>{step.caption}</p>
+                    </article>
+                    {index < ALGORITHM_STEPS.length - 1 ? <ArrowRight className={styles.pipelineArrow} size={17} /> : null}
+                  </div>
+                );
+              })}
+            </div>
 
-          <div className={styles.guardRail}>
-            <ShieldCheck size={22} />
-            <strong>ИИ не может придумать код, изменить город или выйти за пределы найденного shortlist.</strong>
+            <div className={styles.algorithmRule}>
+              <ShieldCheck size={24} strokeWidth={1.5} />
+              <div>
+                <span>Архитектурное правило</span>
+                <strong>AI не может придумать код, изменить город или выйти за пределы shortlist.</strong>
+              </div>
+            </div>
           </div>
         </section>
 
         <section
-          className={`${styles.slide} ${styles.slideBlack} ${activeIndex === 4 ? styles.slideActive : styles.slideHidden} ${direction === "forward" ? styles.enterForward : styles.enterBackward}`}
+          className={styles.slide}
+          data-state={stateFor(4, activeIndex)}
           aria-hidden={activeIndex !== 4}
         >
-          <div className={styles.architectureHeading}>
-            <span className={styles.eyebrowDark}><Code2 size={14} /> Архитектура</span>
-            <h2>Интерфейс, данные<br />и интеллект работают вместе.</h2>
-          </div>
+          <div className={`${styles.slideCanvas} ${styles.architectureCanvas}`}>
+            <div className={styles.sectionHeading}>
+              <span className={styles.eyebrow}>04 · Система</span>
+              <h2>Интерфейс, данные<br />и интеллект работают вместе.</h2>
+            </div>
 
-          <div className={styles.architectureGrid}>
-            <article className={styles.technologyPanel}>
-              <div className={styles.panelHeading}>
-                <span>Технологический слой</span>
-                <em>8 инструментов</em>
-              </div>
-              <div className={styles.technologyGrid}>
-                {TECHNOLOGIES.map((technology) => {
-                  const Icon = technology.icon;
-                  return (
+            <div className={styles.architectureGrid}>
+              <article className={styles.stackPanel}>
+                <div className={styles.panelTopline}>
+                  <span>Технологический слой</span>
+                  <em>{TECHNOLOGIES.length} инструментов</em>
+                </div>
+                <div className={styles.techGrid}>
+                  {TECHNOLOGIES.map((technology, index) => (
                     <div key={technology.title}>
-                      <Icon size={19} />
+                      <span>{String(index + 1).padStart(2, "0")}</span>
                       <strong>{technology.title}</strong>
-                      <span>{technology.role}</span>
+                      <em>{technology.role}</em>
                     </div>
-                  );
-                })}
-              </div>
-            </article>
+                  ))}
+                </div>
+              </article>
 
-            <article className={styles.filePanel}>
-              <div className={styles.panelHeading}>
-                <span>Мозг системы</span>
-                <em>service.ts управляет цепочкой</em>
-              </div>
-              <div className={styles.fileFlow}>
-                {ARCHITECTURE_FILES.map((file, index) => (
-                  <div key={file} className={styles.fileFlowRow}>
-                    <div className={styles.fileNode}>
-                      <FileIcon size={18} />
-                      <span>{file}</span>
+              <article className={styles.systemPanel}>
+                <div className={styles.panelTopline}>
+                  <span>Проверяемые модули</span>
+                  <em>backend / recommendation</em>
+                </div>
+                <div className={styles.systemFlow}>
+                  {ARCHITECTURE_FILES.map((file, index) => (
+                    <div className={styles.systemRow} key={file.name}>
+                      <div className={styles.fileIcon}><Database size={17} strokeWidth={1.5} /></div>
+                      <div>
+                        <strong>{file.name}</strong>
+                        <span>{file.role}</span>
+                      </div>
+                      <em>{String(index + 1).padStart(2, "0")}</em>
                     </div>
-                    {index < ARCHITECTURE_FILES.length - 1 ? <ArrowDown size={16} /> : null}
-                  </div>
-                ))}
-              </div>
-            </article>
+                  ))}
+                </div>
+              </article>
+            </div>
           </div>
         </section>
 
         <section
-          className={`${styles.slide} ${styles.slidePaper} ${activeIndex === 5 ? styles.slideActive : styles.slideHidden} ${direction === "forward" ? styles.enterForward : styles.enterBackward}`}
+          className={styles.slide}
+          data-state={stateFor(5, activeIndex)}
           aria-hidden={activeIndex !== 5}
         >
-          <div className={styles.resultGrid}>
+          <div className={`${styles.slideCanvas} ${styles.resultCanvas}`}>
             <div className={styles.resultCopy}>
-              <span className={styles.eyebrowLight}><Check size={14} /> Итог</span>
+              <span className={styles.eyebrow}>05 · Итог</span>
               <h2>Выбор становится<br />следующим шагом.</h2>
               <p>
-                NCT Navigator уменьшает неопределённость, сохраняет реальные ограничения НЦТ и показывает, что делать дальше.
+                NCT Navigator уменьшает неопределённость и показывает, что делать после выбора направления.
               </p>
+
+              <div className={styles.resultPoints}>
+                {RESULT_POINTS.map((point) => (
+                  <span key={point}><Check size={16} /> {point}</span>
+                ))}
+              </div>
+
               <div className={styles.metricsGrid}>
                 {RESULT_METRICS.map((metric) => (
                   <article key={metric.label}>
@@ -391,26 +428,29 @@ export function PresentationShell() {
             </div>
 
             <aside className={styles.qrPanel}>
-              <div className={styles.qrTopline}>
-                <BrandMark variant="dark" compact />
+              <div className={styles.qrPanelTop}>
+                <Image src="/presentation/icon-nct-dark.png" alt="NCT" width={58} height={30} draggable={false} />
                 <span>Попробовать проект</span>
               </div>
-              <div className={styles.qrWrap}>
-                <img src="/presentation/mmtai-qr.png" alt="QR-код, ведущий на mmtai.xyz" draggable={false} />
+              <div className={styles.qrCode}>
+                <Image
+                  src="/presentation/mmtai-qr.png"
+                  alt="QR-код на сайт mmtai.xyz"
+                  width={220}
+                  height={220}
+                  draggable={false}
+                />
               </div>
               <a href="https://mmtai.xyz" target="_blank" rel="noreferrer">
                 <span>mmtai.xyz</span>
                 <ExternalLink size={22} />
               </a>
-              <p>Откройте сайт или отсканируйте QR-код камерой телефона.</p>
+              <p>Отсканируйте QR-код или откройте проект в браузере.</p>
             </aside>
           </div>
         </section>
       </main>
 
-      <div className={styles.keyboardHint} aria-hidden="true">
-        <span>←</span><span>→</span><em>переключение</em><span>F</span><em>полный экран</em>
-      </div>
     </div>
   );
 }

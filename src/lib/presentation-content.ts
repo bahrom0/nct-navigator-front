@@ -1,11 +1,9 @@
 import {
   BrainCircuit,
-  Code2,
   Database,
   FileCode2,
   Filter,
   GraduationCap,
-  Layers3,
   MapPin,
   Route,
   Search,
@@ -18,40 +16,38 @@ import {
 
 export const PRESENTATION_SLIDES = [
   { id: "intro", shortLabel: "Проект", title: "NCT Navigator" },
-  { id: "problem", shortLabel: "Проблема", title: "Тысячи вариантов" },
+  { id: "problem", shortLabel: "Проблема", title: "Слишком много вариантов" },
   { id: "solution", shortLabel: "Решение", title: "От интересов к коду" },
-  { id: "algorithm", shortLabel: "Алгоритм", title: "Как работает система" },
-  { id: "architecture", shortLabel: "Архитектура", title: "Что внутри" },
-  { id: "result", shortLabel: "Итог", title: "Следующий шаг" },
+  { id: "algorithm", shortLabel: "Алгоритм", title: "AI понимает, база проверяет" },
+  { id: "architecture", shortLabel: "Система", title: "Что работает внутри" },
+  { id: "result", shortLabel: "Итог", title: "Конкретный следующий шаг" },
 ] as const;
 
 export const PROBLEM_CARDS: Array<{
   title: string;
   text: string;
+  number: string;
   icon: LucideIcon;
   tone: "light" | "dark";
 }> = [
   {
+    number: "01",
     title: "Информации много",
-    text: "Статьи, советы, списки вузов и сотни кодов. Но почти нигде нет персонального ответа.",
+    text: "Статьи, списки вузов и сотни кодов — но почти нигде нет ответа именно для этого абитуриента.",
     icon: Search,
     tone: "light",
   },
   {
+    number: "02",
     title: "Маршрута нет",
-    text: "Абитуриент готовится ко всему сразу и не понимает, на чём сфокусироваться.",
+    text: "Подготовка идёт сразу по всем направлениям. Время тратится, а фокус так и не появляется.",
     icon: Route,
     tone: "light",
   },
   {
-    title: "Цена ошибки",
-    text: "Потерянное время, деньги и ощущение, что решение снова принято вслепую.",
-    icon: Target,
-    tone: "light",
-  },
-  {
-    title: "Как понять, что этот выбор действительно мой?",
-    text: "Главный вопрос выпускника перед поступлением.",
+    number: "03",
+    title: "Выбор вслепую",
+    text: "Главный вопрос остаётся без ответа: «Как понять, что этот выбор действительно мой?»",
     icon: Users,
     tone: "dark",
   },
@@ -64,17 +60,17 @@ export const SOLUTION_FEATURES: Array<{
 }> = [
   {
     title: "Подбирает код",
-    text: "Учитывает город, образование, интересы и выбранные направления.",
+    text: "Учитывает город, уровень образования и интересы.",
     icon: Target,
   },
   {
     title: "Объясняет выбор",
-    text: "Показывает, какие сигналы совпали и почему вариант попал в выдачу.",
+    text: "Показывает, почему вариант оказался в выдаче.",
     icon: BrainCircuit,
   },
   {
     title: "Строит план",
-    text: "Превращает направление в конкретные следующие шаги подготовки.",
+    text: "Превращает направление в следующие шаги подготовки.",
     icon: Route,
   },
 ];
@@ -82,89 +78,52 @@ export const SOLUTION_FEATURES: Array<{
 export const ALGORITHM_STEPS: Array<{
   number: string;
   title: string;
-  text: string;
+  caption: string;
   icon: LucideIcon;
   kind: "input" | "ai" | "local" | "output";
 }> = [
-  {
-    number: "01",
-    title: "Профиль",
-    text: "Город, уровень образования и реальные интересы.",
-    icon: Users,
-    kind: "input",
-  },
-  {
-    number: "02",
-    title: "AI-анализ",
-    text: "Профессии, направления и поисковые намерения.",
-    icon: BrainCircuit,
-    kind: "ai",
-  },
-  {
-    number: "03",
-    title: "Жёсткий фильтр",
-    text: "Город и образование отсекаются до подсчёта баллов.",
-    icon: Filter,
-    kind: "local",
-  },
-  {
-    number: "04",
-    title: "Локальный поиск",
-    text: "Только существующие варианты из базы НЦТ.",
-    icon: Database,
-    kind: "local",
-  },
-  {
-    number: "05",
-    title: "Ранжирование",
-    text: "Совпадения, качество данных и разнообразие вариантов.",
-    icon: Layers3,
-    kind: "local",
-  },
-  {
-    number: "06",
-    title: "AI rerank",
-    text: "ИИ меняет порядок только внутри валидного shortlist.",
-    icon: Sparkles,
-    kind: "ai",
-  },
-  {
-    number: "07",
-    title: "Результат",
-    text: "Код, объяснение и персональный план.",
-    icon: GraduationCap,
-    kind: "output",
-  },
+  { number: "01", title: "Профиль", caption: "город · образование · интересы", icon: Users, kind: "input" },
+  { number: "02", title: "AI-анализ", caption: "профессии и намерение", icon: Sparkles, kind: "ai" },
+  { number: "03", title: "Hard filters", caption: "ограничения до ранжирования", icon: Filter, kind: "local" },
+  { number: "04", title: "Локальный поиск", caption: "только существующие записи", icon: Database, kind: "local" },
+  { number: "05", title: "Ранжирование", caption: "совпадение и качество данных", icon: Target, kind: "local" },
+  { number: "06", title: "AI rerank", caption: "порядок внутри shortlist", icon: BrainCircuit, kind: "ai" },
+  { number: "07", title: "План", caption: "код · объяснение · действия", icon: GraduationCap, kind: "output" },
 ];
 
-export const TECHNOLOGIES: Array<{
-  title: string;
-  role: string;
-  icon: LucideIcon;
-}> = [
-  { title: "Next.js 16", role: "страницы, API и серверная логика", icon: Code2 },
-  { title: "React 19", role: "интерактивный интерфейс", icon: Layers3 },
-  { title: "TypeScript", role: "контроль типов и ошибок", icon: ShieldCheck },
-  { title: "Tailwind CSS 4", role: "адаптивная визуальная система", icon: Sparkles },
-  { title: "Zustand", role: "клиентское состояние", icon: MapPin },
-  { title: "Supabase", role: "профили, планы и история", icon: Database },
-  { title: "DeepSeek", role: "анализ, rerank и объяснение", icon: BrainCircuit },
-  { title: "Framer Motion", role: "переходы интерфейса", icon: Route },
-];
-
-export const ARCHITECTURE_FILES = [
-  "analyze-interest-profile.ts",
-  "nct-match.ts",
-  "rank-nct.ts",
-  "finalize-recommendations.ts",
-  "generate-plan.ts",
+export const TECHNOLOGIES = [
+  { title: "Next.js 16", role: "приложение и сервер" },
+  { title: "React 19", role: "интерактивный интерфейс" },
+  { title: "TypeScript", role: "типизированные контракты" },
+  { title: "Tailwind CSS 4", role: "адаптивная система" },
+  { title: "Zustand", role: "состояние клиента" },
+  { title: "Supabase", role: "профиль и история" },
+  { title: "DeepSeek", role: "анализ и объяснение" },
 ] as const;
 
-export const FILE_ICON = FileCode2;
+export const ARCHITECTURE_FILES = [
+  { name: "service.ts", role: "оркестрация" },
+  { name: "engine.ts", role: "поиск и фильтры" },
+  { name: "profession-score.ts", role: "оценка профессий" },
+  { name: "specialty-linker.ts", role: "связь со специальностями" },
+  { name: "scoring-config.json", role: "веса ранжирования" },
+] as const;
 
 export const RESULT_METRICS = [
   { value: "1 562", label: "записи в текущей базе" },
-  { value: "0", label: "новых кодов, которые может придумать AI" },
+  { value: "0", label: "новых кодов может добавить AI" },
   { value: "5+", label: "этапов поиска и проверки" },
-  { value: "24/7", label: "доступ через браузер" },
 ] as const;
+
+export const RESULT_POINTS = [
+  "Сохраняет город и уровень образования",
+  "Работает с реальными записями НЦТ",
+  "Объясняет результат человеческим языком",
+] as const;
+
+export const SYSTEM_ICONS = {
+  file: FileCode2,
+  database: Database,
+  shield: ShieldCheck,
+  location: MapPin,
+};
