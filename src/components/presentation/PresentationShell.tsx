@@ -399,6 +399,15 @@ export function PresentationShell() {
                       <article key={step.number}>
                         <span>{step.number}</span>
                         <Icon size={20} strokeWidth={1.5} />
+                        <div className={styles.validationVisual} aria-hidden="true">
+                          <div className={styles.validationBars}>
+                            <i />
+                            <i />
+                            <i />
+                            <i />
+                          </div>
+                          <small>{step.badges[0]}</small>
+                        </div>
                         <h3>{step.title}</h3>
                         <p>{step.caption}</p>
                       </article>
@@ -576,10 +585,10 @@ export function PresentationShell() {
                     </div>
                     <span>NCT Navigator</span>
                     <p className={styles.qrSignature}>
-                      Made with <strong>Uguloy and Bahrom</strong>
+                      Автор <strong>Угулой</strong>
                       <Heart size={24} fill="currentColor" />
                     </p>
-                    <em>Идея код и немного смелости))</em>
+                    <em>Идея код и немного смелости</em>
                   </div>
 
                   <div className={styles.qrBackFooter}>

@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+.nct-logo-light {
+  display: block;
+}
+
+.nct-logo-dark {
+  display: none;
+}
+
+[data-theme="dark"] .nct-logo-light {
+  display: none;
+}
+
+[data-theme="dark"] .nct-logo-dark {
+  display: block;
+}
+
 :root {
   color-scheme: light;
   --background: #f6f8fc;

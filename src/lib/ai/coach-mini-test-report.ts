@@ -14,12 +14,13 @@ function buildPrompt(miniTest: CoachMiniTest, result: CoachMiniTestResult): Deep
     "Верни только валидный JSON без markdown-кодовых блоков.",
     "Поле reply ОБЯЗАТЕЛЬНО.",
     "Внутри reply используй красивый markdown: заголовки, списки, выделение жирным.",
-    'Формат JSON: {"reply":"# Отчет ..."}',
+    'Формат JSON: {"reply":"# Отчет \..."}',
     "",
     `Предмет: ${miniTest.subject || result.subject || "Не указан"}`,
     `Результат: ${result.correctAnswers}/${result.totalQuestions}`,
     "",
     "Вопросы и ошибки:",
+    wdawdawd
   ]
 
   miniTest.questions.forEach((question, index) => {

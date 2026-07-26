@@ -6,6 +6,7 @@ import {
   Minimize2,
 } from "lucide-react";
 import Image from "next/image";
+import { NctLogoMark } from "@/components/brand/NctLogoMark";
 import { PRESENTATION_SLIDES } from "@/lib/presentation-content";
 import styles from "./presentation.module.css";
 
@@ -28,7 +29,7 @@ export function PresentationNavigation({
 
       <header className={styles.deckHeader}>
         <button className={styles.brandButton} type="button" onClick={() => onGoTo(0)} aria-label="Первый слайд">
-          <Image src="/presentation/icon-nct-light.png" alt="" width={38} height={24} draggable={false} />
+          <NctLogoMark className={styles.presentationBrandMark} width={38} height={19} />
           <span>NCT Navigator</span>
         </button>
 

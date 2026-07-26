@@ -119,6 +119,11 @@
   object-fit: contain;
 }
 
+.presentationBrandMark {
+  width: 38px;
+  height: 24px;
+}
+
 .slideTabs {
   display: flex;
   justify-content: center;
@@ -1160,6 +1165,55 @@
   right: 15px;
 }
 
+.validationVisual {
+  display: flex;
+  margin-top: 34px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.validationBars {
+  display: grid;
+  height: 34px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: end;
+  gap: 5px;
+}
+
+.validationBars i {
+  display: block;
+  height: 12px;
+  border-radius: 999px;
+  background: #dfe1de;
+}
+
+.validationBars i:nth-child(2) {
+  height: 21px;
+  background: #c8cbc7;
+}
+
+.validationBars i:nth-child(3) {
+  height: 28px;
+  background: #afb4b0;
+}
+
+.validationBars i:nth-child(4) {
+  height: 34px;
+  background: var(--dark);
+}
+
+.validationVisual small {
+  width: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  color: var(--secondary);
+  font-size: 9px;
+  font-weight: 650;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .localValidationSteps h3 {
   margin: auto 0 8px;
   font-size: 15px;
@@ -2139,4 +2193,104 @@
   .qrCode {
     animation: none;
   }
+}
+
+/* Light information cards: dark fills are reserved for navigation and the QR badge. */
+.problemCardDark {
+  border-color: var(--line);
+  background: var(--surface-soft);
+  color: var(--ink);
+}
+
+.problemCardDark .cardTopline {
+  color: var(--muted);
+}
+
+.problemCardDark .choiceMap {
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.problemCardDark .choiceMap span {
+  border-color: var(--line-strong);
+  background: var(--surface-soft);
+  color: var(--secondary);
+}
+
+.problemCardDark .choiceMap strong {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(23, 25, 24, 0.34);
+}
+
+.problemCardDark p {
+  color: var(--secondary);
+}
+
+.solutionFeatures article {
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+  color: var(--ink);
+}
+
+.solutionFeatures article > svg {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.solutionFeatures p {
+  color: var(--secondary);
+}
+
+.pipelineStage[data-kind="ai"] {
+  border-color: var(--line);
+  background: var(--surface-soft);
+  color: var(--ink);
+}
+
+.pipelineStage[data-kind="ai"] .pipelineStageTop span {
+  color: var(--muted);
+}
+
+.pipelineStage[data-kind="ai"] .pipelineStageNumber {
+  color: rgba(23, 25, 24, 0.1);
+}
+
+.pipelineStage[data-kind="ai"] .pipelineStageCopy p {
+  color: var(--muted);
+}
+
+.pipelineStage[data-kind="ai"] .pipelineStageBadges span {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--secondary);
+}
+
+.systemPanel {
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+  color: var(--ink);
+}
+
+.systemPanel .panelTopline {
+  border-color: var(--line);
+}
+
+.systemRow {
+  border-color: var(--line);
+}
+
+.systemRow span,
+.systemRow em {
+  color: var(--secondary);
+}
+
+.algorithmRule {
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+  color: var(--ink);
+}
+
+.algorithmRule span {
+  color: var(--muted);
 }

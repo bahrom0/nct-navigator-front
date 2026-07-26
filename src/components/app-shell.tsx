@@ -3,7 +3,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowLeft, Bot, GraduationCap, History, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowLeft, Bot, GraduationCap, History, MessageCircle } from "lucide-react";
 import { ProfileButton, ProfileDrawer } from "@/components/profile";
 import { LoginModal } from "@/components/auth/LoginModal";
 import { MaintenanceScreen } from "@/components/system/MaintenanceScreen";
@@ -19,6 +19,7 @@ import { useUserChatStore } from "@/lib/user-chat/store";
 import { AnimatedShellTitle } from "@/components/animated-shell-title";
 import { ThemeSync } from "@/components/theme/ThemeSync";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { NctLogoMark } from "@/components/brand/NctLogoMark";
 
 export function AppShell({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -169,9 +170,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               </button>
             ) : null}
             <Link href="/" className="inline-flex min-w-0 items-center gap-3 text-sm font-semibold tracking-[-0.02em] text-[var(--marketing-foreground)]">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-[var(--marketing-border)] bg-[var(--marketing-surface)] shadow-[0_12px_30px_rgba(32,28,24,0.1)] backdrop-blur-xl dark:shadow-[0_12px_30px_rgba(0,0,0,0.32)]">
-                <Sparkles className="h-4 w-4 text-[var(--marketing-accent)]" />
-              </span>
+              <NctLogoMark className="h-10 w-10 rounded-2xl border border-[var(--marketing-border)] bg-[var(--marketing-surface)] shadow-[0_12px_30px_rgba(32,28,24,0.1)] backdrop-blur-xl dark:shadow-[0_12px_30px_rgba(0,0,0,0.32)]" width={32} height={16} />
               <span className="truncate"><AnimatedShellTitle isChat={!!isChatRoute} /></span>
             </Link>
           </div>

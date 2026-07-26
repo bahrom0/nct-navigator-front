@@ -8,12 +8,12 @@ import {
   Info,
   LayoutGrid,
   Menu,
-  Sparkles,
   Workflow,
   X,
 } from "lucide-react";
 import { StartSelectionButton } from "@/components/marketing/StartSelectionButton";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { NctLogoMark } from "@/components/brand/NctLogoMark";
 import {
   brandName,
   brandTagline,
@@ -65,9 +65,7 @@ export function MarketingHeader() {
               href="/"
               className="inline-flex items-center gap-3 text-sm font-semibold tracking-[-0.02em] text-[var(--marketing-foreground)]"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-2xl border border-[var(--marketing-border)] bg-[var(--marketing-surface)] shadow-[0_12px_30px_rgba(32,28,24,0.1)] backdrop-blur-xl dark:shadow-[0_12px_30px_rgba(0,0,0,0.32)]">
-                <Sparkles className="h-4 w-4 text-[var(--marketing-accent)]" />
-              </span>
+              <NctLogoMark className="h-10 w-10 rounded-2xl border border-[var(--marketing-border)] bg-[var(--marketing-surface)] shadow-[0_12px_30px_rgba(32,28,24,0.1)] backdrop-blur-xl dark:shadow-[0_12px_30px_rgba(0,0,0,0.32)]" width={32} height={16} />
               <span className="hidden sm:inline">{brandName}</span>
               <span className="sm:hidden">NCT</span>
             </Link>
@@ -132,7 +130,7 @@ export function MarketingHeader() {
               <div className="relative overflow-hidden rounded-[2rem] border border-[var(--marketing-border-strong)] bg-[var(--marketing-header-panel-bg)] p-4 shadow-[0_34px_80px_rgba(26,22,18,0.2)] ring-1 ring-[rgba(255,255,255,0.56)] backdrop-blur-[30px] before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.42),transparent_44%)] after:pointer-events-none after:absolute after:inset-0 after:opacity-28 after:[background-image:radial-gradient(circle_at_1px_1px,rgba(78,66,52,0.06)_1px,transparent_0)] after:[background-size:16px_16px]">
                 <nav className="relative flex flex-col gap-2">
                   {marketingNavLinks.map((link, index) => {
-                    const Icon = mobileNavIcons[link.href] ?? Sparkles;
+                    const Icon = mobileNavIcons[link.href] ?? Info;
 
                     return (
                       <motion.div
@@ -187,9 +185,7 @@ export function MarketingFooter() {
       <div className="mx-auto flex max-w-7xl flex-col gap-5 text-sm text-[var(--marketing-muted)] lg:flex-row lg:items-center lg:justify-between">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
           <div className="inline-flex items-center gap-3 font-medium text-[var(--marketing-foreground)]">
-            <span className="flex h-9 w-9 items-center justify-center rounded-2xl border border-[var(--marketing-border)] bg-[var(--marketing-surface)]">
-              <Sparkles className="h-4 w-4 text-[var(--marketing-accent)]" />
-            </span>
+            <NctLogoMark className="h-9 w-9 rounded-2xl border border-[var(--marketing-border)] bg-[var(--marketing-surface)]" width={29} height={15} />
             {brandName}
           </div>
           <p className="max-w-xl text-sm leading-6">{footerCaption}</p>

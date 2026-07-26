@@ -25,7 +25,7 @@ export function buildCoachContext(options: CoachContextOptions = {}): DeepSeekMe
   const { goal, plan, roadmap, dayPlan, dailyHistory, diagnostics, miniTests, progress } = options
 
   const parts: string[] = [
-    "Ты - персональный наставник по подготовке к поступлению в Казахстане.",
+    "Ты - персональный наставник по подготовке к поступлению в Таджикистане.",
     "Твоя задача - помогать абитуриенту двигаться к цели и не терять контекст между днями.",
   ]
 
