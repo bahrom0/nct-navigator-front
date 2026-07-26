@@ -20,7 +20,6 @@ function buildPrompt(miniTest: CoachMiniTest, result: CoachMiniTestResult): Deep
     `Результат: ${result.correctAnswers}/${result.totalQuestions}`,
     "",
     "Вопросы и ошибки:",
-    wdawdawd
   ]
 
   miniTest.questions.forEach((question, index) => {
