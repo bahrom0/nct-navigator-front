@@ -2195,6 +2195,69 @@
   }
 }
 
+/* Slide 4: one consistent QR-like material across the whole pipeline. */
+.algorithmCanvas .pipelineStage,
+.algorithmCanvas .pipelineStage[data-kind="ai"],
+.algorithmCanvas .pipelineStage[data-kind="output"],
+.algorithmCanvas .localValidation {
+  border-color: rgba(165, 186, 230, 0.2);
+  background:
+    radial-gradient(circle at 82% 8%, rgba(255, 255, 255, 0.06), transparent 30%),
+    radial-gradient(circle at 15% 88%, rgba(46, 139, 255, 0.08), transparent 32%),
+    #070b16;
+  color: var(--ink);
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.24);
+}
+
+.algorithmCanvas .pipelineStage[data-kind="output"] {
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.24);
+}
+
+.algorithmCanvas .pipelineStageNumber,
+.algorithmCanvas .pipelineStage[data-kind="ai"] .pipelineStageNumber {
+  color: rgba(171, 192, 235, 0.18);
+}
+
+.algorithmCanvas .pipelineStageTop span,
+.algorithmCanvas .pipelineStage[data-kind="ai"] .pipelineStageTop span {
+  color: var(--muted);
+}
+
+.algorithmCanvas .pipelineStageCopy p,
+.algorithmCanvas .pipelineStage[data-kind="ai"] .pipelineStageCopy p {
+  color: var(--secondary);
+}
+
+.algorithmCanvas .pipelineStageBadges span,
+.algorithmCanvas .pipelineStage[data-kind="ai"] .pipelineStageBadges span {
+  border-color: rgba(165, 186, 230, 0.2);
+  background: rgba(29, 42, 68, 0.9);
+  color: var(--secondary);
+}
+
+.algorithmCanvas .localValidationSteps article {
+  border-color: rgba(165, 186, 230, 0.2);
+  background: #111a2b;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px rgba(165, 186, 230, 0.04);
+}
+
+.algorithmCanvas .localValidationSteps article > span {
+  color: var(--muted);
+}
+
+.algorithmCanvas .localValidationSteps article > svg {
+  color: #aab8d3;
+}
+
+.algorithmCanvas .localValidationSteps h3 {
+  color: var(--ink);
+}
+
+.algorithmCanvas .localValidationSteps p {
+  color: var(--secondary);
+}
+
 /* Light information cards: dark fills are reserved for navigation and the QR badge. */
 .problemCardDark {
   border-color: var(--line);
@@ -2293,4 +2356,327 @@
 
 .algorithmRule span {
   color: var(--muted);
+}
+
+/* Midnight NCT presentation theme */
+.presentationRoot {
+  --paper: #080d1c;
+  --surface: #141d31;
+  --surface-soft: #1b2740;
+  --surface-muted: #24314c;
+  --ink: #f5f7ff;
+  --secondary: #acb8cf;
+  --muted: #74839f;
+  --dark: #070b16;
+  --dark-soft: #111a2d;
+  --line: rgba(165, 186, 230, 0.18);
+  --line-strong: rgba(165, 186, 230, 0.32);
+  background: #080d1c;
+  color: var(--ink);
+}
+
+.presentationStage {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(56, 107, 190, 0.2), transparent 34%),
+    radial-gradient(circle at 88% 90%, rgba(113, 70, 176, 0.18), transparent 38%),
+    linear-gradient(135deg, #080d1c 0%, #10182a 48%, #171329 100%);
+}
+
+.presentationStage::before,
+.presentationStage::after {
+  -webkit-text-stroke-color: rgba(171, 192, 235, 0.075);
+}
+
+.progress {
+  background: rgba(165, 186, 230, 0.14);
+}
+
+.progress span {
+  background: linear-gradient(90deg, #5f9cff, #9c7bff);
+}
+
+.brandButton,
+.slideTab,
+.slideTabActive,
+.slideCounter,
+.eyebrow {
+  color: var(--secondary);
+}
+
+.brandButton {
+  color: var(--ink);
+}
+
+.presentationBrandMark .nct-logo-light {
+  display: none;
+}
+
+.presentationBrandMark .nct-logo-dark {
+  display: block;
+}
+
+.slideTab:hover,
+.slideTabActive {
+  color: var(--ink);
+  background: rgba(35, 51, 81, 0.78);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+.iconButton {
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.iconButton:hover {
+  background: var(--surface-soft);
+}
+
+.slideCanvas {
+  border-color: var(--line);
+  background: rgba(16, 24, 39, 0.9);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.28);
+}
+
+.slideCanvas::after {
+  -webkit-text-stroke-color: rgba(171, 192, 235, 0.065);
+}
+
+.introCopy,
+.solutionHeading {
+  background: linear-gradient(145deg, rgba(24, 37, 61, 0.96), rgba(16, 26, 45, 0.96));
+}
+
+.introStats article,
+.metricsGrid article,
+.resultPoints span {
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+  color: var(--ink);
+}
+
+.introStats span,
+.metricsGrid span {
+  color: var(--muted);
+}
+
+.problemCard,
+.problemCardDark,
+.solutionFeatures article,
+.pipelineStage,
+.localValidation,
+.stackPanel,
+.systemPanel,
+.resultCopy {
+  border-color: var(--line);
+  background: linear-gradient(145deg, #1b2943, #172238);
+  color: var(--ink);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+}
+
+.informationMap,
+.routeMap,
+.choiceMap {
+  border: 1px solid var(--line);
+  background: #111b2e;
+}
+
+.informationMap span,
+.choiceMap span,
+.routeMap span,
+.routeMap strong {
+  border-color: var(--line-strong);
+  background: var(--surface-muted);
+  color: var(--secondary);
+}
+
+.informationMap strong,
+.routeMap strong {
+  background: #263a61;
+  color: var(--ink);
+}
+
+.choiceMap strong,
+.problemCardDark .choiceMap strong {
+  -webkit-text-stroke-color: rgba(171, 192, 235, 0.42);
+}
+
+.problemGrid p,
+.solutionHeading p,
+.solutionFeatures p,
+.pipelineStageCopy p,
+.systemRow span,
+.systemRow em {
+  color: var(--secondary);
+}
+
+.solutionShowcase,
+.introVisual {
+  background: #070b16;
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.28);
+}
+
+.solutionFeatures article > svg,
+.fileIcon {
+  border: 1px solid var(--line);
+  background: #edf3ff;
+  color: #15233b;
+}
+
+.pipelineStage[data-kind="output"] {
+  border-color: var(--line-strong);
+  background: #1e2d49;
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+}
+
+.pipelineConnector {
+  border-color: var(--line-strong);
+  background: #1d2a44;
+  color: var(--ink);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.algorithmRule {
+  border-color: var(--line);
+  background: linear-gradient(90deg, #1d2c48, #19243b);
+  color: var(--ink);
+}
+
+.algorithmRule strong {
+  color: var(--ink);
+}
+
+.panelTopline,
+.systemPanel .panelTopline,
+.systemRow {
+  border-color: var(--line);
+}
+
+.resultCopy {
+  background: linear-gradient(145deg, #182640, #131f35);
+}
+
+.qrCardBack {
+  background:
+    linear-gradient(rgba(171, 192, 235, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(171, 192, 235, 0.035) 1px, transparent 1px),
+    #101a2c;
+  color: var(--ink);
+}
+
+.qrCardBack .qrBackCenter > span,
+.qrCardBack .qrBackHeader,
+.qrCardBack .qrSignature,
+.qrCardBack .qrBackHeader strong {
+  color: var(--secondary);
+}
+
+.qrBackLogo {
+  border-color: var(--line);
+  background: rgba(237, 243, 255, 0.92);
+}
+
+/* Shared QR-like finish for information cards. */
+.problemCard,
+.problemCardDark,
+.solutionFeatures article,
+.pipelineStage,
+.localValidation,
+.stackPanel,
+.systemPanel,
+.resultCopy {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(165, 186, 230, 0.2);
+  background:
+    radial-gradient(circle at 82% 8%, rgba(255, 255, 255, 0.06), transparent 30%),
+    radial-gradient(circle at 15% 88%, rgba(46, 139, 255, 0.08), transparent 32%),
+    #070b16;
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.24);
+}
+
+.problemCard::before,
+.problemCardDark::before,
+.solutionFeatures article::before,
+.pipelineStage::before,
+.localValidation::before,
+.stackPanel::before,
+.systemPanel::before,
+.resultCopy::before {
+  position: absolute;
+  z-index: 0;
+  inset: 12px;
+  border: 1px dashed rgba(165, 186, 230, 0.085);
+  border-radius: 18px;
+  pointer-events: none;
+  content: "";
+}
+
+.problemCard::after,
+.problemCardDark::after,
+.solutionFeatures article::after,
+.pipelineStage::after,
+.localValidation::after,
+.stackPanel::after,
+.systemPanel::after,
+.resultCopy::after {
+  position: absolute;
+  z-index: 1;
+  top: -25%;
+  left: -75%;
+  width: 42%;
+  height: 150%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.065), transparent);
+  transform: rotate(14deg);
+  pointer-events: none;
+  content: "";
+  animation: badgeSheen 8s ease-in-out infinite;
+}
+
+.problemCard > *,
+.problemCardDark > *,
+.solutionFeatures article > *,
+.pipelineStage > *,
+.localValidation > *,
+.stackPanel > *,
+.systemPanel > *,
+.resultCopy > * {
+  position: relative;
+  z-index: 2;
+}
+
+.problemCard,
+.problemCardDark,
+.solutionFeatures article,
+.pipelineStage,
+.localValidation,
+.stackPanel,
+.systemPanel {
+  color: var(--ink);
+}
+
+.problemCardDark .choiceMap,
+.problemCard .informationMap,
+.problemCard .routeMap,
+.problemCardDark .choiceMap {
+  background: #111a2b;
+}
+
+.solutionFeatures article > svg,
+.fileIcon {
+  position: relative;
+  z-index: 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .problemCard::after,
+  .problemCardDark::after,
+  .solutionFeatures article::after,
+  .pipelineStage::after,
+  .localValidation::after,
+  .stackPanel::after,
+  .systemPanel::after,
+  .resultCopy::after {
+    animation: none;
+  }
 }
