@@ -332,10 +332,10 @@ export function PresentationShell() {
                   loading="eager"
                   onLoad={(event) => prepareEmbeddedPreview(event.currentTarget)}
                 />
-                <div className={styles.landingPreviewStatus} aria-hidden="true">
+                {/* <div className={styles.landingPreviewStatus} aria-hidden="true">
                   <span><i /> Живой лендинг</span>
                   <em>Прокрутите для просмотра</em>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -429,10 +429,10 @@ export function PresentationShell() {
                   loading="eager"
                   onLoad={(event) => prepareEmbeddedPreview(event.currentTarget)}
                 />
-                <div className={styles.landingPreviewStatus} aria-hidden="true">
+                {/* <div className={styles.landingPreviewStatus} aria-hidden="true">
                   <span><i /> Живой онбординг</span>
                   <em>Прокрутите для просмотра</em>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -617,11 +617,6 @@ export function PresentationShell() {
                       <span>Попробовать проект</span>
                     </div>
                     <span className={styles.qrEdition}>06 / NCT PASS</span>
-                  </div>
-
-                  <div className={styles.qrStatus}>
-                    <span />
-                    Демо доступно
                   </div>
 
                   <p className={styles.qrPrompt}>Протестируйте нашу программу</p>

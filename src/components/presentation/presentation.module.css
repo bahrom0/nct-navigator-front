@@ -2646,6 +2646,17 @@
   font-style: normal;
 }
 
+.qrFrontFooter {
+  justify-content: center;
+}
+
+.qrFrontFooter > a {
+  border: 1px solid rgba(142, 181, 255, 0.34);
+  background: #edf3ff;
+  color: #0d172b;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
 /* Match the large solution panel to the same QR-card material. */
 .solutionHeading {
   background:
