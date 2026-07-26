@@ -32,7 +32,6 @@ import {
   TECHNOLOGIES,
 } from "@/lib/presentation-content";
 import { PresentationNavigation } from "./PresentationNavigation";
-import { ProductVisual } from "./ProductVisual";
 import styles from "./presentation.module.css";
 
 const LAST_SLIDE_INDEX = PRESENTATION_SLIDES.length - 1;
@@ -79,6 +78,10 @@ export function PresentationShell() {
   const [isQrFlipped, setIsQrFlipped] = useState(false);
   const [stageScale, setStageScale] = useState(0);
   const rootRef = useRef<HTMLDivElement>(null);
+  const landingPreviewRef = useRef<HTMLIFrameElement>(null);
+  const onboardingPreviewRef = useRef<HTMLIFrameElement>(null);
+  const landingTouchYRef = useRef<number | null>(null);
+  const onboardingTouchYRef = useRef<number | null>(null);
   const wheelLockRef = useRef(false);
   const touchStartRef = useRef<{ x: number; y: number } | null>(null);
 
@@ -183,6 +186,81 @@ export function PresentationShell() {
     [goNext, goPrevious],
   );
 
+  const prepareEmbeddedPreview = useCallback((frame: HTMLIFrameElement) => {
+    const applyDarkPreview = () => {
+      const documentElement = frame.contentDocument?.documentElement;
+      const body = frame.contentDocument?.body;
+      if (!documentElement || !body) return;
+      documentElement.setAttribute("data-theme", "dark");
+      body.style.backgroundColor = "#080d1c";
+    };
+
+    frame.contentWindow?.scrollTo(0, 0);
+    applyDarkPreview();
+    window.setTimeout(applyDarkPreview, 120);
+    window.setTimeout(applyDarkPreview, 600);
+  }, []);
+
+  const handleLandingPreviewWheel = useCallback((event: WheelEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    landingPreviewRef.current?.contentWindow?.scrollBy({
+      top: event.deltaY * 1.6,
+      left: 0,
+      behavior: "auto",
+    });
+  }, []);
+
+  const handleLandingTouchStart = useCallback((event: TouchEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+    landingTouchYRef.current = event.touches[0]?.clientY ?? null;
+  }, []);
+
+  const handleLandingTouchMove = useCallback((event: TouchEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const currentY = event.touches[0]?.clientY;
+    const previousY = landingTouchYRef.current;
+    if (currentY === undefined || previousY === null) return;
+    landingPreviewRef.current?.contentWindow?.scrollBy(0, (previousY - currentY) * 1.6);
+    landingTouchYRef.current = currentY;
+  }, []);
+
+  const handleLandingTouchEnd = useCallback((event: TouchEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+    landingTouchYRef.current = null;
+  }, []);
+
+  const handleOnboardingPreviewWheel = useCallback((event: WheelEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    onboardingPreviewRef.current?.contentWindow?.scrollBy({
+      top: event.deltaY * 1.6,
+      left: 0,
+      behavior: "auto",
+    });
+  }, []);
+
+  const handleOnboardingTouchStart = useCallback((event: TouchEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+    onboardingTouchYRef.current = event.touches[0]?.clientY ?? null;
+  }, []);
+
+  const handleOnboardingTouchMove = useCallback((event: TouchEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const currentY = event.touches[0]?.clientY;
+    const previousY = onboardingTouchYRef.current;
+    if (currentY === undefined || previousY === null) return;
+    onboardingPreviewRef.current?.contentWindow?.scrollBy(0, (previousY - currentY) * 1.6);
+    onboardingTouchYRef.current = currentY;
+  }, []);
+
+  const handleOnboardingTouchEnd = useCallback((event: TouchEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+    onboardingTouchYRef.current = null;
+  }, []);
+
   return (
     <div
       ref={rootRef}
@@ -238,22 +316,26 @@ export function PresentationShell() {
             </div>
 
             <div className={styles.introVisual}>
-              <ProductVisual
-                src="/photos/hero.png"
-                alt="Интерфейс NCT Navigator: профиль и анализ интересов"
-                label="hero.png"
-                className={styles.heroVisual}
-              />
-              <div className={styles.workingBadge}>
-                <span />
-                Рабочий продукт
-              </div>
-              <div className={styles.visualNote}>
-                <span>Профиль</span>
-                <ArrowRight size={15} />
-                <span>Поиск</span>
-                <ArrowRight size={15} />
-                <span>План</span>
+              <div
+                className={styles.landingPreviewViewport}
+                onWheel={handleLandingPreviewWheel}
+                onTouchStart={handleLandingTouchStart}
+                onTouchMove={handleLandingTouchMove}
+                onTouchEnd={handleLandingTouchEnd}
+              >
+                <iframe
+                  ref={landingPreviewRef}
+                  className={styles.landingPreviewFrame}
+                  src="/?presentation-preview=1"
+                  title="Живой лендинг NCT Navigator"
+                  tabIndex={-1}
+                  loading="eager"
+                  onLoad={(event) => prepareEmbeddedPreview(event.currentTarget)}
+                />
+                <div className={styles.landingPreviewStatus} aria-hidden="true">
+                  <span><i /> Живой лендинг</span>
+                  <em>Прокрутите для просмотра</em>
+                </div>
               </div>
             </div>
           </div>
@@ -331,18 +413,27 @@ export function PresentationShell() {
             </div>
 
             <div className={styles.solutionShowcase}>
-              <ProductVisual
-                src="/photos/select_city.png"
-                alt="Интерфейс анализа NCT Navigator"
-                label="select_city.png"
-                className={styles.solutionPrimaryVisual}
-              />
-              <ProductVisual
-                src="/photos/results.png"
-                alt="Результаты подбора NCT Navigator"
-                label="results.png"
-                className={styles.solutionSecondaryVisual}
-              />
+              <div
+                className={styles.landingPreviewViewport}
+                onWheel={handleOnboardingPreviewWheel}
+                onTouchStart={handleOnboardingTouchStart}
+                onTouchMove={handleOnboardingTouchMove}
+                onTouchEnd={handleOnboardingTouchEnd}
+              >
+                <iframe
+                  ref={onboardingPreviewRef}
+                  className={styles.landingPreviewFrame}
+                  src="/onboarding?presentation-preview=location"
+                  title="Живой онбординг NCT Navigator"
+                  tabIndex={-1}
+                  loading="eager"
+                  onLoad={(event) => prepareEmbeddedPreview(event.currentTarget)}
+                />
+                <div className={styles.landingPreviewStatus} aria-hidden="true">
+                  <span><i /> Живой онбординг</span>
+                  <em>Прокрутите для просмотра</em>
+                </div>
+              </div>
             </div>
 
             <div className={styles.solutionFeatures}>

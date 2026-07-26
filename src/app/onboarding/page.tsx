@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Sparkles } from "lucide-react"
 import { useOnboardingStore, hydrateOnboardingStore } from "@/stores/onboarding-store"
 import { StepIndicator } from "./_components/StepIndicator"
@@ -9,12 +9,18 @@ import { StepProfile } from "./_components/StepProfile"
 
 export default function OnboardingPage() {
   const { currentStep, _loaded } = useOnboardingStore()
+  const [showLocationPreview, setShowLocationPreview] = useState(false)
 
   useEffect(() => {
     hydrateOnboardingStore()
+    setShowLocationPreview(
+      new URLSearchParams(window.location.search).get("presentation-preview") === "location",
+    )
   }, [])
 
   if (!_loaded) return null
+
+  const visibleStep = showLocationPreview ? "location" : currentStep
 
   return (
     <div className="relative isolate min-h-[100dvh] overflow-hidden bg-[var(--marketing-bg)] text-[var(--marketing-foreground)]">
@@ -38,11 +44,11 @@ export default function OnboardingPage() {
             <span className="navigator-kicker">Core flow · onboarding</span>
           </div>
 
-          <StepIndicator currentStep={currentStep} />
+          <StepIndicator currentStep={visibleStep} />
 
           <div className="mt-4 rounded-[2.5rem] border border-[var(--marketing-border)] bg-[var(--marketing-surface)] p-4 shadow-[0_24px_80px_rgba(31,27,22,0.06)] ring-1 ring-[rgba(255,255,255,0.22)] backdrop-blur-xl sm:p-6 dark:shadow-[0_24px_80px_rgba(0,0,0,0.28)] dark:ring-[rgba(255,255,255,0.06)]">
-            {currentStep === "location" && <StepLocation />}
-            {currentStep === "profile" && <StepProfile />}
+            {visibleStep === "location" && <StepLocation />}
+            {visibleStep === "profile" && <StepProfile />}
           </div>
         </section>
       </div>

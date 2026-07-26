@@ -2258,6 +2258,408 @@
   color: var(--secondary);
 }
 
+/* Slide 1: product journey replaces the low-resolution screenshot. */
+.introVisual {
+  border: 1px solid rgba(165, 186, 230, 0.2);
+  background:
+    radial-gradient(circle at 82% 8%, rgba(255, 255, 255, 0.06), transparent 30%),
+    radial-gradient(circle at 12% 92%, rgba(46, 139, 255, 0.11), transparent 34%),
+    #070b16;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.3);
+}
+
+.introVisual::before {
+  position: absolute;
+  z-index: 0;
+  inset: 14px;
+  border: 1px dashed rgba(165, 186, 230, 0.09);
+  border-radius: 22px;
+  pointer-events: none;
+  content: "";
+}
+
+.introVisual::after {
+  position: absolute;
+  z-index: 1;
+  top: -25%;
+  left: -75%;
+  width: 42%;
+  height: 150%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.065), transparent);
+  transform: rotate(14deg);
+  pointer-events: none;
+  content: "";
+  animation: badgeSheen 8s ease-in-out infinite;
+}
+
+.introFlowPanel {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  height: 100%;
+  grid-template-rows: auto auto auto 1fr auto;
+  gap: 18px;
+  padding: 34px;
+}
+
+.introFlowHeader,
+.introResultTopline,
+.introResultMain,
+.introFlowFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.introFlowHeader > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.introFlowHeader img {
+  width: 54px;
+  height: auto;
+  object-fit: contain;
+}
+
+.introFlowHeader > div > span {
+  color: rgba(245, 247, 255, 0.5);
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.13em;
+}
+
+.introFlowHeader em {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--secondary);
+  font-size: 10px;
+  font-style: normal;
+}
+
+.introFlowHeader em i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #62c98d;
+  box-shadow: 0 0 0 0 rgba(98, 201, 141, 0.38);
+  animation: badgePulse 2.4s ease-out infinite;
+}
+
+.introProfileCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  min-height: 84px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(20, 31, 52, 0.9);
+}
+
+.introProfileCard > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.introProfileCard > div:first-child span {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.introProfileCard > div:first-child strong {
+  font-size: 14px;
+  font-weight: 560;
+}
+
+.introProfileChips,
+.introResultReasons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.introProfileChips span,
+.introResultReasons span {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(36, 49, 76, 0.78);
+  color: var(--secondary);
+  font-size: 9px;
+  font-weight: 550;
+}
+
+.introFlowStages {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 26px minmax(0, 1fr) 26px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+}
+
+.introFlowStages article {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 126px;
+  grid-template-columns: 1fr auto;
+  align-content: start;
+  gap: 7px 10px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  background: linear-gradient(145deg, rgba(28, 43, 70, 0.92), rgba(17, 27, 46, 0.96));
+}
+
+.introFlowStages article > span {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.introFlowStages article > svg {
+  color: #91b7ff;
+}
+
+.introFlowStages article > strong,
+.introFlowStages article > small {
+  grid-column: 1 / -1;
+}
+
+.introFlowStages article > strong {
+  margin-top: 11px;
+  font-size: 13px;
+  font-weight: 590;
+  line-height: 1.18;
+}
+
+.introFlowStages article > small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.introFlowArrow {
+  justify-self: center;
+  color: #79a8ff;
+  animation: introFlowArrowPulse 1.8s ease-in-out infinite alternate;
+}
+
+.introResultCard {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 22px;
+  border: 1px solid rgba(116, 160, 237, 0.34);
+  border-radius: 23px;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(96, 130, 255, 0.14), transparent 35%),
+    linear-gradient(145deg, #162540, #101a2d);
+  box-shadow: inset 0 0 0 1px rgba(117, 158, 231, 0.04);
+}
+
+.introResultTopline > span {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.introResultTopline em {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #84d4a6;
+  font-size: 9px;
+  font-style: normal;
+}
+
+.introResultMain {
+  margin-top: 16px;
+}
+
+.introResultMain > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.introResultMain small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.introResultMain strong {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.introResultMain > span {
+  padding: 8px 11px;
+  border: 1px solid rgba(118, 161, 239, 0.3);
+  border-radius: 999px;
+  background: rgba(58, 93, 154, 0.28);
+  color: #afc9ff;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.introResultCard h3 {
+  margin: 12px 0 13px;
+  font-size: 21px;
+  font-weight: 560;
+  letter-spacing: -0.03em;
+}
+
+.introResultReasons {
+  justify-content: flex-start;
+}
+
+.introFlowFooter {
+  justify-content: center;
+  gap: 9px;
+  min-height: 36px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.introFlowFooter svg {
+  color: rgba(121, 168, 255, 0.65);
+}
+
+.introFlowFooter strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+@keyframes introFlowArrowPulse {
+  from {
+    opacity: 0.42;
+    transform: translateX(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .introVisual::after,
+  .introFlowHeader em i,
+  .introFlowArrow {
+    animation: none;
+  }
+}
+
+/* Live landing preview: interactions are blocked, scrolling is proxied by the wrapper. */
+.landingPreviewViewport {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 27px;
+  background: #070b16;
+  cursor: ns-resize;
+  touch-action: none;
+}
+
+.landingPreviewViewport::after {
+  position: absolute;
+  z-index: 1;
+  inset: auto 0 0;
+  height: 70px;
+  background: linear-gradient(transparent, rgba(7, 11, 22, 0.72));
+  pointer-events: none;
+  content: "";
+}
+
+.landingPreviewFrame {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 160%;
+  height: 160%;
+  border: 0;
+  background: #080d1c;
+  color-scheme: dark;
+  transform: scale(0.625);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.landingPreviewStatus {
+  position: absolute;
+  z-index: 3;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(165, 186, 230, 0.18);
+  border-radius: 999px;
+  background: rgba(7, 11, 22, 0.84);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(14px);
+  color: var(--secondary);
+  pointer-events: none;
+}
+
+.landingPreviewStatus span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink);
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.landingPreviewStatus span i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #62c98d;
+  box-shadow: 0 0 0 0 rgba(98, 201, 141, 0.38);
+  animation: badgePulse 2.4s ease-out infinite;
+}
+
+.landingPreviewStatus em {
+  color: var(--muted);
+  font-size: 9px;
+  font-style: normal;
+}
+
+/* Match the large solution panel to the same QR-card material. */
+.solutionHeading {
+  background:
+    radial-gradient(circle at 82% 8%, rgba(255, 255, 255, 0.06), transparent 30%),
+    radial-gradient(circle at 15% 88%, rgba(46, 139, 255, 0.08), transparent 32%),
+    #070b16;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landingPreviewStatus span i {
+    animation: none;
+  }
+}
+
 /* Light information cards: dark fills are reserved for navigation and the QR badge. */
 .problemCardDark {
   border-color: var(--line);
