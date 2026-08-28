@@ -1,0 +1,19 @@
+- generic [active] [ref=f11e1]:
+  - generic [ref=f11e2]:
+    - banner:
+      - generic [ref=f11e4]:
+        - link "NCT Navigator" [ref=f11e6] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f11e11]:
+          - 'button "Тема: светлая. Нажмите, чтобы переключить." [ref=f11e12]':
+            - generic [ref=f11e20]: Переключить тему
+          - button "Профиль" [ref=f11e21]
+    - main [ref=f11e25]:
+      - main [ref=f11e26]:
+        - generic [ref=f11e27]:
+          - button [ref=f11e28]
+          - generic [ref=f11e31]:
+            - heading "Рекомендации" [level=1] [ref=f11e32]
+            - paragraph [ref=f11e33]: "Подбираем специальности на основе выбранных направлений. Следующий шаг здесь один: выбрать одну цель."
+  - region "Notifications alt+T"
+  - alert [ref=f11e107]

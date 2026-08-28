@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { ArrowLeft, CheckCircle2, Target } from "lucide-react"
 import { NCTSignalCard } from "@/components/signal-cards/NCTSignalCard"
+import { coveragePercent, sortInterestCoverage } from "@/lib/recommendations/interest-coverage"
 import { selectRecommendationGoal } from "@/lib/recommendations/selection-client"
 import { useAnalysisStore } from "@/stores/analysis-store"
 import { useProfileStore } from "@/stores/profile-store"
@@ -75,6 +76,7 @@ export default function ExplainContent() {
   const [selecting, setSelecting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const code = normalizeCode(searchParams.get("code") ?? "")
+  const detailSection = searchParams.get("section")
 
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
@@ -132,6 +134,16 @@ export default function ExplainContent() {
     () => cache?.ranked.find((item) => normalizeCode(item.code) === code) ?? null,
     [cache, code],
   )
+
+  useEffect(() => {
+    if (detailSection !== "coverage" || !cacheResolved || (!recommendation && !persistedResolved)) return
+
+    const frameId = window.requestAnimationFrame(() => {
+      document.getElementById("interest-coverage-details")?.scrollIntoView({ behavior: "smooth", block: "start" })
+    })
+
+    return () => window.cancelAnimationFrame(frameId)
+  }, [cacheResolved, detailSection, persistedResolved, recommendation])
 
   const related = useMemo(() => {
     if (!cache || !recommendation) return []
@@ -208,6 +220,7 @@ export default function ExplainContent() {
   const matchedKeywords = recommendation?.matchedKeywords ?? persistedDetail?.matchedKeywords ?? []
   const evidence = recommendation?.evidence ?? persistedDetail?.evidence ?? []
   const limitations = recommendation?.limitations ?? persistedDetail?.limitations ?? []
+  const interestCoverage = sortInterestCoverage(recommendation?.interestCoverage ?? persistedDetail?.interestCoverage ?? [])
 
   return (
     <main className="flex flex-1 flex-col px-6 sm:px-8">
@@ -248,6 +261,46 @@ export default function ExplainContent() {
           } : undefined}
           variant="compact"
         />
+
+        {interestCoverage.length > 0 ? (
+          <section
+            id="interest-coverage-details"
+            className="scroll-mt-6 rounded-[20px] border border-border bg-card-bg p-6"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h2 className="text-base font-semibold text-foreground">Полное покрытие интересов</h2>
+                <p className="mt-1.5 text-sm leading-relaxed text-text-secondary">
+                  Здесь собраны все выбранные интересы, включая те, что не поместились в компактную карточку.
+                </p>
+              </div>
+              <span className="shrink-0 rounded-full bg-primary-light px-2.5 py-1 text-xs font-semibold tabular-nums text-primary">
+                {interestCoverage.length}
+              </span>
+            </div>
+
+            <div className="mt-4 space-y-3">
+              {interestCoverage.map((coverage, index) => {
+                const percent = coveragePercent(coverage.score)
+
+                return (
+                  <article key={`${coverage.interestId}-${index}`} className="rounded-[16px] border border-border bg-background/40 p-4">
+                    <div className="flex items-start justify-between gap-3 text-sm">
+                      <h3 className="min-w-0 font-medium text-foreground">{coverage.interest}</h3>
+                      <span className="shrink-0 font-semibold tabular-nums text-primary">{percent}%</span>
+                    </div>
+                    <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-border/60" aria-hidden="true">
+                      <span className="block h-full rounded-full bg-primary" style={{ width: `${percent}%` }} />
+                    </div>
+                    {coverage.evidence.length > 0 ? (
+                      <p className="mt-2 text-xs leading-relaxed text-text-muted">{coverage.evidence.join(" · ")}</p>
+                    ) : null}
+                  </article>
+                )
+              })}
+            </div>
+          </section>
+        ) : null}
 
         <section className="rounded-[20px] border border-border bg-card-bg p-6">
           <h2 className="text-base font-semibold text-foreground">Описание направления</h2>

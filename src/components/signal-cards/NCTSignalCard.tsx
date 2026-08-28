@@ -1,14 +1,18 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ExternalLink, FlaskConical, GraduationCap, Medal } from "lucide-react"
+import { ChevronDown, ChevronUp, ExternalLink, FlaskConical, GraduationCap, Medal } from "lucide-react"
 import { BookmarkButton } from "@/components/signal-cards/BookmarkButton"
 import { CompetitionMeter } from "@/components/strategy/CompetitionMeter"
-import { evaluateCompetitionForCode } from "@/features/strategy/competition-meter"
 import { useRouter } from "next/navigation"
 import { logActivityEvent } from "@/lib/activity-logger"
 import { CLUSTER_NAMES, CLUSTER_EXAMS, EDUCATION_LEVEL_LABELS } from "@/lib/db/types"
+import {
+  COMPACT_INTEREST_COVERAGE_LIMIT,
+  coveragePercent,
+  sortInterestCoverage,
+} from "@/lib/recommendations/interest-coverage"
 import type { RecommendationInterestCoverage, RecommendationRelationType } from "@/types/nct"
 
 interface NCTSignalCardProps {
@@ -16,7 +20,9 @@ interface NCTSignalCardProps {
   title_ru: string
   institution: string
   city: string
+  admissionPlan?: number
   confidence: number
+  reasoning?: string
   relationType?: RecommendationRelationType
   interestCoverage?: RecommendationInterestCoverage[]
   cluster?: number
@@ -38,8 +44,20 @@ const RELATION_LABELS: Record<RecommendationRelationType, string> = {
   adjacent: "Смежный путь",
 }
 
-function coveragePercent(score: number): number {
-  return Math.round(Math.max(0, Math.min(1, score)) * 100)
+function interestCountLabel(count: number): string {
+  const lastTwoDigits = count % 100
+  if (lastTwoDigits >= 11 && lastTwoDigits <= 14) return "интересов"
+
+  switch (count % 10) {
+    case 1:
+      return "интерес"
+    case 2:
+    case 3:
+    case 4:
+      return "интереса"
+    default:
+      return "интересов"
+  }
 }
 
 export function NCTSignalCard({
@@ -47,7 +65,9 @@ export function NCTSignalCard({
   title_ru,
   institution,
   city,
+  admissionPlan,
   confidence,
+  reasoning,
   relationType,
   interestCoverage,
   cluster,
@@ -61,16 +81,44 @@ export function NCTSignalCard({
   const router = useRouter()
   const confidencePercent = Math.round(confidence * 100)
   const [showTooltip, setShowTooltip] = useState(false)
+  const [reasonExpanded, setReasonExpanded] = useState(false)
+  const [reasonOverflows, setReasonOverflows] = useState(false)
+  const reasonRef = useRef<HTMLParagraphElement | null>(null)
 
   const clusterName = cluster !== undefined ? CLUSTER_NAMES[cluster] : taxonomy?.cluster_name_ru
   const exams = cluster !== undefined ? CLUSTER_EXAMS[educationLevel]?.[cluster] ?? [] : []
   const rankTone = rank === 1 ? "gold" : rank === 2 ? "silver" : rank === 3 ? "bronze" : null
 
-  const competition = useMemo(() => evaluateCompetitionForCode(code, confidence), [code, confidence])
+  const compactInterestCoverage = useMemo(
+    () => sortInterestCoverage(interestCoverage ?? []).slice(0, COMPACT_INTEREST_COVERAGE_LIMIT),
+    [interestCoverage],
+  )
+  const hiddenInterestCoverageCount = Math.max(0, (interestCoverage?.length ?? 0) - compactInterestCoverage.length)
+  const hiddenInterestLabel = interestCountLabel(hiddenInterestCoverageCount)
+  const trimmedReasoning = reasoning?.trim() ?? ""
+  const isReasonExpanded = reasonExpanded && reasonOverflows
 
-  const handleExplain = () => {
+  const measureReasonOverflow = useCallback(() => {
+    const element = reasonRef.current
+    if (!element) return
+    setReasonOverflows(element.scrollHeight > 72)
+  }, [])
+
+  useEffect(() => {
+    if (!trimmedReasoning) return
+
+    measureReasonOverflow()
+
+    if (typeof ResizeObserver === "undefined" || !reasonRef.current) return
+    const observer = new ResizeObserver(measureReasonOverflow)
+    observer.observe(reasonRef.current)
+    return () => observer.disconnect()
+  }, [measureReasonOverflow, trimmedReasoning])
+
+  const handleExplain = (section?: "coverage") => {
     logActivityEvent("view_recommendation", `Подробнее: ${code} - ${title_ru}`)
-    router.push(`/explain?code=${encodeURIComponent(code)}&title=${encodeURIComponent(title_ru)}`)
+    const sectionQuery = section ? "&section=coverage" : ""
+    router.push(`/explain?code=${encodeURIComponent(code)}&title=${encodeURIComponent(title_ru)}${sectionQuery}`)
   }
 
   const handleSelectGoal = () => {
@@ -94,10 +142,11 @@ export function NCTSignalCard({
         "navigator-recommendation-card group relative overflow-hidden rounded-[24px]",
         variant === "featured" ? "navigator-recommendation-card--featured" : "",
         variant === "compact" ? "navigator-recommendation-card--compact" : "",
+        isReasonExpanded ? "navigator-recommendation-card--reason-expanded" : "",
         rankTone ? `navigator-recommendation-card--rank-${rankTone}` : "",
       ].filter(Boolean).join(" ")}
     >
-      <div className="flex h-full flex-col p-6">
+      <div className="navigator-recommendation-card-content flex h-full flex-col p-6">
         <header className="flex items-start justify-between gap-4">
           <div className="flex min-w-0 flex-wrap items-center gap-2">
             {rankTone && (
@@ -194,33 +243,93 @@ export function NCTSignalCard({
           </div>
         </div>
 
-        {interestCoverage && interestCoverage.length > 0 && (
-          <div className="mt-5 rounded-[16px] border border-border bg-background/40 p-4">
+        {compactInterestCoverage.length > 0 && (
+          <div
+            className={[
+              "navigator-interest-coverage relative mt-5 overflow-hidden rounded-[16px] border border-border bg-background/40 p-4",
+              hiddenInterestCoverageCount > 0 ? "pb-14" : "",
+            ].filter(Boolean).join(" ")}
+          >
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-text-muted">Покрытие интересов</p>
             <div className="mt-3 space-y-3">
-              {interestCoverage.map((coverage, index) => {
+              {compactInterestCoverage.map((coverage, index) => {
                 const percent = coveragePercent(coverage.score)
 
                 return (
                   <div key={`${coverage.interestId}-${index}`}>
                     <div className="flex items-start justify-between gap-3 text-sm">
-                      <span className="min-w-0 font-medium text-foreground">{coverage.interest}</span>
+                      <span className="min-w-0 truncate font-medium text-foreground" title={coverage.interest}>{coverage.interest}</span>
                       <span className="shrink-0 font-semibold text-primary">{percent}%</span>
                     </div>
                     <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-border/60" aria-hidden="true">
                       <span className="block h-full rounded-full" style={{ width: `${percent}%`, backgroundColor: accentColor }} />
                     </div>
-                    {coverage.evidence.length > 0 && (
-                      <p className="mt-1.5 text-xs leading-relaxed text-text-muted">{coverage.evidence.join(" · ")}</p>
-                    )}
                   </div>
                 )
               })}
             </div>
+
+            {hiddenInterestCoverageCount > 0 && (
+              <div className="navigator-interest-coverage-fade">
+                <button
+                  type="button"
+                  onClick={() => handleExplain("coverage")}
+                  aria-label={`Открыть все интересы в подробностях. Скрыто интересов: ${hiddenInterestCoverageCount}`}
+                  title={`Ещё ${hiddenInterestCoverageCount} ${hiddenInterestLabel} в подробностях`}
+                  className="navigator-interest-coverage-trigger"
+                >
+                  <ChevronDown className="h-4 w-4" aria-hidden="true" />
+                </button>
+              </div>
+            )}
           </div>
         )}
 
-        <CompetitionMeter level={competition.level} score={competition.score} reason={competition.reason} />
+        <CompetitionMeter admissionPlan={admissionPlan} />
+
+        {trimmedReasoning && (
+          <section className="navigator-recommendation-reason mt-3" aria-label="Почему выбрано это направление">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-text-muted">Почему выбрано</p>
+            <div className="navigator-recommendation-reason-viewport relative mt-2">
+              <p
+                ref={reasonRef}
+                className={[
+                  "navigator-recommendation-reason-copy text-sm leading-6 text-text-secondary",
+                  !isReasonExpanded ? "navigator-recommendation-reason-copy--clamped" : "",
+                ].filter(Boolean).join(" ")}
+              >
+                {trimmedReasoning}
+              </p>
+
+              {reasonOverflows && !isReasonExpanded && (
+                <div className="navigator-recommendation-reason-fade">
+                  <button
+                    type="button"
+                    onClick={() => setReasonExpanded(true)}
+                    aria-expanded="false"
+                    aria-label="Раскрыть полное объяснение выбора направления"
+                    title="Показать полное объяснение"
+                    className="navigator-recommendation-reason-trigger"
+                  >
+                    <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {isReasonExpanded && (
+              <button
+                type="button"
+                onClick={() => setReasonExpanded(false)}
+                aria-expanded="true"
+                className="navigator-recommendation-reason-collapse"
+              >
+                <ChevronUp className="h-3.5 w-3.5" aria-hidden="true" />
+                Свернуть объяснение
+              </button>
+            )}
+          </section>
+        )}
 
         <footer className="navigator-recommendation-actions mt-auto flex flex-nowrap items-center gap-2 border-t border-border pt-4">
           <span className="shrink-0">
@@ -231,7 +340,7 @@ export function NCTSignalCard({
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                onClick={handleExplain}
+                onClick={() => handleExplain()}
                 className="inline-flex h-11 min-w-0 shrink items-center gap-2 whitespace-nowrap rounded-full border border-border bg-transparent px-3 text-sm font-medium text-foreground transition-colors hover:bg-background"
               >
                 <ExternalLink className="h-4 w-4 text-text-muted" />

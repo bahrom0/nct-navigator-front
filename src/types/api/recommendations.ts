@@ -97,6 +97,7 @@ const SharedRecommendationFields = {
   title_ru: z.string(),
   institution: z.string(),
   city: z.string(),
+  admissionPlan: z.number().int().min(0).optional(),
   confidence: z.number(),
   career_matches: z.array(z.string()),
   matchScore: z.number(),

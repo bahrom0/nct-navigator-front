@@ -153,7 +153,9 @@ function RecommendationCard({
       title_ru={result.title_ru}
       institution={result.institution}
       city={result.city}
+      admissionPlan={result.admissionPlan}
       confidence={result.confidence}
+      reasoning={result.reasoning}
       relationType={relationType}
       interestCoverage={result.interestCoverage}
       cluster={result.cluster}
@@ -186,7 +188,6 @@ function RecommendationSection({
     <section className="mb-8" aria-labelledby={`recommendation-section-${relation}`}>
       <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
         <div>
-          <span className="navigator-kicker navigator-kicker--muted">{details.eyebrow}</span>
           <h2 id={`recommendation-section-${relation}`} className="mt-2 text-xl font-semibold tracking-[-0.025em] text-foreground sm:text-2xl">
             {details.title}
           </h2>
@@ -229,7 +230,6 @@ function LegacyRecommendationSection({
   return (
     <section className="mb-8" aria-labelledby="recommendation-section-legacy">
       <div className="mb-4">
-        <span className="navigator-kicker navigator-kicker--muted">Тип связи не указан</span>
         <h2 id="recommendation-section-legacy" className="mt-2 text-xl font-semibold tracking-[-0.025em] text-foreground sm:text-2xl">
           Кандидаты из совместимого legacy-ответа
         </h2>
@@ -652,7 +652,6 @@ return (
               <p className="navigator-page-subtitle mt-3">
                 Мы сопоставили ваши интересы и контекст обучения с программами НЦТ. Выберите один вариант — дальше Navigator поможет превратить его в понятный план.
               </p>
-              {interestSynthesis ? <InterestSynthesisPanel synthesis={interestSynthesis} /> : null}
             </div>
           </div>
           <motion.button
@@ -777,12 +776,6 @@ return (
       </section>
     ) : (
       <LayoutGroup>
-        <div className="mb-4 flex items-end justify-between gap-4">
-          <div>
-            <span className="navigator-kicker navigator-kicker--muted">Результаты анализа</span>
-          </div>
-          <span className="hidden text-sm text-text-muted sm:block">Сначала показаны самые подходящие варианты</span>
-        </div>
         {RELATION_ORDER.map((relation) => (
           <RecommendationSection
             key={relation}
@@ -794,6 +787,8 @@ return (
         <LegacyRecommendationSection results={groupedResults.legacy} onSelect={handleSelectGoal} />
       </LayoutGroup>
     )}
+
+    {interestSynthesis ? <InterestSynthesisPanel synthesis={interestSynthesis} /> : null}
   </main>
 )
 }

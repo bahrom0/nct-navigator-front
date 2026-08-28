@@ -337,6 +337,143 @@ button {
   box-shadow: 0 18px 44px rgb(42 34 25 / 0.11);
 }
 
+.navigator-interest-coverage-fade {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  height: 4.5rem;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.55rem;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    color-mix(in srgb, var(--card-bg) 72%, transparent) 48%,
+    color-mix(in srgb, var(--card-bg) 96%, transparent) 100%
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+
+.navigator-interest-coverage-trigger {
+  display: inline-flex;
+  width: 2.3rem;
+  height: 2.3rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255 255 255 / 0.26);
+  border-radius: 999px;
+  background-image: var(--marketing-cta-bg);
+  color: #fff;
+  box-shadow: 0 8px 18px rgb(31 27 24 / 0.2);
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.navigator-interest-coverage-trigger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 11px 22px rgb(31 27 24 / 0.26);
+}
+
+.navigator-interest-coverage-trigger:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.navigator-recommendation-reason-copy--clamped {
+  max-height: 4.5rem;
+  overflow: hidden;
+}
+
+.navigator-recommendation-reason-fade {
+  isolation: isolate;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  height: 3rem;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.2rem;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    color-mix(in srgb, var(--card-bg) 10%, transparent) 30%,
+    color-mix(in srgb, var(--card-bg) 72%, transparent) 78%,
+    color-mix(in srgb, var(--card-bg) 94%, transparent) 100%
+  );
+  pointer-events: none;
+}
+
+.navigator-recommendation-reason-fade::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  content: "";
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  mask-image: linear-gradient(180deg, transparent 0%, transparent 28%, #000 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, transparent 28%, #000 100%);
+  pointer-events: none;
+}
+
+.navigator-recommendation-reason-trigger {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  width: 1.9rem;
+  height: 1.9rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255 255 255 / 0.24);
+  border-radius: 999px;
+  background-image: var(--marketing-cta-bg);
+  color: #fff;
+  box-shadow: 0 6px 14px rgb(31 27 24 / 0.16);
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.navigator-recommendation-reason-trigger:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 17px rgb(31 27 24 / 0.22);
+}
+
+.navigator-recommendation-reason-trigger:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.navigator-recommendation-reason-collapse {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.35rem auto 0;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 600;
+  transition: color 180ms ease;
+}
+
+.navigator-recommendation-reason-collapse:hover {
+  color: var(--foreground);
+}
+
+.navigator-recommendation-reason-collapse:focus-visible {
+  border-radius: 0.4rem;
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
 .navigator-recommendation-card--featured {
   grid-column: span 2;
   background:
@@ -427,9 +564,24 @@ button {
     height: auto;
     min-height: 0;
   }
+
+  .navigator-recommendation-card.navigator-recommendation-card--reason-expanded,
+  .navigator-recommendation-card.navigator-recommendation-card--reason-expanded > .navigator-recommendation-card-content {
+    height: auto;
+    min-height: 46rem;
+  }
 }
 
 @media (max-width: 640px) {
+  .navigator-recommendation-reason-copy--clamped {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .navigator-recommendation-reason-fade {
+    display: none;
+  }
+
   .navigator-recommendation-actions {
     flex-wrap: wrap;
   }

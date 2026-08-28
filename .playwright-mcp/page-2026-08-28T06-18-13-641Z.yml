@@ -1,0 +1,143 @@
+- generic [active] [ref=f17e1]:
+  - generic [ref=f17e2]:
+    - banner:
+      - generic [ref=f17e4]:
+        - link "NCT Navigator" [ref=f17e6] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f17e11]:
+          - 'button "Тема: светлая. Нажмите, чтобы переключить." [ref=f17e12]':
+            - generic [ref=f17e20]: Переключить тему
+          - button "Профиль" [ref=f17e21]
+    - main [ref=f17e25]:
+      - main [ref=f17e33]:
+        - generic [ref=f17e34]:
+          - button "Вернуться к рекомендациям" [ref=f17e35]
+          - generic [ref=f17e38]:
+            - paragraph [ref=f17e39]: Рекомендация №1
+            - heading "Почему это направление подходит" [level=1] [ref=f17e40]
+            - paragraph [ref=f17e41]: Детали рассчитаны тем же анализом, который сформировал список рекомендаций.
+          - article [ref=f17e42]:
+            - generic [ref=f17e43]:
+              - generic [ref=f17e45]:
+                - generic [ref=f17e46]: "2790104"
+                - 'generic "Медицина, биология и спорт: экзамены После 9 класса" [ref=f17e48]': Кластер 5
+              - generic [ref=f17e52]:
+                - heading "Кори тиббию ташхисӣ" [level=3] [ref=f17e53]
+                - generic [ref=f17e54]:
+                  - generic [ref=f17e55]: Коллеҷи технологӣ-фарматсевтии Тоҷикистон Ёвон
+                  - generic [ref=f17e56]: В·
+                  - generic [ref=f17e57]: Unknown
+              - generic [ref=f17e58]:
+                - paragraph [ref=f17e59]: Покрытие интересов
+                - generic [ref=f17e60]:
+                  - generic [ref=f17e62]:
+                    - generic "Психология" [ref=f17e63]
+                    - generic [ref=f17e64]: 95%
+                  - generic [ref=f17e68]:
+                    - generic "Медицина" [ref=f17e69]
+                    - generic [ref=f17e70]: 80%
+                  - generic [ref=f17e74]:
+                    - generic "Педагогика" [ref=f17e75]
+                    - generic [ref=f17e76]: 40%
+                - 'button "Открыть все интересы в подробностях. Скрыто интересов: 2" [ref=f17e79] [cursor=pointer]'
+              - generic [ref=f17e82]:
+                - generic [ref=f17e83]:
+                  - generic [ref=f17e88]: Низкий конкурс
+                  - generic [ref=f17e89]: 35%
+                - paragraph [ref=f17e92]: Низкий конкурс. Высокая вероятность поступления
+              - button "Добавить в закладки" [ref=f17e95]
+          - generic [ref=f17e99]:
+            - generic [ref=f17e100]:
+              - generic [ref=f17e101]:
+                - heading "Полное покрытие интересов" [level=2] [ref=f17e102]
+                - paragraph [ref=f17e103]: Здесь собраны все выбранные интересы, включая те, что не поместились в компактную карточку.
+              - generic [ref=f17e104]: "5"
+            - generic [ref=f17e105]:
+              - article [ref=f17e106]:
+                - generic [ref=f17e107]:
+                  - heading "Психология" [level=3] [ref=f17e108]
+                  - generic [ref=f17e109]: 95%
+                - paragraph [ref=f17e112]: Title and taxonomy indicate a strong psychology match.
+              - article [ref=f17e113]:
+                - generic [ref=f17e114]:
+                  - heading "Медицина" [level=3] [ref=f17e115]
+                  - generic [ref=f17e116]: 80%
+                - paragraph [ref=f17e119]: Card is in medicine domain, specialty family 'lab_diagnostics', taxonomy path includes 'Медицина и здоровье' and 'Медицинская диагностика'.
+              - article [ref=f17e120]:
+                - generic [ref=f17e121]:
+                  - heading "Педагогика" [level=3] [ref=f17e122]
+                  - generic [ref=f17e123]: 40%
+                - paragraph [ref=f17e126]: Institution is pedagogical, but the program evidence is indirect.
+              - article [ref=f17e127]:
+                - generic [ref=f17e128]:
+                  - heading "IT" [level=3] [ref=f17e129]
+                  - generic [ref=f17e130]: 30%
+                - paragraph [ref=f17e133]: Card title 'Кори тиббию ташхисӣ' and taxonomy 'Медицина и здоровье / Медицинская диагностика' do not explicitly mention IT.
+              - article [ref=f17e134]:
+                - generic [ref=f17e135]:
+                  - heading "Архитектура" [level=3] [ref=f17e136]
+                  - generic [ref=f17e137]: 5%
+                - paragraph [ref=f17e140]: No architectural evidence is present.
+          - generic [ref=f17e141]:
+            - heading "Описание направления" [level=2] [ref=f17e142]
+            - paragraph [ref=f17e143]: This medical diagnostics program is a strong medicine match and may involve data handling, but the card provides no explicit IT content, so it bridges the two interests only through a plausible intersection.
+            - generic [ref=f17e144]:
+              - paragraph [ref=f17e145]: Связанные профессии
+              - generic [ref=f17e146]: Медицинская диагностика
+          - generic [ref=f17e148]:
+            - heading "Основания рекомендации" [level=2] [ref=f17e149]
+            - generic [ref=f17e150]:
+              - generic [ref=f17e151]:
+                - paragraph [ref=f17e152]: Общая уверенность
+                - paragraph [ref=f17e153]: 40%
+              - generic [ref=f17e154]:
+                - paragraph [ref=f17e155]: Смысловое совпадение
+                - paragraph [ref=f17e156]: 36%
+              - generic [ref=f17e157]:
+                - paragraph [ref=f17e158]: Совпадение по направлению
+                - paragraph [ref=f17e159]: 100%
+            - generic [ref=f17e160]:
+              - generic [ref=f17e161]: медицинская
+              - generic [ref=f17e162]: здравоохранение
+              - generic [ref=f17e163]: медицина
+            - generic [ref=f17e164]:
+              - paragraph [ref=f17e165]: Фактические основания
+              - list [ref=f17e166]:
+                - listitem [ref=f17e167]:
+                  - generic [ref=f17e169]: Card title 'Кори тиббию ташхисӣ'
+                - listitem [ref=f17e170]:
+                  - generic [ref=f17e172]: "Taxonomy path: Медицина и здоровье / Медицинская диагностика"
+                - listitem [ref=f17e173]:
+                  - generic [ref=f17e175]: "Specialty family: lab_diagnostics"
+                - listitem [ref=f17e176]:
+                  - generic [ref=f17e178]: "Источник каталога: 9_class.pdf, стр. 28."
+          - generic [ref=f17e179]:
+            - heading "Ограничения" [level=2] [ref=f17e180]
+            - list [ref=f17e181]:
+              - listitem [ref=f17e182]:
+                - generic [ref=f17e184]: No explicit IT or informatics content in the card.
+              - listitem [ref=f17e185]:
+                - generic [ref=f17e187]: Confidence limited by derived mapping and lack of curriculum details.
+              - listitem [ref=f17e188]:
+                - generic [ref=f17e190]: Прямое покрытие всех выбранных интересов не подтверждено структурой ответа AI.
+          - generic [ref=f17e191]:
+            - heading "Близкие варианты из этой выдачи" [level=2] [ref=f17e192]
+            - generic [ref=f17e193]:
+              - button "2790131 Кори ҳамширагӣ 35%" [ref=f17e194]:
+                - generic [ref=f17e195]:
+                  - text: "2790131"
+                  - generic [ref=f17e196]: Кори ҳамширагӣ
+                - generic [ref=f17e197]: 35%
+              - button "2790106 Кори ҳамширагӣ 35%" [ref=f17e198]:
+                - generic [ref=f17e199]:
+                  - text: "2790106"
+                  - generic [ref=f17e200]: Кори ҳамширагӣ
+                - generic [ref=f17e201]: 35%
+              - button "2790108 Кори фармасевтӣ 35%" [ref=f17e202]:
+                - generic [ref=f17e203]:
+                  - text: "2790108"
+                  - generic [ref=f17e204]: Кори фармасевтӣ
+                - generic [ref=f17e205]: 35%
+          - button "Выбрать эту цель" [ref=f17e206]
+  - region "Notifications alt+T"
+  - alert [ref=f17e32]

@@ -1,0 +1,40 @@
+- generic [active] [ref=f11e1]:
+  - generic [ref=f11e2]:
+    - banner:
+      - generic [ref=f11e4]:
+        - link "NCT Navigator" [ref=f11e6] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f11e11]:
+          - 'button "Тема: светлая. Нажмите, чтобы переключить." [ref=f11e12]':
+            - generic [ref=f11e20]: Переключить тему
+          - button "Профиль" [ref=f11e21]
+    - main [ref=f11e25]:
+      - main [ref=f11e271]:
+        - generic [ref=f11e273]:
+          - generic [ref=f11e280]:
+            - heading "Собираем рекомендации НЦТ по локальным фактам" [level=1] [ref=f11e281]
+            - paragraph [ref=f11e282]: AI сначала анализирует, как связаны ваши интересы, а затем мы ищем только реальные программы НЦТ в локальной базе. В ответ попадают только проверенные кандидаты с учётом города и уровня образования.
+          - generic [ref=f11e283]:
+            - generic [ref=f11e284]:
+              - generic [ref=f11e285]:
+                - paragraph [ref=f11e286]: Учитываем в подборе
+                - generic [ref=f11e287]:
+                  - generic [ref=f11e288]: Город не выбран
+                  - generic [ref=f11e289]: Уровень не выбран
+                  - generic [ref=f11e290]: 5 направл. интересов
+                  - generic [ref=f11e291]: AI-связи интересов
+                  - generic [ref=f11e292]: реальные кандидаты НЦТ
+              - generic [ref=f11e293]:
+                - generic [ref=f11e298]:
+                  - generic [ref=f11e299]: 33%
+                  - text: по реальным этапам
+                - generic [ref=f11e300]: 2 / 4
+            - generic [ref=f11e306]:
+              - paragraph [ref=f11e314]: 1. Составляем список профессий
+              - generic [ref=f11e325]:
+                - paragraph [ref=f11e326]: 2. Сверяем интересы с каталогом
+                - paragraph [ref=f11e327]: Сопоставляем профиль с локальным каталогом профессий и отбрасываем неподходящие маршруты.
+              - paragraph [ref=f11e337]: 3. Ищем коды из НЦТ
+              - paragraph [ref=f11e346]: 4. Проверяем shortlist и ранжируем
+  - region "Notifications alt+T"
+  - alert [ref=f11e107]: NCT Navigator

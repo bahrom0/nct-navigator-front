@@ -37,6 +37,7 @@ export interface NCTMatchResult {
   title_ru: string
   institution: string
   city: string
+  admissionPlan?: number
   confidence: number
   career_matches: string[]
   matchScore: number
