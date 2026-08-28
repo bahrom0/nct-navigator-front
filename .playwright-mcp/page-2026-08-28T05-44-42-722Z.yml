@@ -1,0 +1,111 @@
+- generic [active] [ref=f8e1]:
+  - generic [ref=f8e2]:
+    - banner:
+      - generic [ref=f8e4]:
+        - link "NCT Navigator" [ref=f8e6] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f8e11]:
+          - 'button "Тема: тёмная. Нажмите, чтобы переключить." [ref=f8e594]':
+            - generic [ref=f8e20]: Переключить тему
+          - button "Профиль" [ref=f8e21]
+    - main [ref=f8e25]:
+      - main [ref=f8e598]:
+        - generic [ref=f8e599]:
+          - button "Вернуться к рекомендациям" [ref=f8e600]
+          - generic [ref=f8e603]:
+            - paragraph [ref=f8e604]: Рекомендация №1
+            - heading "Почему это направление подходит" [level=1] [ref=f8e605]
+            - paragraph [ref=f8e606]: Детали рассчитаны тем же анализом, который сформировал список рекомендаций.
+          - article [ref=f8e607]:
+            - generic [ref=f8e608]:
+              - generic [ref=f8e610]:
+                - generic [ref=f8e611]: "2790104"
+                - 'generic "Медицина, биология и спорт: экзамены После 9 класса" [ref=f8e613]': Кластер 5
+              - generic [ref=f8e617]:
+                - heading "Кори тиббию ташхисӣ" [level=3] [ref=f8e618]
+                - generic [ref=f8e619]:
+                  - generic [ref=f8e620]: Коллеҷи технологӣ-фарматсевтии Тоҷикистон Ёвон
+                  - generic [ref=f8e621]: В·
+                  - generic [ref=f8e622]: Unknown
+              - generic [ref=f8e623]:
+                - paragraph [ref=f8e624]: Покрытие интересов
+                - generic [ref=f8e625]:
+                  - generic [ref=f8e626]:
+                    - generic [ref=f8e627]:
+                      - generic [ref=f8e628]: IT
+                      - generic [ref=f8e629]: 30%
+                    - paragraph [ref=f8e632]: Card title 'Кори тиббию ташхисӣ' and taxonomy 'Медицина и здоровье / Медицинская диагностика' do not explicitly mention IT.
+                  - generic [ref=f8e633]:
+                    - generic [ref=f8e634]:
+                      - generic [ref=f8e635]: Медицина
+                      - generic [ref=f8e636]: 80%
+                    - paragraph [ref=f8e639]: Card is in medicine domain, specialty family 'lab_diagnostics', taxonomy path includes 'Медицина и здоровье' and 'Медицинская диагностика'.
+              - generic [ref=f8e640]:
+                - generic [ref=f8e641]:
+                  - generic [ref=f8e646]: Низкий конкурс
+                  - generic [ref=f8e647]: 35%
+                - paragraph [ref=f8e650]: Низкий конкурс. Высокая вероятность поступления
+              - button "Добавить в закладки" [ref=f8e653]
+          - generic [ref=f8e657]:
+            - heading "Описание направления" [level=2] [ref=f8e658]
+            - paragraph [ref=f8e659]: This medical diagnostics program is a strong medicine match and may involve data handling, but the card provides no explicit IT content, so it bridges the two interests only through a plausible intersection.
+            - generic [ref=f8e660]:
+              - paragraph [ref=f8e661]: Связанные профессии
+              - generic [ref=f8e662]: Медицинская диагностика
+          - generic [ref=f8e664]:
+            - heading "Основания рекомендации" [level=2] [ref=f8e665]
+            - generic [ref=f8e666]:
+              - generic [ref=f8e667]:
+                - paragraph [ref=f8e668]: Общая уверенность
+                - paragraph [ref=f8e669]: 40%
+              - generic [ref=f8e670]:
+                - paragraph [ref=f8e671]: Смысловое совпадение
+                - paragraph [ref=f8e672]: 36%
+              - generic [ref=f8e673]:
+                - paragraph [ref=f8e674]: Совпадение по направлению
+                - paragraph [ref=f8e675]: 100%
+            - generic [ref=f8e676]:
+              - generic [ref=f8e677]: медицинская
+              - generic [ref=f8e678]: здравоохранение
+              - generic [ref=f8e679]: медицина
+            - generic [ref=f8e680]:
+              - paragraph [ref=f8e681]: Фактические основания
+              - list [ref=f8e682]:
+                - listitem [ref=f8e683]:
+                  - generic [ref=f8e685]: Card title 'Кори тиббию ташхисӣ'
+                - listitem [ref=f8e686]:
+                  - generic [ref=f8e688]: "Taxonomy path: Медицина и здоровье / Медицинская диагностика"
+                - listitem [ref=f8e689]:
+                  - generic [ref=f8e691]: "Specialty family: lab_diagnostics"
+                - listitem [ref=f8e692]:
+                  - generic [ref=f8e694]: "Источник каталога: 9_class.pdf, стр. 28."
+          - generic [ref=f8e695]:
+            - heading "Ограничения" [level=2] [ref=f8e696]
+            - list [ref=f8e697]:
+              - listitem [ref=f8e698]:
+                - generic [ref=f8e700]: No explicit IT or informatics content in the card.
+              - listitem [ref=f8e701]:
+                - generic [ref=f8e703]: Confidence limited by derived mapping and lack of curriculum details.
+              - listitem [ref=f8e704]:
+                - generic [ref=f8e706]: Прямое покрытие всех выбранных интересов не подтверждено структурой ответа AI.
+          - generic [ref=f8e707]:
+            - heading "Близкие варианты из этой выдачи" [level=2] [ref=f8e708]
+            - generic [ref=f8e709]:
+              - button "2790131 Кори ҳамширагӣ 35%" [ref=f8e710]:
+                - generic [ref=f8e711]:
+                  - text: "2790131"
+                  - generic [ref=f8e712]: Кори ҳамширагӣ
+                - generic [ref=f8e713]: 35%
+              - button "2790106 Кори ҳамширагӣ 35%" [ref=f8e714]:
+                - generic [ref=f8e715]:
+                  - text: "2790106"
+                  - generic [ref=f8e716]: Кори ҳамширагӣ
+                - generic [ref=f8e717]: 35%
+              - button "2790108 Кори фармасевтӣ 35%" [ref=f8e718]:
+                - generic [ref=f8e719]:
+                  - text: "2790108"
+                  - generic [ref=f8e720]: Кори фармасевтӣ
+                - generic [ref=f8e721]: 35%
+          - button "Выбрать эту цель" [ref=f8e722]
+  - region "Notifications alt+T"
+  - alert [ref=f8e593]: NCT Navigator

@@ -13,7 +13,7 @@
     "nct:stage2:verify": "node scripts/nct_db/verify-stage2.mjs",
     "nct:stage3": "node scripts/nct_db/stage3.mjs",
     "nct:stage3:verify": "node scripts/nct_db/verify-stage3.mjs",
-    "nct:recommendations:verify": "tsx --tsconfig backend/tsconfig.json backend/scripts/evaluate-recommendation-production.ts",
+    "nct:recommendations:verify": "tsx --tsconfig backend/tsconfig.json backend/scripts/evaluate-ai-first-recommendations.ts",
     "start": "next start",
     "lint": "eslint"
   },

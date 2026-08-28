@@ -158,6 +158,20 @@ export default function AnalyzePage() {
         },
       };
 
+      const finishWithResult = (resultSet: RecommendationResultSet) => {
+        if (!Array.isArray(resultSet.ranked)) {
+          throw new Error("Ответ анализа не содержит список рекомендаций");
+        }
+
+        cacheResults({
+          ...resultSet,
+          categories: payload.categories,
+        });
+        setStatus("success");
+        setProgress(1);
+        goToResults();
+      };
+
       logActivityEvent(
         "start_analysis",
         `Анализ направлений: ${categories.map((category) => category.name).join(", ")}`,
@@ -201,13 +215,7 @@ export default function AnalyzePage() {
             throw new Error(event.error || "Ошибка анализа");
           }
 
-          cacheResults({
-            ...event.data,
-            categories: payload.categories,
-          });
-          setStatus("success");
-          setProgress(1);
-          goToResults();
+          finishWithResult(event.data);
           return;
         }
       }
@@ -221,13 +229,7 @@ export default function AnalyzePage() {
           throw new Error(event.error || "Ошибка анализа");
         }
 
-        cacheResults({
-          ...event.data,
-          categories: payload.categories,
-        });
-        setStatus("success");
-        setProgress(1);
-        goToResults();
+        finishWithResult(event.data);
         return;
       }
 
@@ -294,15 +296,12 @@ export default function AnalyzePage() {
               <Stethoscope className="h-6 w-6" />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--marketing-muted)]">
-                Живой pipeline рекомендаций
-              </p>
-              <h1 className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-[var(--marketing-foreground)] sm:text-3xl">
+                            <h1 className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-[var(--marketing-foreground)] sm:text-3xl">
                 Собираем рекомендации НЦТ по локальным фактам
               </h1>
               <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--marketing-muted)] sm:text-base">
-                Сначала строим profession shortlist, потом ищем коды НЦТ с жёсткими фильтрами по городу и уровню.
-                AI подключается только к валидному локальному shortlist и не может добавить свои коды.
+                AI сначала анализирует, как связаны ваши интересы, а затем мы ищем только реальные программы НЦТ в локальной базе.
+                В ответ попадают только проверенные кандидаты с учётом города и уровня образования.
               </p>
             </div>
           </div>
@@ -318,8 +317,8 @@ export default function AnalyzePage() {
                     onboardingData.studyCity ? `Город: ${onboardingData.studyCity}` : "Город не выбран",
                     onboardingData.educationLevel ? `Уровень: ${onboardingData.educationLevel}` : "Уровень не выбран",
                     `${categories.length} направл. интересов`,
-                    "local shortlist",
-                    "allowlist validation",
+                    "AI-связи интересов",
+                    "реальные кандидаты НЦТ",
                   ].map((item) => (
                     <span
                       key={item}

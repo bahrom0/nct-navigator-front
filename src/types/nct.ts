@@ -1,3 +1,12 @@
+export type RecommendationRelationType = "direct" | "bridge" | "adjacent"
+
+export interface RecommendationInterestCoverage {
+  interestId: string
+  interest: string
+  score: number
+  evidence: string[]
+}
+
 export interface NCTCode {
   code: string
   title_ru: string
@@ -33,6 +42,11 @@ export interface NCTMatchResult {
   matchScore: number
   finalScore: number
   matchedKeywords: string[]
+  relationType?: RecommendationRelationType
+  candidateKey?: string
+  interestCoverage?: RecommendationInterestCoverage[]
+  limitations?: string[]
+  evidence?: string[]
   cluster?: number
   cluster_name_ru?: string
   study_form?: string[]

@@ -1,0 +1,41 @@
+NCT Navigator — олимпийская презентация, 7 слайдов
+
+Коммуникационная задача:
+К концу выступления жюри должно понять, что NCT Navigator превращает сложный выбор после НЦТ в проверяемый маршрут: профиль абитуриента -> поиск по локальным данным -> объяснимый выбор -> план действий.
+
+Аудитория и тон:
+Олимпиадное жюри и соперники. Крупный текст, один тезис на слайд, без мелких UI-деталей и декоративных фотографий. Стиль адаптирован из Antique Parian Nocturne: графитовый фон, кремовая типографика, мягкий бронзовый акцент, синий NCT как точечный акцент; без статуй и посторонних предметов.
+
+План слайдов:
+1. NCT Navigator — навигатор поступления для абитуриентов Таджикистана.
+2. Проблема: информации много, но персонального маршрута нет.
+3. Решение: профиль -> поиск и фильтры -> объяснение -> план и коучинг.
+4. Описание: проект соединяет официальные данные НЦТ с понятным продуктовым маршрутом; локальный релиз: 1 389 published offers, 2 releases, 140 excluded for review.
+5. Архитектура: UI/API -> candidate pool and hard filters -> local NCT search/ranking -> AI interpretation/rerank only on shortlist -> goal/interview/plan/coach.
+6. Статистика ЦВЭ-2026: 139 163 in main registration; 116 560 after grade 11/professional and 22 603 after grade 9; 10 394 in second registration; 55 exam sites across 22 cities/districts, 1 527 classrooms.
+7. Заключение: реальные данные НЦТ + понятный выбор + следующий шаг.
+
+Internal project sources used:
+- src/app/recommendations/page.tsx — user-facing recommendations flow, filters, cache, selection -> interview.
+- src/lib/recommendations/service.ts — orchestrates interest analysis, candidate pool, local ranking, AI final ranking, fallback.
+- src/lib/search/engine.ts — local search index and scoring.
+- src/lib/ai/analyze-interest-profile.ts — AI interpretation with local fallback on failure.
+- src/lib/ai/finalize-recommendations.ts — AI receives shortlist and validates structured candidates.
+- data/exports/ntc/nct_release_manifest.json — snapshot 2026-07-15: 2 releases, 1389 published, 140 excluded.
+- data/reports/ntc/stage3_quality.json — 1529 draft, 1389 published, 140 excluded; 704 after_11 and 685 after_9; search matches published.
+- data/reports/ntc/product_features.md — product-facing capabilities and release scope.
+- data/reports/ntc/parser_coverage.json — 1529 parsed rows; 1414 ok, 115 warning; 5 clusters.
+
+External official sources for slide 6:
+- https://www.ntc.tj/tj/hamai-khabarho/o-ozi-asosii-imd-2026.html — main 2026 registration totals and 55 exam sites / 22 cities-districts / 1527 classrooms.
+- https://www.ntc.tj/tj/hamai-khabarho/davri-duyumi-imd-2026-ism-oi-a-va-b.html — second registration total 10394 and breakdown 7245 / 3149.
+- https://www.ntc.tj/tj/hamai-khabarho/arzishi-khizmatrason-dar-imd-2026.html — 2026 NCT service context.
+
+Asset provenance:
+- NCT mark: C:/Users/bahro/Desktop/nct-navigator-front/public/presentation/icon-nct-dark.png and icon-nct-light.png; local project assets, used as supplied.
+- User-provided reference logos: C:/Users/bahro/Downloads/icon_nct (1).png and C:/Users/bahro/Downloads/icon_nct_light.png; inspected, not modified.
+
+Copy guardrails:
+- Do not present 1389 as number of applicants; it is the local published admission-offer record count.
+- Do not sum 139163 and 10394 as unique people; they are published counts for separate registration periods and the second period includes 613 applicants who missed an earlier exam.
+- Do not claim Supabase is the source of published NCT data; the local release is the verified source used in this deck.

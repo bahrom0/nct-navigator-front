@@ -15,9 +15,10 @@ export function createRecommendationSnapshot(
   const matchedInterests = recommendation.matchedInterests ?? []
   const matchedCareers = recommendation.matchedCareers ?? recommendation.career_matches
   const diagnostics = context.pipeline.diagnostics
+  const pipelineVersion = context.pipeline.pipelineVersion
 
   return {
-    version: 1,
+    version: pipelineVersion === "ai_v2" ? 2 : 1,
     selectedAt: new Date().toISOString(),
     inputs: {
       categories: context.categories,
@@ -35,6 +36,10 @@ export function createRecommendationSnapshot(
       explanation: recommendation.reasoning,
       matchedInterests,
       matchedCareers,
+      relationType: recommendation.relationType,
+      interestCoverage: recommendation.interestCoverage,
+      limitations: recommendation.limitations,
+      evidence: recommendation.evidence,
       relatedCodes,
       selectedProfessionKey: recommendation.selectedProfessionKey,
       professionRouteRelation: recommendation.professionRouteRelation,
@@ -65,12 +70,16 @@ export function createRecommendationSnapshot(
       },
     },
     diagnostics: {
+      pipelineVersion,
       catalogVersion: diagnostics?.catalogVersion,
       aiFallbackUsed: diagnostics?.ai.fallbackUsed ?? context.pipeline.usedFallbacks.length > 0,
       usedFallbacks: context.pipeline.usedFallbacks,
       rejectedKeys: diagnostics?.ai.rejectedKeys ?? [],
       violations: diagnostics?.violations,
+      aiCalls: context.pipeline.aiCalls?.diagnostics,
     },
+    pipelineVersion,
+    resultSummary: context.pipeline.resultSummary,
     filters,
     overallConfidence: context.overallConfidence,
   }

@@ -18,6 +18,10 @@ type PersistedRecommendationDetail = {
   explanation: string
   matchedInterests: string[]
   matchedCareers: string[]
+  interestCoverage: NonNullable<RecommendationCacheData["ranked"][number]["interestCoverage"]>
+  matchedKeywords: string[]
+  limitations: string[]
+  evidence: string[]
   relatedCodes: string[]
   overallConfidence: number
   institution?: string
@@ -47,6 +51,10 @@ function toPersistedRecommendationDetail(bundle: ActiveGoalBundle | null, reques
     explanation: bundle.recommendationSnapshot.selection.explanation,
     matchedInterests: bundle.recommendationSnapshot.selection.matchedInterests,
     matchedCareers: bundle.recommendationSnapshot.selection.matchedCareers,
+    interestCoverage: bundle.recommendationSnapshot.selection.interestCoverage ?? [],
+    matchedKeywords: bundle.recommendationSnapshot.selection.explanationFacts?.matchedKeywords ?? [],
+    limitations: bundle.recommendationSnapshot.selection.limitations ?? [],
+    evidence: bundle.recommendationSnapshot.selection.evidence ?? [],
     relatedCodes: bundle.recommendationSnapshot.selection.relatedCodes,
     overallConfidence: bundle.recommendationSnapshot.overallConfidence,
     institution: bundle.goal.university,
@@ -195,6 +203,12 @@ export default function ExplainContent() {
       { label: "Уверенность выдачи", value: persistedDetail!.overallConfidence },
     ]
 
+  const explanation = recommendation?.reasoning ?? persistedDetail?.explanation ?? ""
+  const matchedCareers = recommendation?.matchedCareers ?? recommendation?.career_matches ?? persistedDetail?.matchedCareers ?? []
+  const matchedKeywords = recommendation?.matchedKeywords ?? persistedDetail?.matchedKeywords ?? []
+  const evidence = recommendation?.evidence ?? persistedDetail?.evidence ?? []
+  const limitations = recommendation?.limitations ?? persistedDetail?.limitations ?? []
+
   return (
     <main className="flex flex-1 flex-col px-6 sm:px-8">
       <div className="mx-auto w-full max-w-3xl space-y-6 py-6">
@@ -224,9 +238,7 @@ export default function ExplainContent() {
           institution={recommendation?.institution ?? persistedDetail?.institution ?? "Выбранное учебное заведение"}
           city={recommendation?.city ?? persistedDetail?.city ?? "Город уточняется"}
           confidence={recommendation?.confidence ?? persistedDetail!.confidence}
-          career_matches={recommendation?.matchedCareers ?? recommendation?.career_matches ?? persistedDetail!.matchedCareers}
-          whyItFits={recommendation?.reasoning ?? persistedDetail!.explanation}
-          matchedInterests={recommendation?.matchedInterests ?? persistedDetail!.matchedInterests}
+          interestCoverage={recommendation?.interestCoverage ?? persistedDetail?.interestCoverage}
           cluster={recommendation?.cluster}
           educationLevel={recommendation?.education_level}
           taxonomy={recommendation ? {
@@ -236,6 +248,24 @@ export default function ExplainContent() {
           } : undefined}
           variant="compact"
         />
+
+        <section className="rounded-[20px] border border-border bg-card-bg p-6">
+          <h2 className="text-base font-semibold text-foreground">Описание направления</h2>
+          <p className="mt-3 text-sm leading-relaxed text-text-secondary">{explanation}</p>
+
+          {matchedCareers.length > 0 ? (
+            <div className="mt-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-text-muted">Связанные профессии</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {matchedCareers.map((career) => (
+                  <span key={career} className="rounded-[8px] border border-border bg-background px-2.5 py-1 text-xs text-text-secondary">
+                    {career}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ) : null}
+        </section>
 
         <section className="rounded-[20px] border border-border bg-card-bg p-6">
           <h2 className="text-base font-semibold text-foreground">Основания рекомендации</h2>
@@ -250,9 +280,9 @@ export default function ExplainContent() {
             ))}
           </div>
 
-          {recommendation?.matchedKeywords.length ? (
+          {matchedKeywords.length ? (
             <div className="mt-5 flex flex-wrap gap-2">
-              {recommendation.matchedKeywords.slice(0, 6).map((keyword) => (
+              {matchedKeywords.slice(0, 6).map((keyword) => (
                 <span key={keyword} className="rounded-[8px] border border-border bg-background px-2.5 py-1 text-xs text-text-secondary">
                   {keyword}
                 </span>
@@ -267,7 +297,35 @@ export default function ExplainContent() {
               ))}
             </div>
           ) : null}
+
+          {evidence.length > 0 ? (
+            <div className="mt-5 rounded-[16px] border border-border bg-background/40 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-text-muted">Фактические основания</p>
+              <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-text-secondary">
+                {evidence.map((item, index) => (
+                  <li key={`${item}-${index}`} className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </section>
+
+        {limitations.length > 0 ? (
+          <section className="rounded-[20px] border border-amber-500/20 bg-amber-500/5 p-6">
+            <h2 className="text-base font-semibold text-amber-800 dark:text-amber-200">Ограничения</h2>
+            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-text-secondary">
+              {limitations.map((limitation, index) => (
+                <li key={`${limitation}-${index}`} className="flex gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" aria-hidden="true" />
+                  <span>{limitation}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
         {recommendation && related.length > 0 ? (
           <section className="rounded-[20px] border border-border bg-card-bg p-6">

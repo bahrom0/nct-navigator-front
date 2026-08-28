@@ -1,0 +1,639 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/gjxoco",
+    "id": "gjxoco",
+    "slide": 1,
+    "layoutId": "0f16b76f-5cdc-4910-8fe6-69424d2f8524",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "b98db9c9-a441-4939-88bb-6541eef780b1",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Arial"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "0f16b76f-5cdc-4910-8fe6-69424d2f8524",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "b98db9c9-a441-4939-88bb-6541eef780b1",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "b98db9c9-a441-4939-88bb-6541eef780b1",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ovylsrmp",
+      "id": "1",
+      "name": "title-orbit-outer",
+      "bbox": [
+        812,
+        126,
+        360,
+        237.6
+      ],
+      "geometry": "ellipse",
+      "lineColor": "rgba(213, 188, 149, 0.26)",
+      "lineWidth": 1
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nup4j654",
+      "id": "2",
+      "name": "title-orbit-inner",
+      "bbox": [
+        862.4,
+        176.4,
+        259.2,
+        136.8
+      ],
+      "geometry": "ellipse",
+      "lineColor": "rgba(213, 188, 149, 0.26)",
+      "lineWidth": 1
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mtg3q14j",
+      "id": "3",
+      "name": "title-orbit-dot",
+      "bbox": [
+        1085.6,
+        162,
+        7,
+        7
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#2A8EF0",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1s7mhwne",
+      "id": "4",
+      "name": "title-dot-1",
+      "bbox": [
+        748,
+        260,
+        5,
+        5
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#D5BC95",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0rylor6t",
+      "id": "5",
+      "name": "title-dot-2",
+      "bbox": [
+        1180,
+        498,
+        6,
+        6
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#2A8EF0",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zq5kfm58",
+      "id": "6",
+      "name": "title-kicker",
+      "bbox": [
+        96,
+        156,
+        560,
+        28
+      ],
+      "geometry": "rect",
+      "text": "NCT / НАВИГАТОР ПОСТУПЛЕНИЯ",
+      "textPreview": "NCT / НАВИГАТОР ПОСТУПЛЕНИЯ",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 18,
+        "typeface": "Arial",
+        "color": "#79B9FF",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "NCT / НАВИГАТОР ПОСТУПЛЕНИЯ"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "NCT / НАВИГАТОР ПОСТУПЛЕНИЯ",
+          "lineSpacingPercent": 108000,
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Arial",
+            "color": "#79B9FF",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1.08
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "NCT / НАВИГАТОР ПОСТУПЛЕНИЯ",
+              "fontSize": 18,
+              "typeface": "Arial",
+              "color": "#79B9FF",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1.08
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/epw3mhon",
+      "id": "7",
+      "name": "title-main",
+      "bbox": [
+        96,
+        206,
+        700,
+        92
+      ],
+      "geometry": "rect",
+      "text": "NCT Navigator",
+      "textPreview": "NCT Navigator",
+      "resolvedFontSize": 64,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 64,
+        "typeface": "Arial",
+        "color": "#F5F0E7",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "NCT Navigator"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "NCT Navigator",
+          "lineSpacingPercent": 94000,
+          "resolvedTextStyle": {
+            "fontSize": 64,
+            "typeface": "Arial",
+            "color": "#F5F0E7",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 0.94
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "NCT Navigator",
+              "fontSize": 64,
+              "typeface": "Arial",
+              "color": "#F5F0E7",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 0.94
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lormtgni",
+      "id": "8",
+      "name": "title-subtitle",
+      "bbox": [
+        100,
+        318,
+        620,
+        84
+      ],
+      "geometry": "rect",
+      "text": "От интересов и условий поступления —\nк конкретному коду НЦТ и плану действий.",
+      "textPreview": "От интересов и условий поступления — | к конкретному коду НЦТ и плану действий.",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 28,
+        "typeface": "Arial",
+        "color": "#E9E0D1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "От интересов и условий поступления —"
+          },
+          {
+            "index": 2,
+            "text": "к конкретному коду НЦТ и плану действий."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "От интересов и условий поступления —",
+          "lineSpacingPercent": 104000,
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "typeface": "Arial",
+            "color": "#E9E0D1",
+            "alignment": "left",
+            "lineSpacing": 1.04
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "От интересов и условий поступления —",
+              "fontSize": 28,
+              "typeface": "Arial",
+              "color": "#E9E0D1",
+              "alignment": "left",
+              "lineSpacing": 1.04
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "к конкретному коду НЦТ и плану действий.",
+          "lineSpacingPercent": 104000,
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "typeface": "Arial",
+            "color": "#E9E0D1",
+            "alignment": "left",
+            "lineSpacing": 1.04
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "к конкретному коду НЦТ и плану действий.",
+              "fontSize": 28,
+              "typeface": "Arial",
+              "color": "#E9E0D1",
+              "alignment": "left",
+              "lineSpacing": 1.04
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/knil0bmx",
+      "id": "9",
+      "name": "title-accent-rule",
+      "bbox": [
+        100,
+        438,
+        84,
+        4
+      ],
+      "geometry": "rect",
+      "fillColor": "#2A8EF0",
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mdoj2pkf",
+      "id": "10",
+      "name": "title-context",
+      "bbox": [
+        100,
+        460,
+        560,
+        32
+      ],
+      "geometry": "rect",
+      "text": "Проект для абитуриентов Таджикистана",
+      "textPreview": "Проект для абитуриентов Таджикистана",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 20,
+        "typeface": "Arial",
+        "color": "#D5BC95",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Проект для абитуриентов Таджикистана"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Проект для абитуриентов Таджикистана",
+          "lineSpacingPercent": 108000,
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "Arial",
+            "color": "#D5BC95",
+            "alignment": "left",
+            "lineSpacing": 1.08
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Проект для абитуриентов Таджикистана",
+              "fontSize": 20,
+              "typeface": "Arial",
+              "color": "#D5BC95",
+              "alignment": "left",
+              "lineSpacing": 1.08
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/c3ixcv2l",
+      "id": "11",
+      "bbox": [
+        818,
+        250,
+        350,
+        142
+      ],
+      "geometry": "rect",
+      "alt": "Логотип NCT",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "imageMask": {
+        "geometry": "rect"
+      },
+      "asset": {
+        "assetId": "b0e8da29-ad4f-4aa2-bcfe-909cd44c1c28",
+        "contentType": "image/png",
+        "byteLength": 125198
+      }
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/of6l4z2l",
+      "id": "12",
+      "name": "title-footer",
+      "bbox": [
+        100,
+        614,
+        320,
+        24
+      ],
+      "geometry": "rect",
+      "text": "ОЛИМПИАДА  •  2026",
+      "textPreview": "ОЛИМПИАДА  •  2026",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 17,
+        "typeface": "Arial",
+        "color": "#9AA0A5",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ОЛИМПИАДА  •  2026"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ОЛИМПИАДА  •  2026",
+          "lineSpacingPercent": 108000,
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "Arial",
+            "color": "#9AA0A5",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1.08
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ОЛИМПИАДА  •  2026",
+              "fontSize": 17,
+              "typeface": "Arial",
+              "color": "#9AA0A5",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1.08
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/90f2d4j6",
+      "id": "13",
+      "name": "title-page",
+      "bbox": [
+        1104,
+        668,
+        104,
+        24
+      ],
+      "geometry": "rect",
+      "text": "01 / 07",
+      "textPreview": "01 / 07",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "Arial",
+        "color": "#E9E0D1",
+        "bold": true,
+        "alignment": "right",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "01 / 07"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "01 / 07",
+          "lineSpacingPercent": 108000,
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Arial",
+            "color": "#E9E0D1",
+            "bold": true,
+            "alignment": "right",
+            "lineSpacing": 1.08
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "01 / 07",
+              "fontSize": 16,
+              "typeface": "Arial",
+              "color": "#E9E0D1",
+              "bold": true,
+              "alignment": "right",
+              "lineSpacing": 1.08
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

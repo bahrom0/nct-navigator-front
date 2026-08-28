@@ -1,14 +1,15 @@
 "use client"
 
-import { useEffect, useMemo, useRef, useState } from "react"
+import { useMemo, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, ExternalLink, FlaskConical, GraduationCap, Medal } from "lucide-react"
+import { ExternalLink, FlaskConical, GraduationCap, Medal } from "lucide-react"
 import { BookmarkButton } from "@/components/signal-cards/BookmarkButton"
 import { CompetitionMeter } from "@/components/strategy/CompetitionMeter"
 import { evaluateCompetitionForCode } from "@/features/strategy/competition-meter"
 import { useRouter } from "next/navigation"
 import { logActivityEvent } from "@/lib/activity-logger"
 import { CLUSTER_NAMES, CLUSTER_EXAMS, EDUCATION_LEVEL_LABELS } from "@/lib/db/types"
+import type { RecommendationInterestCoverage, RecommendationRelationType } from "@/types/nct"
 
 interface NCTSignalCardProps {
   code: string
@@ -16,9 +17,8 @@ interface NCTSignalCardProps {
   institution: string
   city: string
   confidence: number
-  career_matches: string[]
-  whyItFits: string
-  matchedInterests: string[]
+  relationType?: RecommendationRelationType
+  interestCoverage?: RecommendationInterestCoverage[]
   cluster?: number
   educationLevel?: "after_9" | "after_11"
   taxonomy?: {
@@ -32,7 +32,15 @@ interface NCTSignalCardProps {
 }
 
 const ACCENT_COLOR = "#315fca"
-const COLLAPSED_REASON_HEIGHT = 120
+const RELATION_LABELS: Record<RecommendationRelationType, string> = {
+  direct: "Прямой путь",
+  bridge: "Связующий путь",
+  adjacent: "Смежный путь",
+}
+
+function coveragePercent(score: number): number {
+  return Math.round(Math.max(0, Math.min(1, score)) * 100)
+}
 
 export function NCTSignalCard({
   code,
@@ -40,9 +48,8 @@ export function NCTSignalCard({
   institution,
   city,
   confidence,
-  career_matches,
-  whyItFits,
-  matchedInterests,
+  relationType,
+  interestCoverage,
   cluster,
   educationLevel = "after_11",
   taxonomy,
@@ -54,29 +61,12 @@ export function NCTSignalCard({
   const router = useRouter()
   const confidencePercent = Math.round(confidence * 100)
   const [showTooltip, setShowTooltip] = useState(false)
-  const [isReasonExpanded, setIsReasonExpanded] = useState(false)
-  const [canExpandReason, setCanExpandReason] = useState(false)
-  const reasonTextRef = useRef<HTMLParagraphElement>(null)
 
   const clusterName = cluster !== undefined ? CLUSTER_NAMES[cluster] : taxonomy?.cluster_name_ru
   const exams = cluster !== undefined ? CLUSTER_EXAMS[educationLevel]?.[cluster] ?? [] : []
   const rankTone = rank === 1 ? "gold" : rank === 2 ? "silver" : rank === 3 ? "bronze" : null
 
   const competition = useMemo(() => evaluateCompetitionForCode(code, confidence), [code, confidence])
-
-  useEffect(() => {
-    const measureReason = () => {
-      const height = reasonTextRef.current?.scrollHeight ?? 0
-      setCanExpandReason(height > COLLAPSED_REASON_HEIGHT + 1)
-    }
-
-    const frame = window.requestAnimationFrame(measureReason)
-    window.addEventListener("resize", measureReason)
-    return () => {
-      window.cancelAnimationFrame(frame)
-      window.removeEventListener("resize", measureReason)
-    }
-  }, [whyItFits])
 
   const handleExplain = () => {
     logActivityEvent("view_recommendation", `Подробнее: ${code} - ${title_ru}`)
@@ -105,12 +95,11 @@ export function NCTSignalCard({
         variant === "featured" ? "navigator-recommendation-card--featured" : "",
         variant === "compact" ? "navigator-recommendation-card--compact" : "",
         rankTone ? `navigator-recommendation-card--rank-${rankTone}` : "",
-        isReasonExpanded ? "navigator-recommendation-card--expanded" : "",
       ].filter(Boolean).join(" ")}
     >
       <div className="flex h-full flex-col p-6">
         <header className="flex items-start justify-between gap-4">
-          <div className="flex min-w-0 items-center gap-2">
+          <div className="flex min-w-0 flex-wrap items-center gap-2">
             {rankTone && (
               <span className={`navigator-recommendation-rank navigator-recommendation-rank--${rankTone}`}>
                 <span className="text-[0.65rem] uppercase tracking-[0.12em]">Топ</span>
@@ -126,6 +115,18 @@ export function NCTSignalCard({
             >
               {code}
             </motion.span>
+
+            {relationType && (
+              <motion.span
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.06 }}
+                className="inline-flex max-w-full items-center rounded-full border border-primary/25 bg-primary-light px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-[0.08em] text-primary"
+                aria-label={`Тип связи: ${RELATION_LABELS[relationType]}`}
+              >
+                {RELATION_LABELS[relationType]}
+              </motion.span>
+            )}
 
             {cluster !== undefined && (
               <div
@@ -193,54 +194,33 @@ export function NCTSignalCard({
           </div>
         </div>
 
-        {career_matches.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-1.5">
-            {career_matches.slice(0, 4).map((career) => (
-              <span key={career} className="rounded-[8px] border border-border bg-background px-2.5 py-1 text-xs text-text-secondary">
-                {career}
-              </span>
-            ))}
-            {career_matches.length > 4 && <span className="rounded-[8px] px-2.5 py-1 text-xs text-text-muted">+{career_matches.length - 4}</span>}
+        {interestCoverage && interestCoverage.length > 0 && (
+          <div className="mt-5 rounded-[16px] border border-border bg-background/40 p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-text-muted">Покрытие интересов</p>
+            <div className="mt-3 space-y-3">
+              {interestCoverage.map((coverage, index) => {
+                const percent = coveragePercent(coverage.score)
+
+                return (
+                  <div key={`${coverage.interestId}-${index}`}>
+                    <div className="flex items-start justify-between gap-3 text-sm">
+                      <span className="min-w-0 font-medium text-foreground">{coverage.interest}</span>
+                      <span className="shrink-0 font-semibold text-primary">{percent}%</span>
+                    </div>
+                    <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-border/60" aria-hidden="true">
+                      <span className="block h-full rounded-full" style={{ width: `${percent}%`, backgroundColor: accentColor }} />
+                    </div>
+                    {coverage.evidence.length > 0 && (
+                      <p className="mt-1.5 text-xs leading-relaxed text-text-muted">{coverage.evidence.join(" · ")}</p>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
           </div>
         )}
 
         <CompetitionMeter level={competition.level} score={competition.score} reason={competition.reason} />
-
-        {whyItFits && (
-          <div className="navigator-recommendation-reason mt-5 rounded-[16px] border border-border p-4">
-            <motion.div
-              animate={{ maxHeight: isReasonExpanded ? 1200 : COLLAPSED_REASON_HEIGHT }}
-              transition={{ duration: 0.28, ease: "easeInOut" }}
-              className="overflow-hidden"
-            >
-              <p ref={reasonTextRef} className="text-sm leading-relaxed text-text-secondary">{whyItFits}</p>
-            </motion.div>
-            {matchedInterests.length > 0 && (
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {matchedInterests.map((interest) => (
-                  <span
-                    key={interest}
-                    className="rounded-full px-2.5 py-1 text-xs font-medium"
-                    style={{ backgroundColor: `${accentColor}18`, color: accentColor }}
-                  >
-                    {interest}
-                  </span>
-                ))}
-              </div>
-            )}
-            {canExpandReason && (
-              <button
-              type="button"
-              aria-expanded={isReasonExpanded}
-              onClick={() => setIsReasonExpanded((expanded) => !expanded)}
-              className="mt-3 inline-flex min-h-9 items-center gap-1.5 rounded-full px-2 text-xs font-semibold text-primary transition-colors hover:bg-primary-light/60"
-            >
-              {isReasonExpanded ? "Свернуть" : "Показать полностью"}
-              <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isReasonExpanded ? "rotate-180" : ""}`} />
-              </button>
-            )}
-          </div>
-        )}
 
         <footer className="navigator-recommendation-actions mt-auto flex flex-nowrap items-center gap-2 border-t border-border pt-4">
           <span className="shrink-0">

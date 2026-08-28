@@ -3,7 +3,7 @@
 import { useEffect, useCallback, useMemo, useState, useRef } from "react"
 import { useRouter } from "next/navigation"
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion"
-import { Search, ArrowLeft, RefreshCw, ArrowUpDown, SlidersHorizontal, Sparkles, Target } from "lucide-react"
+import { Search, ArrowLeft, RefreshCw, ArrowUpDown, SlidersHorizontal, Sparkles, Target, GitBranch } from "lucide-react"
 import { logActivityEvent } from "@/lib/activity-logger"
 import {
   useCategoryStore,
@@ -19,12 +19,240 @@ import { useAnalysisStore } from "@/stores/analysis-store"
 import { selectRecommendationGoal } from "@/lib/recommendations/selection-client"
 import type {
   CanonicalRecommendation,
+  InterestSynthesis,
   RecommendationCacheData,
+  RecommendationRelationType,
   RecommendationResultSet,
+  RecommendationResultSummary,
 } from "@/types/recommendations"
 
 type SortField = "confidence" | "institution"
 type SortDir = "asc" | "desc"
+
+const RELATION_ORDER: RecommendationRelationType[] = ["direct", "bridge", "adjacent"]
+
+const RELATION_DETAILS: Record<RecommendationRelationType, {
+  eyebrow: string
+  title: string
+  description: string
+}> = {
+  direct: {
+    eyebrow: "Прямой путь",
+    title: "Покрывает все выбранные интересы",
+    description: "Эти программы напрямую объединяют все интересы, которые вы указали.",
+  },
+  bridge: {
+    eyebrow: "Связующий путь",
+    title: "Соединяет интересы через правдоподобный маршрут",
+    description: "Эти программы связывают ваши интересы через близкую область, которая может стать переходом.",
+  },
+  adjacent: {
+    eyebrow: "Смежный путь",
+    title: "Связанное образовательное направление",
+    description: "Эти программы расширяют выбор вокруг интересов, когда прямой маршрут не единственный вариант.",
+  },
+}
+
+function isRecommendationRelationType(value: unknown): value is RecommendationRelationType {
+  return value === "direct" || value === "bridge" || value === "adjacent"
+}
+
+function getResultSummary(resultSet: RecommendationResultSet | null): RecommendationResultSummary | null {
+  return resultSet?.resultSummary ?? resultSet?.decisionContext?.pipeline?.resultSummary ?? null
+}
+
+function NoDirectBanner({ message }: { message: string }) {
+  return (
+    <div role="status" className="rounded-[18px] border border-primary/20 bg-primary-light/45 p-4 sm:p-5">
+      <div className="flex items-start gap-3">
+        <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+          <GitBranch className="h-4 w-4" aria-hidden="true" />
+        </span>
+        <div>
+          <p className="text-sm font-semibold text-foreground">Прямого пути не найдено</p>
+          <p className="mt-1 text-sm leading-relaxed text-text-secondary">{message}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function InterestSynthesisPanel({ synthesis }: { synthesis: InterestSynthesis }) {
+  const profileSummary = synthesis.profileSummary.trim()
+  const interestLabels = new Map(synthesis.interests.map((interest) => [interest.id, interest.label]))
+  const relationships = synthesis.relationships.filter((relationship) => relationship.rationale.trim().length > 0)
+  const hypotheses = synthesis.hypotheses.filter((hypothesis) => hypothesis.query.trim().length > 0)
+  const clarifyingQuestion = synthesis.clarifyingQuestion?.trim()
+
+  if (!profileSummary && relationships.length === 0 && hypotheses.length === 0 && !clarifyingQuestion) {
+    return null
+  }
+
+  return (
+    <div className="mt-5 rounded-[20px] border border-[var(--marketing-border)] bg-[var(--marketing-surface)]/75 p-4 sm:p-5">
+      <div className="flex items-center gap-2">
+        <Sparkles className="h-4 w-4 text-primary" aria-hidden="true" />
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-text-muted">Как AI связал интересы</p>
+      </div>
+
+      {profileSummary ? <p className="mt-3 text-sm leading-relaxed text-text-secondary">{profileSummary}</p> : null}
+
+      {relationships.length > 0 ? (
+        <div className="mt-4 grid gap-3 md:grid-cols-2">
+          {relationships.map((relationship, index) => (
+            <article key={relationship.id || `relationship-${index}`} className="rounded-[14px] border border-border bg-background/40 p-3.5">
+              <h2 className="text-sm font-semibold text-foreground">
+                {RELATION_DETAILS[relationship.relationType].eyebrow}
+                {relationship.interestIds.length > 0
+                  ? ` · ${relationship.interestIds.map((id) => interestLabels.get(id) ?? id).join(" + ")}`
+                  : ""}
+              </h2>
+              <p className="mt-1.5 text-sm leading-relaxed text-text-secondary">{relationship.rationale}</p>
+            </article>
+          ))}
+        </div>
+      ) : null}
+
+      {hypotheses.length > 0 ? (
+        <div className="mt-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-text-muted">Рабочие гипотезы</p>
+          <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-text-secondary">
+            {hypotheses.map((hypothesis) => (
+              <li key={hypothesis.id}>
+                • <span className="font-medium text-foreground">{RELATION_DETAILS[hypothesis.relationType].eyebrow}:</span>{" "}
+                {hypothesis.query}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
+      {clarifyingQuestion ? (
+        <p className="mt-4 rounded-[12px] bg-primary-light/45 px-3 py-2.5 text-sm leading-relaxed text-text-secondary">
+          <span className="font-semibold text-foreground">Вопрос для уточнения:</span> {clarifyingQuestion}
+        </p>
+      ) : null}
+    </div>
+  )
+}
+
+function RecommendationCard({
+  result,
+  relationType,
+  variant = "default",
+  onSelect,
+}: {
+  result: CanonicalRecommendation
+  relationType?: RecommendationRelationType
+  variant?: "default" | "featured"
+  onSelect: (result: CanonicalRecommendation) => void
+}) {
+  return (
+    <NCTSignalCard
+      code={result.code}
+      title_ru={result.title_ru}
+      institution={result.institution}
+      city={result.city}
+      confidence={result.confidence}
+      relationType={relationType}
+      interestCoverage={result.interestCoverage}
+      cluster={result.cluster}
+      educationLevel={result.education_level}
+      taxonomy={{
+        cluster_name_ru: result.cluster_name_ru,
+        study_form: result.study_form,
+        study_type: result.study_type,
+      }}
+      rank={result.rank}
+      variant={variant}
+      onSelect={() => onSelect(result)}
+    />
+  )
+}
+
+function RecommendationSection({
+  relation,
+  results,
+  onSelect,
+}: {
+  relation: RecommendationRelationType
+  results: CanonicalRecommendation[]
+  onSelect: (result: CanonicalRecommendation) => void
+}) {
+  if (results.length === 0) return null
+  const details = RELATION_DETAILS[relation]
+
+  return (
+    <section className="mb-8" aria-labelledby={`recommendation-section-${relation}`}>
+      <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <span className="navigator-kicker navigator-kicker--muted">{details.eyebrow}</span>
+          <h2 id={`recommendation-section-${relation}`} className="mt-2 text-xl font-semibold tracking-[-0.025em] text-foreground sm:text-2xl">
+            {details.title}
+          </h2>
+          <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-text-secondary">{details.description}</p>
+        </div>
+        <span className="navigator-chip">{results.length} {results.length === 1 ? "вариант" : "вариантов"}</span>
+      </div>
+      <motion.div layout className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {results.map((result, index) => (
+          <motion.div
+            key={`${result.candidateKey ?? result.code}-${result.institution}-${result.rank}-${index}`}
+            layout
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 180, damping: 24, delay: index * 0.03 }}
+          >
+            <RecommendationCard
+              result={result}
+              relationType={relation}
+              variant={relation === "direct" && index === 0 ? "featured" : "default"}
+              onSelect={onSelect}
+            />
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
+  )
+}
+
+function LegacyRecommendationSection({
+  results,
+  onSelect,
+}: {
+  results: CanonicalRecommendation[]
+  onSelect: (result: CanonicalRecommendation) => void
+}) {
+  if (results.length === 0) return null
+
+  return (
+    <section className="mb-8" aria-labelledby="recommendation-section-legacy">
+      <div className="mb-4">
+        <span className="navigator-kicker navigator-kicker--muted">Тип связи не указан</span>
+        <h2 id="recommendation-section-legacy" className="mt-2 text-xl font-semibold tracking-[-0.025em] text-foreground sm:text-2xl">
+          Кандидаты из совместимого legacy-ответа
+        </h2>
+        <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-text-secondary">
+          Для этих результатов backend не передал AI-классификацию пути, поэтому мы не называем их прямыми, связующими или смежными.
+        </p>
+      </div>
+      <motion.div layout className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {results.map((result, index) => (
+          <motion.div
+            key={`${result.candidateKey ?? result.code}-${result.institution}-${result.rank}-${index}`}
+            layout
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 180, damping: 24, delay: index * 0.03 }}
+          >
+            <RecommendationCard result={result} onSelect={onSelect} />
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
+  )
+}
 
 export default function RecommendationsPage() {
   const router = useRouter()
@@ -96,11 +324,17 @@ export default function RecommendationsPage() {
           return
         }
 
-      const resultSet = data.data as RecommendationResultSet
+        if (!data.data || typeof data.data !== "object") {
+          throw new Error("Ответ анализа не содержит данных")
+        }
+
+        const resultSet = data.data as RecommendationResultSet
+        if (!Array.isArray(resultSet.ranked)) {
+          throw new Error("Ответ анализа не содержит список рекомендаций")
+        }
+
       const payload: RecommendationCacheData = {
         ...resultSet,
-        ranked: data.data.ranked || [],
-        overallConfidence: data.data.overallConfidence ?? null,
         categories: categories.map((c): { id: string; name: string; description?: string } => ({ id: c.id, name: c.name, description: c.description ?? "" })),
       }
 
@@ -127,7 +361,7 @@ export default function RecommendationsPage() {
     if (!onboardingLoaded) return
 
     const cached = restoreFromCache()
-    if (cached?.decisionContext && Array.isArray(cached.ranked) && cached.ranked.length > 0) {
+    if (cached?.decisionContext && Array.isArray(cached.ranked)) {
       const timeoutId = window.setTimeout(() => {
         setResults(cached.ranked)
         setOverallConfidence(cached.overallConfidence ?? null)
@@ -141,7 +375,7 @@ export default function RecommendationsPage() {
 
     const restored = hydrateCategoryStore()
 
-    if (categories.length === 0 && !restored && !cached?.ranked?.length) {
+    if (categories.length === 0 && !restored && !cached) {
       router.replace("/categories")
       return
     }
@@ -223,6 +457,31 @@ const displayedResults = useMemo(() => {
   return sorted
 }, [results, sortBy, sortDir, cityFilter, studyFormFilter])
 
+  const groupedResults = useMemo(() => {
+    const groups: Record<RecommendationRelationType, CanonicalRecommendation[]> = {
+      direct: [],
+      bridge: [],
+      adjacent: [],
+    }
+    const legacy: CanonicalRecommendation[] = []
+
+    displayedResults.forEach((result) => {
+      if (isRecommendationRelationType(result.relationType)) {
+        groups[result.relationType].push(result)
+      } else {
+        legacy.push(result)
+      }
+    })
+
+    return { ...groups, legacy }
+  }, [displayedResults])
+
+  const resultSummary = getResultSummary(cacheRef)
+  const noDirectMessage = resultSummary?.directCount === 0
+    ? resultSummary.noDirectMessage?.trim()
+    : undefined
+  const interestSynthesis = cacheRef?.decisionContext?.pipeline?.interestSynthesis
+
   const toggleSortDir = () => {
     setSortDir((d) => (d === "asc" ? "desc" : "asc"))
   }
@@ -245,7 +504,10 @@ const displayedResults = useMemo(() => {
           },
         })
         setActiveGoal(goal)
-        logActivityEvent("coach_goal_set", `Активная цель: ${result.code} - ${result.title_ru}`)
+        logActivityEvent(
+          "coach_goal_set",
+          `Активная цель: ${result.code} - ${result.title_ru} · Тип связи: ${result.relationType ?? "не указан"}`,
+        )
         router.push(`/interview?code=${encodeURIComponent(result.code)}&title=${encodeURIComponent(result.title_ru)}`)
       } catch (err) {
         setError(err instanceof Error ? err.message : "Не удалось выбрать цель")
@@ -343,6 +605,11 @@ if (!onboardingLoaded || loading) {
   if (results.length === 0) {
     return (
       <main className="navigator-page flex flex-1 flex-col items-center justify-center py-24">
+        {noDirectMessage ? (
+          <div className="mb-6 w-full max-w-2xl">
+            <NoDirectBanner message={noDirectMessage} />
+          </div>
+        ) : null}
         <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="max-w-md text-center">
           <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary-light">
             <Search className="h-7 w-7 text-primary" />
@@ -385,6 +652,7 @@ return (
               <p className="navigator-page-subtitle mt-3">
                 Мы сопоставили ваши интересы и контекст обучения с программами НЦТ. Выберите один вариант — дальше Navigator поможет превратить его в понятный план.
               </p>
+              {interestSynthesis ? <InterestSynthesisPanel synthesis={interestSynthesis} /> : null}
             </div>
           </div>
           <motion.button
@@ -396,6 +664,8 @@ return (
             Фильтры
           </motion.button>
         </div>
+
+        {noDirectMessage ? <NoDirectBanner message={noDirectMessage} /> : null}
 
         <div className="flex flex-wrap items-center gap-3 border-t border-[var(--marketing-border)] pt-5">
           <span className="navigator-chip"><Target className="h-4 w-4 text-primary" /> Следующий шаг: выбрать 1 цель</span>
@@ -509,48 +779,19 @@ return (
       <LayoutGroup>
         <div className="mb-4 flex items-end justify-between gap-4">
           <div>
-            <span className="navigator-kicker navigator-kicker--muted">Ваш shortlist</span>
+            <span className="navigator-kicker navigator-kicker--muted">Результаты анализа</span>
           </div>
           <span className="hidden text-sm text-text-muted sm:block">Сначала показаны самые подходящие варианты</span>
         </div>
-        <motion.div layout className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {displayedResults.map((result, idx) => (
-            <motion.div
-              key={`${result.code}-${idx}-${result.institution}`}
-              layout
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{
-                type: "spring",
-                stiffness: 180,
-                damping: 24,
-                delay: idx * 0.03,
-              }}
-            >
-              <NCTSignalCard
-                code={result.code}
-                title_ru={result.title_ru}
-                institution={result.institution}
-                city={result.city}
-                confidence={result.confidence}
-                career_matches={result.career_matches}
-                whyItFits={result.reasoning}
-                matchedInterests={result.matchedInterests || []}
-                cluster={result.cluster}
-                educationLevel={result.education_level}
-                taxonomy={{
-                  cluster_name_ru: result.cluster_name_ru,
-                  study_form: result.study_form,
-                  study_type: result.study_type,
-                }}
-                rank={idx < 3 ? idx + 1 : undefined}
-                variant={idx === 0 ? "featured" : "default"}
-                onSelect={() => handleSelectGoal(result)}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
+        {RELATION_ORDER.map((relation) => (
+          <RecommendationSection
+            key={relation}
+            relation={relation}
+            results={groupedResults[relation]}
+            onSelect={handleSelectGoal}
+          />
+        ))}
+        <LegacyRecommendationSection results={groupedResults.legacy} onSelect={handleSelectGoal} />
       </LayoutGroup>
     )}
   </main>

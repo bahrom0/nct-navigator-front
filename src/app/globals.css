@@ -345,11 +345,6 @@ button {
   box-shadow: 0 20px 55px rgb(42 34 25 / 0.1);
 }
 
-.navigator-recommendation-card--expanded {
-  height: auto;
-  min-height: 0;
-}
-
 .navigator-recommendation-card--rank-gold {
   border-color: var(--rank-gold-border);
 }
@@ -395,10 +390,6 @@ button {
   border-color: var(--rank-bronze-border);
 }
 
-.navigator-recommendation-reason {
-  background: color-mix(in srgb, var(--marketing-soft) 72%, transparent);
-}
-
 .navigator-top-picks-note {
   align-items: center;
   gap: 0.4rem;
@@ -428,13 +419,13 @@ button {
 }
 
 @media (min-width: 1024px) {
-  .navigator-recommendation-card {
+  .navigator-recommendation-card:not(.navigator-recommendation-card--compact) {
     height: 46rem;
   }
 
-  .navigator-recommendation-card--expanded {
+  .navigator-recommendation-card--compact {
     height: auto;
-    min-height: 46rem;
+    min-height: 0;
   }
 }
 

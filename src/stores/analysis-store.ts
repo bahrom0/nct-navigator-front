@@ -65,9 +65,26 @@ export const useAnalysisStore = create<AnalysisStore>((set, get) => ({
       startTime: null,
     }),
 
-  cacheResults: (payload) => cacheSet("analysisResults", payload),
+  cacheResults: (payload) => {
+    if (payload.decisionContext?.pipeline?.pipelineVersion !== "ai_v2") {
+      cacheRemove("analysisResults")
+      return
+    }
 
-  restoreFromCache: () => cacheGet<RecommendationCacheData>("analysisResults"),
+    cacheSet("analysisResults", payload)
+  },
+
+  restoreFromCache: () => {
+    const cached = cacheGet<RecommendationCacheData>("analysisResults")
+    if (!cached) return null
+
+    if (cached.decisionContext?.pipeline?.pipelineVersion !== "ai_v2") {
+      cacheRemove("analysisResults")
+      return null
+    }
+
+    return cached
+  },
 
   clearCache: () => cacheRemove("analysisResults"),
 }))
