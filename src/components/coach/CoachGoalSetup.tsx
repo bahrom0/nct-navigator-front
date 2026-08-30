@@ -100,26 +100,26 @@ export function CoachGoalSetup({
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
-      className="mx-auto flex w-full max-w-md flex-col items-stretch rounded-[20px] border border-border bg-card-bg p-6"
+      className="mx-auto flex w-full max-w-md flex-col items-stretch rounded-[2rem] border border-[var(--marketing-border)] bg-[linear-gradient(165deg,var(--marketing-surface-strong),var(--marketing-soft))] p-6 shadow-[0_30px_90px_rgba(31,27,22,0.1)] sm:p-7"
     >
       <header className="flex flex-col items-center text-center">
-        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary-light">
-          <Compass className="h-7 w-7 text-primary" aria-hidden="true" />
-   </div>
-        <h1 className="mt-5 text-xl font-bold text-foreground">
+        <div className="flex h-16 w-16 items-center justify-center rounded-[20px] border border-[var(--marketing-border)] bg-[image:var(--marketing-cta-bg)] text-[#f0e1cf] shadow-[0_16px_36px_rgba(42,34,25,0.28)]">
+          <Compass className="h-8 w-8" aria-hidden="true" />
+        </div>
+        <h1 className="mt-5 text-[1.35rem] font-semibold tracking-[-0.03em] text-[var(--marketing-foreground)]">
           Какая у тебя цель?
-   </h1>
-        <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+        </h1>
+        <p className="mt-2 text-sm leading-relaxed text-[var(--marketing-muted)]">
           Coach будет сопровождать тебя до поступления: построит маршрут,
           подберёт задачи и адаптирует план каждый день.
-   </p>
- </header>
+        </p>
+      </header>
 
       {modeOptions.length > 1 ? (
         <div
           role="tablist"
           aria-label="Способ выбора цели"
-          className="mt-6 grid grid-cols-2 gap-2 rounded-[14px] bg-background p-1"
+          className="mt-6 grid grid-cols-2 gap-1.5 rounded-[16px] border border-[var(--marketing-border)] bg-[var(--marketing-soft)] p-1.5"
         >
           {modeOptions.map((option) => {
             const Icon = option.icon;
@@ -131,18 +131,18 @@ export function CoachGoalSetup({
                 role="tab"
                 aria-selected={active}
                 onClick={() => setMode(option.id)}
-                className={`inline-flex h-10 items-center justify-center gap-1.5 rounded-[10px] text-xs font-medium transition-colors ${
+                className={`inline-flex h-11 items-center justify-center gap-1.5 rounded-[12px] text-[13px] font-semibold transition-all duration-200 ${
                   active
-                    ? "bg-card-bg text-primary shadow-sm"
-                    : "text-text-secondary hover:text-foreground"
+                    ? "bg-[image:var(--marketing-cta-bg)] text-white shadow-[0_10px_22px_rgba(42,34,25,0.22)]"
+                    : "text-[var(--marketing-muted)] hover:text-[var(--marketing-foreground)]"
                 }`}
               >
-                <Icon className="h-3.5 w-3.5" aria-hidden="true" />
+                <Icon className="h-4 w-4" aria-hidden="true" />
                 {option.label}
-           </button>
+              </button>
             );
           })}
-     </div>
+        </div>
       ) : null}
 
       {mode === "recommended" ? (
@@ -166,22 +166,22 @@ export function CoachGoalSetup({
       {errorMessage ? (
         <p
           role="alert"
-          className="mt-4 rounded-[12px] border border-error/30 bg-error/5 px-3 py-2 text-xs text-error"
+          className="mt-4 rounded-[14px] border border-error/30 bg-error/10 px-3.5 py-2.5 text-[13px] font-medium text-error"
         >
           {errorMessage}
-     </p>
+        </p>
       ) : null}
 
       <button
         type="button"
         onClick={handleSubmit}
         disabled={!canSubmit || submitting}
-        className="mt-6 inline-flex h-12 items-center justify-center gap-2 rounded-[12px] bg-primary px-4 text-sm font-semibold text-white transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 disabled:cursor-not-allowed disabled:bg-text-muted"
+        className="mt-6 inline-flex h-[3.25rem] items-center justify-center gap-2 rounded-[16px] bg-[image:var(--marketing-cta-bg)] px-4 text-[0.95rem] font-semibold text-white shadow-[0_16px_36px_rgba(42,34,25,0.24)] transition-all duration-200 hover:bg-[image:var(--marketing-cta-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(42,34,25,0.35)] disabled:cursor-not-allowed disabled:opacity-45 disabled:shadow-none"
       >
         <Wand2 className="h-4 w-4" aria-hidden="true" />
         {submitting ? "Готовим Coach…" : "Начать подготовку"}
         <ChevronRight className="h-4 w-4" aria-hidden="true" />
-   </button>
- </motion.section>
+      </button>
+    </motion.section>
   );
 }

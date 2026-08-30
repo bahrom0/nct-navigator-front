@@ -17,7 +17,7 @@ import { SidebarSkeleton, ChatAreaSkeleton } from "@/components/chat/chat-skelet
 import { useChatSync } from "@/lib/chat/use-chat-sync"
 import { saveMessage } from "@/lib/chat/db"
 import type { ActiveGoalBundle } from "@/types/admission"
-import type { TeacherMessage, TeacherChatApiResponse, TeacherEntryContext } from "@/types/teacher"
+import type { TeacherMessage, TeacherChatApiResponse, TeacherChatStreamEvent, TeacherEntryContext } from "@/types/teacher"
 import type { ChatHistoryGroup, ChatSession, ChatSessionRecord } from "@/types/chat"
 
 function generateId(): string {
@@ -62,6 +62,99 @@ function truncateHistory(messages: TeacherMessage[], maxExchanges = 10): Teacher
   return messages.slice(Math.max(0, keepFrom))
 }
 
+function parseTeacherStreamBlock(block: string): TeacherChatStreamEvent | null {
+  const lines = block.split(/\r?\n/)
+  const eventName = lines
+    .find((line) => line.startsWith("event:"))
+    ?.slice("event:".length)
+    .trim()
+  const dataText = lines
+    .filter((line) => line.startsWith("data:"))
+    .map((line) => line.slice("data:".length).trimStart())
+    .join("\n")
+
+  if (!eventName || !dataText) return null
+
+  let data: Record<string, unknown>
+  try {
+    data = JSON.parse(dataText) as Record<string, unknown>
+  } catch {
+    return null
+  }
+
+  if (eventName === "start") {
+    return { event: "start", type: data.type as TeacherMessage["type"] }
+  }
+  if (eventName === "delta" && typeof data.content === "string") {
+    return { event: "delta", content: data.content }
+  }
+  if (eventName === "tool" && (data.status === "running" || data.status === "complete")) {
+    return {
+      event: "tool",
+      status: data.status,
+      names: Array.isArray(data.names)
+        ? data.names.filter((name): name is string => typeof name === "string")
+        : undefined,
+    }
+  }
+  if (eventName === "done") {
+    return {
+      event: "done",
+      type: data.type as TeacherMessage["type"],
+      finishReason: typeof data.finishReason === "string" ? data.finishReason : null,
+    }
+  }
+  if (eventName === "error" && typeof data.error === "string") {
+    return { event: "error", error: data.error, retryable: data.retryable === true }
+  }
+
+  return null
+}
+
+async function readTeacherChatStream(
+  response: Response,
+  onEvent: (event: TeacherChatStreamEvent) => void,
+): Promise<void> {
+  if (!response.ok) {
+    let apiError = "AI Chat временно недоступен. Попробуйте ещё раз."
+    try {
+      const result = (await response.json()) as TeacherChatApiResponse
+      apiError = result.error ?? apiError
+    } catch {}
+    throw new Error(apiError)
+  }
+
+  const reader = response.body?.getReader()
+  if (!reader) {
+    throw new Error("Сервер не вернул поток ответа. Попробуйте ещё раз.")
+  }
+
+  const decoder = new TextDecoder()
+  let buffer = ""
+
+  const processBuffer = (flush = false) => {
+    const blocks = buffer.split(/\r?\n\r?\n/)
+    buffer = flush ? "" : (blocks.pop() ?? "")
+    const readyBlocks = flush ? blocks.filter(Boolean) : blocks
+
+    for (const block of readyBlocks) {
+      const event = parseTeacherStreamBlock(block)
+      if (event) onEvent(event)
+    }
+  }
+
+  try {
+    while (true) {
+      const { done, value } = await reader.read()
+      buffer += decoder.decode(value, { stream: !done })
+      processBuffer(done)
+      if (done) break
+    }
+  } finally {
+    reader.releaseLock()
+  }
+}
+
 function TeacherPageContent() {
   const searchParams = useSearchParams()
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated)
@@ -72,7 +165,7 @@ function TeacherPageContent() {
   const plans = useProfileStore((s) => s.plans)
   const {
     messages, isLoading, error,
-    addMessage, setLoading, setError,
+    addMessage, updateMessageContent, updateMessageStatus, setLoading, setError,
     hydrate, reset,
     sessions, activeSessionId,
     setActiveSession, setSessions, setSessionsLoading,
@@ -84,6 +177,10 @@ function TeacherPageContent() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
   const [streamingId, setStreamingId] = useState<string | null>(null)
+  const [streamingTool, setStreamingTool] = useState<{
+    names: string[]
+    status: "running" | "complete"
+  } | null>(null)
   const [initialLoadDone, setInitialLoadDone] = useState(false)
   const [sessionLoading, setSessionLoading] = useState(false)
   const [bundle, setBundle] = useState<ActiveGoalBundle | null>(null)
@@ -251,6 +348,7 @@ function TeacherPageContent() {
     if (!text || isLoading) return
     if (!messageText) setInput("")
     setStreamingId(null)
+    setStreamingTool(null)
 
     let sessionId = activeSessionId
     if (!sessionId) {
@@ -292,6 +390,27 @@ function TeacherPageContent() {
       ? profile.plans.find((p) => p.id === profile.activePlanId) ?? null
       : null
 
+    const assistantMsg: TeacherMessage = {
+      id: generateId(),
+      role: "assistant",
+      content: "",
+      timestamp: Date.now(),
+      type: "text",
+      status: "sending",
+    }
+    addMessage(assistantMsg)
+    setStreamingId(assistantMsg.id)
+
+    let streamedReply = ""
+    let streamCompleted = false
+    let responseType: TeacherMessage["type"] = "text"
+    let pendingUiFrame: number | null = null
+
+    const flushStreamedReply = () => {
+      pendingUiFrame = null
+      updateMessageContent(assistantMsg.id, streamedReply)
+    }
+
     try {
       const res = await fetch("/api/teacher/chat", {
         method: "POST",
@@ -322,42 +441,53 @@ function TeacherPageContent() {
         }),
       })
 
-      const result: TeacherChatApiResponse = await res.json()
-      if (!res.ok || result.status === "error") {
-        console.error("[/api/teacher/chat] response:", result, "http:", res.status)
-      }
-
-      if (result.status === "error") {
-        setError(result.error ?? "Ошибка при получении ответа")
-        return
-      }
-
-      const reply = result.data?.reply?.trim()
-      if (!reply) {
-        setError(result.error ?? "AI Chat временно не отвечает. Попробуйте ещё раз.")
-        return
-      }
-
-      const msgId = generateId()
-      const assistantMsg: TeacherMessage = {
-        id: msgId,
-        role: "assistant",
-        content: reply,
-        timestamp: Date.now(),
-        type: result.data?.type ?? "text",
-        status: "sending",
-      }
-      addMessage(assistantMsg)
-      saveMessage({
-        id: assistantMsg.id,
-        session_id: sessionId,
-        role: assistantMsg.role,
-        content: assistantMsg.content,
-        type: assistantMsg.type ?? "text",
-        created_at: new Date(assistantMsg.timestamp).toISOString(),
+      await readTeacherChatStream(res, (event) => {
+        if (event.event === "start") {
+          responseType = event.type ?? "text"
+          return
+        }
+        if (event.event === "delta") {
+          streamedReply += event.content
+          if (pendingUiFrame === null) {
+            pendingUiFrame = window.requestAnimationFrame(flushStreamedReply)
+          }
+          return
+        }
+        if (event.event === "error") {
+          throw new Error(event.error)
+        }
+        if (event.event === "tool") {
+          setStreamingTool({ names: event.names ?? [], status: event.status })
+          return
+        }
+        responseType = event.type ?? responseType
+        streamCompleted = true
       })
-      saveMessageToApi(sessionId, assistantMsg)
-      setStreamingId(msgId)
+
+      const reply = streamedReply.trim()
+      if (!streamCompleted || !reply) {
+        throw new Error("AI Chat не завершил ответ. Попробуйте отправить сообщение ещё раз.")
+      }
+
+      const completedAssistantMessage: TeacherMessage = {
+        ...assistantMsg,
+        content: streamedReply,
+        type: responseType,
+      }
+      if (pendingUiFrame !== null) {
+        window.cancelAnimationFrame(pendingUiFrame)
+        pendingUiFrame = null
+      }
+      updateMessageContent(assistantMsg.id, streamedReply)
+      saveMessage({
+        id: completedAssistantMessage.id,
+        session_id: sessionId,
+        role: completedAssistantMessage.role,
+        content: completedAssistantMessage.content,
+        type: completedAssistantMessage.type ?? "text",
+        created_at: new Date(completedAssistantMessage.timestamp).toISOString(),
+      })
+      saveMessageToApi(sessionId, completedAssistantMessage)
       logActivityEvent("use_teacher", "Использование AI Chat")
 
       if (namingTimerRef.current) clearTimeout(namingTimerRef.current)
@@ -370,11 +500,26 @@ function TeacherPageContent() {
         }, 2000)
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Ошибка сети")
+      const fallbackError = "Не удалось получить ответ от AI Chat. Проверьте соединение и попробуйте ещё раз."
+      const errorMessage = err instanceof Error && err.message ? err.message : fallbackError
+      if (pendingUiFrame !== null) {
+        window.cancelAnimationFrame(pendingUiFrame)
+        pendingUiFrame = null
+      }
+      updateMessageStatus(assistantMsg.id, "failed")
+      if (!streamedReply.trim()) {
+        updateMessageContent(assistantMsg.id, errorMessage)
+      }
+      setError(errorMessage)
     } finally {
+      if (pendingUiFrame !== null) {
+        window.cancelAnimationFrame(pendingUiFrame)
+      }
+      setStreamingId(null)
+      setStreamingTool(null)
       setLoading(false)
     }
-  }, [input, isLoading, messages, activeSessionId, addMessage, setLoading, setError, createSession, saveMessageToApi, autoNameSession, renameSession, activePlan, bundleContext, bundlePlan, entryContext])
+  }, [input, isLoading, messages, activeSessionId, addMessage, updateMessageContent, updateMessageStatus, setLoading, setError, createSession, saveMessageToApi, autoNameSession, renameSession, activePlan, bundleContext, bundlePlan, entryContext])
 
   const startNewChat = useCallback(async () => {
     reset()
@@ -583,6 +728,7 @@ function TeacherPageContent() {
             isLoading={isLoading}
             error={error}
             streamingId={streamingId}
+            streamingTool={streamingTool}
             onRegenerate={regenerateMessage}
             loadingText="Думаю"
             emptyState={(

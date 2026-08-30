@@ -63,14 +63,14 @@ function getResultSummary(resultSet: RecommendationResultSet | null): Recommenda
 
 function NoDirectBanner({ message }: { message: string }) {
   return (
-    <div role="status" className="rounded-[18px] border border-primary/20 bg-primary-light/45 p-4 sm:p-5">
-      <div className="flex items-start gap-3">
-        <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+    <div role="status" className="rounded-[18px] border border-primary/20 bg-primary-light/45 p-3.5 sm:p-5">
+      <div className="flex items-start gap-2.5 sm:gap-3">
+        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary sm:h-9 sm:w-9">
           <GitBranch className="h-4 w-4" aria-hidden="true" />
         </span>
-        <div>
+        <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold text-foreground">Прямого пути не найдено</p>
-          <p className="mt-1 text-sm leading-relaxed text-text-secondary">{message}</p>
+          <p className="mt-1 text-[13px] leading-snug text-text-secondary sm:mt-1.5 sm:text-sm sm:leading-relaxed">{message}</p>
         </div>
       </div>
     </div>
@@ -506,7 +506,7 @@ const displayedResults = useMemo(() => {
         setActiveGoal(goal)
         logActivityEvent(
           "coach_goal_set",
-          `Активная цель: ${result.code} - ${result.title_ru} · Тип связи: ${result.relationType ?? "не указан"}`,
+          `Цель выбрана: ${result.title_ru} · код ${result.code}`,
         )
         router.push(`/interview?code=${encodeURIComponent(result.code)}&title=${encodeURIComponent(result.title_ru)}`)
       } catch (err) {
@@ -638,26 +638,49 @@ return (
       className="navigator-recommendation-hero mb-7 p-5 sm:p-8"
     >
       <div className="flex flex-col gap-4">
+        <div className="flex items-center justify-between gap-3 sm:hidden">
+          <button
+            onClick={goBack}
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border border-border bg-card-bg/85 transition-colors hover:bg-background"
+            aria-label="Назад"
+          >
+            <ArrowLeft className="h-4 w-4 text-text-secondary" />
+          </button>
+          <motion.button
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setShowFilters((v) => !v)}
+            className="inline-flex h-10 items-center gap-2 rounded-[14px] border border-border bg-card-bg/85 px-4 text-sm font-medium text-foreground transition-colors hover:bg-background"
+          >
+            <SlidersHorizontal className="h-4 w-4 text-text-muted" />
+            Фильтры
+          </motion.button>
+        </div>
+
         <div className="flex flex-wrap items-start justify-between gap-4">
-          <div className="flex items-start gap-3">
+          <div className="flex min-w-0 flex-1 items-start gap-3">
             <button
               onClick={goBack}
-              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border border-border bg-card-bg/85 transition-colors hover:bg-background"
+              className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border border-border bg-card-bg/85 transition-colors hover:bg-background sm:inline-flex"
             >
               <ArrowLeft className="h-4 w-4 text-text-secondary" />
             </button>
-            <div>
+            <div className="min-w-0">
               <span className="navigator-kicker"><Sparkles className="h-3.5 w-3.5" /> Персональный анализ</span>
               <h1 className="navigator-page-title mt-4 max-w-3xl">Направления, которые могут стать вашей целью</h1>
               <p className="navigator-page-subtitle mt-3">
-                Мы сопоставили ваши интересы и контекст обучения с программами НЦТ. Выберите один вариант — дальше Navigator поможет превратить его в понятный план.
+                <span className="hidden sm:inline">
+                  Мы сопоставили ваши интересы и контекст обучения с программами НЦТ. Выберите один вариант — дальше Navigator поможет превратить его в понятный план.
+                </span>
+                <span className="sm:hidden">
+                  Мы сопоставили ваши интересы с программами НЦТ. Выберите один вариант — это станет вашей целью.
+                </span>
               </p>
             </div>
           </div>
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setShowFilters((v) => !v)}
-            className="inline-flex h-11 items-center gap-2 rounded-[14px] border border-border bg-card-bg/85 px-4 text-sm font-medium text-foreground transition-colors hover:bg-background"
+            className="hidden h-11 items-center gap-2 rounded-[14px] border border-border bg-card-bg/85 px-4 text-sm font-medium text-foreground transition-colors hover:bg-background sm:inline-flex"
           >
             <SlidersHorizontal className="h-4 w-4 text-text-muted" />
             Фильтры

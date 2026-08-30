@@ -2,11 +2,12 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, ChevronUp, ExternalLink, FlaskConical, GraduationCap, Medal } from "lucide-react"
+import { ChevronDown, ChevronUp, ExternalLink, FlaskConical, GraduationCap, MapPin, Medal } from "lucide-react"
 import { BookmarkButton } from "@/components/signal-cards/BookmarkButton"
 import { CompetitionMeter } from "@/components/strategy/CompetitionMeter"
 import { useRouter } from "next/navigation"
 import { logActivityEvent } from "@/lib/activity-logger"
+import { cityLabel } from "@/lib/city-label"
 import { CLUSTER_NAMES, CLUSTER_EXAMS, EDUCATION_LEVEL_LABELS } from "@/lib/db/types"
 import {
   COMPACT_INTEREST_COVERAGE_LIMIT,
@@ -83,7 +84,25 @@ export function NCTSignalCard({
   const [showTooltip, setShowTooltip] = useState(false)
   const [reasonExpanded, setReasonExpanded] = useState(false)
   const [reasonOverflows, setReasonOverflows] = useState(false)
+  const [reasonFullHeight, setReasonFullHeight] = useState<number | null>(null)
+  const [reasonMaskHeld, setReasonMaskHeld] = useState(false)
   const reasonRef = useRef<HTMLParagraphElement | null>(null)
+  const reasonMaskTimeoutRef = useRef<number | null>(null)
+
+  const collapseReason = useCallback(() => {
+    setReasonExpanded(false)
+    // Маска обрезки возвращается только после того, как доиграет анимация высоты,
+    // иначе текст резко «проедает» градиент в конце закрытия.
+    setReasonMaskHeld(true)
+    if (reasonMaskTimeoutRef.current) window.clearTimeout(reasonMaskTimeoutRef.current)
+    reasonMaskTimeoutRef.current = window.setTimeout(() => setReasonMaskHeld(false), 470)
+  }, [])
+
+  useEffect(() => {
+    return () => {
+      if (reasonMaskTimeoutRef.current) window.clearTimeout(reasonMaskTimeoutRef.current)
+    }
+  }, [])
 
   const clusterName = cluster !== undefined ? CLUSTER_NAMES[cluster] : taxonomy?.cluster_name_ru
   const exams = cluster !== undefined ? CLUSTER_EXAMS[educationLevel]?.[cluster] ?? [] : []
@@ -102,6 +121,7 @@ export function NCTSignalCard({
     const element = reasonRef.current
     if (!element) return
     setReasonOverflows(element.scrollHeight > 72)
+    setReasonFullHeight(element.scrollHeight)
   }, [])
 
   useEffect(() => {
@@ -146,120 +166,105 @@ export function NCTSignalCard({
         rankTone ? `navigator-recommendation-card--rank-${rankTone}` : "",
       ].filter(Boolean).join(" ")}
     >
-      <div className="navigator-recommendation-card-content flex h-full flex-col p-6">
-        <header className="flex items-start justify-between gap-4">
-          <div className="flex min-w-0 flex-wrap items-center gap-2">
-            {rankTone && (
-              <span className={`navigator-recommendation-rank navigator-recommendation-rank--${rankTone}`}>
-                <span className="text-[0.65rem] uppercase tracking-[0.12em]">Топ</span>
-                <Medal className="h-3.5 w-3.5" aria-hidden="true" />
-                <strong className="text-base">{rank}</strong>
-              </span>
-            )}
-            <motion.span
-              whileHover={{ scale: 1.05 }}
-              transition={springHover}
-              className="inline-flex rounded-full border px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em]"
-              style={{ backgroundColor: `${accentColor}14`, color: accentColor }}
-            >
-              {code}
-            </motion.span>
-
-            {relationType && (
-              <motion.span
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.06 }}
-                className="inline-flex max-w-full items-center rounded-full border border-primary/25 bg-primary-light px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-[0.08em] text-primary"
-                aria-label={`Тип связи: ${RELATION_LABELS[relationType]}`}
-              >
-                {RELATION_LABELS[relationType]}
-              </motion.span>
-            )}
-
-            {cluster !== undefined && (
-              <div
-                className="relative"
-                onMouseEnter={() => setShowTooltip(true)}
-                onMouseLeave={() => setShowTooltip(false)}
-              >
-                <motion.span
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.1 }}
-                className="inline-flex cursor-default items-center gap-1 rounded-full border border-border bg-transparent px-2.5 py-1 text-xs font-medium text-text-secondary"
-                  aria-label={clusterName ? `${clusterName}: экзамены ${EDUCATION_LEVEL_LABELS[educationLevel]}` : undefined}
-                >
-                  <GraduationCap className="h-3 w-3" />
-                  Кластер {cluster}
-                </motion.span>
-
-                <AnimatePresence>
-                  {showTooltip && exams.length > 0 && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 6, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 4, scale: 0.95 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                        className="absolute left-0 top-full z-20 mt-2 w-72 rounded-[16px] border border-border bg-card-bg p-3 shadow-lg"
-                    >
-                      <p className="text-xs font-semibold text-foreground">Экзамены НЦТ</p>
-                      <p className="mt-1 text-[11px] leading-snug text-text-muted">
-                        {clusterName ?? `Кластер ${cluster}`} • {EDUCATION_LEVEL_LABELS[educationLevel]}
-                      </p>
-                      <ul className="mt-2 space-y-1">
-                        {exams.map((exam) => (
-                          <li key={exam} className="flex items-center gap-2 text-xs text-text-secondary">
-                            <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: accentColor }} />
-                            {exam}
-                          </li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            )}
-          </div>
-          <div
-            className="hidden"
-            style={{
-              backgroundColor:
-                confidencePercent >= 80 ? "#10B98114" : confidencePercent >= 60 ? "#F59E0B14" : "#EF444414",
-              color: confidencePercent >= 80 ? "#10B981" : confidencePercent >= 60 ? "#F59E0B" : "#EF4444",
-            }}
+      <div className="navigator-recommendation-card-content flex h-full flex-col p-5 sm:p-6">
+        <header className="flex flex-wrap items-center gap-2">
+          {rankTone && (
+            <span className={`navigator-recommendation-rank navigator-recommendation-rank--${rankTone}`}>
+              <span className="text-[0.65rem] uppercase tracking-[0.12em]">Топ</span>
+              <Medal className="h-3.5 w-3.5" aria-hidden="true" />
+              <strong className="text-base">{rank}</strong>
+            </span>
+          )}
+          <span
+            className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold tabular-nums"
+            style={{ backgroundColor: "rgb(113 97 77 / 0.08)", color: "var(--text-secondary)" }}
           >
-            <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "currentColor" }} />
-            {confidencePercent}% совпадение
-          </div>
+            {code}
+          </span>
+          {relationType && (
+            <span
+              className="ml-auto inline-flex max-w-full items-center rounded-full px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-[0.08em]"
+              style={{ backgroundColor: `${accentColor}14`, color: accentColor }}
+              aria-label={`Тип связи: ${RELATION_LABELS[relationType]}`}
+            >
+              {RELATION_LABELS[relationType]}
+            </span>
+          )}
         </header>
 
-        <div className="mt-4">
-          <h3 className="text-2xl font-semibold leading-[1.12] tracking-[-0.025em] text-foreground sm:text-[2rem]">{title_ru}</h3>
-          <div className="mt-1.5 flex items-center gap-2 text-sm text-text-secondary">
-            <span className="font-medium">{institution}</span>
-            <span className="text-text-muted">В·</span>
-            <span>{city}</span>
-          </div>
+        <h3 className="mt-3.5 text-[1.15rem] font-semibold leading-snug tracking-[-0.02em] text-foreground sm:text-xl">
+          {title_ru}
+        </h3>
+
+        {institution.trim() ? (
+          <p className="mt-1.5 text-sm leading-snug text-text-secondary">{institution}</p>
+        ) : null}
+
+        <div className="mt-2.5 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[13px] text-text-muted">
+          {city.trim() ? (
+            <span className="inline-flex items-center gap-1.5">
+              <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+              {cityLabel(city)}
+            </span>
+          ) : null}
+          {cluster !== undefined && (
+            <div
+              className="relative inline-flex items-center gap-2.5"
+              onMouseEnter={() => setShowTooltip(true)}
+              onMouseLeave={() => setShowTooltip(false)}
+            >
+              {city.trim() ? <span className="h-1 w-1 rounded-full bg-border" aria-hidden="true" /> : null}
+              <span
+                className="inline-flex cursor-default items-center gap-1 transition-colors hover:text-text-secondary"
+                aria-label={clusterName ? `${clusterName}: экзамены ${EDUCATION_LEVEL_LABELS[educationLevel]}` : undefined}
+              >
+                <GraduationCap className="h-3.5 w-3.5" aria-hidden="true" />
+                Кластер {cluster}
+              </span>
+
+              {showTooltip && exams.length > 0 && (
+                <div className="absolute left-0 top-full z-20 mt-2 w-72 rounded-[16px] border border-border bg-card-bg p-3 shadow-lg">
+                  <p className="text-xs font-semibold text-foreground">Экзамены НЦТ</p>
+                  <p className="mt-1 text-[11px] leading-snug text-text-muted">
+                    {clusterName ?? `Кластер ${cluster}`} • {EDUCATION_LEVEL_LABELS[educationLevel]}
+                  </p>
+                  <ul className="mt-2 space-y-1">
+                    {exams.map((exam) => (
+                      <li key={exam} className="flex items-center gap-2 text-xs text-text-secondary">
+                        <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: accentColor }} />
+                        {exam}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )}
+          <span className="ml-auto hidden shrink-0 font-medium tabular-nums text-text-muted sm:inline">
+            {confidencePercent}%
+          </span>
         </div>
 
         {compactInterestCoverage.length > 0 && (
           <div
             className={[
-              "navigator-interest-coverage relative mt-5 overflow-hidden rounded-[16px] border border-border bg-background/40 p-4",
+              "navigator-interest-coverage relative mt-4 overflow-hidden rounded-[16px] border border-border bg-background/40 p-4",
               hiddenInterestCoverageCount > 0 ? "pb-14" : "",
             ].filter(Boolean).join(" ")}
           >
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-text-muted">Покрытие интересов</p>
-            <div className="mt-3 space-y-3">
+            <div className={[
+              "mt-3 space-y-3",
+              hiddenInterestCoverageCount > 0 ? "navigator-interest-coverage-list-fade" : "",
+            ].filter(Boolean).join(" ")}>
               {compactInterestCoverage.map((coverage, index) => {
                 const percent = coveragePercent(coverage.score)
 
                 return (
                   <div key={`${coverage.interestId}-${index}`}>
-                    <div className="flex items-start justify-between gap-3 text-sm">
+                    <div className="flex items-center justify-between gap-3 text-sm">
                       <span className="min-w-0 truncate font-medium text-foreground" title={coverage.interest}>{coverage.interest}</span>
-                      <span className="shrink-0 font-semibold text-primary">{percent}%</span>
+                      <span className="shrink-0 font-semibold tabular-nums text-primary">{percent}%</span>
                     </div>
                     <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-border/60" aria-hidden="true">
                       <span className="block h-full rounded-full" style={{ width: `${percent}%`, backgroundColor: accentColor }} />
@@ -293,66 +298,83 @@ export function NCTSignalCard({
             <div className="navigator-recommendation-reason-viewport relative mt-2">
               <p
                 ref={reasonRef}
+                style={isReasonExpanded && reasonFullHeight ? { maxHeight: `${reasonFullHeight}px` } : undefined}
                 className={[
                   "navigator-recommendation-reason-copy text-sm leading-6 text-text-secondary",
                   !isReasonExpanded ? "navigator-recommendation-reason-copy--clamped" : "",
+                  !isReasonExpanded && !reasonMaskHeld ? "navigator-recommendation-reason-copy--clamped-mask" : "",
                 ].filter(Boolean).join(" ")}
               >
                 {trimmedReasoning}
               </p>
 
-              {reasonOverflows && !isReasonExpanded && (
-                <div className="navigator-recommendation-reason-fade">
-                  <button
-                    type="button"
-                    onClick={() => setReasonExpanded(true)}
-                    aria-expanded="false"
-                    aria-label="Раскрыть полное объяснение выбора направления"
-                    title="Показать полное объяснение"
-                    className="navigator-recommendation-reason-trigger"
+              <AnimatePresence initial={false}>
+                {reasonOverflows && !isReasonExpanded && !reasonMaskHeld && (
+                  <motion.div
+                    key="reason-fade"
+                    className="navigator-recommendation-reason-fade"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.28, ease: "easeOut" }}
                   >
-                    <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
-                  </button>
-                </div>
-              )}
+                    <button
+                      type="button"
+                      onClick={() => setReasonExpanded(true)}
+                      aria-expanded={false}
+                      aria-label="Раскрыть полное объяснение выбора направления"
+                      title="Показать полное объяснение"
+                      className="navigator-recommendation-reason-trigger"
+                    >
+                      <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
-            {isReasonExpanded && (
-              <button
-                type="button"
-                onClick={() => setReasonExpanded(false)}
-                aria-expanded="true"
-                className="navigator-recommendation-reason-collapse"
-              >
-                <ChevronUp className="h-3.5 w-3.5" aria-hidden="true" />
-                Свернуть объяснение
-              </button>
-            )}
+            <AnimatePresence initial={false}>
+              {isReasonExpanded && (
+                <motion.button
+                  key="reason-collapse"
+                  type="button"
+                  onClick={collapseReason}
+                  aria-expanded={true}
+                  className="navigator-recommendation-reason-collapse"
+                  initial={{ opacity: 0, y: -4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  transition={{ duration: 0.24, ease: "easeOut" }}
+                >
+                  <ChevronUp className="h-3.5 w-3.5" aria-hidden="true" />
+                  Свернуть объяснение
+                </motion.button>
+              )}
+            </AnimatePresence>
           </section>
         )}
 
-        <footer className="navigator-recommendation-actions mt-auto flex flex-nowrap items-center gap-2 border-t border-border pt-4">
-          <span className="shrink-0">
+        <div aria-hidden="true" className="h-5" />
+
+        <footer className="mt-auto flex flex-wrap items-center gap-2 border-t border-border pt-4">          <span className="shrink-0">
             <BookmarkButton nctCode={code} nctTitle={title_ru} institution={institution} city={city} />
           </span>
           {variant !== "compact" && (
             <>
               <motion.button
-                whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => handleExplain()}
-                className="inline-flex h-11 min-w-0 shrink items-center gap-2 whitespace-nowrap rounded-full border border-border bg-transparent px-3 text-sm font-medium text-foreground transition-colors hover:bg-background"
+                className="flex h-10 min-w-[7.5rem] flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-border bg-transparent px-3 text-sm font-medium text-foreground transition-colors hover:bg-background"
               >
-                <ExternalLink className="h-4 w-4 text-text-muted" />
+                <ExternalLink className="h-4 w-4 text-text-muted" aria-hidden="true" />
                 Подробнее
               </motion.button>
               <motion.button
-                whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={handleSelectGoal}
-                className="inline-flex h-11 min-w-0 shrink items-center gap-2 whitespace-nowrap rounded-full bg-[image:var(--marketing-cta-bg)] px-3 text-sm font-semibold text-white transition-colors hover:bg-[image:var(--marketing-cta-hover)]"
+                className="flex h-10 min-w-[8.5rem] flex-[1.3] items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[image:var(--marketing-cta-bg)] px-3 text-sm font-semibold text-white transition-colors hover:bg-[image:var(--marketing-cta-hover)]"
               >
-                <FlaskConical className="h-4 w-4" />
+                <FlaskConical className="h-4 w-4" aria-hidden="true" />
                 Выбрать цель
               </motion.button>
             </>

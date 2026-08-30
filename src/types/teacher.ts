@@ -61,3 +61,10 @@ export type TeacherChatApiResponse = {
   data?: TeacherChatResponse
   error?: string
 }
+
+export type TeacherChatStreamEvent =
+  | { event: "start"; type?: TeacherMessage["type"] }
+  | { event: "delta"; content: string }
+  | { event: "tool"; status: "running" | "complete"; names?: string[] }
+  | { event: "done"; type?: TeacherMessage["type"]; finishReason?: string | null }
+  | { event: "error"; error: string; retryable?: boolean }

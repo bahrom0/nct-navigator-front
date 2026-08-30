@@ -1,15 +1,55 @@
 "use client"
 
-import { useSyncExternalStore } from "react"
+import { useMemo, useSyncExternalStore } from "react"
 import { createPortal } from "react-dom"
 import { AnimatePresence, motion } from "framer-motion"
-import { Bot, MessageSquare, PanelRightClose, Plus, UserRound, X } from "lucide-react"
+import { MessageSquare, PanelRightClose, Plus, X } from "lucide-react"
 import { useCoachStore } from "@/stores/coach-store"
+import type { CoachMessage } from "@/types/coach"
 
 interface CoachChatHistoryProps {
   mobileOpen?: boolean
   onMobileClose?: () => void
   onNewChat?: () => void
+}
+
+const LEGACY_CONVERSATION_KEY = "legacy"
+
+interface ConversationEntry {
+  key: string
+  id: string | null
+  title: string
+  updatedAt: number
+  messageCount: number
+}
+
+function buildConversations(messages: CoachMessage[]): ConversationEntry[] {
+  const groups = new Map<string, CoachMessage[]>()
+
+  for (const message of messages) {
+    const key = message.conversationId ?? LEGACY_CONVERSATION_KEY
+    const bucket = groups.get(key)
+    if (bucket) {
+      bucket.push(message)
+    } else {
+      groups.set(key, [message])
+    }
+  }
+
+  const entries: ConversationEntry[] = []
+  for (const [key, bucket] of groups) {
+    const ordered = [...bucket].sort((a, b) => a.timestamp - b.timestamp)
+    const firstUser = ordered.find((message) => message.role === "user")
+    entries.push({
+      key,
+      id: key === LEGACY_CONVERSATION_KEY ? null : key,
+      title: (firstUser ?? ordered[0])?.content.trim() || "Диалог",
+      updatedAt: ordered[ordered.length - 1]?.timestamp ?? 0,
+      messageCount: ordered.length,
+    })
+  }
+
+  return entries.sort((a, b) => b.updatedAt - a.updatedAt)
 }
 
 export function CoachChatHistory({ mobileOpen = false, onMobileClose, onNewChat }: CoachChatHistoryProps) {
@@ -90,12 +130,20 @@ function MobileHistoryPortal({ mobileOpen, onMobileClose, onNewChat }: CoachChat
 
 function HistoryPanel({ onClose, onNewChat }: { onClose?: () => void; onNewChat?: () => void }) {
   const messages = useCoachStore((s) => s.messages)
+  const activeConversationId = useCoachStore((s) => s.activeConversationId)
+  const setActiveConversation = useCoachStore((s) => s.setActiveConversation)
   const goal = useCoachStore((s) => s.goal)
-  const sorted = [...messages].sort((a, b) => b.timestamp - a.timestamp)
-  const activeMessageId = messages.at(-1)?.id ?? null
+
+  const conversations = useMemo(() => buildConversations(messages), [messages])
+  const activeKey = activeConversationId ?? LEGACY_CONVERSATION_KEY
+
+  const selectConversation = (id: string | null) => {
+    setActiveConversation(id)
+    onClose?.()
+  }
 
   return (
-    <div className="flex h-full w-full flex-col overflow-hidden rounded-[1.75rem] border border-border bg-card-bg/90 shadow-[0_20px_54px_rgba(28,24,18,0.10)] backdrop-blur">
+    <div className="flex h-full w-full flex-col overflow-hidden rounded-[1.75rem] border border-border bg-[var(--marketing-surface-strong)] shadow-[0_20px_54px_rgba(28,24,18,0.10)]">
       <div className="shrink-0 border-b border-border px-4 py-4">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
@@ -132,37 +180,42 @@ function HistoryPanel({ onClose, onNewChat }: { onClose?: () => void; onNewChat?
       </div>
 
       <div className="chat-scrollbar min-h-0 flex-1 overflow-y-auto overscroll-contain px-3 py-4">
-        {sorted.length === 0 ? (
+        {conversations.length === 0 ? (
           <div className="flex h-full flex-col items-center justify-center px-4 text-center">
             <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-2xl border border-border bg-surface-soft text-text-muted">
               <MessageSquare className="h-5 w-5" aria-hidden="true" />
             </div>
             <p className="text-sm font-medium text-foreground">История пуста</p>
-            <p className="mt-1 text-xs leading-5 text-text-muted">После первого сообщения здесь появятся фрагменты диалога.</p>
+            <p className="mt-1 text-xs leading-5 text-text-muted">Начните диалог — здесь появится отдельная карточка для него.</p>
           </div>
         ) : (
-          <div className="space-y-1.5">
-            {sorted.map((msg) => {
-              const active = msg.id === activeMessageId
-              const Icon = msg.role === "coach" ? Bot : UserRound
+          <div className="space-y-2">
+            {conversations.map((conversation) => {
+              const active = conversation.key === activeKey
               return (
                 <button
-                  key={msg.id}
+                  key={conversation.key}
                   type="button"
-                  className={`group w-full rounded-2xl px-3 py-2.5 text-left transition-colors ${
+                  onClick={() => selectConversation(conversation.id)}
+                  aria-current={active ? "true" : undefined}
+                  className={`w-full rounded-2xl border px-3.5 py-3 text-left transition-colors ${
                     active
-                      ? "border border-border bg-surface-raised"
-                      : "border border-transparent text-text-secondary hover:border-border hover:bg-foreground/5"
+                      ? "border-border bg-surface-raised shadow-[0_8px_20px_rgba(28,24,18,0.06)]"
+                      : "border-transparent hover:border-border hover:bg-foreground/5"
                   }`}
                 >
-                  <div className="flex min-w-0 items-center gap-2">
-                    <Icon className={`h-3.5 w-3.5 shrink-0 ${msg.role === "coach" ? "text-primary" : "text-text-muted"}`} aria-hidden="true" />
-                    <span className="truncate text-xs font-medium text-text-muted">
-                      {msg.role === "user" ? "Вы" : "Coach"}
+                  <div className="flex min-w-0 items-center justify-between gap-2">
+                    <span className={`truncate text-sm font-semibold ${active ? "text-foreground" : "text-text-secondary"}`}>
+                      {conversation.title}
+                    </span>
+                    <span className="shrink-0 text-[11px] text-text-muted">
+                      {conversation.updatedAt
+                        ? new Date(conversation.updatedAt).toLocaleDateString("ru-RU", { day: "numeric", month: "short" })
+                        : null}
                     </span>
                   </div>
-                  <p className="mt-1 truncate text-sm font-medium text-foreground">
-                    {msg.content}
+                  <p className="mt-1 text-xs text-text-muted">
+                    {conversation.messageCount} {pluralMessages(conversation.messageCount)}
                   </p>
                 </button>
               )
@@ -172,4 +225,12 @@ function HistoryPanel({ onClose, onNewChat }: { onClose?: () => void; onNewChat?
       </div>
     </div>
   )
+}
+
+function pluralMessages(count: number): string {
+  const mod10 = count % 10
+  const mod100 = count % 100
+  if (mod10 === 1 && mod100 !== 11) return "сообщение"
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return "сообщения"
+  return "сообщений"
 }

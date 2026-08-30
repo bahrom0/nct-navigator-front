@@ -23,6 +23,7 @@ import { NctLogoMark } from "@/components/brand/NctLogoMark";
 
 export function AppShell({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const hydrate = useAuthStore((s) => s.hydrate);
   const activeGoal = useProfileStore((s) => s.activeGoal);
@@ -56,7 +57,14 @@ export function AppShell({ children }: { children: ReactNode }) {
     pathname?.startsWith("/plan") ||
     pathname?.startsWith("/coach");
   const showBackButton = isChatRoute && !!activeConversationId;
-  const isCoachChat = pathname === "/coach" && coachActiveTab === "chat";
+  // coachActiveTab is persisted in localStorage and can differ between the
+  // server render and the browser's first render. Delay structure-changing UI
+  // until hydration has completed so React sees the same initial tree.
+  const isCoachChat = hasMounted && pathname === "/coach" && coachActiveTab === "chat";
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   useEffect(() => {
     const handler = () => {
@@ -151,7 +159,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   }
 
   return (
-    <div className={isDashboardRoute ? "dashboard-route flex min-h-full flex-col" : "flex min-h-full flex-col"}>
+    <div className={isDashboardRoute || pathname?.startsWith("/coach") ? "dashboard-route flex min-h-full flex-col" : "flex min-h-full flex-col"}>
       <ThemeSync />
       <header className="pointer-events-none fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-5 lg:px-6">
         <div className={`pointer-events-auto relative mx-auto max-w-7xl overflow-hidden rounded-[1.9rem] border border-[var(--marketing-border)] bg-[var(--marketing-header-bg)] px-3 py-2.5 shadow-[0_24px_80px_rgba(28,24,18,0.14)] ring-1 ring-[rgba(255,255,255,0.28)] backdrop-blur-[22px] transition-opacity duration-300 dark:shadow-[0_24px_80px_rgba(0,0,0,0.45)] dark:ring-[rgba(255,255,255,0.08)] ${isDashboardRoute && dashboardMobileNavOpen ? "opacity-[.55]" : ""}`}>
@@ -230,7 +238,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       </header>
       <main
         className={`flex-1 ${isDashboardRoute ? "pt-[5.75rem] sm:pt-[5.75rem]" : "pt-24 sm:pt-28"} ${
-          pathname?.startsWith("/categories")
+          pathname?.startsWith("/categories") || pathname?.startsWith("/analyze")
             ? "bg-[var(--marketing-bg)]"
             : ""
         }`}
@@ -242,4 +250,3 @@ export function AppShell({ children }: { children: ReactNode }) {
     </div>
   );
 }
-

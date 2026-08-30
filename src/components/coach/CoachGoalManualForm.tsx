@@ -27,7 +27,7 @@ export function CoachGoalManualForm({
   onChangeUniversity,
 }: CoachGoalManualFormProps) {
   return (
-    <div className="mt-5 space-y-3">
+    <div className="mt-6 space-y-4">
       <LabeledField
         label="Код НЦТ"
         icon={Code2}
@@ -75,12 +75,12 @@ function LabeledField({
 }: LabeledFieldProps) {
   return (
     <label className="block">
-      <span className="mb-1 block text-xs font-medium text-text-secondary">
+      <span className="mb-1.5 block text-[13px] font-semibold text-[var(--marketing-muted)]">
         {label}
     </span>
       <span className="relative block">
         <Icon
-          className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted"
+          className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--marketing-muted)]"
           aria-hidden="true"
         />
         <input
@@ -89,7 +89,7 @@ function LabeledField({
           maxLength={maxLength}
           placeholder={placeholder}
           onChange={(e) => onChange(e.target.value)}
-          className="h-11 w-full rounded-[12px] border border-border bg-background pl-9 pr-3 text-sm text-foreground placeholder:text-text-muted focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+          className="h-12 w-full rounded-[14px] border border-[var(--marketing-border-strong)] bg-[var(--marketing-surface)] pl-10 pr-3 text-sm text-[var(--marketing-foreground)] transition-colors placeholder:text-[color-mix(in_srgb,var(--marketing-muted)_72%,transparent)] focus-visible:border-[var(--marketing-accent)] focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[rgba(42,34,25,0.12)]"
         />
     </span>
   </label>

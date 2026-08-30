@@ -112,7 +112,9 @@ export function CoachChat() {
     setMiniTests,
     addMiniTest,
     setMiniTestResult,
-    clearMessages,
+    activeConversationId,
+    startNewConversation,
+    setActiveConversation,
     progress,
     isLoading,
     setLoading,
@@ -128,19 +130,26 @@ export function CoachChat() {
   const [streamingId, setStreamingId] = useState<string | null>(null)
   const hydratedGoalRef = useRef<string | null>(null)
   const messages = useMemo(() => (Array.isArray(rawMessages) ? rawMessages : []), [rawMessages])
+  const visibleMessages = useMemo(
+    () =>
+      activeConversationId
+        ? messages.filter((message) => message.conversationId === activeConversationId)
+        : messages.filter((message) => !message.conversationId),
+    [messages, activeConversationId],
+  )
   const diagnostics = useMemo(() => (Array.isArray(rawDiagnostics) ? rawDiagnostics : []), [rawDiagnostics])
   const miniTests = useMemo(() => (Array.isArray(rawMiniTests) ? rawMiniTests : []), [rawMiniTests])
   const resolvedGoalId = resolvedGoal?.id
 
   const chatMessages = useMemo<TeacherMessage[]>(
     () =>
-      messages.map((message) => ({
+      visibleMessages.map((message) => ({
         id: message.id,
         role: message.role === "coach" ? "assistant" : "user",
         content: message.content,
         timestamp: message.timestamp,
       })),
-    [messages],
+    [visibleMessages],
   )
 
   useEffect(() => {
@@ -172,6 +181,8 @@ export function CoachChat() {
 
         setMessages(nextMessages)
         setMiniTests(nextMiniTests)
+        // Сообщения из БД не несут локальной метки диалога — показываем их как первый диалог.
+        setActiveConversation(null)
         hydratedGoalRef.current = activeGoalId
       } catch {
         // fall back to persisted client state
@@ -183,7 +194,7 @@ export function CoachChat() {
     return () => {
       cancelled = true
     }
-  }, [resolvedGoalId, setMessages, setMiniTests])
+  }, [resolvedGoalId, setMessages, setMiniTests, setActiveConversation])
 
   const handleSend = useCallback(async (prefilledText?: string) => {
     const text = (prefilledText ?? input).trim()
@@ -198,6 +209,7 @@ export function CoachChat() {
       content: text,
       type: "text",
       timestamp: Date.now(),
+      conversationId: activeConversationId ?? undefined,
     }
     addMessage(userMsg)
     if (resolvedGoalId) {
@@ -207,7 +219,7 @@ export function CoachChat() {
     setLoading(true)
     setError(null)
 
-    const history = messages.slice(-20).map((message) => ({
+    const history = visibleMessages.slice(-20).map((message) => ({
       role: (message.role === "coach" ? "assistant" : "user") as "user" | "assistant",
       content: message.content,
     }))
@@ -255,6 +267,7 @@ export function CoachChat() {
         type: result.data?.type ?? "text",
         miniTest: nextMiniTest,
         timestamp: Date.now(),
+        conversationId: activeConversationId ?? undefined,
       }
 
       addMessage(coachMsg)
@@ -268,7 +281,7 @@ export function CoachChat() {
     } finally {
       setLoading(false)
     }
-  }, [input, isLoading, addMessage, messages, resolvedGoal, resolvedGoalId, setLoading, setError, plan, roadmap, dayPlan, dailyHistory, diagnostics, miniTests, progress, addMiniTest])
+  }, [input, isLoading, addMessage, visibleMessages, resolvedGoal, resolvedGoalId, activeConversationId, setLoading, setError, plan, roadmap, dayPlan, dailyHistory, diagnostics, miniTests, progress, addMiniTest])
 
   const handleMiniTestComplete = useCallback(async (
     testId: string,
@@ -281,7 +294,6 @@ export function CoachChat() {
   ) => {
     const miniTest = miniTests.find((item) => item.id === testId)
       ?? messages.find((message) => message.miniTest?.id === testId)?.miniTest
-
     if (!miniTest) return
 
     const resultPayload: CoachMiniTestResult = {
@@ -326,6 +338,7 @@ export function CoachChat() {
         content: payload.data.reply.trim(),
         type: "progress_update",
         timestamp: Date.now(),
+        conversationId: activeConversationId ?? undefined,
       }
 
       addMessage(reportMessage)
@@ -335,7 +348,7 @@ export function CoachChat() {
     } catch {
       // Non-blocking: the quiz result is already saved locally/server-side.
     }
-  }, [miniTests, messages, setMiniTestResult, addMessage, resolvedGoalId])
+  }, [miniTests, messages, setMiniTestResult, addMessage, resolvedGoalId, activeConversationId])
 
   const regenerateMessage = useCallback(
     (messageId: string) => {
@@ -353,15 +366,16 @@ export function CoachChat() {
   )
 
   const startNewChat = useCallback(() => {
-    clearMessages()
+    // Диалоги сохраняются в истории — новый чат просто начинает новую ветку.
+    startNewConversation()
     setInput("")
     setStreamingId(null)
     setError(null)
     setMobileHistoryOpen(false)
-  }, [clearMessages, setError, setMobileHistoryOpen])
+  }, [startNewConversation, setError, setMobileHistoryOpen])
 
   return (
-    <div className="flex h-full min-h-0 flex-1 overflow-hidden bg-background lg:rounded-[1.75rem] lg:border lg:border-border lg:bg-card-bg/45 lg:shadow-[0_18px_54px_rgba(28,24,18,0.06)] lg:backdrop-blur">
+    <div className="flex h-full min-h-0 flex-1 overflow-hidden bg-background lg:rounded-[1.75rem] lg:border lg:border-border lg:bg-[var(--marketing-surface-strong)] lg:shadow-[0_18px_54px_rgba(28,24,18,0.06)]">
       <div className="relative flex min-w-0 flex-1 flex-col">
         <ChatMessages
           messages={chatMessages}
@@ -406,7 +420,7 @@ export function CoachChat() {
             )
           }}
         />
-        <div className="z-20 shrink-0 bg-gradient-to-t from-background via-background/95 to-transparent pt-3 sm:pt-4">
+        <div className="z-20 shrink-0 pt-3 sm:pt-4">
           <ChatComposer
             input={input}
             onInputChange={setInput}

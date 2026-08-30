@@ -59,6 +59,11 @@ interface CoachStore {
   addMessage: (msg: CoachMessage) => void
   clearMessages: () => void
 
+  /** Активный диалог в чате; null — первый (легаси) диалог. Не персистится. */
+  activeConversationId: string | null
+  startNewConversation: () => void
+  setActiveConversation: (id: string | null) => void
+
   progress: CoachProgress
   updateProgress: (partial: Partial<CoachProgress>) => void
   resetProgress: () => void
@@ -372,6 +377,16 @@ export const useCoachStore = create<CoachStore>((set, get) => {
     persistCoachState(next)
     return next
   }),
+
+  activeConversationId: null,
+  startNewConversation: () =>
+    set((state) => {
+      const id = typeof crypto !== "undefined" && crypto.randomUUID
+        ? crypto.randomUUID()
+        : `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`
+      return { ...state, activeConversationId: id }
+    }),
+  setActiveConversation: (id) => set((state) => ({ ...state, activeConversationId: id })),
 
   progress: persisted.progress,
   updateProgress: (partial) =>

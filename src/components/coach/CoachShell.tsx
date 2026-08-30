@@ -71,15 +71,15 @@ export function CoachShell({ children }: CoachShellProps) {
 
       <aside
         aria-label="Разделы Coach"
-        className={`dashboard-sidebar fixed left-1/2 top-1/2 z-50 flex max-h-[calc(100dvh-3rem)] w-[min(18rem,calc(100vw-1.5rem))] -translate-x-1/2 -translate-y-1/2 flex-col transition-[transform,opacity] duration-300 ease-out lg:left-6 lg:top-1/2 lg:max-h-[calc(100dvh-3rem)] lg:translate-x-0 lg:-translate-y-1/2 ${mobileOpen ? "scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0 lg:pointer-events-auto lg:scale-100 lg:opacity-100"}`}
+        className={`dashboard-sidebar fixed left-1/2 top-1/2 z-50 flex max-h-[calc(100dvh-2.5rem)] w-[min(21.5rem,calc(100vw-1.75rem))] -translate-x-1/2 -translate-y-1/2 flex-col transition-[transform,opacity] duration-300 ease-out lg:left-6 lg:top-1/2 lg:max-h-[calc(100dvh-3rem)] lg:w-[18rem] lg:translate-x-0 lg:-translate-y-1/2 ${mobileOpen ? "scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0 lg:pointer-events-auto lg:scale-100 lg:opacity-100"}`}
       >
-        <div className="flex items-start justify-between border-b border-border px-5 py-5">
+        <div className="flex items-start justify-between border-b border-border px-6 pb-5 pt-6 lg:px-5 lg:py-5">
           <div className="min-w-0">
             {/* <p className="dashboard-eyebrow">Личный Coach</p> */}
-            <p className="mt-3 truncate text-sm font-semibold text-foreground">
+            <p className="mt-3 truncate text-base font-semibold text-foreground lg:text-sm">
               {resolvedGoal?.nctTitle ?? "Цель подготовки"}
             </p>
-            <p className="mt-1 truncate text-xs text-text-muted">
+            <p className="mt-1.5 truncate text-sm text-text-muted lg:mt-1 lg:text-xs">
               {resolvedGoal?.nctCode ?? "Выберите направление"}
             </p>
           </div>
@@ -87,24 +87,24 @@ export function CoachShell({ children }: CoachShellProps) {
             type="button"
             onClick={() => setMobileOpen(false)}
             aria-label="Закрыть меню"
-            className="-mr-2 -mt-1 rounded-xl p-2 text-text-secondary hover:bg-foreground/5 lg:hidden"
+            className="-mr-2 -mt-1 rounded-xl p-2.5 text-text-secondary hover:bg-foreground/5 lg:hidden"
           >
-            <X className="h-4 w-4" aria-hidden="true" />
+            <X className="h-5 w-5" aria-hidden="true" />
           </button>
         </div>
 
-        <nav className="flex-1 space-y-1.5 overflow-y-auto p-3" role="tablist">
+        <nav className="flex-1 space-y-2 overflow-y-auto p-4 lg:space-y-1.5 lg:p-3" role="tablist">
           {TABS.map((tab) => (
             <CoachNavButton key={tab.id} tab={tab} active={activeTab === tab.id} onSelect={changeTab} />
           ))}
         </nav>
 
-        <div className="m-3 rounded-2xl border border-border bg-background p-4">
+        <div className="m-4 rounded-2xl border border-border bg-background p-5 lg:m-3 lg:p-4">
           <div className="flex items-center gap-2 text-warning">
-            <Flame className="h-4 w-4" aria-hidden="true" />
-            <span className="text-sm font-semibold tabular-nums">{streak} {pluralDays(streak)}</span>
+            <Flame className="h-5 w-5 lg:h-4 lg:w-4" aria-hidden="true" />
+            <span className="text-[0.95rem] font-semibold tabular-nums lg:text-sm">{streak} {pluralDays(streak)}</span>
           </div>
-          <p className="mt-2 text-xs leading-5 text-text-muted">Сохраняйте ритм: один завершённый день укрепляет вашу серию.</p>
+          <p className="mt-2 text-[13px] leading-5 text-text-muted lg:text-xs">Сохраняйте ритм: один завершённый день укрепляет вашу серию.</p>
         </div>
       </aside>
 
@@ -143,12 +143,12 @@ function CoachNavButton({ tab, active, onSelect }: { tab: TabConfig; active: boo
       role="tab"
       aria-selected={active}
       onClick={() => onSelect(tab.id)}
-      className={`flex min-h-14 w-full items-center gap-3 rounded-2xl px-3.5 py-3 text-left transition-all duration-200 ${active ? "bg-primary text-white shadow-[0_12px_24px_rgba(42,34,25,0.16)]" : "text-text-secondary hover:translate-x-0.5 hover:bg-foreground/5 hover:text-foreground"}`}
+      className={`flex min-h-[3.9rem] w-full items-center gap-3.5 rounded-2xl px-4 py-3.5 text-left transition-all duration-200 lg:min-h-14 lg:gap-3 lg:px-3.5 lg:py-3 ${active ? "bg-primary text-white shadow-[0_12px_24px_rgba(42,34,25,0.16)]" : "text-text-secondary hover:translate-x-0.5 hover:bg-foreground/5 hover:text-foreground"}`}
     >
-      <Icon className="h-4 w-4 shrink-0" aria-hidden="true" />
+      <Icon className="h-5 w-5 shrink-0 lg:h-4 lg:w-4" aria-hidden="true" />
       <span className="min-w-0">
-        <span className="block text-sm font-semibold">{tab.label}</span>
-        <span className={`mt-0.5 block text-xs ${active ? "text-white/70" : "text-text-muted"}`}>{tab.description}</span>
+        <span className="block text-[0.95rem] font-semibold lg:text-sm">{tab.label}</span>
+        <span className={`mt-0.5 block text-[13px] lg:text-xs ${active ? "text-white/70" : "text-text-muted"}`}>{tab.description}</span>
       </span>
     </button>
   )

@@ -3,233 +3,178 @@
 import type { AnalysisStep } from "@/types/analysis";
 import { STEPS as STEP_LIST } from "@/types/analysis";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  BriefcaseBusiness,
-  Check,
-  Database,
-  GitBranch,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
+import { Check } from "lucide-react";
 
-const ICONS: Record<AnalysisStep, typeof Sparkles> = {
-  submitting_request: BriefcaseBusiness,
-  analyzing_interests: GitBranch,
-  searching_nct_codes: Database,
-  forming_recommendations: ShieldCheck,
+const STEP_CHIPS: Record<AnalysisStep, string> = {
+  submitting_request: "Профессии",
+  analyzing_interests: "Интересы",
+  searching_nct_codes: "Программы",
+  forming_recommendations: "Проверка",
 };
 
 const SUBTITLES: Record<AnalysisStep, string> = {
-  submitting_request: "Берём выбранные интересы, город и уровень образования, чтобы собрать локальный profession shortlist.",
-  analyzing_interests: "Сопоставляем профиль с локальным каталогом профессий и отбрасываем неподходящие маршруты.",
-  searching_nct_codes: "Применяем жёсткие фильтры по городу и уровню, затем ищем связанные специальности в базе НЦТ.",
-  forming_recommendations: "Проверяем валидные ключи, убираем дубли семей специальностей и ранжируем финальный shortlist.",
+  submitting_request: "Собираем shortlist профессий по вашим интересам",
+  analyzing_interests: "Сверяем ваши интересы с каталогом профессий",
+  searching_nct_codes: "Ищем связанные программы и коды НЦТ",
+  forming_recommendations: "Проверяем кандидатов и ранжируем рекомендации",
 };
 
-function StageIcon({
-  step,
-  active,
-  completed,
-}: {
-  step: AnalysisStep;
-  active: boolean;
-  completed: boolean;
-}) {
-  const Icon = ICONS[step];
+type ChipState = "done" | "active" | "pending";
 
+function pluralDirections(count: number): string {
+  const mod10 = count % 10;
+  const mod100 = count % 100;
+  if (mod10 === 1 && mod100 !== 11) return `${count} направление интересов`;
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return `${count} направления интересов`;
+  return `${count} направлений интересов`;
+}
+
+function AnalysisOrb({ active }: { active: boolean }) {
   return (
-    <motion.div
-      layout
-      className={`relative flex shrink-0 items-center justify-center rounded-full transition-colors duration-300 ${
-        active
-          ? "h-16 w-16 bg-[var(--primary)] text-white shadow-[0_0_0_10px_rgb(37_99_235_/_0.12),0_14px_34px_rgb(37_99_235_/_0.28)]"
-          : completed
-            ? "h-12 w-12 bg-[var(--primary)] text-white shadow-[0_8px_24px_rgb(37_99_235_/_0.2)]"
-            : "h-12 w-12 border border-[var(--marketing-border-strong)] bg-[var(--marketing-surface)] text-[var(--marketing-muted)]"
-      }`}
-    >
+    <div className="relative h-36 w-36 shrink-0 sm:h-44 sm:w-44" aria-hidden="true">
+      <motion.div
+        className="absolute inset-[-12%] rounded-full bg-[radial-gradient(circle_at_50%_58%,rgba(148,178,255,0.32),rgba(148,178,255,0.12)_48%,transparent_72%)] blur-lg"
+        animate={{
+          scale: active ? [1, 1.07, 1, 1.09, 1] : [1, 1.07, 1],
+          opacity: active ? [0.75, 1, 0.8, 1, 0.75] : [0.75, 1, 0.75],
+        }}
+        transition={
+          active
+            ? { duration: 1.6, repeat: Infinity, ease: "easeInOut" }
+            : { duration: 4.2, repeat: Infinity, ease: "easeInOut" }
+        }
+      />
+      <motion.div
+        className="absolute inset-0"
+        animate={active ? { scale: [1, 1.035, 1, 1.05, 1] } : { scale: 1 }}
+        transition={
+          active
+            ? { duration: 1.6, repeat: Infinity, times: [0, 0.16, 0.32, 0.52, 0.68], ease: "easeInOut" }
+            : { duration: 0.3 }
+        }
+      >
+        <motion.div
+          className="absolute inset-[16%] rounded-full bg-[radial-gradient(circle_at_38%_30%,#ffffff_0%,#e3e9ff_26%,#b7c8ff_58%,#8ba6ff_100%)] shadow-[0_0_56px_rgba(96,141,255,0.4)]"
+          animate={{ scale: active ? [1, 1.02, 1] : [1, 1.035, 1] }}
+          transition={{ duration: active ? 1.6 : 3.4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute left-[37%] top-[32%] h-3 w-3 rounded-full bg-white shadow-[0_0_16px_6px_rgba(255,255,255,0.95),0_0_38px_16px_rgba(125,157,255,0.55)]"
+          animate={{ opacity: active ? [0.7, 1, 0.8, 1, 0.7] : [0.7, 1, 0.7] }}
+          transition={{ duration: active ? 1.6 : 2.6, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </motion.div>
       {active ? (
         <>
           <motion.span
-            aria-hidden="true"
-            className="absolute inset-[-10px] rounded-full border border-[var(--primary)]/35"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-[12%] rounded-full border border-[var(--primary)]/30"
+            animate={{ scale: [1, 1.45], opacity: [0.55, 0] }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: "easeOut" }}
           />
           <motion.span
-            aria-hidden="true"
-            className="absolute inset-[-5px] rounded-full border border-dashed border-[var(--primary)]/40"
-            animate={{ rotate: -360 }}
-            transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-[12%] rounded-full border border-[var(--primary)]/20"
+            animate={{ scale: [1, 1.45], opacity: [0.45, 0] }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: "easeOut", delay: 1.1 }}
           />
-          <Icon className="relative h-7 w-7" />
         </>
-      ) : completed ? (
-        <Check className="h-5 w-5" strokeWidth={2.5} />
-      ) : (
-        <Icon className="h-5 w-5" />
-      )}
-    </motion.div>
-  );
-}
-
-function StageLabel({
-  step,
-  index,
-  active,
-  completed,
-  compact = false,
-}: {
-  step: (typeof STEP_LIST)[number];
-  index: number;
-  active: boolean;
-  completed: boolean;
-  compact?: boolean;
-}) {
-  return (
-    <div className={compact ? "mt-0" : active ? "mt-5" : "mt-4"}>
-      <p
-        className={`text-sm font-semibold tracking-[-0.01em] ${
-          active
-            ? "text-[var(--marketing-foreground)]"
-            : completed
-              ? "text-[var(--primary)]"
-              : "text-[var(--marketing-muted)]"
-        }`}
+      ) : null}
+      <motion.div
+        className="absolute inset-[-4%] rounded-full border border-[var(--primary)]/20"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
       >
-        {index + 1}. {step.label}
-      </p>
-      <AnimatePresence initial={false} mode="wait">
-        {active ? (
-          <motion.p
-            key={`${step.key}-active`}
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -4 }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-            className="mt-2 text-xs leading-5 text-[var(--marketing-muted)] sm:text-sm"
+        <span className="absolute left-1/2 top-0 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--primary)]/50" />
+        <span className="absolute bottom-[10%] right-[12%] h-1 w-1 rounded-full bg-[var(--primary)]/35" />
+      </motion.div>
+      <motion.div
+        className="absolute inset-[-13%] rounded-full border border-[var(--primary)]/10"
+        animate={{ rotate: -360 }}
+        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+      >
+        <span className="absolute left-[14%] top-[24%] text-[10px] leading-none text-[var(--primary)]/45">+</span>
+        <span className="absolute bottom-[16%] left-[38%] text-[8px] leading-none text-[var(--primary)]/35">+</span>
+        <span className="absolute right-[10%] top-[46%] h-1 w-1 rounded-full bg-[var(--primary)]/30" />
+      </motion.div>
+    </div>
+  );
+}
+
+function ProgressBar({ ratio }: { ratio: number }) {
+  const width = `${Math.round(Math.min(1, Math.max(0.04, ratio)) * 100)}%`;
+
+  return (
+    <div className="relative h-[3px] w-full rounded-full bg-[var(--primary)]/12">
+      <motion.div
+        className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-[#a9c0ff] via-[var(--primary)] to-[var(--primary)]"
+        initial={{ width: "4%" }}
+        animate={{ width }}
+        transition={{ type: "spring", stiffness: 60, damping: 20 }}
+      />
+      <motion.div
+        className="absolute top-1/2 z-10"
+        initial={{ left: "4%" }}
+        animate={{ left: width }}
+        transition={{ type: "spring", stiffness: 60, damping: 20 }}
+      >
+        <motion.span
+          className="block h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_0_4px_rgba(37,99,235,0.22),0_0_14px_5px_rgba(37,99,235,0.45)]"
+          animate={{ scale: [1, 1.25, 1] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </motion.div>
+    </div>
+  );
+}
+
+function StageBadge({ index, total, className }: { index: number; total: number; className?: string }) {
+  return (
+    <span
+      className={`shrink-0 items-center rounded-full bg-[var(--primary)]/10 px-3.5 py-1.5 text-sm font-semibold text-[var(--primary)] ${className ?? ""}`}
+    >
+      Этап {Math.min(index + 1, total)}/{total}
+    </span>
+  );
+}
+
+function StepChip({ label, state, vertical }: { label: string; state: ChipState; vertical?: boolean }) {
+  return (
+    <div className={vertical ? "flex min-w-0 flex-col items-center gap-2 text-center" : "flex items-center gap-2.5"}>
+      <div className="flex h-6 w-6 shrink-0 items-center justify-center">
+        {state === "done" ? (
+          <motion.span
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 320, damping: 20 }}
+            className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--primary)] text-white shadow-[0_6px_16px_rgba(37,99,235,0.32)]"
           >
-            {SUBTITLES[step.key]}
-          </motion.p>
-        ) : null}
-      </AnimatePresence>
-    </div>
-  );
-}
-
-function ActiveStageFrame({
-  active,
-  children,
-  className = "",
-  radius = "rounded-[2rem]",
-}: {
-  active: boolean;
-  children: React.ReactNode;
-  className?: string;
-  radius?: string;
-}) {
-  return (
-    <div className={`relative overflow-visible ${radius} ${className}`}>
-      {children}
-      <motion.div
-        aria-hidden="true"
-        className={`pointer-events-none absolute inset-0 z-20 border-2 border-[var(--primary)] ${radius}`}
-        initial={{ opacity: 0, scale: 0.985 }}
-        animate={{
-          opacity: active ? 1 : 0,
-          scale: active ? 1 : 0.985,
-        }}
-        transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
-      />
-    </div>
-  );
-}
-
-function DesktopTimeline({ currentIndex, status }: { currentIndex: number; status: string }) {
-  return (
-    <div className="relative hidden min-h-[18rem] items-center md:flex">
-      <div className="absolute left-[12%] right-[12%] top-[4.3rem] h-px bg-[var(--marketing-border-strong)]" />
-      <motion.div
-        className="absolute left-[12%] top-[4.3rem] h-px origin-left bg-[var(--primary)]"
-        animate={{ width: `${Math.max(0, Math.min(currentIndex, STEP_LIST.length - 1)) * (76 / (STEP_LIST.length - 1))}%` }}
-        transition={{ type: "spring", stiffness: 80, damping: 18 }}
-      />
-
-      <div className="relative grid w-full grid-cols-4 gap-3">
-        {STEP_LIST.map((step, index) => {
-          const active = status === "running" && index === currentIndex;
-          const completed = index < currentIndex || status === "success";
-
-          return (
-            <motion.div
-              key={step.key}
-              layout
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.06, duration: 0.3, ease: "easeOut" }}
-              className={`relative flex min-w-0 flex-col items-center text-center ${active ? "z-10" : "z-0"}`}
-            >
-              <ActiveStageFrame
-                active={active}
-                className={active ? "w-full max-w-[15rem]" : "w-full"}
-                radius="rounded-[2rem]"
-              >
-              <motion.div
-                layout
-                className={active ? "flex min-h-[15rem] w-full max-w-[15rem] flex-col items-center justify-start rounded-[2rem] bg-[var(--marketing-surface)] px-4 py-5 shadow-[0_20px_50px_rgb(37_99_235_/_0.14)]" : "flex min-h-[15rem] w-full flex-col items-center justify-start px-2 py-5"}
-              >
-                <StageIcon step={step.key} active={active} completed={completed} />
-                <StageLabel step={step} index={index} active={active} completed={completed} />
-              </motion.div>
-              </ActiveStageFrame>
-            </motion.div>
-          );
-        })}
+            <Check className="h-3.5 w-3.5" strokeWidth={3} />
+          </motion.span>
+        ) : state === "active" ? (
+          <span className="relative flex h-6 w-6 items-center justify-center">
+            <motion.span
+              className="absolute inset-0 rounded-full border border-[var(--primary)]/45"
+              animate={{ scale: [1, 1.55], opacity: [0.8, 0] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: "easeOut" }}
+            />
+            <span className="h-3.5 w-3.5 rounded-full bg-[var(--primary)] shadow-[0_0_12px_2px_rgba(37,99,235,0.45)]" />
+          </span>
+        ) : (
+          <span className="h-[18px] w-[18px] rounded-full border-2 border-[var(--primary)]/25" />
+        )}
       </div>
-    </div>
-  );
-}
-
-function MobileTimeline({ currentIndex, status }: { currentIndex: number; status: string }) {
-  return (
-    <div className="relative pl-3 md:hidden">
-      <div className="absolute bottom-10 left-[2.75rem] top-6 z-0 w-px bg-[var(--marketing-border-strong)]" />
-      <motion.div
-        className="absolute left-[2.75rem] top-6 z-0 w-px origin-top bg-[var(--primary)]"
-        animate={{ height: `${Math.max(0, Math.min(currentIndex, STEP_LIST.length - 1)) * 33.333}%` }}
-        transition={{ type: "spring", stiffness: 80, damping: 18 }}
-      />
-
-      <div className="relative space-y-3">
-        {STEP_LIST.map((step, index) => {
-          const active = status === "running" && index === currentIndex;
-          const completed = index < currentIndex || status === "success";
-
-          return (
-            <motion.div
-              key={step.key}
-              layout
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.06, duration: 0.3, ease: "easeOut" }}
-              className="relative z-10 grid grid-cols-[4rem_minmax(0,1fr)] items-center gap-4 py-3 pr-2 pl-0"
-            >
-              <ActiveStageFrame
-                active={active}
-                className={`col-span-2 grid grid-cols-[4rem_minmax(0,1fr)] items-center gap-4 overflow-visible rounded-[1.35rem] py-3 ${active ? "-ml-3 bg-[var(--marketing-surface)] py-4 pr-4 pl-3 shadow-[0_16px_36px_rgb(37_99_235_/_0.12)]" : ""}`}
-                radius="rounded-[1.35rem]"
-              >
-                <div className="flex items-center justify-center">
-                  <StageIcon step={step.key} active={active} completed={completed} />
-                </div>
-                <div className="min-w-0">
-                  <StageLabel step={step} index={index} active={active} completed={completed} compact />
-                </div>
-              </ActiveStageFrame>
-            </motion.div>
-          );
-        })}
-      </div>
+      <span
+        className={
+          vertical
+            ? `block w-full px-0.5 text-center text-[clamp(9px,2.6vw,11px)] font-semibold leading-tight tracking-[-0.02em] ${
+                state === "pending" ? "text-[var(--marketing-muted)]" : "text-[var(--marketing-foreground)]"
+              }`
+            : `text-sm font-semibold ${
+                state === "pending" ? "font-medium text-[var(--marketing-muted)]" : "text-[var(--marketing-foreground)]"
+              }`
+        }
+      >
+        {label}
+      </span>
     </div>
   );
 }
@@ -237,16 +182,82 @@ function MobileTimeline({ currentIndex, status }: { currentIndex: number; status
 export function AnalysisTimeline({
   currentStep,
   status,
+  city,
+  interestsCount,
 }: {
   currentStep: AnalysisStep;
   status: "idle" | "running" | "success" | "error";
+  city?: string;
+  interestsCount: number;
 }) {
-  const targetIndex = Math.max(0, STEP_LIST.findIndex((step) => step.key === currentStep));
+  const safeIndex = Math.max(0, STEP_LIST.findIndex((step) => step.key === currentStep));
+  const currentIndex = status === "success" ? STEP_LIST.length - 1 : safeIndex;
+  const finished = status === "success";
+  const ratio = finished ? 1 : (currentIndex + 0.5) / STEP_LIST.length;
+  const subtitle = finished ? "Готово — открываем рекомендации" : SUBTITLES[currentStep];
+
+  const chipStates = STEP_LIST.map(
+    (step, index): ChipState =>
+      index < currentIndex || finished ? "done" : status === "running" && index === currentIndex ? "active" : "pending",
+  );
+
+  const meta = `${city?.trim() ? city.trim() : "Ваш город"} · ${pluralDirections(interestsCount)} · реальные кандидаты НЦТ`;
 
   return (
     <div className="w-full">
-      <DesktopTimeline currentIndex={targetIndex} status={status} />
-      <MobileTimeline currentIndex={targetIndex} status={status} />
+      <div className="flex flex-col items-center md:grid md:grid-cols-[auto_minmax(0,1fr)] md:items-start md:gap-9">
+        <div className="flex justify-center md:block">
+          <AnalysisOrb active={status === "running"} />
+        </div>
+
+        <div className="mt-7 w-full md:mt-1.5">
+          <div className="flex items-start justify-between gap-4 md:justify-start">
+            <h1 className="text-center text-xl font-semibold tracking-[-0.03em] text-[var(--marketing-foreground)] sm:text-2xl md:text-left md:text-[1.75rem] md:leading-tight">
+              Собираем рекомендации НЦТ
+            </h1>
+            <StageBadge index={currentIndex} total={STEP_LIST.length} className="hidden md:inline-flex" />
+          </div>
+
+          <div className="flex min-h-[3.5rem] items-start justify-center md:min-h-0 md:justify-start">
+            <AnimatePresence initial={false} mode="wait">
+              <motion.p
+                key={subtitle}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.24, ease: "easeOut" }}
+                className="mt-2.5 text-center text-[15px] font-medium leading-6 text-[var(--primary)] md:mt-3 md:text-left md:text-base"
+              >
+                {subtitle}
+              </motion.p>
+            </AnimatePresence>
+          </div>
+
+          <p className="mt-1.5 text-center text-sm text-[var(--marketing-muted)] md:mt-2 md:text-left">
+            {meta}
+          </p>
+
+          <div className="mt-6 md:mt-7">
+            <ProgressBar ratio={ratio} />
+          </div>
+
+          <p className="mt-4 text-center text-sm font-semibold text-[var(--primary)] md:hidden">
+            Этап {Math.min(currentIndex + 1, STEP_LIST.length)} из {STEP_LIST.length}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-8 grid grid-cols-4 gap-1.5 sm:gap-3 md:hidden">
+        {STEP_LIST.map((step, index) => (
+          <StepChip key={step.key} label={STEP_CHIPS[step.key]} state={chipStates[index]} vertical />
+        ))}
+      </div>
+
+      <div className="mt-9 hidden items-center justify-between gap-6 md:flex">
+        {STEP_LIST.map((step, index) => (
+          <StepChip key={step.key} label={STEP_CHIPS[step.key]} state={chipStates[index]} />
+        ))}
+      </div>
     </div>
   );
 }

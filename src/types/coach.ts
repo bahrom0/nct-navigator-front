@@ -151,6 +151,8 @@ export interface CoachMessage {
   type: CoachMessageType
   miniTest?: CoachMiniTest
   timestamp: number
+  /** Локальная группировка по диалогам; сообщения без метки относятся к текущему (первому) диалогу. */
+  conversationId?: string
 }
 
 export interface CoachProgress {

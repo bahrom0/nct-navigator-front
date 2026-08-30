@@ -56,6 +56,23 @@ export function isPriorityActivityEventType(type: string): type is PriorityActiv
   return PRIORITY_ACTIVITY_EVENT_SET.has(type)
 }
 
+// Главные события, которые показываем пользователю в профиле («Последние действия»).
+// Внутренняя логика (достижения) продолжает видеть все события.
+export const HIGHLIGHTED_ACTIVITY_EVENT_TYPES = [
+  "finish_interview",
+  "generate_plan",
+  "complete_plan",
+  "coach_goal_set",
+  "coach_roadmap_created",
+  "coach_goal_achieved",
+] as const
+
+const HIGHLIGHTED_ACTIVITY_EVENT_SET = new Set<string>(HIGHLIGHTED_ACTIVITY_EVENT_TYPES)
+
+export function isHighlightedActivityEventType(type: string): boolean {
+  return HIGHLIGHTED_ACTIVITY_EVENT_SET.has(type)
+}
+
 export const ACTIVITY_EVENT_LABELS: Record<ActivityEventType, string> = {
   open_app: "Запуск приложения",
   choose_category: "Выбор направления",
@@ -64,20 +81,20 @@ export const ACTIVITY_EVENT_LABELS: Record<ActivityEventType, string> = {
   bookmark_code: "Сохранение кода в закладки",
   open_profile: "Открытие профиля",
   start_interview: "Начало AI-собеседования",
-  finish_interview: "Завершение AI-собеседования",
-  generate_plan: "Генерация общего плана",
+  finish_interview: "Интервью завершено",
+  generate_plan: "План создан",
   save_plan: "Сохранение плана в аккаунт",
   complete_plan_step: "Завершение шага общего плана",
   test_plan: "Прохождение проверки плана",
-  complete_plan: "Завершение общего плана",
+  complete_plan: "План завершён",
   regenerate_plan: "Пересборка общего плана",
   use_teacher: "Использование AI Chat",
-  coach_goal_set: "Установка цели в Coach",
+  coach_goal_set: "Цель выбрана",
   coach_diagnostic_taken: "Прохождение диагностики",
-  coach_roadmap_created: "Создание roadmap в Coach",
+  coach_roadmap_created: "Цель создана",
   coach_day_completed: "Завершение учебного дня",
   coach_task_completed: "Завершение задачи Coach",
   coach_mini_test_taken: "Прохождение мини-теста",
   coach_streak_milestone: "Достижение серии дней",
-  coach_goal_achieved: "Достижение цели",
+  coach_goal_achieved: "Цель выполнена",
 }

@@ -337,6 +337,11 @@ button {
   box-shadow: 0 18px 44px rgb(42 34 25 / 0.11);
 }
 
+.navigator-interest-coverage-list-fade {
+  mask-image: linear-gradient(180deg, #000 0%, #000 52%, rgb(0 0 0 / 0) 96%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 52%, rgb(0 0 0 / 0) 96%);
+}
+
 .navigator-interest-coverage-fade {
   position: absolute;
   right: 0;
@@ -348,14 +353,6 @@ button {
   align-items: flex-end;
   justify-content: center;
   padding-bottom: 0.55rem;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    color-mix(in srgb, var(--card-bg) 72%, transparent) 48%,
-    color-mix(in srgb, var(--card-bg) 96%, transparent) 100%
-  );
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
   pointer-events: none;
 }
 
@@ -385,42 +382,32 @@ button {
   outline-offset: 3px;
 }
 
+.navigator-recommendation-reason-copy {
+  overflow: hidden;
+  transition: max-height 440ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+
 .navigator-recommendation-reason-copy--clamped {
   max-height: 4.5rem;
   overflow: hidden;
 }
 
+.navigator-recommendation-reason-copy--clamped-mask {
+  mask-image: linear-gradient(180deg, #000 0%, #000 42%, rgb(0 0 0 / 0) 97%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 42%, rgb(0 0 0 / 0) 97%);
+}
+
 .navigator-recommendation-reason-fade {
-  isolation: isolate;
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 1;
   display: flex;
-  height: 3rem;
+  height: 3.25rem;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 0.2rem;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    color-mix(in srgb, var(--card-bg) 10%, transparent) 30%,
-    color-mix(in srgb, var(--card-bg) 72%, transparent) 78%,
-    color-mix(in srgb, var(--card-bg) 94%, transparent) 100%
-  );
-  pointer-events: none;
-}
-
-.navigator-recommendation-reason-fade::before {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  content: "";
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  mask-image: linear-gradient(180deg, transparent 0%, transparent 28%, #000 100%);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, transparent 28%, #000 100%);
+  padding-bottom: 0.15rem;
   pointer-events: none;
 }
 
@@ -576,6 +563,11 @@ button {
   .navigator-recommendation-reason-copy--clamped {
     max-height: none;
     overflow: visible;
+  }
+
+  .navigator-recommendation-reason-copy--clamped-mask {
+    mask-image: none;
+    -webkit-mask-image: none;
   }
 
   .navigator-recommendation-reason-fade {
@@ -1002,5 +994,20 @@ button {
   .navigator-page-subtitle {
     font-size: 1rem;
     line-height: 1.6;
+  }
+
+  .navigator-recommendation-hero .navigator-page-title {
+    font-size: 1.45rem;
+    line-height: 1.18;
+  }
+
+  .navigator-recommendation-hero .navigator-page-subtitle {
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+
+  .navigator-recommendation-hero .navigator-kicker {
+    padding: 0.32rem 0.65rem;
+    font-size: 0.68rem;
   }
 }

@@ -22,7 +22,7 @@ export function CoachGoalRecommendationList({
         {[0, 1, 2].map((i) => (
           <div
             key={i}
-            className="h-16 animate-pulse rounded-[14px] bg-background"
+            className="h-16 animate-pulse rounded-[16px] bg-[var(--marketing-soft)]"
           />
         ))}
    </div>
@@ -31,7 +31,7 @@ export function CoachGoalRecommendationList({
 
   if (recommendations.length === 0) {
     return (
-      <p className="mt-5 rounded-[14px] bg-background px-4 py-6 text-center text-sm text-text-secondary">
+      <p className="mt-5 rounded-[16px] border border-[var(--marketing-border)] bg-[var(--marketing-soft)] px-4 py-6 text-center text-sm text-[var(--marketing-muted)]">
         У нас пока нет рекомендаций для тебя.
         <br />
         Введите код НЦТ вручную — Coach подстроится.
@@ -54,29 +54,29 @@ export function CoachGoalRecommendationList({
               role="radio"
               aria-checked={active}
               onClick={() => onPick(index)}
-              className={`flex w-full items-start gap-3 rounded-[14px] border px-3 py-3 text-left transition-colors ${
+              className={`flex w-full items-start gap-3 rounded-[16px] border px-3.5 py-3.5 text-left transition-all duration-200 ${
                 active
-                  ? "border-primary bg-primary-light/40"
-                  : "border-border bg-background hover:border-primary/40"
+                  ? "border-[var(--marketing-accent)] bg-[var(--marketing-surface-contrast)] shadow-[0_12px_28px_rgba(42,34,25,0.14)]"
+                  : "border-[var(--marketing-border)] bg-[var(--marketing-surface)] hover:border-[var(--marketing-border-strong)]"
               }`}
             >
               <BookOpen
                 className={`mt-0.5 h-4 w-4 shrink-0 ${
-                  active ? "text-primary" : "text-text-muted"
+                  active ? "text-[var(--marketing-accent)]" : "text-[var(--marketing-muted)]"
                 }`}
                 aria-hidden="true"
               />
               <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-semibold text-foreground">
+                <p className="truncate text-sm font-semibold text-[var(--marketing-foreground)]">
                   {rec.nctTitle}
              </p>
-                <p className="truncate text-xs text-text-secondary">
+                <p className="truncate text-xs text-[var(--marketing-muted)]">
                   {rec.nctCode}
                   {rec.institution ? ` · ${rec.institution}` : ""}
              </p>
            </div>
               {active ? (
-                <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-primary">
+                <span className="shrink-0 rounded-full bg-[image:var(--marketing-cta-bg)] px-2.5 py-1 text-[11px] font-semibold text-white">
                   Выбрано
              </span>
               ) : null}

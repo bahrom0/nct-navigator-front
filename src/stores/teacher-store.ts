@@ -13,6 +13,7 @@ interface TeacherState {
   error: string | null
   addMessage: (msg: TeacherMessage) => void
   addMessages: (msgs: TeacherMessage[]) => void
+  updateMessageContent: (id: string, content: string) => void
   updateMessageStatus: (id: string, status: MessageStatus) => void
   setLoading: (loading: boolean) => void
   setError: (error: string | null) => void
@@ -47,6 +48,14 @@ export const useTeacherStore = create<TeacherState>((set, get) => ({
       if (newMsgs.length === 0) return state
       return { messages: [...state.messages, ...newMsgs], error: null }
     })
+  },
+
+  updateMessageContent: (id, content) => {
+    set((state) => ({
+      messages: state.messages.map((message) =>
+        message.id === id ? { ...message, content } : message
+      ),
+    }))
   },
 
   updateMessageStatus: (id, status) => {

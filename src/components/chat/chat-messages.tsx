@@ -10,52 +10,49 @@ interface ChatMessagesProps {
   isLoading: boolean
   error: string | null
   streamingId: string | null
+  streamingTool?: { names: string[]; status: "running" | "complete" } | null
   onRegenerate: (messageId: string) => void
   renderAfterMessage?: (messageId: string) => React.ReactNode
   emptyState?: ReactNode
   loadingText?: string
 }
 
-function StreamingContent({ content }: { content: string }) {
-  const [displayedWords, setDisplayedWords] = useState(0)
-  const [done, setDone] = useState(false)
-  const words = content.split(" ")
-  const displayRef = useRef(0)
+const TOOL_STATUS_LABELS: Record<string, { running: string; complete: string }> = {
+  nct_catalog_search: { running: "Ищу в каталоге NCT", complete: "Каталог NCT" },
+  exa_web_search: { running: "Ищу в интернете", complete: "Поиск в интернете" },
+  get_active_context: { running: "Смотрю текущий контекст", complete: "Текущий контекст" },
+}
 
-  useEffect(() => {
-    displayRef.current = 0
-    if (!content) return
+function describeToolStatus(tool: { names: string[]; status: "running" | "complete" }): string {
+  const labels = [...new Set(tool.names.map((name) => TOOL_STATUS_LABELS[name]?.[tool.status] ?? name))]
+  const text = labels.join(" · ")
+  return tool.status === "running" ? `${text}…` : text
+}
 
-    const batchSize = Math.max(1, Math.floor(words.length / 18))
-    const resetTimer = window.setTimeout(() => {
-      setDisplayedWords(0)
-      setDone(false)
-    }, 0)
-    const timer = setInterval(() => {
-      displayRef.current += batchSize
-      if (displayRef.current >= words.length) {
-        setDisplayedWords(words.length)
-        setDone(true)
-        clearInterval(timer)
-      } else {
-        setDisplayedWords(displayRef.current)
-      }
-    }, 30)
-
-    return () => {
-      window.clearTimeout(resetTimer)
-      clearInterval(timer)
-    }
-  }, [content, words.length])
-
-  if (done) return <>{content}</>
-  if (displayedWords === 0) return null
-
+function StreamingContent({ content, thinkingHint }: { content: string; thinkingHint?: string }) {
   return (
-    <span>
-      {words.slice(0, displayedWords).join(" ")}
+    <div>
+      {content ? (
+        renderMarkdownContent(content)
+      ) : thinkingHint ? (
+        <p className="text-sm text-text-muted">{thinkingHint}</p>
+      ) : null}
       <span className="ml-0.5 inline-block h-4 w-0.5 animate-pulse bg-primary align-middle" />
-    </span>
+    </div>
+  )
+}
+
+function ToolStatusIndicator({ tool }: { tool: { names: string[]; status: "running" | "complete" } }) {
+  if (tool.names.length === 0) return null
+  return (
+    <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-surface-soft px-3 py-1.5 text-xs text-text-muted">
+      {tool.status === "running" ? (
+        <Loader2 className="h-3.5 w-3.5 animate-spin text-primary" />
+      ) : (
+        <Check className="h-3.5 w-3.5 text-primary" />
+      )}
+      <span>{describeToolStatus(tool)}</span>
+    </div>
   )
 }
 
@@ -145,11 +142,15 @@ function renderMarkdownContent(content: string): ReactNode {
 function MessageItem({
   message,
   isStreaming,
+  toolStatus,
+  thinkingHint,
   onRegenerate,
   onDelete,
 }: {
   message: TeacherMessage
   isStreaming: boolean
+  toolStatus?: { names: string[]; status: "running" | "complete" } | null
+  thinkingHint?: string
   onRegenerate: (messageId: string) => void
   onDelete: (messageId: string) => void
 }) {
@@ -182,8 +183,9 @@ function MessageItem({
         ) : null}
 
         <div className={`min-w-0 ${isUser ? "rounded-[1.35rem] border border-border bg-surface-raised px-4 py-3 shadow-[0_8px_22px_rgba(28,24,18,0.06)]" : "flex-1 py-1"}`}>
+          {isStreaming && toolStatus ? <ToolStatusIndicator tool={toolStatus} /> : null}
           <div className="prose-chat text-[15px] leading-7 text-foreground">
-            {isStreaming ? <StreamingContent content={message.content} /> : renderMarkdownContent(message.content)}
+            {isStreaming ? <StreamingContent content={message.content} thinkingHint={thinkingHint} /> : renderMarkdownContent(message.content)}
           </div>
 
           {!isUser && !isStreaming ? (
@@ -239,6 +241,7 @@ export function ChatMessages({
   isLoading,
   error,
   streamingId,
+  streamingTool = null,
   onRegenerate,
   renderAfterMessage,
   emptyState,
@@ -248,6 +251,7 @@ export function ChatMessages({
   const [deletedIds, setDeletedIds] = useState<string[]>([])
   const visibleMessages = messages.filter((message) => !deletedIds.includes(message.id))
   const isEmpty = visibleMessages.length === 0 && !isLoading
+  const latestContentLength = visibleMessages.at(-1)?.content.length ?? 0
 
   useEffect(() => {
     const el = listRef.current
@@ -255,7 +259,7 @@ export function ChatMessages({
     requestAnimationFrame(() => {
       el.scrollTo({ top: el.scrollHeight, behavior: "smooth" })
     })
-  }, [visibleMessages.length, isLoading, streamingId])
+  }, [visibleMessages.length, latestContentLength, isLoading, streamingId])
 
   return (
     <div
@@ -292,6 +296,8 @@ export function ChatMessages({
               <MessageItem
                 message={msg}
                 isStreaming={streamingId === msg.id}
+                toolStatus={streamingId === msg.id ? streamingTool : null}
+                thinkingHint={loadingText}
                 onRegenerate={onRegenerate}
                 onDelete={(id) => setDeletedIds((current) => [...current, id])}
               />

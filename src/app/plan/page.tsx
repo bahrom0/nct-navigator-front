@@ -4,7 +4,7 @@ import type { ReactNode } from "react"
 import { useCallback, useEffect, useState, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { motion } from "framer-motion"
-import { ArrowLeft, ArrowRight, Bot, Check, Cloud, Loader2, Target } from "lucide-react"
+import { ArrowLeft, Bot, Check, Cloud, Loader2, Target } from "lucide-react"
 import { PlanCard } from "@/components/plans/PlanCard"
 import { useProfileStore } from "@/stores/profile-store"
 import { applyActiveGoalBundle } from "@/lib/coach/bundle-client"
@@ -309,14 +309,6 @@ function PlanContent() {
                     План синхронизируется
                   </span>
                 )}
-                <button
-                  type="button"
-                  onClick={() => router.push(coachHref)}
-                  className="inline-flex h-10 items-center gap-2 rounded-[12px] bg-primary px-4 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
-                >
-                  Перейти в Coach
-                  <ArrowRight className="h-4 w-4" />
-                </button>
               </div>
             </div>
 
